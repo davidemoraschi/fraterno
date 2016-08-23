@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>DEBUG_PAGE_ITEM Procedure Signature 2</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:39Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="DEBUG_PAGE_ITEM Procedure Signature 2" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_plugin_util002.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_plugin_util004.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_plugin_util002.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin_util004.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABDDEHD" name="BABDDEHD"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>DEBUG_PAGE_ITEM <a id="sthref800" name="sthref800"></a>Procedure Signature 2</h1>
+<p>This procedure writes the data of the page item meta data to the debug output if debugging is enabled.</p>
+<a id="sthref801" name="sthref801"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_PLUGIN_UTIL.DEBUG_ITEM (
+    p_plugin              IN apex_plugin.t_plugin,
+    p_page_item           IN apex_plugin.t_page_item,
+    p_value               IN VARCHAR2,
+    p_is_readonly         IN BOOLEAN,
+    p_is_printer_friendly IN BOOLEAN);
+</pre>
+<a id="sthref802" name="sthref802"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#BABGIEJE">Table: DEBUG_PAGE_ITEM Parameters</a> describes the parameters available in the <code>DEBUG_PAGE_ITEM</code> procedure.</p>
+<div class="tblformal"><a id="sthref803" name="sthref803"></a><a id="BABGIEJE" name="BABGIEJE"></a>
+<p class="titleintable">DEBUG_PAGE_ITEM Parameters</p>
+<table class="Formal" title="DEBUG_PAGE_ITEM Parameters" summary="This table describes the parameters available in the DEBUG_PAGE_ITEM procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t4">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t4">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t4" headers="r1c1-t4">
+<p><code>p_plugin</code></p>
+</td>
+<td align="left" headers="r2c1-t4 r1c2-t4">
+<p>This is the <code>p_plugin</code> parameter of your plug-in function.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t4" headers="r1c1-t4">
+<p>p_page_item</p>
+</td>
+<td align="left" headers="r3c1-t4 r1c2-t4">
+<p>This is the <code>p_page_item</code> parameter of your plug-in function.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t4" headers="r1c1-t4">
+<p>p_value</p>
+</td>
+<td align="left" headers="r4c1-t4 r1c2-t4">
+<p>This is the <code>p_value</code> parameter of your plug-in function.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t4" headers="r1c1-t4">
+<p>p_is_readonly</p>
+</td>
+<td align="left" headers="r5c1-t4 r1c2-t4">
+<p>This is the <code>p_is_readonly</code> parameter of your plug-in function.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t4" headers="r1c1-t4">
+<p>p_is_printer_friendly</p>
+</td>
+<td align="left" headers="r6c1-t4 r1c2-t4">
+<p>This is the <code>p_is_printer_friendly</code> parameter of your plug-in function.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref804" name="sthref804"></a>
+<p class="subhead2">Example</p>
+<p>This example shows how to collect helpful debug information during the plug-in development cycle to see what values are actually passed into the renderer, AJAX callback or validation function.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+apex_plugin_util.debug_page_item (
+    p_plugin         =&gt; p_plugin,
+    p_page_item      =&gt; p_page_item, 
+    p_value          =&gt; p_value,
+    p_is_readonly    =&gt; p_is_readonly,
+    p_is_printer_friendly =&gt; p_is_printer_friendly);
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_plugin_util002.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin_util004.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

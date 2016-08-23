@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Step 1: Export Microsoft Access Metadata</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-28T10:25:23Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Step 1: Export Microsoft Access Metadata" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15518-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="appmgr.htm" title="Migrating a Microsoft Acces..." type="text/html" />
+<link rel="up" href="apm_export_meta.htm" title="Step 1: Export Microsoft Ac..." type="text/html" />
+<link rel="prev" href="apm_howmigproj.htm" title="Previous" type="text/html" />
+<link rel="next" href="apm_howmigdb.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="appmgr.htm" title="Migrating a Microsoft Acces...">Migrating a Microsoft Acces...</a> &gt; Step 1: Export Microsoft Ac...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apm_howmigproj.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apm_howmigdb.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BGBGEJJG" name="BGBGEJJG"></a></p>
+<div class="sect1"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEMIG106" id="AEMIG106"></a>Step 1: Export <a id="sthref34" name="sthref34"></a>Microsoft Access Metadata</h1>
+<p>To export your metadata from Microsoft Access, download the correct version of the Exporter tool, as explained in this section. Then, run the Exporter and extract the metadata from the Microsoft Access <code>.mdb</code> file. The metadata contains the necessary database and application schema information.</p>
+<p>The export process creates two output files:</p>
+<ul>
+<li>
+<p>database (<code>.xml</code> file)</p>
+</li>
+<li>
+<p>application (<code>.sql</code> file)</p>
+</li>
+</ul>
+<a id="sthref35" name="sthref35"></a>
+<p class="subhead2">Exporter Tool System Requirements</p>
+<p>To use the Exporter tool, the Microsoft Windows operating system where the Exporter tool runs must include the following libraries:</p>
+<ul>
+<li>
+<p>Microsoft DAO 3.6 Object Library</p>
+</li>
+<li>
+<p>Microsoft ActiveX Data Objects 2.5 Library</p>
+</li>
+</ul>
+<a id="sthref36" name="sthref36"></a>
+<p class="subhead2">Downloading the Exporter Tool</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Follow the instructions in this section if you are downloading the Exporter tool from Oracle Application Express release 3.0 or later. Alternately, you skip the following task and access the Exporter directly from Oracle SQL Developer using the Migration menu.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+<p>To download the Exporter tool for Microsoft Access:</p>
+<ol>
+<li>
+<p>Log in the workspace you created for your conversion project as described in <a href="apm_login.htm#CIHFCGDB">"Logging in to Your Oracle Application Express Workspace"</a>.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Application Builder</span> icon.</p>
+</li>
+<li>
+<p>Click <span class="bold">Migrations</span> on the right side of the page.</p>
+<img src="img/migration_link.gif" alt="Description of migration_link.gif follows" title="Description of migration_link.gif follows" longdesc="img_text/migration_link.htm" /><br />
+<a id="sthref37" name="sthref37" href="img_text/migration_link.htm">Description of the illustration migration_link.gif</a><br />
+<br /></li>
+<li>
+<p>Under Tasks, click <span class="bold">Download Exporter for Microsoft Access</span>.</p>
+</li>
+<li>
+<p>In the Download column, click the zip file that corresponds to your version of Microsoft Access. For example, download the <code>omwb2003.zip</code> file if you are using Microsoft Access 2003.</p>
+</li>
+<li>
+<p>Save the file.</p>
+</li>
+<li>
+<p>Unzip the file. You must <span class="italic">replace</span> the following files with the updated versions in the <code>msaccess_exporter</code> directory where you unzipped Oracle Migration Workbench:</p>
+<ul>
+<li>
+<p><code>schema.dtd</code> file</p>
+</li>
+<li>
+<p>Exporter tool file: <code>omwb</code>&lt;<span class="italic">version</span>&gt;<code>.mde</code></p>
+</li>
+<li>
+<p>online help file: <code>omwb.chm</code></p>
+</li>
+</ul>
+<p>Be sure to invoke the export from this directory.</p>
+</li>
+</ol>
+<a id="sthref38" name="sthref38"></a>
+<p class="subhead2">Exporting Your Metadata</p>
+<p>To export your metadata, follow the instructions found in the help file for the Exporter tool. To find the instructions, do one of the following:</p>
+<ul>
+<li>
+<p>Launch the Exporter tool, and click the <span class="bold">Help</span> button.</p>
+</li>
+<li>
+<p>Open the help file (<code>omwb.chm</code>) contained in the Exporter zip file.</p>
+</li>
+</ul>
+<p>The instructions appear in the topic called Exporter Overview.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apm_howmigdb.htm#BGBHACII">"Step 2: Migrate the Microsoft Access Database to Oracle"</a> and <a href="apm_howmigproj.htm#BGBIDFDB">"How to Migrate a Microsoft Access Application"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apm_howmigproj.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apm_howmigdb.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

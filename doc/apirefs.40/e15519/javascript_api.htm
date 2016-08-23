@@ -1,0 +1,1379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>JavaScript APIs</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = document) - Version 5.1" />
+<meta name="Date" content="2010-10-20T13:9:33Z" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="doctitle" content="Oracle&reg; Application Express API Reference Release 4.0" />
+<meta name="partno" content="E15519-03" />
+<meta name="docid" content="AEAPI" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<script type="text/javascript" src="../../dcommon/js/doccd.js">
+</script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="apex_web_service.htm" title="Previous" type="text/html" />
+<link rel="alternate" href="../e15519.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Application Express API Reference<br />
+Release 4.0</b><br />
+Part Number E15519-03</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="196">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img width="24" height="24" src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img width="24" height="24" src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img width="24" height="24" src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img width="24" height="24" src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="49">
+<tr>
+<td align="center" valign="top"><a href="apex_web_service.htm"><img width="24" height="24" src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top" style="font-size: 90%"><a href="../e15519.pdf">View PDF</a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="CDEEIGFH" name="CDEEIGFH"></a><a id="AEAPI266" name="AEAPI266"></a>
+<h1 class="chapter"><span class="secnum">19</span> JavaScript APIs</h1>
+<p>This section describes <a id="sthref745" name="sthref745"></a><a id="sthref746" name="sthref746"></a>JavaScript functions and objects included with Oracle Application Express and available on every page. You can use these functions and objects to provide client-side functionality, such as showing and hiding page elements, or making XML HTTP Asynchronous JavaScript and XML (AJAX) requests.</p>
+<p><span class="bold">Topics</span>:</p>
+<ul>
+<li>
+<p><a href="#CHDGGBII">apex.event.trigger(pSelector,pEvent,pData)</a></p>
+</li>
+<li>
+<p><a href="#BGBBHCBH">apex.widget.initPageItem(pName,pOptions)</a></p>
+</li>
+<li>
+<p><a href="#BGBHEBGA">$x(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDEJEIG">$v2(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDEJEIG">$v2(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDFBJGD">$s(pNd, pValue, pDisplayValue)</a></p>
+</li>
+<li>
+<p><a href="#CHDCBJFF">$u_Carray(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDEIGDJ">$u_Narray(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDGAIJJ">$nvl(pTest, pDefault)</a></p>
+</li>
+<li>
+<p><a href="#BGBJHEHG">apex.submit(pOptions)</a></p>
+</li>
+<li>
+<p><a href="#CHDBEACA">apex.submit(pRequest)</a></p>
+</li>
+<li>
+<p><a href="#CHDGHCBE">apex.confirm(pMessage, pRequest)</a></p>
+</li>
+<li>
+<p><a href="#CHDDBBDH">$x_Style(pNd, pStyle, pString)</a></p>
+</li>
+<li>
+<p><a href="#CHDDAGFE">$x_Hide(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDIFFJI">$x_Show(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDCEEAG">$x_Toggle(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDDJGHC">$x_Remove(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDDEFJJ">$x_Value(pNd,pValue)</a></p>
+</li>
+<li>
+<p><a href="#CHDEGGGI">$x_UpTill(pNd, pToTag)</a></p>
+</li>
+<li>
+<p><a href="#CHDIBGDH">$x_ItemRow(pNd,pFunc)</a></p>
+</li>
+<li>
+<p><a href="#CHDIIJHG">$x_HideItemRow(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDHAEDD">$x_ShowItemRow(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDJHIFH">$x_ToggleItemRow(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDGBGAE">$x_HideAllExcept(pNd,pNdArray)</a></p>
+</li>
+<li>
+<p><a href="#CHDHHIBB">$x_HideSiblings(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDJGBHF">$x_ShowSiblings(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDFCHJJ">$x_Class(pNd,pClass)</a></p>
+</li>
+<li>
+<p><a href="#CHDEAIIA">$x_SetSiblingsClass(pNd, pClass, pNdClass)</a></p>
+</li>
+<li>
+<p><a href="#CHDEACGG">$x_ByClass(pClass, pNd, pTag)</a></p>
+</li>
+<li>
+<p><a href="#CHDGBBDE">$x_ShowAllByClass(pNd, pClass, pTag)</a></p>
+</li>
+<li>
+<p><a href="#CHDFJBGB">$x_ShowChildren(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDIBFDB">$x_HideChildren(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDDAHDJ">$x_disableItem(pNd, pTest)</a></p>
+</li>
+<li>
+<p><a href="#CHDJDFEI">$f_get_emptys(pNd, pClassFail, pClass)</a></p>
+</li>
+<li>
+<p><a href="#CHDGEBHH">$v_Array(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDIFFFF">$f_ReturnChecked(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDDFHDF">$d_ClearAndHide(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDFGIHJ">$f_SelectedOptions(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDFBJDF">$f_SelectValue(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDHIFGB">$u_ArrayToString(pArray, pDelim)</a></p>
+</li>
+<li>
+<p><a href="#CHDDGDGB">$x_CheckImageSrc(pId,pSearch)</a></p>
+</li>
+<li>
+<p><a href="#CHDJFDGE">$v_CheckValueAgainst(pThis, pValue)</a></p>
+</li>
+<li>
+<p><a href="#CHDHIAJB">$f_Hide_On_Value_Item(pThis, pThat, pValue)</a></p>
+</li>
+<li>
+<p><a href="#CHDFAFJJ">$f_Show_On_Value_Item(pThis, pThat, pValue)</a></p>
+</li>
+<li>
+<p><a href="#CHDEIJED">$f_Hide_On_Value_Item_Row(pThis, pThat, pValue)</a></p>
+</li>
+<li>
+<p><a href="#CHDBAEJH">$f_Show_On_Value_Item_Row(pThis, pThat, pValue)</a></p>
+</li>
+<li>
+<p><a href="#CHDIGFEF">$f_DisableOnValue(pThis, pValue, pThat)</a></p>
+</li>
+<li>
+<p><a href="#CHDIFGBG">$x_ClassByClass(pNd, pClass, pTag, pClass2)</a></p>
+</li>
+<li>
+<p><a href="#CHDEGJFC">$f_ValuesToArray(pThis, pClass, pTag)</a></p>
+</li>
+<li>
+<p><a href="#CHDBGBJJ">$x_FormItems(pNd, pType)</a></p>
+</li>
+<li>
+<p><a href="#CHDFECEC">$f_CheckAll(pThis, pCheck, pArray)</a></p>
+</li>
+<li>
+<p><a href="#CHDHDHEB">$f_CheckFirstColumn(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDEBJAB">$v_PopupReturn(pValue, pThat)</a></p>
+</li>
+<li>
+<p><a href="#CHDFBAEE">$x_ToggleWithImage(pThis,pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDIDCCA">$x_SwitchImageSrc(pNd, pSearch, pReplace)</a></p>
+</li>
+<li>
+<p><a href="#CHDCFHHB">$x_CheckImageSrc(pNd, pSearch)</a></p>
+</li>
+<li>
+<p><a href="#CHDFHGDB">$u_SubString(pText,pMatch)</a></p>
+</li>
+<li>
+<p><a href="#CHDBAIHH">html_RemoveAllChildren(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDBCAGD">$v_IsEmpty(pThis)</a></p>
+</li>
+<li>
+<p><a href="#CHDBBJJJ">html_SetSelectValue(pId,pValue)</a></p>
+</li>
+<li>
+<p><a href="#CHDIFGFC">addLoadEvent(pFunction)</a></p>
+</li>
+<li>
+<p><a href="#CHDFCGHE">$f_Swap(pThis,pThat)</a></p>
+</li>
+<li>
+<p><a href="#CHDFEHFA">submitEnter(pNd,e)</a></p>
+</li>
+<li>
+<p><a href="#CHDCFCJI">$f_SetValueSequence(pArray,pMultiple)</a></p>
+</li>
+<li>
+<p><a href="#CHDBAFAG">$dom_AddTag(pThis, pTag, pText)</a></p>
+</li>
+<li>
+<p><a href="#CHDIEEGE">$tr_AddTD(pThis,pText)</a></p>
+</li>
+<li>
+<p><a href="#CHDHEDDA">$dom_AddInput(pThis,pType,pId,pName,pValue)</a></p>
+</li>
+<li>
+<p><a href="#CHDIEDBG">$dom_MakeParent(p_Node,p_Parent)</a></p>
+</li>
+<li>
+<p><a href="#CHDEGCGF">$x_RowHighlight(pThis, pColor)</a></p>
+</li>
+<li>
+<p><a href="#CHDFAFCC">$x_RowHighlightOff(pThis)</a></p>
+</li>
+<li>
+<p><a href="#CHDHIIGD">$v_Upper(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDHIIGD">$v_Upper(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDEBGJG">$d_Find(pThis,pString,pTags,pClass)</a></p>
+</li>
+<li>
+<p><a href="#CHDGGCDF">returnInput(p_R, p_D)</a></p>
+</li>
+<li>
+<p><a href="#CHDJEJEF">setReturn(p_R,p_D)</a></p>
+</li>
+<li>
+<p><a href="#CHDGCEAD">$f_First_field(pNd)</a></p>
+</li>
+<li>
+<p><a href="#CHDJJIBG">GetCookie (pName)</a></p>
+</li>
+<li>
+<p><a href="#CHDDGGBA">SetCookie (pName,pValue)</a></p>
+</li>
+</ul>
+<a id="CHDGGBII" name="CHDGGBII"></a><a id="AEAPI415" name="AEAPI415"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref747" name="sthref747"></a>apex.event.trigger(pSelector,pEvent,pData)</h2>
+<p>Given a jQuery selector, jQuery object or DOM Node the specified pEvent will be triggered. pEvent can be a browser event like "click" or "change" but also a custom event like "slidechange". This function should only be used to trigger events that are handled by the dynamic action framework. Otherwise, custom events registered by plug-ins installed in your application or any event that is already exposed in dynamic actions can be compromised.</p>
+<p class="subhead2"><a id="AEAPI1980" name="AEAPI1980"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Boolean
+</pre>
+<p class="subhead2"><a id="AEAPI1981" name="AEAPI1981"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pSelector (jQuery selector | jQuery object | DOM Node)
+pEvent (String)
+pData (Object)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="BGBBHCBH" name="BGBBHCBH"></a><a id="AEAPI416" name="AEAPI416"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref748" name="sthref748"></a>apex.widget.initPageItem(pName,pOptions)</h2>
+<p>Given a page item name different options can be registered for a page item with the Application Express JavaScript framework. This is necessary to seamlessly integrate a plug-in item type with the built-in page item related JavaScript functions of Application Express.</p>
+<p class="subhead2"><a id="AEAPI1982" name="AEAPI1982"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pName (string)
+pOptions (Object)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="BGBHEBGA" name="BGBHEBGA"></a><a id="AEAPI267" name="AEAPI267"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref749" name="sthref749"></a>$x(pNd)</h2>
+<p>Given a DOM node or string ID (pNd), this function returns a DOM node if the element is on the page, or returns false if it is not.</p>
+<p class="subhead2"><a id="AEAPI1983" name="AEAPI1983"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM Node | false)
+</pre>
+<p class="subhead2"><a id="AEAPI1984" name="AEAPI1984"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM Node | string ID)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="AEAPI268" name="AEAPI268"></a>
+<hr />
+<div class="refsect1"><a id="sthref750" name="sthref750"></a>
+<h2 class="refsect1"><a id="sthref751" name="sthref751"></a>$v(pNd)</h2>
+<p>Given a DOM node or string ID (pNd), this function returns the value of an Application Express item in the same format as it would be posted.</p>
+<p class="subhead2"><a id="AEAPI1985" name="AEAPI1985"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM Node | string ID)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDEJEIG" name="CHDEJEIG"></a><a id="AEAPI417" name="AEAPI417"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref752" name="sthref752"></a>$v2(pNd)</h2>
+<p>Given a DOM node or string ID (pNd), this function returns the value of an Application Express item as a string or an array. If the page item type can contain multiple values like a shuttle, checkboxes or a multi select list an array will be returned, otherwise a string.</p>
+<p class="subhead2"><a id="AEAPI1986" name="AEAPI1986"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(string|array)
+</pre>
+<p class="subhead2"><a id="AEAPI1987" name="AEAPI1987"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM Node | string ID)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDFBJGD" name="CHDFBJGD"></a><a id="AEAPI269" name="AEAPI269"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref753" name="sthref753"></a>$s(pNd, pValue, pDisplayValue)</h2>
+<p>Given a DOM node or string ID (pNd), this function sets the Application Express item value taking into account what type of item it is. The pDisplayValue is optional. If used for a page item of type "Popup LOV" where the attribute "Input Field" = "Not Enterable, Show Display Value and Store Return Value". It will be used to set the "Input Field". The value of pValue will be stored in the hidden return field.</p>
+<p class="subhead2"><a id="AEAPI1988" name="AEAPI1988"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM Node | string ID)
+pValue  (String | Array)
+pDisplayValue(String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDCBJFF" name="CHDCBJFF"></a><a id="AEAPI270" name="AEAPI270"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref754" name="sthref754"></a>$u_Carray(pNd)</h2>
+<p>Given a DOM node or string ID or an array (pNd), this function returns an array. Used for creating DOM based functionality that can accept a single or multiple DOM nodes.</p>
+<p class="subhead2"><a id="AEAPI1989" name="AEAPI1989"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM Node | string ID | Array)
+</pre>
+<p class="subhead2"><a id="AEAPI1990" name="AEAPI1990"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">Array
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDEIGDJ" name="CHDEIGDJ"></a><a id="AEAPI271" name="AEAPI271"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref755" name="sthref755"></a>$u_Narray(pNd)</h2>
+<p>Given a DOM node or string ID or an array (pNd), this function returns a single value, if an pNd is an array but only has one element the value of that element will be returned otherwise the array will be returned. Used for creating DOM based functionality that can accept a single or multiple DOM nodes.</p>
+<p class="subhead2"><a id="AEAPI1991" name="AEAPI1991"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Array (DOM Node | string ID | Array)
+</pre>
+<p class="subhead2"><a id="AEAPI1992" name="AEAPI1992"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">Array or first value
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDGAIJJ" name="CHDGAIJJ"></a><a id="AEAPI272" name="AEAPI272"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref756" name="sthref756"></a>$nvl(pTest, pDefault)</h2>
+<p>If <code>pTest</code> is empty or false return <code>pDefault</code> otherwise return <code>pTest</code>.</p>
+<p class="subhead2"><a id="AEAPI1993" name="AEAPI1993"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(string | Array)
+</pre>
+<p class="subhead2"><a id="AEAPI1994" name="AEAPI1994"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pTest  (String | Array)
+pDefault (String | Array)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="BGBJHEHG" name="BGBJHEHG"></a><a id="AEAPI273" name="AEAPI273"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref757" name="sthref757"></a>apex.submit(pOptions)</h2>
+<p>This function submits the page using the options sepcified in <code>pOptions</code>.</p>
+<p class="subhead2"><a id="AEAPI1995" name="AEAPI1995"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pOptions (Object)
+where Object can contain the following options:
+
+<span class="bold">request</span> - The request value to set (defaults to null)
+<span class="bold">set</span> - Object conatining name/value pairs of items to be set on the page prior to submission(defaults to null).
+<span class="bold">showWait</span> - Flag to control if a 'Wait Indicator' icon is displayed, which can be useful when running long page operations (Defaults to false).
+</pre>
+<p class="subhead2"><a id="AEAPI1996" name="AEAPI1996"></a>Example</p>
+<p>This example submits the page with a REQUEST value of 'DELETE' and 2 page item values are set, <code>P1_DEPTNO</code> to <code>10</code> and <code>P1_EMPNO</code> to <code>5433</code>. During submit a wait icon is displayed as visual indicator for the user as well.</p>
+<pre xml:space="preserve" class="oac_no_warn">apex.submit({  request:"DELETE",  set:{"P1_DEPTNO":10, "P1_EMPNO":5433},  showWait:true});
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDBEACA" name="CHDBEACA"></a><a id="AEAPI522" name="AEAPI522"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref758" name="sthref758"></a>apex.submit(pRequest)</h2>
+<p>This function submits the page setting the Application Express Request value <code>pRequest</code>.</p>
+<p class="subhead2"><a id="AEAPI1997" name="AEAPI1997"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pRequest (String)
+<a id="AEAPI1998" name="AEAPI1998"></a>
+
+
+Example
+
+
+Submits the current page with a REQUEST value of 'DELETE'.
+apex.submit({
+  request:"DELETE",
+  set:{"P1_DEPTNO":10, "P1_EMPNO":5433});
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDGHCBE" name="CHDGHCBE"></a><a id="AEAPI521" name="AEAPI521"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref759" name="sthref759"></a>apex.confirm(pMessage, pRequest)</h2>
+<p>Displays a confirmation showing a message (<code>pMessage</code>) and depending on user's choice, submits a page setting request value (<code>pRequest</code>) or cancels page submit.</p>
+<p class="subhead2"><a id="AEAPI1999" name="AEAPI1999"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pMessage (string)
+pRequest (string)
+</pre>
+<p class="subhead2"><a id="AEAPI2000" name="AEAPI2000"></a>Example</p>
+<p>This example shows a confirmation dialog with the text 'Delete Department'. If the user chooses to proceed with the delete, the current page is submitted with a REQUEST value of 'DELETE'</p>
+<pre xml:space="preserve" class="oac_no_warn">apex.confirm('Delete Department', 'DELETE');
+</pre></div>
+<!-- class="refsect1" -->
+<a id="AEAPI274" name="AEAPI274"></a>
+<hr />
+<div class="refsect1"><a id="sthref760" name="sthref760"></a>
+<h2 class="refsect1"><a id="sthref761" name="sthref761"></a>apex.confirm(pMessage, pOptions)</h2>
+<p>Displays a confirmation showing a message (<code>pMessage</code>) and depending on user's choice, submits a page setting request values specified by (<code>pOptions</code>) or cancels page submit.</p>
+<p class="subhead2"><a id="AEAPI2001" name="AEAPI2001"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pMessage (string)
+pOptions (object)
+Object can contain the following options:
+<span class="bold">request</span> - The request value to be set (Defaults to null)
+<span class="bold">set</span> - Object containing name / value pairs of items to be set on the page prior to submission (Defaults to null)
+</pre>
+<p class="subhead2"><a id="AEAPI2002" name="AEAPI2002"></a>Example 1</p>
+<p>This example shows a confirmation message with the 'Save Department?' text. If the user chooses to proceed with the save, the page is submitted with a <code>REQUEST</code> value of 'SAVE' and 2 page item values are set, <code>P1_DEPTNO</code> to <code>10</code> and <code>P1_EMPNO</code> to <code>5433</code>."</p>
+<pre xml:space="preserve" class="oac_no_warn">apex.confirm("Save Department?", {
+  request:"SAVE",
+  set:{"P1_DEPTNO":10, "P1_EMPNO":5433});
+</pre>
+<p class="subhead2"><a id="AEAPI2003" name="AEAPI2003"></a>Example 2</p>
+<p>This example submits the current page and sets the <code>REQUEST</code> value to <code>SAVE</code>.</p>
+<pre xml:space="preserve" class="oac_no_warn">apex.submit('SAVE');
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDDBBDH" name="CHDDBBDH"></a><a id="AEAPI275" name="AEAPI275"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref762" name="sthref762"></a>$x_Style(pNd, pStyle, pString)</h2>
+<p>Sets a specific style property (<code>pStyle</code>) to given value (<code>pString</code>) of a DOM node or DOM node Array (<code>pNd</code>).</p>
+<p class="subhead2"><a id="AEAPI2004" name="AEAPI2004"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM node | DOM Array)
+</pre>
+<p class="subhead2"><a id="AEAPI2005" name="AEAPI2005"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID | DOM node Array )
+pStyle (String)
+pString (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDDAGFE" name="CHDDAGFE"></a><a id="AEAPI276" name="AEAPI276"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref763" name="sthref763"></a>$x_Hide(pNd)</h2>
+<p>Hides a DOM node or array of DOM nodes (<code>pNd</code>). This will also take into consideration which type of Application Express item is being hidden.</p>
+<p class="subhead2"><a id="AEAPI2006" name="AEAPI2006"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM node | Array)
+</pre>
+<p class="subhead2"><a id="AEAPI2007" name="AEAPI2007"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID | DOM node Array )
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDIFFJI" name="CHDIFFJI"></a><a id="AEAPI277" name="AEAPI277"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref764" name="sthref764"></a>$x_Show(pNd)</h2>
+<p>Shows a DOM node or array of DOM nodes (<code>pNd</code>). This will also take into consideration which type of Application Express item is being hidden.</p>
+<p class="subhead2"><a id="AEAPI2008" name="AEAPI2008"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM node | Array)
+</pre>
+<p class="subhead2"><a id="AEAPI2009" name="AEAPI2009"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID | DOM node Array )
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDCEEAG" name="CHDCEEAG"></a><a id="AEAPI278" name="AEAPI278"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref765" name="sthref765"></a>$x_Toggle(pNd)</h2>
+<p>Toggles a DOM node or array of DOM nodes (pNd).</p>
+<p class="subhead2"><a id="AEAPI2010" name="AEAPI2010"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM node | Array)
+</pre>
+<p class="subhead2"><a id="AEAPI2011" name="AEAPI2011"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID | Array)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDDJGHC" name="CHDDJGHC"></a><a id="AEAPI279" name="AEAPI279"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref766" name="sthref766"></a>$x_Remove(pNd)</h2>
+<p>Removes a DOM node or array of DOM nodes.</p>
+<p class="subhead2"><a id="AEAPI2012" name="AEAPI2012"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM Node | Array)
+</pre>
+<p class="subhead2"><a id="AEAPI2013" name="AEAPI2013"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID | DOM node Array)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDDEFJJ" name="CHDDEFJJ"></a><a id="AEAPI280" name="AEAPI280"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref767" name="sthref767"></a>$x_Value(pNd,pValue)</h2>
+<p>Sets the value (<code>pValue</code>) of a DOM node or array of DOM nodes (<code>pNd</code>).</p>
+<p class="subhead2"><a id="AEAPI2014" name="AEAPI2014"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2015" name="AEAPI2015"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID | DOM node Array)
+pValue (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDEGGGI" name="CHDEGGGI"></a><a id="AEAPI281" name="AEAPI281"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref768" name="sthref768"></a>$x_UpTill(pNd, pToTag)</h2>
+<p>Starting from a DOM node (<code>pNd</code>), this function cascades up the DOM tree until the tag of node name (<code>pToTag</code>) is found.</p>
+<p class="subhead2"><a id="AEAPI2016" name="AEAPI2016"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM Node | false)
+</pre>
+<p class="subhead2"><a id="AEAPI2017" name="AEAPI2017"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd  (DOM Node | string ID) 
+String (pToTag) 
+String (pToClass ) 
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDIBGDH" name="CHDIBGDH"></a><a id="AEAPI282" name="AEAPI282"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref769" name="sthref769"></a>$x_ItemRow(pNd,pFunc)</h2>
+<p>Given DOM node or array of DOM nodes, this function (shows, hides, or toggles) the entire row that contains the DOM node or array of DOM nodes. This is most useful when using Page Items.</p>
+<p class="subhead2"><a id="AEAPI2018" name="AEAPI2018"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2019" name="AEAPI2019"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM Node | string ID | Dom node Array) 
+pFunc ['TOGGLE','SHOW','HIDE'] (String )
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDIIJHG" name="CHDIIJHG"></a><a id="AEAPI283" name="AEAPI283"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref770" name="sthref770"></a>$x_HideItemRow(pNd)</h2>
+<p>Given a page item name, this function hides the entire row that holds the item. In most cases, this will be the item and its label.</p>
+<p class="subhead2"><a id="AEAPI2020" name="AEAPI2020"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2021" name="AEAPI2021"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM Node | string ID | DON node Array)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDHAEDD" name="CHDHAEDD"></a><a id="AEAPI284" name="AEAPI284"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref771" name="sthref771"></a>$x_ShowItemRow(pNd)</h2>
+<p>Given a page item name, this function shows the entire row that holds the item. In most cases, this will be the item and its label.</p>
+<p class="subhead2"><a id="AEAPI2022" name="AEAPI2022"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2023" name="AEAPI2023"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID | DOM note Array)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDJHIFH" name="CHDJHIFH"></a><a id="AEAPI285" name="AEAPI285"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref772" name="sthref772"></a>$x_ToggleItemRow(pNd)</h2>
+<p>Given a page item name (pNd), this function toggles the entire row that holds the item. In most cases, this will be the item and its label.</p>
+<p class="subhead2"><a id="AEAPI2024" name="AEAPI2024"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2025" name="AEAPI2025"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID | DOM node ray)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDGBGAE" name="CHDGBGAE"></a><a id="AEAPI286" name="AEAPI286"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref773" name="sthref773"></a>$x_HideAllExcept(pNd,pNdArray)</h2>
+<p>Hides all DOM nodes referenced in <code>pNdArray</code> and then shows the DOM node referenced by <code>pNd</code>. This is most useful when <code>pNd</code> is also a node in <code>pNdArray</code>.</p>
+<p class="subhead2"><a id="AEAPI2026" name="AEAPI2026"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM node | DOM Array)
+</pre>
+<p class="subhead2"><a id="AEAPI2027" name="AEAPI2027"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID | DOM node Array) 
+pNdArray (DOM node | String | Array)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDHHIBB" name="CHDHHIBB"></a><a id="AEAPI287" name="AEAPI287"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref774" name="sthref774"></a>$x_HideSiblings(pNd)</h2>
+<p>Hides all sibling nodes of given <code>pNd</code>.</p>
+<p class="subhead2"><a id="AEAPI2028" name="AEAPI2028"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM node)
+</pre>
+<p class="subhead2"><a id="AEAPI2029" name="AEAPI2029"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID )
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDJGBHF" name="CHDJGBHF"></a><a id="AEAPI288" name="AEAPI288"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref775" name="sthref775"></a>$x_ShowSiblings(pNd)</h2>
+<p>Shows all sibling DOM nodes of given DOM nodes (<code>pNd</code>).</p>
+<p class="subhead2"><a id="AEAPI2030" name="AEAPI2030"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM node)
+</pre>
+<p class="subhead2"><a id="AEAPI2031" name="AEAPI2031"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID )
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDFCHJJ" name="CHDFCHJJ"></a><a id="AEAPI289" name="AEAPI289"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref776" name="sthref776"></a>$x_Class(pNd,pClass)</h2>
+<p>Sets a DOM node or array of DOM nodes to a single class name.</p>
+<p class="subhead2"><a id="AEAPI2032" name="AEAPI2032"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2033" name="AEAPI2033"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID | DOM node Array)
+pClass (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDEAIIA" name="CHDEAIIA"></a><a id="AEAPI290" name="AEAPI290"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref777" name="sthref777"></a>$x_SetSiblingsClass(pNd, pClass, pNdClass)</h2>
+<p>Sets the class (<code>pClass</code>) of all DOM node siblings of a node (<code>pNd</code>). If <code>pNdClass</code> is not null the class of <code>pNd</code> is set to <code>pNdClass</code>.</p>
+<p class="subhead2"><a id="AEAPI2034" name="AEAPI2034"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM node | false)
+</pre>
+<p class="subhead2"><a id="AEAPI2035" name="AEAPI2035"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM Nnde | string ID)
+pClass (String)
+pThisClass (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDEACGG" name="CHDEACGG"></a><a id="AEAPI291" name="AEAPI291"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref778" name="sthref778"></a>$x_ByClass(pClass, pNd, pTag)</h2>
+<p>Returns an array of DOM nodes by a given class name (<code>pClass</code>). If the <code>pNd</code> parameter is provided, then the returned elements will be all be children of that DOM node. Including the <code>pTag</code> parameter further narrows the list to just return nodes of that tag type.</p>
+<p class="subhead2"><a id="AEAPI2036" name="AEAPI2036"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(Array)
+</pre>
+<p class="subhead2"><a id="AEAPI2037" name="AEAPI2037"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pClass (String)
+pNd  (DOM node | string ID)
+pTag (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDGBBDE" name="CHDGBBDE"></a><a id="AEAPI292" name="AEAPI292"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref779" name="sthref779"></a>$x_ShowAllByClass(pNd, pClass, pTag)</h2>
+<p>Show all the DOM node children of a DOM node (<code>pNd</code>) that have a specific class (<code>pClass</code>) and tag (<code>pTag</code>).</p>
+<p class="subhead2"><a id="AEAPI2038" name="AEAPI2038"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2039" name="AEAPI2039"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID)
+pClass (String)
+pTag (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDFJBGB" name="CHDFJBGB"></a><a id="AEAPI293" name="AEAPI293"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref780" name="sthref780"></a>$x_ShowChildren(pNd)</h2>
+<p>Show all DOM node children of a DOM node (<code>pNd</code>).</p>
+<p class="subhead2"><a id="AEAPI2040" name="AEAPI2040"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2041" name="AEAPI2041"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDIBFDB" name="CHDIBFDB"></a><a id="AEAPI294" name="AEAPI294"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref781" name="sthref781"></a>$x_HideChildren(pNd)</h2>
+<p>Hide all DOM node children of a DOM node (<code>pNd</code>).</p>
+<p class="subhead2"><a id="AEAPI2042" name="AEAPI2042"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2043" name="AEAPI2043"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDDAHDJ" name="CHDDAHDJ"></a><a id="AEAPI295" name="AEAPI295"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref782" name="sthref782"></a>$x_disableItem(pNd, pTest)</h2>
+<p>Disables or enables an item or array of items based on (<code>pTest</code>).</p>
+<p class="subhead2"><a id="AEAPI2044" name="AEAPI2044"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2045" name="AEAPI2045"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID | DOM node array)
+a (true | false)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDJDFEI" name="CHDJDFEI"></a><a id="AEAPI296" name="AEAPI296"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref783" name="sthref783"></a>$f_get_emptys(pNd, pClassFail, pClass)</h2>
+<p>Checks an item or an array of items to see if any are empty, set the class of all items that are empty to <code>pClassFail</code>, set the class of all items that are not empty to <code>pClass</code>.</p>
+<p class="subhead2"><a id="AEAPI2046" name="AEAPI2046"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">false, Array  Array of all items that are empty (false | Array)
+</pre>
+<p class="subhead2"><a id="AEAPI2047" name="AEAPI2047"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID | DOM node Array)
+Sting (pClassFail)
+Sting (pClass)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDGEBHH" name="CHDGEBHH"></a><a id="AEAPI297" name="AEAPI297"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref784" name="sthref784"></a>$v_Array(pNd)</h2>
+<p>Returns an item value as an array. Useful for multiselects and checkboxes.</p>
+<p class="subhead2"><a id="AEAPI2048" name="AEAPI2048"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(Array)
+</pre>
+<p class="subhead2"><a id="AEAPI2049" name="AEAPI2049"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pId (DOM Node | string ID)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDIFFFF" name="CHDIFFFF"></a><a id="AEAPI298" name="AEAPI298"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref785" name="sthref785"></a>$f_ReturnChecked(pNd)</h2>
+<p>Returns an item value as an array. Useful for radio items and check boxes.</p>
+<p class="subhead2"><a id="AEAPI2050" name="AEAPI2050"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(Array)
+</pre>
+<p class="subhead2"><a id="AEAPI2051" name="AEAPI2051"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pId (DOM node | string ID)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDDFHDF" name="CHDDFHDF"></a><a id="AEAPI299" name="AEAPI299"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref786" name="sthref786"></a>$d_ClearAndHide(pNd)</h2>
+<p>Clears the content of an DOM node or array of DOM nodes and hides them.</p>
+<p class="subhead2"><a id="AEAPI2052" name="AEAPI2052"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2053" name="AEAPI2053"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID | DOM node array)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDFGIHJ" name="CHDFGIHJ"></a><a id="AEAPI300" name="AEAPI300"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref787" name="sthref787"></a>$f_SelectedOptions(pNd)</h2>
+<p>Returns the DOM nodes of the selected options of a select item (<code>pNd</code>).</p>
+<p class="subhead2"><a id="AEAPI2054" name="AEAPI2054"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM Array)
+</pre>
+<p class="subhead2"><a id="AEAPI2055" name="AEAPI2055"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDFBJDF" name="CHDFBJDF"></a><a id="AEAPI301" name="AEAPI301"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref788" name="sthref788"></a>$f_SelectValue(pNd)</h2>
+<p>Returns the values of the selected options of a select item (<code>pNd</code>).</p>
+<p class="subhead2"><a id="AEAPI2056" name="AEAPI2056"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM Array | String)
+</pre>
+<p class="subhead2"><a id="AEAPI2057" name="AEAPI2057"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDHIFGB" name="CHDHIFGB"></a><a id="AEAPI302" name="AEAPI302"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref789" name="sthref789"></a>$u_ArrayToString(pArray, pDelim)</h2>
+<p>Given an array (<code>pArray</code>) return a string with the values of the array delimited with a given delimiter character (<code>pDelim</code>).</p>
+<p class="subhead2"><a id="AEAPI2058" name="AEAPI2058"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2059" name="AEAPI2059"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pArray (pArray)
+pDelim (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDDGDGB" name="CHDDGDGB"></a><a id="AEAPI303" name="AEAPI303"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref790" name="sthref790"></a>$x_CheckImageSrc(pId,pSearch)</h2>
+<p>Checks an image (<code>pId</code>) <code>source</code> attribute for a substring (<code>pSearch</code>). The function returns true if a substring (<code>pSearch</code>) is found. It returns false if a substring (<code>pSearch</code>) is not found.</p>
+<p class="subhead2"><a id="AEAPI2060" name="AEAPI2060"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(true | false)
+</pre>
+<p class="subhead2"><a id="AEAPI2061" name="AEAPI2061"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pId (DOM Node | String)
+pSearch (pSearch)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDJFDGE" name="CHDJFDGE"></a><a id="AEAPI304" name="AEAPI304"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref791" name="sthref791"></a>$v_CheckValueAgainst(pThis, pValue)</h2>
+<p>Checks an page item's (<code>pThis</code>) value against a set of values (<code>pValue</code>). This function returns true if any value matches.</p>
+<p class="subhead2"><a id="AEAPI2062" name="AEAPI2062"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(true | false)
+</pre>
+<p class="subhead2"><a id="AEAPI2063" name="AEAPI2063"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pThis (DOM node | string ID)
+pValue (Number | String | Array)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDHIAJB" name="CHDHIAJB"></a><a id="AEAPI305" name="AEAPI305"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref792" name="sthref792"></a>$f_Hide_On_Value_Item(pThis, pThat, pValue)</h2>
+<p>Checks an page item's (<code>pThis</code>) value against a value (<code>pValue</code>). If it matches, a DOM node (<code>pThat</code>) is set to hidden. If it does not match, then the DOM node (<code>pThat</code>) is set to visible.</p>
+<p class="subhead2"><a id="AEAPI2064" name="AEAPI2064"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(true | false)
+</pre>
+<p class="subhead2"><a id="AEAPI2065" name="AEAPI2065"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pThis (DOM node | string ID)
+pThat  (DOM node | string ID | DOM node Array )
+pValue (Number | String | Array)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDFAFJJ" name="CHDFAFJJ"></a><a id="AEAPI306" name="AEAPI306"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref793" name="sthref793"></a>$f_Show_On_Value_Item(pThis, pThat, pValue)</h2>
+<p>Checks an page item's (<code>pThis</code>) value against a value (<code>pValue</code>). If it matches, a DOM node (<code>pThat</code>) is set to hidden. If it does not match, then the DOM node (<code>pThat</code>) is set to visible.</p>
+<p class="subhead2"><a id="AEAPI2066" name="AEAPI2066"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(true | false)
+</pre>
+<p class="subhead2"><a id="AEAPI2067" name="AEAPI2067"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pThis (DOM node | string ID)
+pThat  (DOM node | string ID | DOM node Array )
+pValue (Number | String | Array)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDEIJED" name="CHDEIJED"></a><a id="AEAPI307" name="AEAPI307"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref794" name="sthref794"></a>$f_Hide_On_Value_Item_Row(pThis, pThat, pValue)</h2>
+<p>Checks the value (<code>pValue</code>) of an item (<code>pThis</code>). If it matches, this function hides the table row that holds (<code>pThat</code>). If it does not match, then the table row is shown.</p>
+<p class="subhead2"><a id="AEAPI2068" name="AEAPI2068"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(true | false)
+</pre>
+<p class="subhead2"><a id="AEAPI2069" name="AEAPI2069"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pThis (DOM node | string ID)
+pThat  (DOM node | string ID | DOM node Array )
+pValue (Number | String | Array)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDBAEJH" name="CHDBAEJH"></a><a id="AEAPI308" name="AEAPI308"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref795" name="sthref795"></a>$f_Show_On_Value_Item_Row(pThis, pThat, pValue)</h2>
+<p>Checks the value (<code>pValue</code>) of an item (<code>pThis</code>). If it matches, this function hides the table row that holds (<code>pThat</code>). If it does not match, then the table row is shown.</p>
+<p class="subhead2"><a id="AEAPI2070" name="AEAPI2070"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(true | false)
+</pre>
+<p class="subhead2"><a id="AEAPI2071" name="AEAPI2071"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pThis (DOM node | string ID)
+pThat  (DOM node | string ID | DOM node Array )
+pValue (Number | String | Array)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDIGFEF" name="CHDIGFEF"></a><a id="AEAPI309" name="AEAPI309"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref796" name="sthref796"></a>$f_DisableOnValue(pThis, pValue, pThat)</h2>
+<p>Checks the value (<code>pValue</code>) of an item (<code>pThis</code>). If it matches, this function disables the item or array of items (<code>pThat</code>). If it does not match, then the item is enabled.</p>
+<p class="subhead2"><a id="AEAPI2072" name="AEAPI2072"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(true | false)
+</pre>
+<p class="subhead2"><a id="AEAPI2073" name="AEAPI2073"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pThis (DOM node | string ID)
+pValue (String)
+pThat  (DOM node | string ID | DOM node Array )
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDIFGBG" name="CHDIFGBG"></a><a id="AEAPI310" name="AEAPI310"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref797" name="sthref797"></a>$x_ClassByClass(pNd, pClass, pTag, pClass2)</h2>
+<p>Sets a class attribute of an array of nodes that are selected by class.</p>
+<p class="subhead2"><a id="AEAPI2074" name="AEAPI2074"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM node | DOM node Array)
+</pre>
+<p class="subhead2"><a id="AEAPI2075" name="AEAPI2075"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID)
+pClass (String)
+pTag (String)
+pClass2 (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDEGJFC" name="CHDEGJFC"></a><a id="AEAPI311" name="AEAPI311"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref798" name="sthref798"></a>$f_ValuesToArray(pThis, pClass, pTag)</h2>
+<p>Collects the values of form items contained within DOM node (<code>pThis</code>) of class attribute (<code>pClass</code>) and nodeName (<code>pTag</code>) and returns an array.</p>
+<p class="subhead2"><a id="AEAPI2076" name="AEAPI2076"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">No applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2077" name="AEAPI2077"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pThis (DOM node | string ID)
+pCLass (String)
+pTag (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDBGBJJ" name="CHDBGBJJ"></a><a id="AEAPI312" name="AEAPI312"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref799" name="sthref799"></a>$x_FormItems(pNd, pType)</h2>
+<p>Returns all form input items contained in a DOM node (<code>pThis</code>) of a certain type (<code>pType</code>).</p>
+<p class="subhead2"><a id="AEAPI2078" name="AEAPI2078"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">DOM node Array
+</pre>
+<p class="subhead2"><a id="AEAPI2079" name="AEAPI2079"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID)
+pType (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDFECEC" name="CHDFECEC"></a><a id="AEAPI313" name="AEAPI313"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref800" name="sthref800"></a>$f_CheckAll(pThis, pCheck, pArray)</h2>
+<p>Check or uncheck (<code>pCheck</code>) all check boxes contained within a DOM node (<code>pThis</code>). If an array of checkboxes DOM nodes (<code>pArray</code>) is provided, use that array for affected check boxes.</p>
+<p class="subhead2"><a id="AEAPI2080" name="AEAPI2080"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2081" name="AEAPI2081"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pThis (DOM node | string ID)
+pCheck (true | fales)
+pArray (DOM node array)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDHDHEB" name="CHDHDHEB"></a><a id="AEAPI314" name="AEAPI314"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref801" name="sthref801"></a>$f_CheckFirstColumn(pNd)</h2>
+<p>This function sets all checkboxes located in the first column of a table based on the checked state of the calling checkbox (<code>pNd</code>), useful for tabular forms.</p>
+<p class="subhead2"><a id="AEAPI2082" name="AEAPI2082"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">DOM node Array
+</pre>
+<p class="subhead2"><a id="AEAPI2083" name="AEAPI2083"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDEBJAB" name="CHDEBJAB"></a><a id="AEAPI315" name="AEAPI315"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref802" name="sthref802"></a>$v_PopupReturn(pValue, pThat)</h2>
+<p>Sets the value of the item in the parent window (<code>pThat</code>), with (<code>pValue</code>) and then closes the popup window.</p>
+<p class="subhead2"><a id="AEAPI2084" name="AEAPI2084"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2085" name="AEAPI2085"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pValue (string)
+pThat (DOM node | string ID)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDFBAEE" name="CHDFBAEE"></a><a id="AEAPI316" name="AEAPI316"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref803" name="sthref803"></a>$x_ToggleWithImage(pThis,pNd)</h2>
+<p>Given an image element (<code>pThis</code>) and a DOM node (<code>pNd</code>), this function toggles the display of the DOM node (<code>pNd</code>). The src attribute of the image element (<code>pThis</code>) will be rewritten. The image src will have any plus substrings replaced with minus substrings or minus substrings will be replaced with plus substrings.</p>
+<p class="subhead2"><a id="AEAPI2086" name="AEAPI2086"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM Node)
+</pre>
+<p class="subhead2"><a id="AEAPI2087" name="AEAPI2087"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pThis (DOM Node | string ID)
+pNd (DOM Nnde | string iD | DOM node Array)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDIDCCA" name="CHDIDCCA"></a><a id="AEAPI317" name="AEAPI317"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref804" name="sthref804"></a>$x_SwitchImageSrc(pNd, pSearch, pReplace)</h2>
+<p>Checks an image (<code>pId</code>) src attribute for a substring (<code>pSearch</code>). If a substring is found, this function replaces the image entire src attribute with (<code>pReplace</code>).</p>
+<p class="subhead2"><a id="AEAPI2088" name="AEAPI2088"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM node | false)
+</pre>
+<p class="subhead2"><a id="AEAPI2089" name="AEAPI2089"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID)
+pSearch (String)
+pReplace (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDCFHHB" name="CHDCFHHB"></a><a id="AEAPI318" name="AEAPI318"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref805" name="sthref805"></a>$x_CheckImageSrc(pNd, pSearch)</h2>
+<p>Checks an image (<code>pNd</code>) source attribute for a substring (<code>pSearch</code>). The function returns true if a substring (<code>pSearch</code>) is found. It returns false if a substring (<code>pSearch</code>) is not found.</p>
+<p class="subhead2"><a id="AEAPI2090" name="AEAPI2090"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(true | fales)
+</pre>
+<p class="subhead2"><a id="AEAPI2091" name="AEAPI2091"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd  (DOM node | string ID)
+pSearch (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDFHGDB" name="CHDFHGDB"></a><a id="AEAPI319" name="AEAPI319"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref806" name="sthref806"></a>$u_SubString(pText,pMatch)</h2>
+<p>Returns a true or false if a string (<code>pText</code>) contains a substring (<code>pMatch</code>).</p>
+<p class="subhead2"><a id="AEAPI2092" name="AEAPI2092"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(true | false)
+</pre>
+<p class="subhead2"><a id="AEAPI2093" name="AEAPI2093"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pText (String) 
+pMatch (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDBAIHH" name="CHDBAIHH"></a><a id="AEAPI320" name="AEAPI320"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref807" name="sthref807"></a>html_RemoveAllChildren(pNd)</h2>
+<p>Use DOM methods to remove all DOM children of DOM node (<code>pND</code>).</p>
+<p class="subhead2"><a id="AEAPI2094" name="AEAPI2094"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2095" name="AEAPI2095"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | string ID) 
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDBCAGD" name="CHDBCAGD"></a><a id="AEAPI321" name="AEAPI321"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref808" name="sthref808"></a>$v_IsEmpty(pThis)</h2>
+<p>Returns true or false if a form element is empty, this will consider any whitespace including a space, a tab, a form-feed, as empty. This will also consider any null value that has been specified on the item.</p>
+<p class="subhead2"><a id="AEAPI2096" name="AEAPI2096"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">[true | false]
+</pre>
+<p class="subhead2"><a id="AEAPI2097" name="AEAPI2097"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pThis (DOM Node | String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDBBJJJ" name="CHDBBJJJ"></a><a id="AEAPI322" name="AEAPI322"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref809" name="sthref809"></a>html_SetSelectValue(pId,pValue)</h2>
+<p>Sets the value (<code>pValue</code>) of a select item (<code>pId</code>). If the value is not found, this functions selects the first option (usually the <code>NULL</code> selection).</p>
+<p class="subhead2"><a id="AEAPI2098" name="AEAPI2098"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2099" name="AEAPI2099"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pId (DOM node | String)
+pValue (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDIFGFC" name="CHDIFGFC"></a><a id="AEAPI323" name="AEAPI323"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref810" name="sthref810"></a>addLoadEvent(pFunction)</h2>
+<p>Adds an onload function (<code>func</code>) without overwriting any previously specified onload functions.</p>
+<p class="subhead2"><a id="AEAPI2100" name="AEAPI2100"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2101" name="AEAPI2101"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pFunction (Javascript Function)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDFCGHE" name="CHDFCGHE"></a><a id="AEAPI324" name="AEAPI324"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref811" name="sthref811"></a>$f_Swap(pThis,pThat)</h2>
+<p>Swaps the form values of two form elements (<code>pThis</code>,<code>pThat</code>).</p>
+<p class="subhead2"><a id="AEAPI2102" name="AEAPI2102"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2103" name="AEAPI2103"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pThis (DOM Node | String)
+pThat (DOM Node | String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDFEHFA" name="CHDFEHFA"></a><a id="AEAPI325" name="AEAPI325"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref812" name="sthref812"></a>submitEnter(pNd,e)</h2>
+<p>Submits a page when ENTER is pressed in a text field, setting the request value to the ID of a DOM node (<code>pNd</code>).</p>
+<p>Usage is <code>onkeypress="submitEnter(this,event)"</code></p>
+<p class="subhead2"><a id="AEAPI2104" name="AEAPI2104"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2105" name="AEAPI2105"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM node | String | Array)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDCFCJI" name="CHDCFCJI"></a><a id="AEAPI326" name="AEAPI326"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref813" name="sthref813"></a>$f_SetValueSequence(pArray,pMultiple)</h2>
+<p>Sets array of form item (<code>pArray</code>) to sequential number in multiples of (<code>pMultiple</code>).</p>
+<p class="subhead2"><a id="AEAPI2106" name="AEAPI2106"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2107" name="AEAPI2107"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pArray (Array) 
+pMultiple (Number)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDBAFAG" name="CHDBAFAG"></a><a id="AEAPI327" name="AEAPI327"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref814" name="sthref814"></a>$dom_AddTag(pThis, pTag, pText)</h2>
+<p>Inserts the html element (<code>pTag</code>) as a child node of a DOM node (<code>pThis</code>) with the innerHTML set to (<code>pText</code>).</p>
+<p class="subhead2"><a id="AEAPI2108" name="AEAPI2108"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">DOM node
+</pre>
+<p class="subhead2"><a id="AEAPI2109" name="AEAPI2109"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pThis (DOM node | string ID ) 
+pTag (String)
+pText (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDIEEGE" name="CHDIEEGE"></a><a id="AEAPI328" name="AEAPI328"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref815" name="sthref815"></a>$tr_AddTD(pThis,pText)</h2>
+<p>Appends a table cell to a table row (<code>pThis</code>). And sets the content to (<code>pText</code>).</p>
+<p class="subhead2"><a id="AEAPI2110" name="AEAPI2110"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM node)
+</pre>
+<p class="subhead2"><a id="AEAPI2111" name="AEAPI2111"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pThis (DOM node | string ID)
+pText (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDGIBHG" name="CHDGIBHG"></a><a id="AEAPI329" name="AEAPI329"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref816" name="sthref816"></a>$tr_AddTH(pThis,pText)</h2>
+<p>Appends a table cell to a table row (<code>pThis</code>). And sets the content to (<code>pText</code>).</p>
+<p class="subhead2"><a id="AEAPI2112" name="AEAPI2112"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">DOM node
+</pre>
+<p class="subhead2"><a id="AEAPI2113" name="AEAPI2113"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pThis (DOM node | string ID)
+pTest (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDHEDDA" name="CHDHEDDA"></a><a id="AEAPI330" name="AEAPI330"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref817" name="sthref817"></a>$dom_AddInput(pThis,pType,pId,pName,pValue)</h2>
+<p>Inserts the html form input element (<code>pType</code>) as a child node of a DOM node (<code>pThis</code>) with an id (<code>pId</code>) and name (<code>pName</code>) value set to <code>pValue</code>.</p>
+<p class="subhead2"><a id="AEAPI2114" name="AEAPI2114"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM node)
+</pre>
+<p class="subhead2"><a id="AEAPI2115" name="AEAPI2115"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pThis (DOM node | string ID)
+pType (String)
+pId (String)
+pName (String)
+pValue (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDIEDBG" name="CHDIEDBG"></a><a id="AEAPI331" name="AEAPI331"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref818" name="sthref818"></a>$dom_MakeParent(p_Node,p_Parent)</h2>
+<p>Takes a DOM node (<code>p_Node</code>) and makes it a child of DOM node (<code>p_Parent</code>) and then returns the DOM node (pNode).</p>
+<p class="subhead2"><a id="AEAPI2116" name="AEAPI2116"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">(DOM node)
+</pre>
+<p class="subhead2"><a id="AEAPI2117" name="AEAPI2117"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">p_This (DOM node | string ID)
+p_Parent (DOM node | string ID)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDEGCGF" name="CHDEGCGF"></a><a id="AEAPI332" name="AEAPI332"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref819" name="sthref819"></a>$x_RowHighlight(pThis, pColor)</h2>
+<p>Give an table row DOM element (<code>pThis</code>), this function sets the background of all table cells to a color (<code>pColor</code>). A global variable <code>gCurrentRow</code> is set to <code>pThis</code>.</p>
+<p class="subhead2"><a id="AEAPI2118" name="AEAPI2118"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2119" name="AEAPI2119"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pThis (DOM node | String)
+pColor(String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDFAFCC" name="CHDFAFCC"></a><a id="AEAPI333" name="AEAPI333"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref820" name="sthref820"></a>$x_RowHighlightOff(pThis)</h2>
+<p>Give an table row Dom node (<code>pThis</code>), this function sets the background of all table cells to <code>NULL</code>.</p>
+<p class="subhead2"><a id="AEAPI2120" name="AEAPI2120"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2121" name="AEAPI2121"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pThis (DOM Element | String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDHIIGD" name="CHDHIIGD"></a><a id="AEAPI334" name="AEAPI334"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref821" name="sthref821"></a>$v_Upper(pNd)</h2>
+<p>Sets the value of a form item (pNd) to uppercase.</p>
+<p class="subhead2"><a id="AEAPI2122" name="AEAPI2122"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2123" name="AEAPI2123"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd (DOM Node | String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDEBGJG" name="CHDEBGJG"></a><a id="AEAPI335" name="AEAPI335"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref822" name="sthref822"></a>$d_Find(pThis,pString,pTags,pClass)</h2>
+<p>Hides child nodes of a Dom node (<code>pThis</code>) where the child node's inner HTML matches any instance of <code>pString</code>. To narrow the child nodes searched by specifying a tag name (<code>pTag</code>) or a class name (<code>pClass</code>). Note that the child node will be set to a block level element when set to visible.</p>
+<p class="subhead2"><a id="AEAPI2124" name="AEAPI2124"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2125" name="AEAPI2125"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pThis (DOM node | String)
+pString (String)
+pTags (String 
+pClass (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDGGCDF" name="CHDGGCDF"></a><a id="AEAPI336" name="AEAPI336"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref823" name="sthref823"></a>returnInput(p_R, p_D)</h2>
+<p>Sets DOM node in the global variables <code>returnInput (p_R)</code> and <code>returnDisplay (p_D)</code> for use in populating items from popups.</p>
+<p class="subhead2"><a id="AEAPI2126" name="AEAPI2126"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2127" name="AEAPI2127"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">p_R (DOM node | String)
+p_R (DOM node | String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDJEJEF" name="CHDJEJEF"></a><a id="AEAPI337" name="AEAPI337"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref824" name="sthref824"></a>setReturn(p_R,p_D)</h2>
+<p>Sets DOM items in the global variables <code>returnInput</code> (<code>p_R</code>) and <code>returnDisplay</code> (<code>p_D</code>) for use in populating items from popups.</p>
+<p class="subhead2"><a id="AEAPI2128" name="AEAPI2128"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2129" name="AEAPI2129"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">p_R
+p_D
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDGCEAD" name="CHDGCEAD"></a><a id="AEAPI338" name="AEAPI338"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref825" name="sthref825"></a>$f_First_field(pNd)</h2>
+<p>Places the user focus on the a form item (pNd). If pNd is not found then this function places focus on the first found user editable field.</p>
+<p class="subhead2"><a id="AEAPI2130" name="AEAPI2130"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">true (if successful)
+</pre>
+<p class="subhead2"><a id="AEAPI2131" name="AEAPI2131"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pNd
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDJJIBG" name="CHDJJIBG"></a><a id="AEAPI339" name="AEAPI339"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref826" name="sthref826"></a>GetCookie (pName)</h2>
+<p>Returns the value of cookie name (<code>pName</code>).</p>
+<p class="subhead2"><a id="AEAPI2132" name="AEAPI2132"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2133" name="AEAPI2133"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pName (String)
+</pre></div>
+<!-- class="refsect1" -->
+<a id="CHDDGGBA" name="CHDDGGBA"></a><a id="AEAPI340" name="AEAPI340"></a>
+<hr />
+<div class="refsect1">
+<h2 class="refsect1"><a id="sthref827" name="sthref827"></a>SetCookie (pName,pValue)</h2>
+<p>Sets a cookie (<code>pName</code>) to a specified value (<code>pValue</code>).</p>
+<p class="subhead2"><a id="AEAPI2134" name="AEAPI2134"></a>Return Value</p>
+<pre xml:space="preserve" class="oac_no_warn">Not applicable.
+</pre>
+<p class="subhead2"><a id="AEAPI2135" name="AEAPI2135"></a>Parameters</p>
+<pre xml:space="preserve" class="oac_no_warn">pName (String)
+pValue (String)
+</pre></div>
+<!-- class="refsect1" --></div>
+<!-- class="ind" -->
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="33%" />
+<col width="*" />
+<col width="33%" />
+<tr>
+<td align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="49">
+<tr>
+<td align="center" valign="top"><a href="apex_web_service.htm"><img width="24" height="24" src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+</tr>
+</table>
+</td>
+<td style="font-size: 90%" align="center" class="copyrightlogo"><img width="144" height="18" src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="196">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img width="24" height="24" src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img width="24" height="24" src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img width="24" height="24" src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img width="24" height="24" src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

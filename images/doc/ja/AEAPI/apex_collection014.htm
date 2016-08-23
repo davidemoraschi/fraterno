@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>CREATE_COLLECTION_FROM_QUERY Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:37Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="CREATE_COLLECTION_FROM_QUERY Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_collection013.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_collection015.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_collection013.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection015.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CJAGHAJD" name="CJAGHAJD"></a></p>
+<hr />
+<div class="refsect1">
+<h1><a id="sthref186" name="sthref186"></a>CREATE_COLLECTION_FROM_QUERY Procedure</h1>
+<p>Use this procedure to create a collection from a supplied query. The query will be parsed as the application owner. This method can be used with a query with up to 50 columns in the <code>SELECT</code> clause. These columns in the <code>SELECT</code> clause will populate the 50 character attributes of the collection (C001 through C050). If a collection exists with the same name for the current user in the same session for the current Application ID, an application error is raised.</p>
+<a id="sthref187" name="sthref187"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_COLLECTION.CREATE_COLLECTION_FROM_QUERY (
+    p_collection_name IN VARCHAR2,
+    p_query IN VARCHAR2,
+    p_generate_md5 IN VARCHAR2 default 'NO');
+</pre>
+<a id="sthref188" name="sthref188"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#CJABHEJF">Table: CREATE_COLLECTION_FROM_QUERY Procedure Parameters</a> describes the parameters available in the <code>CREATE_COLLECTION_FROM_QUERY</code> procedure.</p>
+<div class="tblformal"><a id="sthref189" name="sthref189"></a><a id="CJABHEJF" name="CJABHEJF"></a>
+<p class="titleintable">CREATE_COLLECTION_FROM_QUERY Procedure Parameters</p>
+<table class="Formal" title="CREATE_COLLECTION_FROM_QUERY Procedure Parameters" summary="This table describes the parameters available in the UNEXPIRE_END_USER_ACCOUNT procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t37">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t37">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t37" headers="r1c1-t37">
+<p><code>p_collection_name</code></p>
+</td>
+<td align="left" headers="r2c1-t37 r1c2-t37">
+<p>The name of the collection. The maximum length is 255 characters. An error is returned if this collection exists with the specified name of the current user and in the same session.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t37" headers="r1c1-t37">
+<p><code>p_query</code></p>
+</td>
+<td align="left" headers="r3c1-t37 r1c2-t37">
+<p>Query to execute in order to populate the members of the collection. If p_query is numeric, it is assumed to be a DBMS_SQL cursor.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t37" headers="r1c1-t37">
+<p><code>p_generate_md5</code></p>
+</td>
+<td align="left" headers="r4c1-t37 r1c2-t37">
+<p>Valid values include <code>YES</code> and <code>NO</code>. <code>YES</code> to specify if the message digest of the data of the collection member should be computed. Use this parameter to compare the MD5 of the collection member with another member or to see if that member has changed.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref190" name="sthref190"></a>
+<p class="subhead2">Example</p>
+<p>The following example shows how to use the <code>CREATE_COLLECTION_FROM_QUERY</code> procedure to create a collection named <code>AUTO</code> and populate it with data from the <code>AUTOS</code> table. Because <code>p_generate_md5</code> is '<code>YES</code>', the <code>MD5</code> checksum will be computed to allow comparisons to determine change status.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+Begin
+    l_query := 'select make, model, year from AUTOS';
+    APEX_COLLECTION.CREATE_COLLECTION_FROM_QUERY (
+        p_collection_name =&gt; 'AUTO', 
+        p_query =&gt; l_query,
+        p_generate_md5 =&gt; 'YES');
+End;
+</pre>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection023.htm#CJAIFADF">"GET_MEMBER_MD5 Function"</a>, <a href="apex_collection012.htm#CJADHJCJ">"CREATE_COLLECTION Procedure"</a>, <a href="apex_collection013.htm#CJAGGCJD">"CREATE_OR_TRUNCATE_COLLECTION Procedure"</a>, <a href="apex_collection015.htm#CJAEDIIB">"CREATE_COLLECTION_FROM_QUERY2 Procedure"</a>, <a href="apex_collection016.htm#CJAHBBGD">"CREATE_COLLECTION_FROM_QUERY_B Procedure"</a>, <a href="apex_collection017.htm#CJACABGE">"CREATE_COLLECTION_FROM_QUERYB2 Procedure"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_collection013.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection015.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

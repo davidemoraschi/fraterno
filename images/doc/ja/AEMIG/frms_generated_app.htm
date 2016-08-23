@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>About Generated Applications</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-28T10:25:26Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="About Generated Applications" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15518-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="objects.htm" title="Oracle Forms Generation Cap..." type="text/html" />
+<link rel="up" href="frms_modules.htm" title="Oracle Forms Modules" type="text/html" />
+<link rel="up" href="frms_generated_app.htm" title="About Generated Applications" type="text/html" />
+<link rel="prev" href="frms_comp_about.htm" title="Previous" type="text/html" />
+<link rel="next" href="frms_region_mappings.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="objects.htm" title="Oracle Forms Generation Cap...">Oracle Forms Generation Cap...</a> &gt; <a href="frms_modules.htm" title="Oracle Forms Modules">Oracle Forms Modules</a> &gt; About Generated Applications</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="frms_comp_about.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="frms_region_mappings.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABIBDEA" name="BABIBDEA"></a></p>
+<div class="sect2">
+<h1>About Generated A<a id="sthref233" name="sthref233"></a>pplications</h1>
+<p>Oracle Application Express applications generated from a project conform to standard out-of-the-box application capabilities. These generated applications do not contain non-standard functionality such as JavaScript or Advanced JavaScript and XML (AJAX). However, you can readily extend the Oracle Application Express framework to include functionality such as JavaScript and AJAX to enhance the user interaction. However, such enhancements must be implemented manually post-generation.</p>
+<p>Generated forms for inserting, updating, or deleting records include automatic row fetch processes to load existing records and automatic row processes to commit changes to the Oracle Database table. Forms also include generated validations for mandatory columns, and column types of number or date.</p>
+<div class="sect3"><a id="sthref234" name="sthref234"></a>
+<h2>Primary Key A<a id="sthref235" name="sthref235"></a>ssumptions</h2>
+<p>The generation process assumes that the primary key for an Oracle table is non-updatable, maintained using a database trigger, and has a maximum of two parts.</p>
+<p>If the primary key is updatable then the generated application must be modified post-generation. You must modify the item attributes for the primary key. By default, these attributes are generated but displayed as hidden and protected. If there is no database trigger defined to automatically fetch the primary key when inserting a record, then the application will fail when attempting to insert a record. To avoid this error either define a database trigger or modify the generated application post-generation to populate the primary key value before processing the record. To populate the primary key value within the application you can use the item default, create a computation, or create a process. If creating a computation or process it is important to include a condition so that execution only occurs when inserting a record (for example, when the primary key item is <code>NULL</code>).</p>
+<p>Oracle Application Express does not support cascading multiple part keys where the key for a child is defined as the primary key of the parent with a counter for each child within that parent key. In such cases, you must define a distinct primary key for the child table with an appropriate means of populating the primary key.</p>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="frms_comp_about.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="frms_region_mappings.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Changing Build Status for Multiple Applications</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-27T14:38:55Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Changing Build Status for Multiple Applications" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15521-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="wrkspc.htm" title="Workspace and Application A..." type="text/html" />
+<link rel="up" href="aadm_build_status.htm" title="Changing Build Status for M..." type="text/html" />
+<link rel="prev" href="aadm_cache_pg.htm" title="Previous" type="text/html" />
+<link rel="next" href="aadm_mg_models.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="wrkspc.htm" title="Workspace and Application A...">Workspace and Application A...</a> &gt; Changing Build Status for M...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="aadm_cache_pg.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="aadm_mg_models.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABFDJHI" name="BABFDJHI"></a></p>
+<div class="sect1"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEADM165" id="AEADM165"></a>Changing Build Status <a id="sthref156" name="sthref156"></a><a id="sthref157" name="sthref157"></a>for Multiple Applications</h1>
+<p>Every Oracle Application Express application has an application-level attribute called Build Status. You can use this attribute to prevent an application from being modified by other developers. Build Status has two settings:</p>
+<ul>
+<li>
+<p><span class="bold">Run and Build Application</span> - Developers can both run and edit an application.</p>
+</li>
+<li>
+<p><span class="bold">Run Application Only</span> - Developers can only run an application.</p>
+</li>
+</ul>
+<p>Setting the Build Status to <span class="bold">Run Application Only</span> is an effective way to prevent other developers from modifying it.</p>
+<p>You can change the Build Status of an application as follows:</p>
+<ul>
+<li>
+<p>Developers and administrators can change the Build Status attribute on the Edit Application page. See "Availability" in <a href="../bldr_attr_standard.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+<li>
+<p>Workspace administrators can change the Build Status of applications within the current workspace as described in this section. See <a href="#CIHHCHCI">"Managing Build Status in Workspace Administration"</a>.</p>
+</li>
+<li>
+<p>Instance administrators can change the Build Status of an application on the Build Status page. See <a href="adm_bld_status.htm#CHDEDCAJ">"Changing Application Build Status Set During Deployment"</a>.</p>
+</li>
+</ul>
+<a id="CIHHCHCI" name="CIHHCHCI"></a>
+<p class="subhead2">Managing Build Status in Workspace Administration</p>
+<p>To manage Build Status in Workspace Administration:</p>
+<ol>
+<li>
+<p>Navigate to the Workspace home page.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Administration</span> icon.</p>
+</li>
+<li>
+<p>On the Administration page, click <span class="bold">Manage Service</span>.</p>
+</li>
+<li>
+<p>Under Manage Meta Data, click <span class="bold">Application Build Status</span>.</p>
+<p>Next, select a status. Status specifies whether or not the application is available or unavailable for use.</p>
+</li>
+<li>
+<p>For Status, select one of the following:</p>
+<ul>
+<li>
+<p><span class="bold">Available</span> - Application is available with no restrictions.</p>
+</li>
+<li>
+<p><span class="bold">Available with Edit Links</span> - Application is available for use. For developers, the Developer toolbar displays at the bottom of each page. Requires the developer to be logged in to the Application Builder in the same browser session.</p>
+</li>
+<li>
+<p><span class="bold">Available to Developers Only</span> - Application is available to users having developer privileges.</p>
+</li>
+<li>
+<p><span class="bold">Restricted Access</span> - Application is available to developers named in the Restrict to comma separated user list.</p>
+</li>
+<li>
+<p><span class="bold">Unavailable</span> - Application cannot be run or edited. The message in Message for unavailable application displays when users attempt to access the application.</p>
+</li>
+<li>
+<p><span class="bold">Unavailable (Status Shown with PL/SQL)</span> - Application cannot be run or edited.</p>
+</li>
+<li>
+<p><span class="bold">Unavailable (Status Shown with PL/SQL)</span> - Application cannot be run or edited.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>From Build Status, select one of the following:</p>
+<ul>
+<li>
+<p><span class="bold">Run and Build Application</span> - Developers can both run and edit an application.</p>
+</li>
+<li>
+<p><span class="bold">Run Application Only</span> - Developers can only run an application.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="aadm_cache_pg.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="aadm_mg_models.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

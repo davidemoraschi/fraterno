@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Overview of Oracle Forms Components</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-28T10:25:26Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Overview of Oracle Forms Components" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15518-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="objects.htm" title="Oracle Forms Generation Cap..." type="text/html" />
+<link rel="up" href="frms_modules.htm" title="Oracle Forms Modules" type="text/html" />
+<link rel="up" href="frms_comp_about.htm" title="Overview of Oracle Forms Co..." type="text/html" />
+<link rel="prev" href="frms_modules.htm" title="Previous" type="text/html" />
+<link rel="next" href="frms_generated_app.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="objects.htm" title="Oracle Forms Generation Cap...">Oracle Forms Generation Cap...</a> &gt; <a href="frms_modules.htm" title="Oracle Forms Modules">Oracle Forms Modules</a> &gt; Overview of Oracle Forms Co...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="frms_modules.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="frms_generated_app.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABDJEBG" name="BABDJEBG"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1>Overview of Oracle Forms <a id="sthref209" name="sthref209"></a>Components</h1>
+<p>This section provides an overview of Oracle Forms components and the corresponding Oracle Application Express generation capabilities or workarounds.</p>
+<div class="sect3"><a id="sthref210" name="sthref210"></a>
+<h2>Aler<a id="sthref211" name="sthref211"></a>ts</h2>
+<p>Alert messages are not generated. However, you can store an alert message as a text message in Shared Components in Oracle Application Express application. Text messages can be used to build translatable text strings with substitution variables that can be called from PL/SQL packages, procedures, and functions. See "Working with Shared Components" in <span class="italic"><a href="../bldr_sc.htm">Oracle Application Express Application Builder User's Guide</a></span>.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref212" name="sthref212"></a>
+<h2>Bloc<a id="sthref213" name="sthref213"></a>ks</h2>
+<p>A single block can be mapped to a region in Oracle Application Express. Based upon the block type and data source type (that is, table or view) identified in the Forms <code>XML</code> file, some default mappings are defined. For example, a report block based upon an Oracle view, is mapped to an Interactive report in Oracle Application Express. A form block based upon a table, is mapped to an Interactive report and form in Oracle Application Express. For more information see <a href="frms_region_mappings.htm#BABGFCCC">"Block to Page Region Mappings"</a>.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref214" name="sthref214"></a>
+<h2>Canvas<a id="sthref215" name="sthref215"></a>es</h2>
+<p>In Oracle Forms, the canvas is the object on which the graphical user interface (GUI) is drawn, or the background of the form. In Oracle Application Express, the Application Express engine constructs the appearance of each page in an application using templates. Templates define how pages, page controls, and page components display. Canvases are ignored when generating pages for an Oracle Application Express application.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref216" name="sthref216"></a>
+<h2>Coord<a id="sthref217" name="sthref217"></a>inates</h2>
+<p>Depending on the coordinate system used in an Oracle Forms application, coordinates can be expressed in real units such as inches, centimeters, and pixels. The coordinate values cannot be automatically applied to the generated application. One unit in an Oracle Application Express item width might not be equal to one physical pixel in an Oracle Forms application. While Oracle Forms enables specific placement of individual fields by specifying coordinates, Oracle Application Express uses standard HTML tables and all items are positioned relative to other elements and columns within the HTML table.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref218" name="sthref218"></a>
+<h2>Edi<a id="sthref219" name="sthref219"></a>tors</h2>
+<p>In Oracle Forms, editors provide standard editing features, including search and replace and cut, copy, and paste for text items. For a selected text item, an editor is mapped to a HTML editor in Oracle Application Express.</p>
+</div>
+<!-- class="sect3" -->
+<a id="BABIHFBE" name="BABIHFBE"></a>
+<div class="sect3">
+<h2>List of V<a id="sthref220" name="sthref220"></a>alues</h2>
+<p>A list of values (LOV) can be mapped to an equivalent list of values in Oracle Application Express. When LOVs are selected for inclusion in the conversion to Oracle Application Express their associated record group is included in the conversion. For more information, see the <a href="frms_lovs.htm#BABFDADD">"List of Values Implementation"</a>.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref221" name="sthref221"></a>
+<h2>Program <a id="sthref222" name="sthref222"></a>Units</h2>
+<p>In the post-generation phase of the Forms Conversion process, program units can be incorporated into your Oracle Application Express application as a PL/SQL package, page process, computation or validation. For more information, see <a href="frms_bus_logic.htm#BABCEHCC">"Implementing Business Logic"</a>.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref223" name="sthref223"></a>
+<h2>Property C<a id="sthref224" name="sthref224"></a>lasses</h2>
+<p>In Oracle Forms, a property class is a named object that contains a list of properties and their settings. An object based on a property class can inherit the settings of any property in that class. Similarly, in Oracle Application Express, a theme is a named collection of templates used to define the user interface of an application. Oracle Application Express has a repository of 20 themes, and you can also create your own custom themes. Property classes are not used within the generation of Oracle Application Express applications.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref225" name="sthref225"></a>
+<h2>Record G<a id="sthref226" name="sthref226"></a>roups</h2>
+<p>In Oracle Forms, LOV values are derived from a record group. When a record group is defined, it is associated with a SQL query. When a LOV is generated in Oracle Application Express, the associated record group is used to determine the SQL Query for that LOV. For more information, see <a href="frms_lovs.htm#BABFDADD">"List of Values Implementation"</a>.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref227" name="sthref227"></a>
+<h2>Tri<a id="sthref228" name="sthref228"></a>ggers</h2>
+<p>An Oracle Forms trigger is an event-handler written in PL/SQL to augment the default processing behavior. The trigger logic can be incorporated into an Oracle Application Express application as a computation, validation, or PL/SQL process in the post-generation phase. Where feasible, <code>POST-QUERY</code> block trigger logic is automatically incorporated in the generated Oracle Application Express application, as part of the Enhanced Query generation. For more information refer to <a href="frms_bus_logic.htm#BABCEHCC">"Implementing Business Logic"</a>.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref229" name="sthref229"></a>
+<h2>Visual Attr<a id="sthref230" name="sthref230"></a>ibutes</h2>
+<p>Visual attributes are the font, color, and pattern properties that you can set for form and menu objects that appear in an Oracle Forms application's interface. Using the default cascading style sheets (CSS) installed with Oracle Application Express, or by uploading your own CSS files, style can be applied to your Oracle Application Express application. See "Using Custom Cascading Style Sheets" in <span class="italic"><a href="../ui_custom_css.htm">Oracle Application Express Application Builder User's Guide</a></span>.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref231" name="sthref231"></a>
+<h2>Wind<a id="sthref232" name="sthref232"></a>ows</h2>
+<p>A window is the container for all visual objects that comprise an Oracle Forms application, including canvases. In Oracle Application Express, a page holds all of the visual objects for an application. Due to the block mapping resulting in multiple pages, the windows are not used in the conversion process.</p>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="frms_modules.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="frms_generated_app.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

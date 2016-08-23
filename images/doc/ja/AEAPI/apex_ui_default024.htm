@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>UPD_TABLE Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:40Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="UPD_TABLE Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_ui_default023.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_util.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_ui_default023.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_util.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDCCGGF" name="CHDCCGGF"></a></p>
+<hr />
+<div class="refsect1">
+<h1><a name="AEAPI412" id="AEAPI412"></a>UPD_TABLE <a id="sthref1034" name="sthref1034"></a>Procedure</h1>
+<p>If the provided table exists within the user's schema's table based User Interface Defaults, the form region title and report region title are updated to match those provided. If 'null%' is passed in for p_form_region_title or p_report_region_title, the value is set to null.</p>
+<a id="sthref1035" name="sthref1035"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_UI_DEFAULT_UPDATE.UPD_TABLE (
+    p_table_name            IN VARCHAR2,
+    p_form_region_title     IN VARCHAR2 DEFAULT NULL,
+    p_report_region_title   IN VARCHAR2 DEFAULT NULL);
+</pre>
+<a id="sthref1036" name="sthref1036"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#CHDGDGFB">Table: UPD_TABLE Parameters</a> describes the parameters available in the <code>UPD_TABLE</code> procedure.</p>
+<div class="tblformal"><a id="sthref1037" name="sthref1037"></a><a id="CHDGDGFB" name="CHDGDGFB"></a>
+<p class="titleintable">UPD_TABLE Parameters</p>
+<table class="Formal" title="UPD_TABLE Parameters" summary="This table describes the parameters available in the UPD_REPORT_REGION_TITLE procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t29">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t29">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t29" headers="r1c1-t29">
+<p><code>p_table_name</code></p>
+</td>
+<td align="left" headers="r2c1-t29 r1c2-t29">
+<p>Name of table being updated.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t29" headers="r1c1-t29">
+<p><code>p_form_region_title</code></p>
+</td>
+<td align="left" headers="r3c1-t29 r1c2-t29">
+<p>Region title used for forms.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t29" headers="r1c1-t29">
+<p>p_report_region_title</p>
+</td>
+<td align="left" headers="r4c1-t29 r1c2-t29">
+<p>Region title used for reports and tabular forms.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+if 'null%' is passed in for <code>p_form_region_title</code> or <code>p_report_region_title</code>, the value is set to <code>null</code>. If no value is passed in, that column will not be updated.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+<a id="sthref1038" name="sthref1038"></a>
+<p class="subhead2">Example</p>
+<p>The following example updates the EMP table definition within the UI Defaults Table Dictionary within the current schema.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+begin
+    apex_ui_default_update.upd_table (
+       p_table_name          =&gt; 'EMP',
+       p_form_region_title   =&gt; 'Employee Details',
+       p_report_region_title =&gt; 'Employees' );
+end;
+/
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_ui_default023.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_util.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

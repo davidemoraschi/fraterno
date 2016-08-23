@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Creating a Table</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T17:42:50Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Creating a Table" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15520-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface" title="Home" type="text/html" />
+<link rel="up" href="obj_brows.htm" title="Managing Database Objects w..." type="text/html" />
+<link rel="up" href="obj_table.htm" title="Managing Tables" type="text/html" />
+<link rel="up" href="obj_table_create.htm" title="Creating a Table" type="text/html" />
+<link rel="prev" href="obj_table.htm" title="Previous" type="text/html" />
+<link rel="next" href="obj_table_browse.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface" title="Home">Home</a> &gt; <a href="obj_brows.htm" title="Managing Database Objects w...">Managing Database Objects w...</a> &gt; <a href="obj_table.htm" title="Managing Tables">Managing Tables</a> &gt; Creating a Table</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="obj_table.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="obj_table_browse.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDFCIJJ" name="CHDFCIJJ"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEUTL110" id="AEUTL110"></a>Creating a <a id="sthref23" name="sthref23"></a>Table</h1>
+<p>To create a table:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click <span class="bold">SQL Workshop</span> and then <span class="bold">Object Browser</span>.</p>
+<p>Object Browser appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+</li>
+<li>
+<p>From the list of object types, select <span class="bold">Table</span>.</p>
+</li>
+<li>
+<p>Enter a table name.</p>
+<p>Table names must conform to Oracle naming conventions and not contain spaces or start with a number or underscore.</p>
+</li>
+<li>
+<p>To have the final table name match the case entered in the Table Name field, click <span class="bold">Preserve Case</span>.</p>
+</li>
+<li>
+<p>Enter details for each column. For each column:</p>
+<ol>
+<li>
+<p>Enter the column name.</p>
+</li>
+<li>
+<p>Select the column type.</p>
+</li>
+<li>
+<p>Enter the following additional information as appropriate:</p>
+<ul>
+<li>
+<p>Precision</p>
+<p>The precision is the number of digits before the decimal point. Not all column types have this setting. Precision must be a positive integer. Only <code>NUMBER</code>, <code>FLOAT</code>, <code>INTERVAL</code> <code>YEAR</code> <code>TO</code> <code>MONTH</code>, and <code>INTERVAL</code> <code>DAY</code> <code>TO</code> <code>SECOND</code> have this setting. For example, if a column of type <code>NUMBER</code> has precision of 4, the column value can be 0 through 9999.</p>
+</li>
+<li>
+<p>Scale</p>
+<p>The function of the scale setting depends on the column type. For <code>NUMBER</code> types, scale is the number of digits after the decimal point. For <code>VARCHAR2</code> and <code>CHAR</code> types, scale is the number of stored characters and must be no more than 4000 bytes. For <code>TIMESTAMP</code> types, scale is the fractional seconds precision and must be a number between 0 and 9. Scale must be a positive number. For example, if a column type <code>TIMESTAMP</code> has a scale of 3, seconds are between .000 seconds and .999 seconds.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>To specify a column must always have a value, select the check box in the <span class="bold">Not Null</span> column.</p>
+<p>To change the order of previously entered columns, click the <span class="bold">Up</span> and <span class="bold">Down</span> arrows in the Move column. To add additional columns, click <span class="bold">Add Column</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+<p>Next, define the primary key for this table (optional). A primary key is a single field or combination of fields that uniquely identifies a record.</p>
+</li>
+<li>
+<p>For Primary Key, select the appropriate option and click <span class="bold">Next</span>:</p>
+<ul>
+<li>
+<p><span class="bold">No Primary Key</span> - No primary key is created.</p>
+</li>
+<li>
+<p><span class="bold">Populate from a new sequence</span> - Creates a primary key and creates a trigger and a sequence. The sequence is used in the trigger to populated the selected primary key column. The primary key can only be a single column.</p>
+</li>
+<li>
+<p><span class="bold">Populated from an existing sequence</span> - Creates a primary key and creates a trigger. The selected sequence is used in the trigger to populate the selected primary key column. The primary key can only be a single column.</p>
+</li>
+<li>
+<p><span class="bold">Not populated</span> - Defines a primary key but does not have the value automatically populated with a sequence within a trigger. You can also select this option to define a composite primary key (that is, a primary key made up of multiple columns).</p>
+</li>
+</ul>
+<p>Next, add foreign keys (optional). A foreign key establishes a relationship between a column (or columns) in one table and a primary or unique key in another table.</p>
+</li>
+<li>
+<p>To add a foreign key:</p>
+<ol>
+<li>
+<p>Name - Enter a name of the foreign key constraint that you are defining.</p>
+</li>
+<li>
+<p>Select Key Column(s) - Select the columns that are part of the foreign key, then click the <span class="bold">Add</span> icon to move them to Key Column(s).</p>
+</li>
+<li>
+<p>References Table - Select the table which is referenced by this foreign key. Then, select the columns referenced by this foreign key. Once selected, click the <span class="bold">Add</span> icon to move the selected columns to Referenced Column(s).</p>
+</li>
+<li>
+<p>Select the appropriate option:</p>
+<ul>
+<li>
+<p><span class="bold">Disallow Delete</span> - Blocks the delete of rows from the referenced table when there are dependent rows in this table.</p>
+</li>
+<li>
+<p><span class="bold">Cascade Delete</span> - Deletes the dependent rows from this table when the corresponding parent table row is deleted.</p>
+</li>
+<li>
+<p><span class="bold">Set to Null on Delete</span> - Sets the foreign key column values in this table to null when the corresponding parent table row is deleted.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">Add</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+<p>Next, add a constraint (optional). You can create multiple constraints, but you must add each constraint separately.</p>
+</li>
+<li>
+<p>To add a constraint:</p>
+<ol>
+<li>
+<p>Specify the type of constraint (Check or Unique).</p>
+<p>A <span class="bold">check constraint</span> is a validation check on one or more columns within the table. No records can be inserted or updated in a table which violates an enabled check constraint. A <span class="bold">unique constraint</span> designates a column or a combination of columns as a unique key. To satisfy a unique constraint, no two rows in the table can have the same values for the specified columns.</p>
+</li>
+<li>
+<p>Enter the constraint in the field provided. For unique constraints, select the column(s) that are to be unique. For check constraints, enter the expression that should be checked such as <code>flag in ('Y','N')</code>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Add</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+<p>A confirmation page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+<p>Note that it is not necessary to follow the steps for creating a table in the order described in the previous procedure. Instead of navigating through the wizard by clicking the Next and Previous button, you can also access a specific step by selecting it in the progress indicator on the left side of the page.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="../bldapp_srch_table.htm">"Using the Table Finder"</a> in <a href="../preface.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a> and "Overview of Tables" in <a href="http://www.oracle.com/pls/db112/lookup?id=CNCPT211"><span class="italic">Oracle Database Concepts</span></a> for information about tables.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="obj_table.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="obj_table_browse.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

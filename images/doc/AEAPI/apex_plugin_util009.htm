@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>GET_DISPLAY_DATA Function Signature 1</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:39Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="GET_DISPLAY_DATA Function Signature 1" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_plugin_util008.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_plugin_util010.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_plugin_util008.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin_util010.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABCJEBF" name="BABCJEBF"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>GET_DISPLAY_DATA <a id="sthref830" name="sthref830"></a>Function Signature 1</h1>
+<p>This function gets the display lookup value for the value specified in <code>p_search_string</code>.</p>
+<a id="sthref831" name="sthref831"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_PLUGIN_UTIL.GET_DISPLAY_DATA (
+    p_sql_statement    IN VARCHAR2,
+    p_min_columns      IN NUMBER,
+    p_max_columns      IN NUMBER,
+    p_component_name   IN VARCHAR2,
+    p_display_column_no IN BINARY_INTEGER DEFAULT 1,
+    p_search_column_no  IN BINARY_INTEGER DEFAULT 2,
+    p_search_string    IN VARCHAR2 DEFAULT NULL,
+    p_display_extra    IN BOOLEAN DEFAULT TRUE)
+RETURN VARCHAR2;
+</pre>
+<a id="sthref832" name="sthref832"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#BABJCBCH">Table: GET_DISPLAY_DATA Signature 1 Parameters</a> describes the parameters available in the <code>GET_DISPLAY_DATA</code> function signature 1.</p>
+<div class="tblformal"><a id="sthref833" name="sthref833"></a><a id="BABJCBCH" name="BABJCBCH"></a>
+<p class="titleintable">GET_DISPLAY_DATA Signature 1 Parameters</p>
+<table class="Formal" title="GET_DISPLAY_DATA Signature 1 Parameters" summary="This table describes the parameters available in the GET_DISPLAY_DATA function signature 1." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t10">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t10">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t10" headers="r1c1-t10">
+<p><code>p_sql_statement</code></p>
+</td>
+<td align="left" headers="r2c1-t10 r1c2-t10">
+<p>SQL statement used for the lookup.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t10" headers="r1c1-t10">
+<p><code>p_min_columns</code></p>
+</td>
+<td align="left" headers="r3c1-t10 r1c2-t10">
+<p>Minimum number of return columns.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t10" headers="r1c1-t10">
+<p><code>p_max_columns</code></p>
+</td>
+<td align="left" headers="r4c1-t10 r1c2-t10">
+<p>Maximum number of return columns.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t10" headers="r1c1-t10">
+<p><code>p_component_name</code></p>
+</td>
+<td align="left" headers="r5c1-t10 r1c2-t10">
+<p>In case an error is returned, this is the name of the page item or report column used to display the error message.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t10" headers="r1c1-t10">
+<p><code>p_display_column_no</code></p>
+</td>
+<td align="left" headers="r6c1-t10 r1c2-t10">
+<p>Number of the column returned from the SQL statement. Must be within the <code>p_min_columns</code> though <code>p_max_columns</code> range</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t10" headers="r1c1-t10">
+<p><code>p_search_column_no</code></p>
+</td>
+<td align="left" headers="r7c1-t10 r1c2-t10">
+<p>Number of the column used to restrict the SQL statement. Must be within the <code>p_min_columns</code> though <code>p_max_columns</code> range.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t10" headers="r1c1-t10">
+<p><code>p_search_string</code></p>
+</td>
+<td align="left" headers="r8c1-t10 r1c2-t10">
+<p>Value used to restrict the query.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t10" headers="r1c1-t10">
+<p><code>p_display_extra</code></p>
+</td>
+<td align="left" headers="r9c1-t10 r1c2-t10">
+<p>If set to <code>TRUE</code>, and a value is not found, the search value will be added to the result instead.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref834" name="sthref834"></a>
+<p class="subhead2">Return</p>
+<p><a href="#BABEEBIB">Table: GET_DISPLAY_DATA Signature 1 Return</a> describes the return value by the <code>GET_DISPLAY_DATA</code> function signature 1.</p>
+<div class="tblformal"><a id="sthref835" name="sthref835"></a><a id="BABEEBIB" name="BABEEBIB"></a>
+<p class="titleintable">GET_DISPLAY_DATA Signature 1 Return</p>
+<table class="Formal" title="GET_DISPLAY_DATA Signature 1 Return" summary="This table describes the return values for the GET_DISPLAY_DATA function signature 1." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t11">Return</th>
+<th align="left" valign="bottom" id="r1c2-t11">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t11" headers="r1c1-t11">
+<p>VARCHAR2</p>
+</td>
+<td align="left" headers="r2c1-t11 r1c2-t11">
+<p>Value of the first record of the column specified by <code>p_display_column_no</code>. If no record was found it will contain the value of <code>p_search_string</code> if the parameter <code>p_display_extra</code> is set to TRUE. Otherwise NULL is returned.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref836" name="sthref836"></a>
+<p class="subhead2">Example</p>
+<p>The following example does a lookup with the value provided in p_value and returns the display column of the LOV query.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+function render_value (
+    p_item                in apex_plugin.t_page_item,
+    p_value               in varchar2,
+    p_is_readonly         in boolean,
+    p_is_printer_friendly in boolean )
+    return apex_plugin.t_page_item_render_result
+is
+begin
+    sys.htp.p(sys.htf.escape_sc(
+        apex_plugin_util.get_display_data (
+            p_sql_statement     =&gt; p_item.lov_definition,
+            p_min_columns       =&gt; 2,
+            p_max_columns       =&gt; 2,
+            p_component_name    =&gt; p_item.name,
+            p_display_column_no =&gt; 1,
+            p_search_column_no  =&gt; 2,
+            p_search_string     =&gt; p_value )));
+end render_value;
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_plugin_util008.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin_util010.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

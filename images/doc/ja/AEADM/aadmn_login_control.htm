@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Enabling Account Login Controls for a Workspace</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-27T14:38:54Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Enabling Account Login Controls for a Workspace" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15521-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="wrkspc.htm" title="Workspace and Application A..." type="text/html" />
+<link rel="up" href="aadm_prefs.htm" title="Configuring Workspace Prefe..." type="text/html" />
+<link rel="up" href="aadmn_login_control.htm" title="Enabling Account Login Cont..." type="text/html" />
+<link rel="prev" href="aadm_prefs.htm" title="Previous" type="text/html" />
+<link rel="next" href="aadmn_bldr_use.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="wrkspc.htm" title="Workspace and Application A...">Workspace and Application A...</a> &gt; <a href="aadm_prefs.htm" title="Configuring Workspace Prefe...">Configuring Workspace Prefe...</a> &gt; Enabling Account Login Cont...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="aadm_prefs.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="aadmn_bldr_use.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDDFIAJ" name="CHDDFIAJ"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEADM131" id="AEADM131"></a>Enabling Account <a id="sthref84" name="sthref84"></a><a id="sthref85" name="sthref85"></a><a id="sthref86" name="sthref86"></a>Login Controls for a Workspace</h1>
+<p>There are two different ways to configure login controls:</p>
+<ul>
+<li>
+<p>An Instance administrator enables account login controls for all Application Express accounts in all workspaces across a development instance.</p>
+<p>If your Instance administrator configures these preferences for an instance, those settings display as the defaults for all workspaces. See <a href="adm_config_sec.htm#CIHBFFGH">"Enabling Login Controls for All Workspaces"</a>.</p>
+</li>
+<li>
+<p>If the Instance administrator does <span class="italic">not</span> enable login controls across an entire instance, then each Workspace administrator can enable the following controls on a workspace-by-workspace basis:</p>
+<ul>
+<li>
+<p>Require end-user account expiration and locking</p>
+</li>
+<li>
+<p>Set up a maximum number of failed login attempts for end-user accounts</p>
+</li>
+<li>
+<p>Set the password lifetime for end-user accounts, that is, the number of days an end-user account password can be used before it expires</p>
+</li>
+</ul>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Tip:</p>
+This feature applies only to accounts created using the Application Express user creation and management facilities. It provides additional authentication security for applications. See <a href="aadm_users.htm#CHDDFDCH">"Managing Application Express Users"</a>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<p>To enable login controls for a workspace:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express. See "Logging In to Oracle Application Express" in <a href="../start_login.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+<p>The Workspace home page appears.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Administration</span> icon.</p>
+<p>The Administration page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Service</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Set Workspace Preferences</span>.</p>
+</li>
+<li>
+<p>Under Account Login Control:</p>
+<ol>
+<li>
+<p>Account Expiration and Locking - Click <span class="bold">Enable</span>.</p>
+<p>If you select <span class="bold">Enable</span>, end-user account passwords will expire after a configurable time period and accounts will be locked after a configurable number of authentication failures. Account passwords can be set to expire after the first use.</p>
+<p>If your Instance administrator set the <span class="bold">Require User Account Expiration and Locking</span> preference to <span class="bold">Yes</span>, this preference defaults to <span class="bold">Enable</span> and you cannot update it.</p>
+</li>
+<li>
+<p>Maximum Login Failures Allowed - Enter a positive integer for the maximum number of consecutive unsuccessful authentication attempts allowed before an end-user account is locked. If you do not specify a value in this field, the instance-level setting for Maximum Login Failures Allowed is used.</p>
+</li>
+<li>
+<p>End User Account Lifetime (days) - Enter a positive integer for the maximum number of days an end-user account password may be used before the account expires. If you do not specify a value in this field, the instance-level setting for Account Password Lifetime is used.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="aadm_prefs.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="aadmn_bldr_use.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

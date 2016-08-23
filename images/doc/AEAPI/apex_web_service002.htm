@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Invoking a SOAP Style Web Service</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:42Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Invoking a SOAP Style Web Service" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_web_service001.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_web_service003.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_web_service001.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_web_service003.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABGEIAH" name="BABGEIAH"></a></p>
+<hr />
+<h1>Invoking a SOAP Style<a id="sthref1634" name="sthref1634"></a> Web Service</h1>
+<p>There is a procedure and a function to invoke a SOAP style Web service. The procedure will store the response in the collection specified by the parameter p_collection_name. The function will return the results as an XMLTYPE. To retrieve a specific value from the response, you use either the PARSE_RESPONSE function if the result is stored in a collection or the PARSE_XML function if the response is returned as an XMLTYPE. If you need to pass a binary parameter to the Web service as base64 encoded character data, use the function BLOB2CLOBBASE64. Conversely, if you need to transform a response that contains a binary parameter that is base64 encoded use the function CLOBBASE642BLOB.The following is an example of using the BLOB2CLOBBASE64 function to encode a parameter, MAKE_REQUEST procedure to call a Web service, and the PARSE_RESPONSE function to extract a specific value from the response.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+declare
+ l_filename varchar2(255);
+ l_BLOB BLOB;
+ l_CLOB CLOB;
+ l_envelope CLOB;
+ l_response_msg varchar2(32767);
+BEGIN
+ IF :P1_FILE IS NOT NULL THEN
+    SELECT filename, BLOB_CONTENT
+      INTO l_filename, l_BLOB
+      FROM APEX_APPLICATION_FILES
+      WHERE name = :P1_FILE;
+ 
+    l_CLOB := apex_web_service.blob2clobbase64(l_BLOB);
+ 
+   l_envelope := q'!&lt;?xml version='1.0' encoding='UTF-8'?&gt;!';
+   l_envelope := l_envelope '&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:chec="http://www.stellent.com/CheckIn/"&gt;
+  &lt;soapenv:Header/&gt;
+  &lt;soapenv:Body&gt;
+     &lt;chec:CheckInUniversal&gt;
+        &lt;chec:dDocName&gt;'||l_filename||'&lt;/chec:dDocName&gt;
+        &lt;chec:dDocTitle&gt;'||l_filename||'&lt;/chec:dDocTitle&gt;
+        &lt;chec:dDocType&gt;Document&lt;/chec:dDocType&gt;
+        &lt;chec:dDocAuthor&gt;GM&lt;/chec:dDocAuthor&gt;
+        &lt;chec:dSecurityGroup&gt;Public&lt;/chec:dSecurityGroup&gt;
+        &lt;chec:dDocAccount&gt;&lt;/chec:dDocAccount&gt;
+        &lt;chec:CustomDocMetaData&gt;
+           &lt;chec:property&gt;
+              &lt;chec:name&gt;&lt;/chec:name&gt;
+              &lt;chec:value&gt;&lt;/chec:value&gt;
+           &lt;/chec:property&gt;
+        &lt;/chec:CustomDocMetaData&gt;
+        &lt;chec:primaryFile&gt;
+           &lt;chec:fileName&gt;'||l_filename'||&lt;/chec:fileName&gt;
+           &lt;chec:fileContent&gt;'||l_CLOB||'&lt;/chec:fileContent&gt;
+        &lt;/chec:primaryFile&gt;
+        &lt;chec:alternateFile&gt;
+           &lt;chec:fileName&gt;&lt;/chec:fileName&gt;
+           &lt;chec:fileContent&gt;&lt;/chec:fileContent&gt;
+        &lt;/chec:alternateFile&gt;
+        &lt;chec:extraProps&gt;
+           &lt;chec:property&gt;
+              &lt;chec:name&gt;&lt;/chec:name&gt;
+              &lt;chec:value&gt;&lt;/chec:value&gt;
+           &lt;/chec:property&gt;
+        &lt;/chec:extraProps&gt;
+     &lt;/chec:CheckInUniversal&gt;
+  &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;';
+ 
+apex_web_service.make_request(
+   p_url               =&gt; 'http://127.0.0.1/idc/idcplg',
+   p_action            =&gt; 'http://www.stellent.com/CheckIn/',
+   p_collection_name   =&gt; 'STELLENT_CHECKIN',
+   p_envelope          =&gt; l_envelope,
+   p_username          =&gt; 'sysadmin',
+   p_password          =&gt; 'welcome1' );
+ 
+ l_response_msg := apex_web_service.parse_response(
+  p_collection_name=&gt;'STELLENT_CHECKIN',
+p_xpath=&gt;'//idc:CheckInUniversalResponse/idc:CheckInUniversalResult/idc:StatusInfo/idc:statusMessage/text()',
+  p_ns=&gt;'xmlns:idc="http://www.stellent.com/CheckIn/"');
+ 
+ :P1_RES_MSG := l_response_msg;
+ 
+ END IF;
+END;
+</pre>
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_web_service001.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_web_service003.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

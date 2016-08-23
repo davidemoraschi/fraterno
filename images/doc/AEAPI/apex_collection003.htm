@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Merging, Truncating and Deleting Collections</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:37Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Merging, Truncating and Deleting Collections" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_collection002.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_collection004.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_collection002.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection004.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABGGIDG" name="BABGGIDG"></a></p>
+<hr />
+<h1>Merging, Truncating and Deleting Collections</h1>
+<p><a id="sthref135" name="sthref135"></a></p>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#BAGEIACA">Merging Collections</a></p>
+</li>
+<li>
+<p><a href="#BAGHEIBA">Truncating a Collection</a></p>
+</li>
+<li>
+<p><a href="#BAGEEGAB">Deleting a Collection</a></p>
+</li>
+<li>
+<p><a href="#BAGGEECF">Deleting All Collections for the Current Application</a></p>
+</li>
+<li>
+<p><a href="#BAGGAHEE">Deleting All Collections in the Current Session</a></p>
+</li>
+</ul>
+<p><a id="BAGEIACA" name="BAGEIACA"></a></p>
+<h2>Merging <a id="sthref136" name="sthref136"></a>Collections</h2>
+<p>You can merge members of a collection with values passed in a set of arrays. By using the <code>p_init_query</code> argument, you can create a collection from the supplied query.</p>
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection024.htm#CJAJBDCF">"MERGE_MEMBERS Procedure"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" -->
+<p><a id="BAGHEIBA" name="BAGHEIBA"></a></p>
+<h2>Truncating a <a id="sthref137" name="sthref137"></a>Collection</h2>
+<p>If you truncate a collection, you remove all members from the specified collection, but the named collection remains in place.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection031.htm#CJADGFHA">"TRUNCATE_COLLECTION Procedure"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<p><a id="BAGEEGAB" name="BAGEEGAB"></a></p>
+<h2>Deleting a Collection</h2>
+<p>If you delete a collection, you delete the collection and all of its members. Be aware that if you do not delete a collection, it will eventually be deleted when the session is purged.</p>
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection020.htm#CJAHDJIE">"DELETE_COLLECTION Procedure"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" -->
+<p><a id="BAGGEECF" name="BAGGEECF"></a></p>
+<h2>Deleting All Collections for the Current Application</h2>
+<p>Use the <code>DELETE_ALL_COLLECTIONS</code> method to delete all collections defined in the current application.</p>
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection018.htm#CJAJAJBD">"DELETE_ALL_COLLECTIONS Procedure"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" -->
+<p><a id="BAGGAHEE" name="BAGGAHEE"></a></p>
+<h2>Deleting All Collections in the Current Session</h2>
+<p>Use the <code>DELETE_ALL_COLLECTIONS_SESSION</code> method to delete all collections defined in the current session.</p>
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection019.htm#CJAIJBCI">"DELETE_ALL_COLLECTIONS_SESSION Procedure"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_collection002.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection004.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

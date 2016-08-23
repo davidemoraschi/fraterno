@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Debugging Dynamic Actions</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:13Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Debugging Dynamic Actions" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="advnc.htm" title="Advanced Programming Techni..." type="text/html" />
+<link rel="up" href="advnc_dynamic_actions.htm" title="Implementing Dynamic Actions" type="text/html" />
+<link rel="up" href="advnc_dynamic_debug.htm" title="Debugging Dynamic Actions" type="text/html" />
+<link rel="prev" href="advnc_dynamic_scope.htm" title="Previous" type="text/html" />
+<link rel="next" href="advnc_blob.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="advnc.htm" title="Advanced Programming Techni...">Advanced Programming Techni...</a> &gt; <a href="advnc_dynamic_actions.htm" title="Implementing Dynamic Actions">Implementing Dynamic Actions</a> &gt; Debugging Dynamic Actions</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="advnc_dynamic_scope.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_blob.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CIHGCIBJ" name="CIHGCIBJ"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB28007" id="HTMDB28007"></a>Debugging <a id="sthref2610" name="sthref2610"></a>Dynamic Actions</h1>
+<p>Debugging dynamic actions in Application Express is slightly different than other debugging, because much of the processing done with the dynamic action framework is done on the client, not on the server. In order to debug dynamic actions, we output debug information to the browser's JavaScript console, if your browser supports it (for example Firefox with Firebug installed will show the debug information in it's Console pane). The debug information will tell you when a dynamic action fires, the name of the dynamic action and also specifically which action has fired.</p>
+<p>To debug a dynamic action:</p>
+<ol>
+<li>
+<p>Ensure the application containing the dynamic action has Debugging enabled. See <a href="debug_mode.htm#BABJEJGI">"Accessing Debugging Mode"</a>.</p>
+</li>
+<li>
+<p>Run the page containing the dynamic action.</p>
+</li>
+<li>
+<p>Open the browser's JavaScript console.From the Developer toolbar, click <span class="bold">Debug</span>.The page refreshes and if you have any dynamic actions that are set to fire on page load, you will see the following text output to the console: "Dynamic Action Fired: [Dynamic action name] ([specific action fired])".Leaving Debug mode switched on (as the debug information is only output when running in Debug mode), you can then further test if dynamic actions are firing when you expect them to. For example if you have defined a dynamic action that fires when a certain item's value changes, change that item's value and the console will show the debug output if the dynamic action fires.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="advnc_dynamic_scope.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_blob.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

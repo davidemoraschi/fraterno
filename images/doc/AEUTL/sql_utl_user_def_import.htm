@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>About Exporting and Importing User Interface Defaults</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T17:42:54Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="About Exporting and Importing User Interface Defaults" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15520-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface" title="Home" type="text/html" />
+<link rel="up" href="sql_utl.htm" title="Using Oracle Application Ex..." type="text/html" />
+<link rel="up" href="sql_utl_user_def.htm" title="Managing User Interface Def..." type="text/html" />
+<link rel="up" href="sql_utl_user_def_import.htm" title="About Exporting and Importi..." type="text/html" />
+<link rel="prev" href="sql_utl_user_att_mod.htm" title="Previous" type="text/html" />
+<link rel="next" href="sql_utl_restor.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface" title="Home">Home</a> &gt; <a href="sql_utl.htm" title="Using Oracle Application Ex...">Using Oracle Application Ex...</a> &gt; <a href="sql_utl_user_def.htm" title="Managing User Interface Def...">Managing User Interface Def...</a> &gt; About Exporting and Importi...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="sql_utl_user_att_mod.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="sql_utl_restor.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CEGCADJI" name="CEGCADJI"></a></p>
+<div class="sect2">
+<h1><a name="AEUTL311" id="AEUTL311"></a>About Exporting and Importing User Interface <a id="sthref326" name="sthref326"></a>Defaults</h1>
+<p>You export user interface defaults in the same way you export any related application file. Exporting user interface defaults from one development instance to another involves the following steps:</p>
+<ol>
+<li>
+<p>Export the user interface defaults using the Export User Interface Defaults utility. See "Exporting user Interface Defaults" in <a href="../preface.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+<li>
+<p>Import the exported file into the target Oracle Application Express instance. See "Importing User Interface Defaults" in <a href="../preface.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+<li>
+<p>Install the exported file from Export Repository. See "Installing Export Files" in <a href="../preface.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+</ol>
+<p>When you export user interface defaults, all user interface defaults for the selected schema are exported to a single script. The file contains an API call to create table hints by making calls to the application PL/SQL API. You can use this file to import user interface defaults to another database and Oracle Application Express instance.</p>
+</div>
+<!-- class="sect2" -->
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="sql_utl_user_att_mod.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="sql_utl_restor.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

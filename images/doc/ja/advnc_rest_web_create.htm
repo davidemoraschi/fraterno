@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Creating a RESTful Web Service Reference</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:12Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Creating a RESTful Web Service Reference" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="advnc.htm" title="Advanced Programming Techni..." type="text/html" />
+<link rel="up" href="advnc_web_services.htm" title="Implementing Web Services" type="text/html" />
+<link rel="up" href="advnc_rest_web_create.htm" title="Creating a RESTful Web Serv..." type="text/html" />
+<link rel="prev" href="advnc_web_create_man.htm" title="Previous" type="text/html" />
+<link rel="next" href="advnc_web_rep.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="advnc.htm" title="Advanced Programming Techni...">Advanced Programming Techni...</a> &gt; <a href="advnc_web_services.htm" title="Implementing Web Services">Implementing Web Services</a> &gt; Creating a RESTful Web Serv...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="advnc_web_create_man.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_web_rep.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDDIHEA" name="CHDDIHEA"></a></p>
+<div class="sect2">
+<h1><a name="HTMDB28000" id="HTMDB28000"></a>Creating a <a id="sthref2552" name="sthref2552"></a>RESTful Web Service Reference</h1>
+<p>If you want to utilize a RESTful Web service from your application, you must create a RESTfull Web service reference.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="advnc_rest_web_eg_1.htm#CIHJICFA">"Example: Creating a Web Service Reference on a RESTful Style Web Service"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<p>To create a RESTful Web service reference:</p>
+<ol>
+<li>
+<p>Navigate to the Web Service References page. See <a href="advnc_web_about.htm#BABBFIDF">"Accessing the Web Service References Page"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+</li>
+<li>
+<p>Select <span class="bold">REST</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For REST Details, specify the following:</p>
+<ol>
+<li>
+<p>Name - Enter a name to identify the reference.</p>
+</li>
+<li>
+<p>URL - Enter the URL endpoint of the Web service.</p>
+</li>
+<li>
+<p>Proxy - Enter a proxy if you want to override the application proxy for this service (optional).</p>
+</li>
+<li>
+<p>HTTP Method - Choose the http method used for the request to the Web service. Select GET, HEAD, POST, PUT or DELETE.</p>
+</li>
+<li>
+<p>Basic Authentication - Select <span class="bold">Yes</span> to require HTTP Basic Authentication. Otherwise, select <span class="bold">No</span>.</p>
+</li>
+<li>
+<p>HTTP Headers - Enter the names of the HTTP headers to send with the request.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For REST Input parameters, specify the following:</p>
+<ol>
+<li>
+<p>Name - Enter the name of the input parameter expected by the method.</p>
+</li>
+<li>
+<p>Type - Select the input type.</p>
+</li>
+<li>
+<p>Click <span class="bold">Add Parameter</span>.</p>
+</li>
+<li>
+<p>Repeat steps a though c for each expected input.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For REST Output parameters, specify the following:</p>
+<ol>
+<li>
+<p>Output Format - Select <span class="bold">XML</span> or <span class="bold">Text</span> for the response format expected from the Web service.</p>
+</li>
+<li>
+<p>XPath to Output Parameters (XML only) - Enter an XPath expression to the relevant part of the response.</p>
+</li>
+<li>
+<p>Response Namespace (XML only) - Enter the namespace corresponding to the Response XPath.</p>
+</li>
+<li>
+<p>Parameter Delimiter (Text only)- Enter the character or sequence that separates parameters returned from the Web service. Use <code>\n</code> to indicate a new line and <code>\t</code> to indicate a tab character.</p>
+</li>
+<li>
+<p>New Record Delimiter (Text only) - Enter the character or sequence that determines a new record in a text response from the Web service. Use <code>\n</code> to indicate a new line and <code>\t</code> to indicate a tab character.</p>
+</li>
+<li>
+<p>Name - Enter the name of the output parameter returned by the method.</p>
+</li>
+<li>
+<p>Type - Select the output type.</p>
+</li>
+<li>
+<p>Click <span class="bold">Add Parameter</span>.</p>
+</li>
+<li>
+<p>Repeat steps f though h for each returned output parameter.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+</li>
+</ol>
+<p>The Create Web Service Reference Success page appears. The Web service reference is added to the Web Service References Repository.</p>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="advnc_web_create_man.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_web_rep.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

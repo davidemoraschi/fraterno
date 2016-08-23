@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Understanding Oracle Default Schema Restrictions</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-27T14:38:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Understanding Oracle Default Schema Restrictions" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15521-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="adm_wrkspc.htm" title="Oracle Application Express ..." type="text/html" />
+<link rel="up" href="adm_schema.htm" title="Managing Schemas" type="text/html" />
+<link rel="up" href="adm_schema_restrict.htm" title="Understanding Oracle Defaul..." type="text/html" />
+<link rel="prev" href="adm_eng_schema.htm" title="Previous" type="text/html" />
+<link rel="next" href="adm_create_wkspc.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="adm_wrkspc.htm" title="Oracle Application Express ...">Oracle Application Express ...</a> &gt; <a href="adm_schema.htm" title="Managing Schemas">Managing Schemas</a> &gt; Understanding Oracle Defaul...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="adm_eng_schema.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_create_wkspc.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BEJEFJAE" name="BEJEFJAE"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEADM232" id="AEADM232"></a>Understanding Oracle Default Schema <a id="sthref379" name="sthref379"></a><a id="sthref380" name="sthref380"></a><a id="sthref381" name="sthref381"></a><a id="sthref382" name="sthref382"></a>Restrictions</h1>
+<p>When Oracle Application Express installs, the Instance administrator does not have the ability to assign Oracle default schemas to workspaces. Default schemas such as <code>SYS</code>, <code>SYSTEM</code>, and <code>RMAN</code> are reserved by Oracle for various product features and for internal use. Access to a default schema can be a very powerful privilege. For example, a workspace with access to the default schema <code>SYSTEM</code> can run applications that parse as the <code>SYSTEM</code> user.</p>
+<p>In order for an Instance administrator to have the ability to assign most Oracle default schemas to workspaces, the database administrator (DBA) must explicitly grant the privilege using SQL*Plus to run a procedure within the <code>APEX_ SITE_ADMIN_PRIVS</code> package. Note, however, that beginning with Oracle Application Express release 3.1, the <code>SYS</code> and <code>SYSTEM</code> schemas may no longer be used by workspaces as parsing schemas.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+All schema and workspace names used as arguments to procedures in the <code>APEX_SITE_ADMIN_PRIVS</code> package are used exactly as they are provided by the caller.
+<p>For example, if you pass an argument value such as <code>p_schema =&gt;'system'</code>, the lower-case schema name <code>'system'</code> will be recorded and referenced. This example could return unexpected results if you really meant to reference the common schema name SYSTEM, which would be referenced using upper case.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+<a id="sthref383" name="sthref383"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#CIHFHFIF">Granting the Privilege to Assign Oracle Default Schemas</a></p>
+</li>
+<li>
+<p><a href="#CIHBHFJA">Revoking the Privilege to Assign Oracle Default Schemas</a></p>
+</li>
+<li>
+<p><a href="#CIHIHAFD">Working with Restricted Schemas</a></p>
+</li>
+<li>
+<p><a href="#CIHFDFGD">Determining the Privilege Status</a></p>
+</li>
+</ul>
+<a id="CIHFHFIF" name="CIHFHFIF"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM233" id="AEADM233"></a>Granting the Privilege to Assign Oracle Default Schemas</h2>
+<p>The DBA can grant an Instance administrator the ability to assign Oracle schemas to workspaces by using SQL*Plus to run the <a id="sthref384" name="sthref384"></a><code>APEX_SITE_ADMIN_PRIVS.UNRESTRICT_SCHEMA</code> procedure from within the Application Express engine schema. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+EXEC APEX_040000.APEX_SITE_ADMIN_PRIVS.UNRESTRICT_SCHEMA(p_schema =&gt; 'RMAN');
+COMMIT;
+</pre>
+<p>This example would enable the Instance administrator to assign the <code>RMAN</code> schema to any workspace.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="adm_eng_schema.htm#BEJEDCEJ">"Determining the Oracle Application Express Engine Schema"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect3" -->
+<a id="CIHBHFJA" name="CIHBHFJA"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM234" id="AEADM234"></a>Revoking the Privilege to Assign Oracle Default Schemas</h2>
+<p>The DBA can revoke this privilege using SQL*Plus to run the <code><a id="sthref385" name="sthref385"></a>APEX_SITE_ADMIN_PRIVS.RESTRICT_SCHEMA</code> procedure from within the Application Express engine schema. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+EXEC APEX_040000.APEX_SITE_ADMIN_PRIVS.RESTRICT_SCHEMA(p_schema =&gt; 'RMAN');
+COMMIT;
+</pre>
+<p>This example would prevent the Instance administrator from assigning the <code>RMAN</code> schema to any workspace. It does not, however, prevent workspaces that have already had the <code>RMAN</code> schema assigned to them from using the <code>RMAN</code> schema.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="adm_eng_schema.htm#BEJEDCEJ">"Determining the Oracle Application Express Engine Schema"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect3" -->
+<a id="CIHIHAFD" name="CIHIHAFD"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM235" id="AEADM235"></a>Working with Restricted Schemas</h2>
+<p>If a schema has been designated as restricted using the <code>RESTRICT_SCHEMA</code> procedure, the DBA can designate specific workspaces as exceptions by running the <code><a id="sthref386" name="sthref386"></a>APEX_SITE_ADMIN_PRIVS.CREATE_EXCEPTION</code> procedure. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+EXEC APEX_040000.APEX_SITE_ADMIN_PRIVS.CREATE_EXCEPTION(p_schema =&gt; 'RMAN', p_workspace=&gt; 'DBA_WORKSPACE');
+EXEC APEX_040000.APEX_SITE_ADMIN_PRIVS.CREATE_EXCEPTION(p_schema =&gt; 'RMAN', p_workspace  =&gt; 'AUDITOR_WORKSPACE');
+COMMIT;
+</pre>
+<p>This example would prevent the Instance administrator from assigning the <code>RMAN</code> schema to the workspace named AUDITOR_WORKSPACE. However this restriction only applies to workspace provisioning requests processed after the <code>REMOVE_EXCEPTION</code> procedure has been run. If the AUDITOR_WORKSPACE already had the <code>RMAN</code> schema assigned to it, this method would not prevent that workspace from continuing to use the schema.</p>
+<div class="sect4"><!-- infolevel="all" infotype="General" --><a id="sthref387" name="sthref387"></a>
+<h3><a name="AEADM236" id="AEADM236"></a>Removing Workspace Exceptions for a Schema</h3>
+<p>The DBA can remove all workspace exceptions for a schema by using SQL*Plus to run the <a id="sthref388" name="sthref388"></a><code>APEX_SITE_ADMIN_PRIVS.REMOVE_WORKSPACE_EXCEPTIONS</code> procedure from within the Application Express engine schema. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+EXEC APEX_040000.APEX_SITE_ADMIN_PRIVS.REMOVE_WORKSPACE_EXCEPTIONS(p_schema =&gt; 'RMAN');
+COMMIT;
+</pre>
+<p>This example would prevent the Instance administrator from assigning the <code>RMAN</code> schema to any workspaces if the <code>RMAN</code> schema were already restricted, but had one or more exceptions previously created for it.</p>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><!-- infolevel="all" infotype="General" --><a id="sthref389" name="sthref389"></a>
+<h3><a name="AEADM237" id="AEADM237"></a>Removing Schema Exceptions for a Workspace</h3>
+<p>The DBA can remove all schema exceptions for a workspace by using SQL*Plus to run the <a id="sthref390" name="sthref390"></a><code>REMOVE_SCHEMA_EXCEPTIONS</code> procedure from within the Application Express engine schema. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+EXEC APEX_040000.APEX_SITE_ADMIN_PRIVS.REMOVE_WORKSPACE_EXCEPTIONS(p_workspace =&gt; 'AUDITOR_WORKSPACE');
+COMMIT;
+</pre>
+<p>This example would prevent the Instance administrator from assigning any restricted schemas to the workspace named AUDITOR_WORKSPACE if that workspace had exceptions previously created for it with respect to any restricted schemas.</p>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<a id="CIHFDFGD" name="CIHFDFGD"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM238" id="AEADM238"></a>Determining the Privilege Status</h2>
+<p>The DBA can determine the current status of the privilege by using SQL*Plus to run the <a id="sthref391" name="sthref391"></a><code>APEX_SITE_ADMIN_PRIVS.REPORT</code> procedure. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SET SERVEROUTPUT ON
+EXEC APEX_040000.APEX_SITE_ADMIN_PRIVS.REPORT;
+</pre>
+<p>This example would display the text of a query that dumps the tables that defines the schema and workspace restrictions.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT a.schema "SCHEMA",b.workspace_name "WORKSPACE" FROM WWV_FLOW_RESTRICTED_SCHEMAS a, WWV_FLOW_RSCHEMA_EXCEPTIONS b WHERE b.schema_id (+)= a.id;
+</pre>
+<p>When reviewing the output of this query, remember the following:</p>
+<ul>
+<li>
+<p>A schema name in the SCHEMA column indicates that the schema is restricted.</p>
+</li>
+<li>
+<p>Schemas that are not listed are not restricted and may be assigned to any workspace.</p>
+</li>
+<li>
+<p>A workspace name next to a schema name means that an exception exists for the schema for the named workspace.</p>
+</li>
+</ul>
+<p>You can run this query in SQL*Plus as shown above, or you can change it and format the output.</p>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="adm_eng_schema.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_create_wkspc.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Configuring Features</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-27T14:38:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Configuring Features" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15521-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="adm_wrkspc.htm" title="Oracle Application Express ..." type="text/html" />
+<link rel="up" href="adm_mg_service_set.htm" title="Managing Instance Settings" type="text/html" />
+<link rel="up" href="adm_config_feature.htm" title="Configuring Features" type="text/html" />
+<link rel="prev" href="adm_mg_service_set.htm" title="Previous" type="text/html" />
+<link rel="next" href="adm_config_sec.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="adm_wrkspc.htm" title="Oracle Application Express ...">Oracle Application Express ...</a> &gt; <a href="adm_mg_service_set.htm" title="Managing Instance Settings">Managing Instance Settings</a> &gt; Configuring Features</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="adm_mg_service_set.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_config_sec.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CIHCGJBG" name="CIHCGJBG"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1>Configuring Features</h1>
+<p>Use the Feature Configuration page to configure application development and SQL Workshop option as well as control database monitoring.</p>
+<a id="sthref251" name="sthref251"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#CIHIJHEF">Disabling PL/SQL Program Unit Editing</a></p>
+</li>
+<li>
+<p><a href="#CIHEIHHD">Disabling the Creation of Sample Application in a New Workspace</a></p>
+</li>
+<li>
+<p><a href="#CHDCBFEE">Disabling the Creation of Websheet Objects</a></p>
+</li>
+<li>
+<p><a href="#CIHCAADI">Configuring SQL Workshop</a></p>
+</li>
+<li>
+<p><a href="#CIHEJBID">Enabling Database Monitoring</a></p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="adm_mg_comp.htm#CHDBBCIE">"Managing Component Availability"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<a id="CIHIJHEF" name="CIHIJHEF"></a>
+<div class="sect3">
+<h2><a name="AEADM196" id="AEADM196"></a>Disabling PL/SQL <a id="sthref252" name="sthref252"></a><a id="sthref253" name="sthref253"></a>Program Unit Editing</h2>
+<p>By default, developers can change and compile PL/SQL source code when browsing database procedures, packages, and functions in Object Browser. As an Instance administrator, you can control PL/SQL program unit editing for an entire instance by making a selection from Allow PL/SQL Program Unit Editing.</p>
+<p>To disable PL/SQL program unit editing:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Feature Configuration</span>.</p>
+</li>
+<li>
+<p>Locate the Application Development section.</p>
+</li>
+<li>
+<p>For Allow PL/SQL Program Unit Editing, select <span class="bold">No</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="aadmin_prgunit.htm#CHDHJHFA">"Disabling PL/SQL Program Unit Editing for a Workspace"</a> for information about disabling PL/SQL program unit editing for a specific workspace</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect3" -->
+<a id="CIHEIHHD" name="CIHEIHHD"></a>
+<div class="sect3">
+<h2><a name="AEADM197" id="AEADM197"></a>Disabling the <a id="sthref254" name="sthref254"></a>Creation of Sample Application in a New Workspace<a id="sthref255" name="sthref255"></a><a id="sthref256" name="sthref256"></a></h2>
+<p>When an Instance administrator creates a new workspace, Oracle Application Express automatically creates a demonstration application within the workspace.</p>
+<p>To disable the creation of demonstration applications:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Feature Configuration</span>.</p>
+</li>
+<li>
+<p>Locate the Application Development section.</p>
+</li>
+<li>
+<p>For Create demonstration objects in new workspaces, select <span class="bold">No</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CHDCBFEE" name="CHDCBFEE"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2>Disabling the <a id="sthref257" name="sthref257"></a>Creation of Websheet Objects</h2>
+<p>When an Instance administrator creates a new workspace, Oracle Application Express automatically creates Websheet objects within the workspace.</p>
+<p>To disable the creation of Websheet objects:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Feature Configuration</span>.</p>
+</li>
+<li>
+<p>Locate the Application Development section.</p>
+</li>
+<li>
+<p>For Create Websheet objects in new workspaces, select <span class="bold">No</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHCAADI" name="CIHCAADI"></a>
+<div class="sect3">
+<h2><a name="AEADM198" id="AEADM198"></a>Configuring<a id="sthref258" name="sthref258"></a> SQL Workshop<a id="sthref259" name="sthref259"></a><a id="sthref260" name="sthref260"></a></h2>
+<p>As an Instance administrator, you can use the attributes under SQL Workshop to configure basic SQL Workshop behavior.</p>
+<p>To configure SQL Workshop:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Feature Configuration</span>.</p>
+</li>
+<li>
+<p>Under SQL Workshop, enter the attributes described in <a href="#CIHCDAAF">Table: SQL Workshop Attributes</a>.</p>
+<div class="tblformal"><a id="sthref261" name="sthref261"></a><a id="CIHCDAAF" name="CIHCDAAF"></a>
+<p class="titleintable">SQL Workshop Attributes</p>
+<table class="Formal" title="SQL Workshop Attributes" summary="This table describes the attributes available under SQL Workshop of the Manage Environment Preferences page." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="33%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t12">Attribute</th>
+<th align="left" valign="bottom" id="r1c2-t12">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t12" headers="r1c1-t12">
+<p>SQL Commands Maximum Inactivity in minutes</p>
+</td>
+<td align="left" headers="r2c1-t12 r1c2-t12">
+<p>Identify the maximum amount of time a transactional command in the SQL Command Processor waits before timing out.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t12" headers="r1c1-t12">
+<p>SQL Scripts Maximum Script Output Size in bytes</p>
+</td>
+<td align="left" headers="r3c1-t12 r1c2-t12">
+<p>Identify the maximum amount of output a single SQL script can generate. SQL scripts are run from the SQL Workshop.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t12" headers="r1c1-t12">
+<p>SQL Scripts Maximum Workspace Output Size in bytes</p>
+</td>
+<td align="left" headers="r4c1-t12 r1c2-t12">
+<p>Identify the maximum amount of space all scripts within a workspace may consume. SQL script results are the output generated when running SQL scripts from the Script Editor or from the SQL Scripts home page.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t12" headers="r1c1-t12">
+<p>SQL Scripts Maximum Script Size in bytes</p>
+</td>
+<td align="left" headers="r5c1-t12 r1c2-t12">
+<p>Identify the maximum size of a SQL script used within the SQL Workshop.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t12" headers="r1c1-t12">
+<p>Enable Transactional SQL Commands</p>
+</td>
+<td align="left" headers="r6c1-t12 r1c2-t12">
+<p>Select <span class="bold">Yes</span> to enable transactional SQL commands for the entire Oracle Application Express instance. Enabling this feature permits SQL Command Processor users to issue multiple SQL commands within the same physical database transaction.</p>
+<p>When you select <span class="bold">Yes</span>, an Autocommit check box appears on the SQL Command Processor page. By default, this option is set to <span class="bold">No</span>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHEJBID" name="CIHEJBID"></a>
+<div class="sect3">
+<h2><a name="AEADM199" id="AEADM199"></a>Enabling <a id="sthref262" name="sthref262"></a>Database Monitoring<a id="sthref263" name="sthref263"></a><a id="sthref264" name="sthref264"></a></h2>
+<p>Setting Enable Database Monitoring to <span class="bold">Yes</span> enables monitoring within SQL Workshop. Before you can access the Database Monitoring page, an Instance administrator must enable database monitoring.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+"Monitoring the Database" in <span class="italic"><a href="../AEUTL/dbadm_montitor.htm">Oracle Application Express SQL Workshop Guide</a></span></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<p>To enable database monitoring:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Feature Configuration</span>.</p>
+</li>
+<li>
+<p>Scroll down to Monitoring.</p>
+</li>
+<li>
+<p>For Enable Database Monitoring, select <span class="bold">Yes</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Only users having a database user account that has been granted a DBA role can access the Database Monitor page.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="adm_mg_service_set.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_config_sec.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Creating a Workspace Manually</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-28T10:25:24Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Creating a Workspace Manually" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15518-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="appmgr.htm" title="Migrating a Microsoft Acces..." type="text/html" />
+<link rel="up" href="apm_howcrwkspc.htm" title="Step 3: Create a Workspace ..." type="text/html" />
+<link rel="up" href="apm_env_wrkspc.htm" title="Creating a Workspace Manually" type="text/html" />
+<link rel="prev" href="apm_howcrwkspc.htm" title="Previous" type="text/html" />
+<link rel="next" href="apm_env_users.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="appmgr.htm" title="Migrating a Microsoft Acces...">Migrating a Microsoft Acces...</a> &gt; <a href="apm_howcrwkspc.htm" title="Step 3: Create a Workspace ...">Step 3: Create a Workspace ...</a> &gt; Creating a Workspace Manually</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apm_howcrwkspc.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apm_env_users.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CIHJBBBJ" name="CIHJBBBJ"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1>Creating a <a id="sthref44" name="sthref44"></a>Workspace Manually</h1>
+<p>To create an Oracle Application Express workspace manually:</p>
+<ol>
+<li>
+<p>Log in to <a id="sthref45" name="sthref45"></a>Oracle Application Express Administration Services.</p>
+<p>Oracle Application Express Administration Services is a separate application for managing an entire Oracle Application Express instance. You log in using the <code>ADMIN</code> account and password created or reset during the installation process.</p>
+<ol>
+<li>
+<p>In a Web browser, navigate to the Oracle Application Express Administration Services application. By default, Oracle Application Express Administration Services installs to the following location:</p>
+<ul>
+<li>
+<p>If your setup uses the embedded PL/SQL gateway, go to:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+http://<span class="italic">hostname</span>:<span class="italic">port</span>/apex/apex_admin
+</pre>
+<p>Where:</p>
+<p><code>hostname</code> is the name of the system where Oracle XML DB HTTP Server is installed.</p>
+<p><code>port</code> is the port number assigned to Oracle XML DB HTTP Server. In a default installation, this number is 8080.</p>
+<p><code>apex</code> is the database access descriptor (DAD) defined in the configuration file.</p>
+</li>
+<li>
+<p>If your setup uses the Oracle Application Express Listener, go to:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+http://<span class="italic">hostname</span>:<span class="italic">port</span>/apex/apex_admin
+</pre>
+<p>Where:</p>
+<p><code>hostname</code> is the name of the system where Oracle HTTP Server is installed.</p>
+<p><code>port</code> is the port number assigned to Oracle HTTP Server. In a default installation, for Oracle WebLogic Server this number is 7001, in OC4J this number is 8888, and in Oracle Glassfish Server this number is 8080. These defaults are correct at the time of the writing of this document. Please review the related Web server documentation for the latest default port if necessary.</p>
+<p><code>apex</code> is the mount point defined in the Web Server configuration file.</p>
+</li>
+<li>
+<p>If your setup uses Apache and <code>mod_plsql</code>, go to:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+http://<span class="italic">hostname</span>:<span class="italic">port</span>/pls/apex/apex_admin
+</pre>
+<p>Where:</p>
+<p><code>hostname</code> is the name of the system where Oracle HTTP Server is installed.</p>
+<p><code>port</code> is the port number assigned to Oracle HTTP Server. In a default installation, this number is 7777.</p>
+<p><code>pls</code> is the indicator to use the <code>mod_plsql</code> cartridge.</p>
+<p><code>apex</code> is the database access descriptor (DAD) defined in the <code>mod_plsql</code> configuration file.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>On the Login page:</p>
+<ul>
+<li>
+<p>In Username, enter <code>admin</code>.</p>
+</li>
+<li>
+<p>In Password, enter the Oracle Application Express administrator account password you specified when you installed Oracle Application Express.</p>
+</li>
+<li>
+<p>Click <span class="bold">Login</span>.</p>
+</li>
+</ul>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+See "Logging in to Oracle Application Express Administration Services" in <a href="../AEADM/adm_login.htm"><span class="italic">Oracle Application Express Administration Guide</span></a>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<p>Next, create a workspace.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Workspaces</span>.</p>
+</li>
+<li>
+<p>Under Workspace Actions, click <span class="bold">Create Workspace</span>.</p>
+<p>The Create Workspace Wizard appears.</p>
+</li>
+<li>
+<p>For Identify Workspace, enter a workspace name and description and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Identify Schema, specify the Oracle Forms application schema:</p>
+<ol>
+<li>
+<p>Re-use existing schema - Select <span class="bold">Yes</span>.</p>
+</li>
+<li>
+<p>Schema Name - Select a schema from the list.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Identify Administrator, enter the Workspace administrator information and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Confirm your selections and click <span class="bold">Create Workspace</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apm_howcrwkspc.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apm_env_users.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

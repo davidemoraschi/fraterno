@@ -1,0 +1,2848 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Managing Instance Settings</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = document) - Version 5.1.1 Build 007" />
+<meta name="Date" content="2010-09-14T14:57:15Z" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="doctitle" content="Oracle&reg; Application Express Administration Guide Release 4.0" />
+<meta name="partno" content="E15521-02" />
+<meta name="docid" content="AEADM" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<script type="text/javascript" src="../../dcommon/js/doccd.js">
+</script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="adm_ser_rqst.htm" title="Previous" type="text/html" />
+<link rel="Next" href="adm_schema.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../e15521.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Application Express Administration Guide<br />
+Release 4.0</b><br />
+Part Number E15521-02</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img width="24" height="24" src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img width="24" height="24" src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img width="24" height="24" src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img width="24" height="24" src="../../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img width="24" height="24" src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="98">
+<tr>
+<td align="center" valign="top"><a href="adm_ser_rqst.htm"><img width="24" height="24" src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="adm_schema.htm"><img width="24" height="24" src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top" style="font-size: 90%"><a href="../e15521.pdf">View PDF</a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="BABEDDJD" name="BABEDDJD"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" -->
+<h1 class="sect1"><a name="AEADM169" id="AEADM169"></a>Managing Instance Settings</h1>
+<p>Instance administrators use the settings under Manage Instance to manage and configure an Oracle Application Express instance.</p>
+<p class="subhead2"><a id="sthref249" name="sthref249"></a>Topics:</p>
+<ul>
+<li>
+<p><a href="#CIHCGJBG">Configuring Features</a></p>
+</li>
+<li>
+<p><a href="#CIHHHICH">Configuring Security Settings</a></p>
+</li>
+<li>
+<p><a href="#CJAIJIDJ">Configuring Instance Settings</a></p>
+</li>
+<li>
+<p><a href="#CHDBFHHA">Purging Inactive Workspaces</a></p>
+</li>
+<li>
+<p><a href="#CIHIGGHG">Managing Public Themes</a></p>
+</li>
+<li>
+<p><a href="#CIHGEBEC">Managing Session State</a></p>
+</li>
+<li>
+<p><a href="#CIHFCAHD">Managing the Mail Queue</a></p>
+</li>
+<li>
+<p><a href="#CIHEHEDF">Managing Logs</a></p>
+</li>
+<li>
+<p><a href="#CIHGBABB">Viewing Installed Translations</a></p>
+</li>
+<li>
+<p><a href="#CIHIIIJJ">Managing a Runtime Environment</a></p>
+</li>
+<li>
+<p><a href="#CHDJFJJE">Managing Messages</a></p>
+</li>
+</ul>
+<a id="CIHCGJBG" name="CIHCGJBG"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h2 class="sect2">Configuring Features</h2>
+<p>Use the Feature Configuration page to configure application development and SQL Workshop option as well as control database monitoring.</p>
+<p class="subhead2"><a id="sthref250" name="sthref250"></a>Topics:</p>
+<ul>
+<li>
+<p><a href="#CIHIJHEF">Disabling PL/SQL Program Unit Editing</a></p>
+</li>
+<li>
+<p><a href="#CIHEIHHD">Disabling the Creation of Sample Application in a New Workspace</a></p>
+</li>
+<li>
+<p><a href="#CHDCBFEE">Disabling the Creation of Websheet Objects</a></p>
+</li>
+<li>
+<p><a href="#CIHCAADI">Configuring SQL Workshop</a></p>
+</li>
+<li>
+<p><a href="#CIHEJBID">Enabling Database Monitoring</a></p>
+</li>
+</ul>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<a href="adm_mg_wrkspc.htm#CHDBBCIE">"Managing Component Availability"</a></div>
+<a id="CIHIJHEF" name="CIHIJHEF"></a>
+<div class="sect3">
+<h3 class="sect3"><a name="AEADM196" id="AEADM196"></a>Disabling PL/SQL <a id="sthref251" name="sthref251"></a><a id="sthref252" name="sthref252"></a>Program Unit Editing</h3>
+<p>By default, developers can change and compile PL/SQL source code when browsing database procedures, packages, and functions in Object Browser. As an Instance administrator, you can control PL/SQL program unit editing for an entire instance by making a selection from Allow PL/SQL Program Unit Editing.</p>
+<p>To disable PL/SQL program unit editing:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Feature Configuration</span>.</p>
+</li>
+<li>
+<p>Locate the Application Development section.</p>
+</li>
+<li>
+<p>For Allow PL/SQL Program Unit Editing, select <span class="bold">No</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<a href="aadm_prefs.htm#CHDHJHFA">"Disabling PL/SQL Program Unit Editing for a Workspace"</a> for information about disabling PL/SQL program unit editing for a specific workspace</div>
+</div>
+<!-- class="sect3" -->
+<a id="CIHEIHHD" name="CIHEIHHD"></a>
+<div class="sect3">
+<h3 class="sect3"><a name="AEADM197" id="AEADM197"></a>Disabling the <a id="sthref253" name="sthref253"></a>Creation of Sample Application in a New Workspace<a id="sthref254" name="sthref254"></a><a id="sthref255" name="sthref255"></a></h3>
+<p>When an Instance administrator creates a new workspace, Oracle Application Express automatically creates a demonstration application within the workspace.</p>
+<p>To disable the creation of demonstration applications:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Feature Configuration</span>.</p>
+</li>
+<li>
+<p>Locate the Application Development section.</p>
+</li>
+<li>
+<p>For Create demonstration objects in new workspaces, select <span class="bold">No</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CHDCBFEE" name="CHDCBFEE"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3">Disabling the <a id="sthref256" name="sthref256"></a>Creation of Websheet Objects</h3>
+<p>When an Instance administrator creates a new workspace, Oracle Application Express automatically creates Websheet objects within the workspace.</p>
+<p>To disable the creation of Websheet objects:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Feature Configuration</span>.</p>
+</li>
+<li>
+<p>Locate the Application Development section.</p>
+</li>
+<li>
+<p>For Create Websheet objects in new workspaces, select <span class="bold">No</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHCAADI" name="CIHCAADI"></a>
+<div class="sect3">
+<h3 class="sect3"><a name="AEADM198" id="AEADM198"></a>Configuring<a id="sthref257" name="sthref257"></a> SQL Workshop<a id="sthref258" name="sthref258"></a><a id="sthref259" name="sthref259"></a></h3>
+<p>As an Instance administrator, you can use the attributes under SQL Workshop to configure basic SQL Workshop behavior.</p>
+<p>To configure SQL Workshop:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Feature Configuration</span>.</p>
+</li>
+<li>
+<p>Under SQL Workshop, enter the attributes described in <a href="#CIHCDAAF">Table 2-1</a>.</p>
+<div class="tblformal">
+<p class="titleintable"><a id="sthref260" name="sthref260"></a><a id="CIHCDAAF" name="CIHCDAAF"></a>Table 2-1 SQL Workshop Attributes</p>
+<table class="Formal" title="SQL Workshop Attributes" summary="This table describes the attributes available under SQL Workshop of the Manage Environment Preferences page." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="33%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t12">Attribute</th>
+<th align="left" valign="bottom" id="r1c2-t12">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t12" headers="r1c1-t12">
+<p>SQL Commands Maximum Inactivity in minutes</p>
+</td>
+<td align="left" headers="r2c1-t12 r1c2-t12">
+<p>Identify the maximum amount of time a transactional command in the SQL Command Processor waits before timing out.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t12" headers="r1c1-t12">
+<p>SQL Scripts Maximum Script Output Size in bytes</p>
+</td>
+<td align="left" headers="r3c1-t12 r1c2-t12">
+<p>Identify the maximum amount of output a single SQL script can generate. SQL scripts are run from the SQL Workshop.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t12" headers="r1c1-t12">
+<p>SQL Scripts Maximum Workspace Output Size in bytes</p>
+</td>
+<td align="left" headers="r4c1-t12 r1c2-t12">
+<p>Identify the maximum amount of space all scripts within a workspace may consume. SQL script results are the output generated when running SQL scripts from the Script Editor or from the SQL Scripts home page.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t12" headers="r1c1-t12">
+<p>SQL Scripts Maximum Script Size in bytes</p>
+</td>
+<td align="left" headers="r5c1-t12 r1c2-t12">
+<p>Identify the maximum size of a SQL script used within the SQL Workshop.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t12" headers="r1c1-t12">
+<p>Enable Transactional SQL Commands</p>
+</td>
+<td align="left" headers="r6c1-t12 r1c2-t12">
+<p>Select <span class="bold">Yes</span> to enable transactional SQL commands for the entire Oracle Application Express instance. Enabling this feature permits SQL Command Processor users to issue multiple SQL commands within the same physical database transaction.</p>
+<p>When you select <span class="bold">Yes</span>, an Autocommit check box appears on the SQL Command Processor page. By default, this option is set to <span class="bold">No</span>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHEJBID" name="CIHEJBID"></a>
+<div class="sect3">
+<h3 class="sect3"><a name="AEADM199" id="AEADM199"></a>Enabling <a id="sthref261" name="sthref261"></a>Database Monitoring<a id="sthref262" name="sthref262"></a><a id="sthref263" name="sthref263"></a></h3>
+<p>Setting Enable Database Monitoring to <span class="bold">Yes</span> enables monitoring within SQL Workshop. Before you can access the Database Monitoring page, an Instance administrator must enable database monitoring.</p>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+"Monitoring the Database" in <span class="italic"><a class="olink AEUTL271" href="../../user.40/e15520/sql_utl.htm#AEUTL271">Oracle Application Express SQL Workshop Guide</a></span></div>
+<p>To enable database monitoring:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Feature Configuration</span>.</p>
+</li>
+<li>
+<p>Scroll down to Monitoring.</p>
+</li>
+<li>
+<p>For Enable Database Monitoring, select <span class="bold">Yes</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+<div class="infoboxnote">
+<p class="notep1">Note:</p>
+Only users having a database user account that has been granted a DBA role can access the Database Monitor page.</div>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="CIHHHICH" name="CIHHHICH"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h2 class="sect2"><a name="AEADM200" id="AEADM200"></a>Configuring Security Settings</h2>
+<p>Instance administrators can configure security settings, such as turning off cookies used to populate the login form in Application Express, controlling access to accounts, and setting up password policies.</p>
+<p class="subhead2"><a id="sthref264" name="sthref264"></a>Topics:</p>
+<ul>
+<li>
+<p><a href="#CIHIEIAG">Turning Off Cookies Used to Populate the Login Form</a></p>
+</li>
+<li>
+<p><a href="#CIHEEHHG">Disabling Access Oracle Application Express Administration Services</a></p>
+</li>
+<li>
+<p><a href="#CIHIJAFD">Disabling Access Workspace Login</a></p>
+</li>
+<li>
+<p><a href="#CIHHEHBH">Controlling Public File Upload</a></p>
+</li>
+<li>
+<p><a href="#CIHJICEA">Restricting User Access by IP Address</a></p>
+</li>
+<li>
+<p><a href="#CIHBJDHH">Requiring HTTPS</a></p>
+</li>
+<li>
+<p><a href="#CHDFDBHF">Controlling RESTful Access</a></p>
+</li>
+<li>
+<p><a href="#CIHGBGJF">Configuring Session Timeout</a></p>
+</li>
+<li>
+<p><a href="#CIHCCAHJ">Excluding Domains from Regions of Type URL and Web Services</a></p>
+</li>
+<li>
+<p><a href="#CIHBFFGH">Enabling Login Controls for All Workspaces</a></p>
+</li>
+<li>
+<p><a href="#CIHCJAIF">About Password Policies</a></p>
+</li>
+<li>
+<p><a href="#CIHCIEGE">Configuring Password Policies</a></p>
+</li>
+<li>
+<p><a href="#CIHIEECD">Restricting Access to Oracle Application Express by Database Access Descriptor (DAD)</a></p>
+</li>
+<li>
+<p><a href="#CHDJAABI">Defining Authorized URLs</a></p>
+</li>
+</ul>
+<a id="CIHIEIAG" name="CIHIEIAG"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM201" id="AEADM201"></a>Turning Off Cookies Used to <a id="sthref265" name="sthref265"></a>Populate the Login Form</h3>
+<p>Instance administrators can control if a convenience cookie is sent to a user's computer whenever a developer or administrator logs in to a workspace from the Application Express Login page. By default, the Set Workspace Cookie option is set to Yes.</p>
+<p>If selected, Oracle Application Express sends a persistent cookie that:</p>
+<ul>
+<li>
+<p>combines the last used workspace name and user name</p>
+</li>
+<li>
+<p>has a lifetime of six months</p>
+</li>
+<li>
+<p>is read to populate the Application Express Workspace Login form (but not the Oracle Application Express Administration Services Login form)</p>
+</li>
+</ul>
+<div class="infoboxnotealso">
+<p class="notep1">Note:</p>
+If your computer has received this cookie, you can physically remove it from its persistent location on disk using browser tools or system utilities. The cookie is named <code>ORA_WWV_REMEMBER_UN.</code> In older releases of Oracle Application Express, this cookie was named <code>ORACLE_PLATFORM_REMEMBER_UN</code>. It may exist for each Oracle Application Express service accessed having distinct hostname and path components.</div>
+<p>To prevent a cookie from being sent to the user's computer when logging in:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Security</span>.</p>
+</li>
+<li>
+<p>Locate the Security section.</p>
+</li>
+<li>
+<p>For Set Workspace Cookie, select <span class="bold">No</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHEEHHG" name="CIHEEHHG"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM206" id="AEADM206"></a>Disabling Access Oracle Application Express Administration Services<a id="sthref266" name="sthref266"></a><a id="sthref267" name="sthref267"></a></h3>
+<p>Instance administrators can restrict user access to Oracle Application Express Administration Services. This prevents any user from logging in to Oracle Application Express Administration Services.</p>
+<p>To disable user access to Oracle Application ExpressAdministration Services:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Security</span>.</p>
+</li>
+<li>
+<p>Locate the Security section.</p>
+</li>
+<li>
+<p>For Disable Administrator Login, select <span class="bold">Yes</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+<p>Setting this value and logging out prevents anyone from logging in to Oracle Application Express Administration Services.</p>
+<div class="sect4"><!-- infolevel="all" infotype="General" --><a id="sthref268" name="sthref268"></a>
+<h4 class="sect4">Enab<a id="sthref269" name="sthref269"></a><a id="sthref270" name="sthref270"></a>ling Administrator Login</h4>
+<p>To reverse this setting and enable administrator login:</p>
+<ol>
+<li>
+<p>Connect in SQL*Plus and connect to the database where Oracle Application Express is installed as <code>SYS</code>, for example:</p>
+<ul>
+<li>
+<p>On Windows:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+<li>
+<p>On UNIX and Linux:</p>
+<pre xml:space="preserve" class="oac_no_warn">$ sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+</ul>
+<p>When prompted enter the appropriate password.</p>
+</li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">ALTER SESSION SET CURRENT_SCHEMA = APEX_040000;
+</pre></li>
+<li>
+<p>Run the following statements:</p>
+<pre xml:space="preserve" class="oac_no_warn">BEGIN
+  APEX_INSTANCE_ADMIN.SET_PARAMETER('DISABLE_ADMIN_LOGIN', 'N');
+  commit;
+END;
+/
+</pre></li>
+</ol>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<a id="CIHIJAFD" name="CIHIJAFD"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM207" id="AEADM207"></a>Disabling Access Workspace<a id="sthref271" name="sthref271"></a><a id="sthref272" name="sthref272"></a> Login<a id="sthref273" name="sthref273"></a></h3>
+<p>Developers and Workspace administrators log into the Oracle Application Express development environment to access the Application Builder, SQL Workshop, Team Development and Administration.</p>
+<p>To restrict access to these applications, select <span class="bold">Yes</span> from Disable Workspace Login. This option effectively sets a Runtime Only environment while still allowing Instance administrators to log into Instance Administration. Selecting <span class="bold">Yes</span> in production environments prevents developers from changing applications or data.</p>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<a href="#CIHIIIJJ">"Managing a Runtime Environment"</a></div>
+<p>To disable user access to the Internal workspace:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Security</span>.</p>
+</li>
+<li>
+<p>Locate the Security section.</p>
+</li>
+<li>
+<p>From Disable Workspace Login, select <span class="bold">Yes</span>.</p>
+<p>Selecting <span class="bold">Yes</span> prevents users from logging in to the Internal workspace.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHHEHBH" name="CIHHEHBH"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3">Controlling P<a id="sthref274" name="sthref274"></a><a id="sthref275" name="sthref275"></a>ublic File Upload</h3>
+<p>Use the <span class="bold">Allow Public File Upload</span> attribute to control whether unauthenticated users can upload files in applications that provide file upload controls.</p>
+<p>To control file upload:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Security</span>.</p>
+</li>
+<li>
+<p>Locate the Security section.</p>
+</li>
+<li>
+<p>From Allow Public File Upload, select one of the following:</p>
+<ul>
+<li>
+<p><span class="bold">Yes</span> enables unauthenticated users to upload files in applications in the Internal workspace.</p>
+</li>
+<li>
+<p><span class="bold">No</span> prevents unauthenticated users from uploading files in applications in the Internal workspace.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHJICEA" name="CIHJICEA"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM208" id="AEADM208"></a>Restricting User Access by I<a id="sthref276" name="sthref276"></a><a id="sthref277" name="sthref277"></a><a id="sthref278" name="sthref278"></a>P Address<a id="sthref279" name="sthref279"></a><a id="sthref280" name="sthref280"></a><a id="sthref281" name="sthref281"></a></h3>
+<p>Instance administrators can restrict user access to an Oracle Application Express instance by creating a Runtime setting named <a id="sthref282" name="sthref282"></a><code>RESTRICT_IP_RANGE</code>.</p>
+<p>To restrict user access by IP address:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Security</span>.</p>
+</li>
+<li>
+<p>Locate the Security section.</p>
+</li>
+<li>
+<p>For Disable Administrator Login, select <span class="bold">No</span>.</p>
+</li>
+<li>
+<p>In Restrict Access by IP Address, enter a comma-delimited list of IP addresses. Use an asterisk (*) to specify a wildcard.</p>
+<p>You can enter IP addresses from one to four levels. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">141, 141.* ...
+192.128.23.1 ...
+</pre>
+<div class="infoboxnote">
+<p class="notep1">Note:</p>
+When using wildcards, do not include additional numeric values after wildcard characters. For example, <code>138.*.41.2</code>.</div>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHBJDHH" name="CIHBJDHH"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM297" id="AEADM297"></a>Requiring H<a id="sthref283" name="sthref283"></a><a id="sthref284" name="sthref284"></a>TTPS</h3>
+<p>Secure Socktets Layer (SSL) is a protocol for managing the security of data transmitted on the Internet. For Web applications, SSL is implemented by using the HTTPS protocol. Oracle recommends that you run Oracle Application Express applications using SSL (HTTPS protocol) to prevent any sensitive data from being sent over an unencrypted (cleartext) communication channel.</p>
+<p>You can configure both your Oracle Application Express instance and all related applications to require HTTPS by setting the Require HTTPS attribute to <span class="bold">Yes</span> on the Manage Service page.</p>
+<div class="infoboxnote">
+<p class="notep1">Note:</p>
+If you set Require HTTPS to <span class="bold">Yes</span>, you will only be able to log in to an Oracle Application Express workspace or Oracle Application Express Administration Services over HTTPS.</div>
+<p>To require HTTPS for an Oracle Application Express instance:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Security</span>.</p>
+</li>
+<li>
+<p>Locate the Security section.</p>
+</li>
+<li>
+<p>For Require HTTPS, select <span class="bold">Yes</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+<div class="sect4"><!-- infolevel="all" infotype="General" --><a id="sthref285" name="sthref285"></a>
+<h4 class="sect4">Reversing H<a id="sthref286" name="sthref286"></a><a id="sthref287" name="sthref287"></a>TTPS Requirement</h4>
+<p>To reverse the Require HTTPS instance-level requirement:</p>
+<ol>
+<li>
+<p>Connect in SQL*Plus or SQL Developer with the Application Express engine schema as the current schema, for example:</p>
+<ul>
+<li>
+<p>On Windows:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+<li>
+<p>On UNIX and Linux:</p>
+<pre xml:space="preserve" class="oac_no_warn">$ sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+</ul>
+<p>When prompted enter the appropriate password.</p>
+</li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">ALTER SESSION SET CURRENT_SCHEMA = APEX_040000;
+</pre></li>
+<li>
+<p>Run the following statements:</p>
+<pre xml:space="preserve" class="oac_no_warn">BEGIN
+    APEX_INSTANCE_ADMIN.SET_PARAMETER('REQUIRE_HTTPS', 'N');
+    commit;
+end;
+/
+</pre></li>
+</ol>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<a id="CHDFDBHF" name="CHDFDBHF"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM298" id="AEADM298"></a>Controlling <a id="sthref288" name="sthref288"></a>RESTful Access</h3>
+<p>Use the <span class="bold">Allow RESTful Access</span> attribute to control whether developers can expose report regions as RESTful services.</p>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+"Implementing Web Services" in <a class="olink HTMDB13005" href="../../user.40/e15517/advnc.htm#HTMDB13005"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a></div>
+<p>To enable RESTful Access:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Security</span>.</p>
+</li>
+<li>
+<p>Locate the RESTful Access section.</p>
+</li>
+<li>
+<p>From Allow RESTful Access, select one of the following:</p>
+<ul>
+<li>
+<p><span class="bold">Yes</span> enables developers to expose report regions as RESTful services.</p>
+</li>
+<li>
+<p><span class="bold">No</span> prevents developers from exposing report regions as RESTful services.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHGBGJF" name="CIHGBGJF"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM293" id="AEADM293"></a>Configuring S<a id="sthref289" name="sthref289"></a>ession Timeout</h3>
+<p>Use the attributes under Session Timeout for Oracle Application Express to reduce exposure to abandoned computers with an open Web browser at the application level.</p>
+<p>To manage session settings for an Oracle Application Express instance:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Security</span>.</p>
+</li>
+<li>
+<p>Under Session Timeout For Application Express, specify the following attributes:</p>
+<ul>
+<li>
+<p><span class="bold">Maximum Session Length in Seconds</span> - Enter a positive integer representing how many seconds a session can exist for Oracle Application Express applications (that is, Application Builder, SQL Workshop, and so on). Leave the value <code>NULL</code> to revert the value to the default of 28800 seconds (or 8 hours). This session duration may be superseded by the operation of the job that runs every eight hours which deletes sessions older than 24 hours.</p>
+</li>
+<li>
+<p><span class="bold">Maximum Session Idle Time in Seconds</span> - Enter a positive integer representing how many seconds a session may remain idle for Oracle Application Express applications (that is, Application Builder, SQL Workshop, and so on). Leave the value null to revert the value to the default of 1 hour (3600 seconds).</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+"Session Timeout" in <span class="italic"><a class="olink HTMDB25221" href="../../user.40/e15517/bldr.htm#HTMDB25221">Oracle Application Express Application Builder User's Guide</a></span></div>
+</div>
+<!-- class="sect3" -->
+<a id="CIHCCAHJ" name="CIHCCAHJ"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM202" id="AEADM202"></a>Excluding Domains from Regions of <a id="sthref290" name="sthref290"></a><a id="sthref291" name="sthref291"></a>Type URL and Web Services</h3>
+<p>It is possible to restrict regions of type URL and Web services for the entire Oracle Application Express instance. The Instance administrator defines excluded domains and regions of type URL. If a Web reference or region of type URL contains an excluded domain, an error displays informing the user that it is restricted.</p>
+<p>To exclude a domain from regions of type URL and Web services:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Security</span>.</p>
+</li>
+<li>
+<p>In Domain Must Not Contain, enter a colon-delimited list of excluded domains.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHBFFGH" name="CIHBFFGH"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM203" id="AEADM203"></a>Enabling Login Controls for <a id="sthref292" name="sthref292"></a><a id="sthref293" name="sthref293"></a>All Workspaces</h3>
+<p>By default, no login controls are enabled across an Oracle Application Express instance. Instance administrators can enable login controls for all accounts in all workspaces across an entire development instance. Account login controls include:</p>
+<ul>
+<li>
+<p>Require user account expiration and locking</p>
+</li>
+<li>
+<p>Set up a maximum number of failed login attempts</p>
+</li>
+<li>
+<p>Set the lifetime of a password before prompted for a new one</p>
+</li>
+</ul>
+<p>If the Instance administrator does <span class="italic">not</span> enable login controls for an entire instance then each Workspace administrator can enable controls on a workspace-by-workspace basis. See <a href="aadm_prefs.htm#CHDDFIAJ">"Enabling Account Login Controls for a Workspace"</a>.</p>
+<p>Note that Account Login control affect applications that use the Application Express user account creation facilities and authentication against those accounts.</p>
+<p>To enable login controls for all workspaces:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Security</span>.</p>
+</li>
+<li>
+<p>Scroll down to Account Login control.</p>
+</li>
+<li>
+<p>Under Account Login Control:</p>
+<ol>
+<li>
+<p><span class="bold">Require User Account Expiration and Locking</span> - Select <span class="bold">Yes</span> to enable this feature for all workspaces across an entire Oracle Application Express instance. This feature applies to end-user accounts created using the Application Express end-user account management interface.</p>
+<p>Select <span class="bold">No</span> to relinquish control to each Workspace administrator.</p>
+</li>
+<li>
+<p><span class="bold">Maximum Login Failures Allowed</span> - Enter a number for the maximum number of consecutive unsuccessful authentication attempts allowed before a developer or administrator account is locked. If you do not specify a value in this field, the default value is 4.</p>
+<p>This setting applies to Instance administrator and developer accounts. It does not apply to end user accounts.</p>
+<p>The value you enter is used as the default for the workspace-level Maximum Login Failures Allowed preference, if the Workspace administrator does not specify a value. That preference is used for end-user accounts within the respective workspace.</p>
+</li>
+<li>
+<p><span class="bold">Account Password Lifetime (days)</span> - Enter a number for the maximum number of days a developer or administrator account password may be used before the account expires. If you do not specify a value in this field, a default value is 45 days.</p>
+<p>This setting applies to accounts used to access the Application Express administration and development environment only. It does not apply to end-user accounts used by applications developed in Application Express.</p>
+<p>The value you enter is used as the default workspace-level End User Account Lifetime preference, if the Workspace administrator specifies no value. That preference is used for end-user accounts within the respective workspace.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1">Tip:</p>
+This feature applies only to accounts created using the Application Express user creation and management facilities. It provides additional authentication security for applications. See <a href="aadm_users.htm#CHDDFDCH">"Managing Application Express Users"</a>.</div>
+</div>
+<!-- class="sect3" -->
+<a id="CIHCJAIF" name="CIHCJAIF"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM204" id="AEADM204"></a>About Password <a id="sthref294" name="sthref294"></a>Policies</h3>
+<p>Instance administrators can enable password policies for:</p>
+<ul>
+<li>
+<p>All users across all workspaces (that is, Workspace administrators, developers, and end users).</p>
+<p>Instance administrators can set up restrictions for all users, including password characters, lengths, words, and differences in consecutive passwords.</p>
+</li>
+<li>
+<p>Users logging in to Oracle Application Express Administration Services</p>
+<p>Turning on the strong password requirement for Oracle Application Express adds another layer of security to prevent hackers from determining an administrator's password. When this option is selected, passwords must meet these requirements:</p>
+<ul>
+<li>
+<p>consist of at least six characters</p>
+</li>
+<li>
+<p>contain at least one lowercase alphabetic character, one uppercase alphabetic character, one numeric digit, and one punctuation character</p>
+</li>
+<li>
+<p>cannot include the username</p>
+</li>
+<li>
+<p>cannot include the word Internal</p>
+</li>
+<li>
+<p>cannot contain any words shown in the Must Not Contain Workspace Name field in this section</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<!-- class="sect3" -->
+<a id="CIHCIEGE" name="CIHCIEGE"></a>
+<div class="sect3">
+<h3 class="sect3"><a name="AEADM205" id="AEADM205"></a>Configuring Password <a id="sthref295" name="sthref295"></a><a id="sthref296" name="sthref296"></a>Policies</h3>
+<p>To configure password policies:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Security</span>.</p>
+</li>
+<li>
+<p>To set up a password policy for Workspace administrators, developers, and end users, scroll down to Workspace Password Policy and specify the attributes described in <a href="#CIHJECCJ">Table 2-2</a>.</p>
+<div class="tblformal">
+<p class="titleintable"><a id="sthref297" name="sthref297"></a><a id="CIHJECCJ" name="CIHJECCJ"></a>Table 2-2 Workspace Password Policy Attributes</p>
+<table class="Formal" title="Workspace Password Policy Attributes" summary="This table decribes attributes that appear under Workspace Password Policy. Configure these attributes to set up a passoword policy for Workspace administrators, developers, and end users." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t22">Attribute</th>
+<th align="left" valign="bottom" id="r1c2-t22">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t22" headers="r1c1-t22">
+<p>Minimum Password Length</p>
+</td>
+<td align="left" headers="r2c1-t22 r1c2-t22">
+<p>Enter a number for the minimal character length for passwords.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t22" headers="r1c1-t22">
+<p>Minimum Password Differences</p>
+</td>
+<td align="left" headers="r3c1-t22 r1c2-t22">
+<p>Enter a positive integer or 0.</p>
+<p>When users change their password, the new password must differ from the old password by this number of characters. The old and new passwords are compared, character-by-character, for differences such that each difference in any position common to the old and new passwords counts toward the required minimum difference.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t22" headers="r1c1-t22">
+<p>Must Contain At Least One Alphabetic Character</p>
+</td>
+<td align="left" headers="r4c1-t22 r1c2-t22">
+<p>Select <span class="bold">Yes</span> to require that user passwords contain at least one alphabetic character. The Alphabetic Characters field lists the letters considered alphabetic characters.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t22" headers="r1c1-t22">
+<p>Must Contain At Least One Numeric Character</p>
+</td>
+<td align="left" headers="r5c1-t22 r1c2-t22">
+<p>Select <span class="bold">Yes</span> to require that user passwords contain at least one numeric character: 0,1,2,3,4,5,6,7,8, 9.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t22" headers="r1c1-t22">
+<p>Must Contain At Least One Punctuation Character</p>
+</td>
+<td align="left" headers="r6c1-t22 r1c2-t22">
+<p>Select <span class="bold">Yes</span> to require that user passwords contain at least one punctuation character. The Punctuation Characters field lists the symbols considered punctuation characters.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t22" headers="r1c1-t22">
+<p>Must Contain At Least One Upper Case Character</p>
+</td>
+<td align="left" headers="r7c1-t22 r1c2-t22">
+<p>Select <span class="bold">Yes</span> to require that user passwords contain at least one uppercase alphabetic character.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t22" headers="r1c1-t22">
+<p>Must Contain At Least One Lower Case Character</p>
+</td>
+<td align="left" headers="r8c1-t22 r1c2-t22">
+<p>Select <span class="bold">Yes</span> to require that passwords for users contain at least one lowercase alphabetic character.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t22" headers="r1c1-t22">
+<p>Must Not Contain Username</p>
+</td>
+<td align="left" headers="r9c1-t22 r1c2-t22">
+<p>Select <span class="bold">Yes</span> to prevent user passwords from containing the username, regardless of case.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t22" headers="r1c1-t22">
+<p>Must Not Contain Workspace Name.</p>
+</td>
+<td align="left" headers="r10c1-t22 r1c2-t22">
+<p>Select <span class="bold">Yes</span> to prevent user passwords from containing the workspace name, regardless of case.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r11c1-t22" headers="r1c1-t22">
+<p>Must Not Contain</p>
+</td>
+<td align="left" headers="r11c1-t22 r1c2-t22">
+<p>Enter words, separated by colons, that may not be included in user passwords. These words may not appear in the password in any combination of uppercase or lowercase.</p>
+<p>This feature improves security by preventing the creation of some simple, easy-to-guess passwords based on words like hello, guest, welcome, and so on.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r12c1-t22" headers="r1c1-t22">
+<p>Alphabetic Characters</p>
+</td>
+<td align="left" headers="r12c1-t22 r1c2-t22">
+<p>Enter new text or edit the existing text. This is the set of characters used in password validations involving alphabetic characters.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r13c1-t22" headers="r1c1-t22">
+<p>Punctuation Characters</p>
+</td>
+<td align="left" headers="r13c1-t22 r1c2-t22">
+<p>Enter new text or edit the existing text. This is the set of characters used in password validations involving punctuation characters.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p>Next, set up a password policy for service administrators.</p>
+</li>
+<li>
+<p>Scroll down to the Service Administrator Password Policy and specify one of the following:</p>
+<ol>
+<li>
+<p><span class="bold">Use policy specified in Workspace Password Policy</span> - Applies the password rules specified above in Workspace Password Policy to service administrator passwords.</p>
+</li>
+<li>
+<p><span class="bold">Use default strong password policy</span> - Applies the default strong password policy to service administrator passwords. To learn more, see item Help.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHIEECD" name="CIHIEECD"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM209" id="AEADM209"></a>Restricting Access to Oracle Application Express by <a id="sthref298" name="sthref298"></a><a id="sthref299" name="sthref299"></a>Database Access Descriptor (DAD)</h3>
+<p><code>mod_plsql</code> and the embedded PL/SQL gateway support a directive which enables you to name a PL/SQL function which will be called for each HTTP request. You can use this functionality to restrict the procedures that can be invoked through the embedded PL/SQL gateway or <code>mod_plsql</code>. The function returns <code>TRUE</code> if the named procedure in the current request is allowed and <code>FALSE</code> if it is not allowed. You can use this function to enforce access restrictions for Oracle Application Express on a per-database access descriptor (DAD) basis.</p>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Application Express Listener Installation Guide</span></div>
+<p>Oracle Application Express ships with a request validation function named <code>wwv_flow_epg_include_modules.authorize</code>. This function specifies access restrictions appropriate for the standard DAD configured for Oracle Application Express.</p>
+<p>During installation, the installer also creates a PL/SQL function in the Oracle Application Express product schema (<code>APEX_040000</code>). You can change and recompile this function to restrict access. The source code for this function is not wrapped and can be found in the Oracle Application Express product core directory in the file named <code>wwv_flow_epg_include_local.sql</code>. The source code is as follows</p>
+<pre xml:space="preserve" class="oac_no_warn">CREATE OR REPLACE FUNCTION
+wwv_flow_epg_include_mod_local(
+    PROCEDURE_NAME IN VARCHAR2)
+RETURN BOOLEAN
+IS  
+BEGIN  
+    RETURN FALSE; -- remove this statement when  
+you add procedure names to the "IN" list
+    IF UPPER(procedure_name) IN (
+          '') THEN  
+        RETURN TRUE;  
+    ELSE  
+        RETURN FALSE;  
+    END IF;  
+END wwv_flow_epg_include_mod_local;
+/
+</pre>
+<p>To add names of procedures that should be allowed:</p>
+<ol>
+<li>
+<p>Remove or comment out the <code>RETURN FALSE</code> statement that immediately follows the <code>BEGIN</code> statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">...
+BEGIN  
+    RETURN FALSE; -- remove this statement when 
+you add procedure names to the "IN" list
+...
+</pre></li>
+<li>
+<p>Add names to the clause representing procedure names that should be allowed to be invoked in HTTP requests. For example to allow procedures <code>PROC1</code> and <code>PROC2</code> the <code>IN</code> list you would write <code>IN ('PROC1', 'PROC2')</code>.</p>
+</li>
+</ol>
+<p>After changing the source code of this function, alter the Oracle Application Express product schema (<code>APEX_040000</code>) and compile the function in that schema.</p>
+<p>To alter the product schema, <code>APEX_040000</code></p>
+<ol>
+<li>
+<p>Log in to SQL Command Line (SQL*Plus) as <code>SYS</code>.</p>
+</li>
+<li>
+<p>Alter the product schema (<code>APEX_040000</code>) by entering the following command:</p>
+<pre xml:space="preserve" class="oac_no_warn">ALTER SESSION SET CURRENT_SCHEMA APEX_040000; 
+</pre></li>
+<li>
+<p>Compile the function <code>wwv_flow_epg_include_local.sql</code>.</p>
+</li>
+</ol>
+<p>The <code>wwv_flow_epg_include_mod_local</code> function is called by Oracle Application Express's request validation function which itself is called by the embedded PL/SQL gateway or mod_plsql. The Oracle Application Express function first evaluates the request and based on the procedure name, approves it, rejects it, or passes it to the local function, <code>wwv_flow_epg_include_mod_local</code>, which can evaluate the request using its own rules.</p>
+<p>When you create new Database Access Descriptors for use with Oracle Application Express, the request validation function directive should be specified. Specifically, the function <code>wwv_flow_epg_include_modules.authorize</code> should be named in the directive <code>PlsqlRequestValidationFunction</code> in the Database Access Descriptor entry in <code>dads.conf</code>.</p>
+<p>If you have no additional restrictions beyond those implemented in the <code>wwv_flow_epg_include_modules.authorize</code> function, there is no need to take any action with respect to the source code for the <code>wwv_flow_epg_include_mod_loca</code>l function.</p>
+<p>The PL/SQL Request Validation Function directive is only available in Oracle Application Server 10g and Oracle HTTP Server 11g or later, as well as the embedded PL/SQL gateway in Oracle Database 11g or later. This directive is not available in Oracle HTTP Server Release 9.0.3.</p>
+</div>
+<!-- class="sect3" -->
+<a id="CHDJAABI" name="CHDJAABI"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM292" id="AEADM292"></a>Defining <a id="sthref300" name="sthref300"></a>Authorized URLs</h3>
+<p>In previous releases of Oracle Application Express, developers can use a URL as an argument in Oracle Application Express procedures that redirect to the defined URL. Examples include <code>APEX_UTIL.COUNT_CLICK</code> (<code>p_url</code> parameter) and <code>WWV_FLOW_CUSTOM_AUTH_STD.LOGOUT</code> (<code>p_next_url</code> parameter).</p>
+<p>Instance administrators can define a list of authorized URLs. When a URL is provided as an argument to these procedures, it is verified internally against this list.</p>
+<p>To manage the Authorized URLs list:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Security</span>.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Authorized URLs</span> tab.</p>
+</li>
+<li>
+<p>To add a new URL:</p>
+<ol>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+</li>
+<li>
+<p>Authorized URL - Enter an authorized URL that can be used as the parameter value to certain Application Express procedures.</p>
+<p>The entire authorized URL value will be compared with the URL parameter value in Oracle Application Express procedures. If there is an exact match up to and including the entire length of the Authorized URL value, then the URL parameter value will be permitted.</p>
+</li>
+<li>
+<p>Description - Enter a description of the URL.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>To edit an existing URL:</p>
+<ol>
+<li>
+<p>Click the <span class="bold">Edit</span> icon adjacent to the URL.</p>
+</li>
+<li>
+<p>Edit the Authorized URL and Description fields.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>To delete an existing URL:</p>
+<ol>
+<li>
+<p>Click the <span class="bold">Edit</span> icon adjacent to the URL.</p>
+</li>
+<li>
+<p>Click <span class="bold">Delete</span>.</p>
+</li>
+</ol>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<a class="olink AEAPI" href="../../apirefs.40/e15519/toc.htm"><span class="italic">Oracle Application Express API Reference</span></a></div>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="CJAIJIDJ" name="CJAIJIDJ"></a>
+<div class="sect2">
+<h2 class="sect2"><a name="AEADM194" id="AEADM194"></a>Configuring <a id="sthref301" name="sthref301"></a>Instance Settings</h2>
+<p>Instance settings control Oracle Application Express configuration and apply to all workspaces within the current Oracle Application Express instance.</p>
+<p class="subhead2"><a id="sthref302" name="sthref302"></a>Topics:</p>
+<ul>
+<li>
+<p><a href="#CIHFEDGE">Enabling Self Service Workspace Provisioning</a></p>
+</li>
+<li>
+<p><a href="#CIHBFFFC">Disabling Email Provisioning</a></p>
+</li>
+<li>
+<p><a href="#BABBIBGB">Configuring Storage Settings</a></p>
+</li>
+<li>
+<p><a href="#BEJBCEEH">Configuring Email</a></p>
+</li>
+<li>
+<p><a href="#BABHEHAG">Configuring Wallet Information</a></p>
+</li>
+<li>
+<p><a href="#CIHJHIIJ">Configuring Report Printing</a></p>
+</li>
+<li>
+<p><a href="#BABHECDD">Configuring Workspace Size Options for Requests</a></p>
+</li>
+</ul>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<a href="adm_create_wkspc.htm#CHDJFJFA">"Creating Workspaces"</a></div>
+<a id="CIHFEDGE" name="CIHFEDGE"></a>
+<div class="sect3">
+<h3 class="sect3">Enabling <a id="sthref303" name="sthref303"></a>Self Service Workspace Provisioning</h3>
+<p>Use the Self Service section of the Instance Setting page to determine how the process of provisioning (or creating) a workspace works for your Oracle Application Express development instance.</p>
+<p>In <span class="bold">Manual</span> provision mode, an Instance administrator creates new workspaces and notifies the Workspace administrator of the login information. In <span class="bold">Request</span> or <span class="bold">Email Verification</span> provision modes, users request workspaces directly in a self-service fashion. In this scenario, users use a link on the login page to access a request form. After the workspace request has been granted, users are automatically emailed the appropriate login information.</p>
+<p>To specify a provisioning mode:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Instance Settings</span>.</p>
+</li>
+<li>
+<p>Under Self Service, select a provisioning status:</p>
+<ul>
+<li>
+<p><span class="bold">Manual</span> - An Instance administrator manually creates new workspaces and notifies the Workspace administrator of the login information.</p>
+</li>
+<li>
+<p><span class="bold">Request</span> - Users request workspaces directly in a self-service fashion. Selecting this option displays a link on the Login page enabling users to request a workspace. When a user requests a workspace, each request is submitted to a queue for approval. When the request is approved, the user is sent an email containing login credentials (the workspace name, User ID, and password).</p>
+</li>
+<li>
+<p><span class="bold">Email Verification</span> - Works similar to <span class="bold">Request</span> except each user receives an initial email containing a verification link. Clicking this link validates the user's email address and then the request is processed. Then another email is sent to the user containing login credentials (that is, the workspace name, User ID, and password).</p>
+</li>
+</ul>
+</li>
+<li>
+<p>If you select <span class="bold">Request</span> or <span class="bold">Email Verification</span> in the previous step, enter a URL in Development Service URL (optional).</p>
+<p>The value you enter is used in the email when the request is approved. This setting defines the URL for the service. If this setting is not present, the URL is derived from your environment.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+<div class="infoboxnote">
+<p class="notep1">Note:</p>
+To enable users to request a workspace using a link on the Login page, an Instance administrator must choose the provisioning status of <span class="bold">Request</span> or <span class="bold">Email Verification</span> as described in the previous procedure. If the provisioning status is set to <span class="bold">Manual</span>, no link appears on the login page.</div>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<a href="#CIHBFFFC">"Disabling Email Provisioning"</a>, <a href="#BEJBCEEH">"Configuring Email"</a>, and <a href="adm_ser_rqst.htm#CIHJBIGB">"Managing Workspace and Change Requests"</a></div>
+</div>
+<!-- class="sect3" -->
+<a id="CIHBFFFC" name="CIHBFFFC"></a>
+<div class="sect3">
+<h3 class="sect3">Disabling <a id="sthref304" name="sthref304"></a>Email Provisioning</h3>
+<p>Use Email Provisioning to disables workspace provisioning when provisioning with Email Verification. Use the Message field to display a message to the user that explains why email provisioning is disabled.</p>
+<p>To disable email provisioning:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Instance Settings</span>.</p>
+</li>
+<li>
+<p>From Email Provisioning, select <span class="bold">Disabled</span>.</p>
+<p>Selecting <span class="bold">Disabled</span> completely disables workspace provisioning when provisioning with Email Verification.</p>
+</li>
+<li>
+<p>In Message, enter a message that explains why email provisioning is disabled.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="BABBIBGB" name="BABBIBGB"></a>
+<div class="sect3">
+<h3 class="sect3"><a name="AEADM223" id="AEADM223"></a>Configuring Storage Settings</h3>
+<p>Instance administrators can require a new schema when user's request a new workspace or auto extend tablespaces.</p>
+<div class="sect4"><!-- infolevel="all" infotype="General" --><a id="sthref305" name="sthref305"></a>
+<h4 class="sect4">Requiring a <a id="sthref306" name="sthref306"></a>New Schema</h4>
+<p>To require a new schema when creating a workspace:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Instance Settings</span>.</p>
+</li>
+<li>
+<p>Scroll down to Storage.</p>
+</li>
+<li>
+<p>From Require New Schema, select one of the following:</p>
+<ul>
+<li>
+<p><span class="bold">Yes</span> - Requires users to request a new schema when they request a new workspace.</p>
+</li>
+<li>
+<p><span class="bold">No</span> - Enables users to select an existing schema when they request a new workspace.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Auto Extend Tablespaces, select <span class="bold">Yes</span> or <span class="bold">No</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" -->
+<a id="CHDJJGDG" name="CHDJJGDG"></a>
+<div class="sect4"><!-- infolevel="all" infotype="General" -->
+<h4 class="sect4">Enabling <a id="sthref307" name="sthref307"></a>Auto Extend Tablespaces</h4>
+<p>If Auto Extend Tablespaces is enabled, tablespaces provisioned with Oracle Application Expressare created with a data file that is one tenth the requested size. The data file will automatically extend up to the requested size. For example, if a user requests a 100 MB workspace, the initial size of the datafile will be 10 MB and it will automatically extend up to a maximum size of 100 MB.</p>
+<p>To enable Auto Extend Tablespaces:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Instance Settings</span>.</p>
+</li>
+<li>
+<p>Scroll down to Storage.</p>
+</li>
+<li>
+<p>To enable Auto Extend Tablespaces, select <span class="bold">Yes</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<a id="BEJBCEEH" name="BEJBCEEH"></a>
+<div class="sect3">
+<h3 class="sect3"><a name="AEADM210" id="AEADM210"></a>Configuring <a id="sthref308" name="sthref308"></a>Email<a id="sthref309" name="sthref309"></a></h3>
+<p>To enable Oracle Application Express to send mail, an Instance administrator must configure email settings</p>
+<p>Additionally, if you are running Oracle Application Express with Oracle Database 11<span class="italic">g</span> release 1 (11.1), you need to enable outbound mail. In Oracle Database 11<span class="italic">g</span> release 1 (11.1), the ability to interact with network services is disabled by default. For more information, see "Enabling Network Services in Oracle Database 11g" for your configuration scenario in <a class="olink HTMIG" href="../../install.40/e15513/toc.htm"><span class="italic">Oracle Application Express Installation Guide</span></a>.</p>
+<div class="infoboxnotealso">
+<p class="notep1">Tip:</p>
+You can configure Oracle Application Express to automatically email users their login credentials when a new workspace request has been approved. To learn more, see <a href="adm_create_wkspc.htm#CHDBAFDG">"Specifying a Provisioning Mode"</a>.</div>
+<p class="subhead2"><a id="sthref310" name="sthref310"></a>Topics:</p>
+<ul>
+<li>
+<p><a href="#BABJGCDF">Configuring Email in a Full Development Environment</a></p>
+</li>
+<li>
+<p><a href="#BABGEHGI">Configuring Email in a Runtime Environment</a></p>
+</li>
+<li>
+<p><a href="#BABGJFAB">Determining Email Settings in a Runtime Environment</a></p>
+</li>
+</ul>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<a href="#CIHFCAHD">"Managing the Mail Queue"</a> and "APEX_MAIL" in <a class="olink AEAPI341" href="../../apirefs.40/e15519/apex_mail.htm#AEAPI341"><span class="italic">Oracle Application Express API Reference</span></a></div>
+<a id="BABJGCDF" name="BABJGCDF"></a>
+<div class="sect4">
+<h4 class="sect4"><a name="AEADM211" id="AEADM211"></a>Configuring Email in a Full <a id="sthref311" name="sthref311"></a><a id="sthref312" name="sthref312"></a>Development Environment</h4>
+<p>To configure Oracle Application Express to send mail in a full development environment:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Instance Settings</span>.</p>
+</li>
+<li>
+<p>Under Email, enter the following:</p>
+<ol>
+<li>
+<p><span class="bold">SMTP Host Address</span> - Defines the server address of the SMTP server. By default on installation, this is set to <code>localhost</code>. If you are using another server as an SMTP relay, change this parameter to that server's address.</p>
+</li>
+<li>
+<p><span class="bold">SMTP Host Port</span> - Defines the port the SMTP server listens to for mail requests. The default setting is 25.</p>
+</li>
+<li>
+<p><span class="bold">Administration Email Address</span> - Defines the <code>from</code> address for administrative tasks that generate email, such as approving a provision request or resetting a password.</p>
+</li>
+<li>
+<p><span class="bold">Notification Email Address</span> - Enter the email address to receive notification email messages for new workspace requests and change workspace requests. If not specified, no workspace request notification email messages is sent.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" -->
+<a id="BABGEHGI" name="BABGEHGI"></a>
+<div class="sect4">
+<h4 class="sect4"><a name="AEADM212" id="AEADM212"></a>Configuring Email in a Runtime <a id="sthref313" name="sthref313"></a>Environment</h4>
+<p>To configure Oracle Application Express to send mail in a runtime environment:</p>
+<ol>
+<li>
+<p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code>SYS</code>. For example:</p>
+<ul>
+<li>
+<p>On Windows:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+<li>
+<p>On UNIX and Linux:</p>
+<pre xml:space="preserve" class="oac_no_warn">$ sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+</ul>
+<p>When prompted enter the appropriate password.</p>
+</li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">ALTER SESSION SET CURRENT_SCHEMA = APEX_040000
+</pre></li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">BEGIN
+   APEX_INSTANCE_ADMIN.GET_PARAMETER(<span class="italic">PARAMETER_NAME</span>, <span class="italic">PARAMETER_VALUE</span>);
+END;
+</pre>
+<p>For a description of email parameters, see <a href="#BABCEDBA">Table 2-3</a>.</p>
+<div class="tblformal">
+<p class="titleintable"><a id="sthref314" name="sthref314"></a><a id="BABCEDBA" name="BABCEDBA"></a>Table 2-3 Email Parameters</p>
+<table class="Formal" title="Email Parameters" summary="his table lists parameter names and values for determining and setting email settings in a runtime environment." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t30">Parameter Name</th>
+<th align="left" valign="bottom" id="r1c2-t30">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t30" headers="r1c1-t30">
+<p><code>SMTP_FROM</code></p>
+</td>
+<td align="left" headers="r2c1-t30 r1c2-t30">
+<p>Defines the "from" address for administrative tasks that generate email, such as approving a provision request or resetting a password.</p>
+<p>Enter a valid email address, for example:</p>
+<p><code>someone@somewhere.com</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t30" headers="r1c1-t30">
+<p><code>SMTP_HOST_ADDRESS</code></p>
+</td>
+<td align="left" headers="r3c1-t30 r1c2-t30">
+<p>Defines the server address of the SMTP server. If you are using another server as an SMTP relay, change this parameter to that server's address.</p>
+<p>Default setting:</p>
+<pre xml:space="preserve" class="oac_no_warn">localhost
+</pre></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t30" headers="r1c1-t30">
+<p><code>SMTP_HOST_PORT</code></p>
+</td>
+<td align="left" headers="r4c1-t30 r1c2-t30">
+<p>Defines the port the SMTP server listens to for mail requests.</p>
+<p>Default setting:</p>
+<pre xml:space="preserve" class="oac_no_warn">25
+</pre></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+"SET_PARAMETER Procedure" in <span class="italic"><a class="olink AEAPI246" href="../../apirefs.40/e15519/apex_instance.htm#AEAPI246">Oracle Application Express API Reference</a></span></div>
+</div>
+<!-- class="sect4" -->
+<a id="BABGJFAB" name="BABGJFAB"></a>
+<div class="sect4">
+<h4 class="sect4"><a name="AEADM213" id="AEADM213"></a>Determining Email Settings <a id="sthref315" name="sthref315"></a>in a Runtime Environment</h4>
+<p>To determine email settings in runtime environment:</p>
+<ol>
+<li>
+<p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code>SYS</code>. For example:</p>
+<ul>
+<li>
+<p>On Windows:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+<li>
+<p>On UNIX and Linux:</p>
+<pre xml:space="preserve" class="oac_no_warn">$ sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+</ul>
+<p>When prompted enter the appropriate password.</p>
+</li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">ALTER SESSION SET CURRENT_SCHEMA = APEX_040000
+</pre></li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">SELECT 
+APEX_INSTANCE_ADMIN.GET_PARAMETER(<span class="italic">PARAMETER_NAME</span>)
+FROM DUAL;
+</pre>
+<p>For a description of email parameters, see <a href="#BABCEDBA">Table 2-3</a>.</p>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+"GET_PARAMETER Function" in <a class="olink AEAPI247" href="../../apirefs.40/e15519/apex_instance.htm#AEAPI247"><span class="italic">Oracle Application Express API Reference</span></a></div>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<a id="BABHEHAG" name="BABHEHAG"></a>
+<div class="sect3">
+<h3 class="sect3"><a name="AEADM214" id="AEADM214"></a>Configuring <a id="sthref316" name="sthref316"></a><a id="sthref317" name="sthref317"></a><a id="sthref318" name="sthref318"></a>Wallet Information</h3>
+<p><a id="sthref319" name="sthref319"></a>Secure Sockets Layer (SSL) is an industry standard protocol that uses RSA public key cryptography in conjunction with symmetric key cryptography to provide authentication, encryption, and data integrity. When SSL is enabled, <code>https</code> displays in the URL.</p>
+<p>If you call a SSL-enabled URL (for example, by invoking a Web service), or create a region of type URL that is SSL-enabled, you must create a wallet. A wallet is a password-protected container that stores authentication and signing credentials (including private keys, certificates, and trusted certificates) needed by SSL.</p>
+<p class="subhead2"><a id="sthref320" name="sthref320"></a>Topics:</p>
+<ul>
+<li>
+<p><a href="#BABCIIFH">Creating a Wallet</a></p>
+</li>
+<li>
+<p><a href="#BABFBJEA">Configuring a Wallet in a Full Development Environment</a></p>
+</li>
+<li>
+<p><a href="#BABICHBB">Configuring a Wallet in a Runtime Environment</a></p>
+</li>
+<li>
+<p><a href="#BABCJDGI">Determining Wallet Settings in a Runtime Environment</a></p>
+</li>
+</ul>
+<a id="BABCIIFH" name="BABCIIFH"></a>
+<div class="sect4">
+<h4 class="sect4"><a name="AEADM215" id="AEADM215"></a>Creating a <a id="sthref321" name="sthref321"></a>Wallet</h4>
+<p>To create a wallet:</p>
+<ol>
+<li>
+<p>The database administrator must create a wallet on the Oracle Application Express database instance. See "Using Oracle Wallet Manager" in <span class="italic"><a class="olink ASOAG160" href="http://www.oracle.com/pls/topic/lookup?ctx=E17556-01&id=ASOAG160">Oracle Database Advanced Security Administrator's Guide</a></span>.</p>
+</li>
+<li>
+<p>The Instance administrator configures the Wallet section of the Instance Settings page to specify the file system path to the wallet and the wallet password (if required).</p>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+"Working with SSL Enabled Web Services" in <a class="olink HTMDB25885" href="../../user.40/e15517/advnc.htm#HTMDB25885"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a> and "Using Oracle Wallet Manager" in <span class="italic"><a class="olink ASOAG160" href="http://www.oracle.com/pls/topic/lookup?ctx=E17556-01&id=ASOAG160">Oracle Database Advanced Security Administrator's Guide</a></span></div>
+</div>
+<!-- class="sect4" -->
+<a id="BABFBJEA" name="BABFBJEA"></a>
+<div class="sect4">
+<h4 class="sect4"><a name="AEADM216" id="AEADM216"></a>Configuring a Wallet in a <a id="sthref322" name="sthref322"></a>Full Development Environment</h4>
+<p>To specify wallet settings in a full development environment:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Instance Settings</span>.</p>
+</li>
+<li>
+<p>Scroll down to Wallet.</p>
+</li>
+<li>
+<p>In Wallet, enter the path on the file system where the wallet is located using the following format:</p>
+<pre xml:space="preserve" class="oac_no_warn">file:<span class="italic">directory-path</span>
+</pre></li>
+<li>
+<p>If a password is required to open the wallet:</p>
+<ol>
+<li>
+<p>Enter a password in the Wallet Password field.</p>
+</li>
+<li>
+<p>Select <span class="bold">Check to confirm that you wish to change the wallet password</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" -->
+<a id="BABICHBB" name="BABICHBB"></a>
+<div class="sect4">
+<h4 class="sect4"><a name="AEADM217" id="AEADM217"></a>Configuring a <a id="sthref323" name="sthref323"></a>Wallet in a Runtime Environment</h4>
+<p>To specify wallet settings in a runtime environment:</p>
+<ol>
+<li>
+<p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code>SYS</code>. For example:</p>
+<ul>
+<li>
+<p>On Windows:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+<li>
+<p>On UNIX and Linux:</p>
+<pre xml:space="preserve" class="oac_no_warn">$ sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+</ul>
+<p>When prompted enter the appropriate password.</p>
+</li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">ALTER SESSION SET CURRENT_SCHEMA = APEX_040000
+</pre></li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">BEGIN 
+    APEX_INSTANCE_ADMIN.SET_PARAMETER(<span class="italic">PARAMETER_NAME</span>, <span class="italic">PARAMETER_VALUE</span>);
+END;
+</pre>
+<p>For a description of wallet parameters, see <a href="#BABJFBEI">Table 2-4</a>.</p>
+<div class="tblformal">
+<p class="titleintable"><a id="sthref324" name="sthref324"></a><a id="BABJFBEI" name="BABJFBEI"></a>Table 2-4 Wallet Parameters</p>
+<table class="Formal" title="Wallet Parameters" summary="This table describes wallet parameter names and descriptions." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t34">Parameter Name</th>
+<th align="left" valign="bottom" id="r1c2-t34">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t34" headers="r1c1-t34">
+<p><code>WALLET_PATH</code></p>
+</td>
+<td align="left" headers="r2c1-t34 r1c2-t34">
+<p>The path to the wallet on the file system, for example:</p>
+<pre xml:space="preserve" class="oac_no_warn">file:/home/&lt;<span class="italic">username</span>&gt;/wallets
+</pre></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t34" headers="r1c1-t34">
+<p><code>WALLET_PWD</code></p>
+</td>
+<td align="left" headers="r3c1-t34 r1c2-t34">
+<p>The password associated with the wallet.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+"SET_PARAMETER Procedure" in <a class="olink AEAPI246" href="../../apirefs.40/e15519/apex_instance.htm#AEAPI246"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a></div>
+</div>
+<!-- class="sect4" -->
+<a id="BABCJDGI" name="BABCJDGI"></a>
+<div class="sect4">
+<h4 class="sect4"><a name="AEADM218" id="AEADM218"></a>Determining <a id="sthref325" name="sthref325"></a>Wallet Settings in a Runtime Environment</h4>
+<p>To determine wallet settings in a runtime environment:</p>
+<ol>
+<li>
+<p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code>SYS</code>. For example:</p>
+<ul>
+<li>
+<p>On Windows:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+<li>
+<p>On UNIX and Linux:</p>
+<pre xml:space="preserve" class="oac_no_warn">$ sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+</ul>
+<p>When prompted enter the appropriate password.</p>
+</li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">ALTER SESSION SET CURRENT_SCHEMA = APEX_040000
+</pre></li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">SELECT 
+APEX_INSTANCE_ADMIN.GET_PARAMETER(<span class="italic">PARAMETER_NAME</span>) 
+FROM DUAL;
+</pre>
+<p>For a description of wallet parameters, see <a href="#BABJFBEI">Table 2-4</a>.</p>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+"GET_PARAMETER Function" in <a class="olink AEAPI247" href="../../apirefs.40/e15519/apex_instance.htm#AEAPI247"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a></div>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<a id="CIHJHIIJ" name="CIHJHIIJ"></a>
+<div class="sect3">
+<h3 class="sect3"><a name="AEADM219" id="AEADM219"></a>Configuring <a id="sthref326" name="sthref326"></a>Report Printing</h3>
+<p>Oracle Application Express provides several features so that end users can download and print reports in various formats, including PDF. To set up this functionality, different users must configure the following printing settings:</p>
+<ol>
+<li>
+<p><span class="bold">Site Level</span>: Instance administrators must specify the level of functionality (Standard or Advanced) for an entire Oracle Application Express instance, as described in this section.</p>
+</li>
+<li>
+<p><span class="bold">Application Level</span>: Workspace administrators and developers can define Report Queries and Report Layouts. Report Queries and Report Layouts are stored under Shared Components and are not tied to a specific page.</p>
+</li>
+<li>
+<p><span class="bold">Page/Region Level</span>: Developers can edit the Report regions on specific pages to enable printing. This, in turn, enables end users to print regions as reports in various formats. See "Configuring Classic Report Region Print Attributes" in <a class="olink HTMDB25385" href="../../user.40/e15517/app_comp.htm#HTMDB25385"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1">Tip:</p>
+If you are running Oracle Application Express with Oracle Database 11<span class="italic">g</span> Release 1 (11.1), you must enable network services to use report printing. See "Enabling Network Services in Oracle Database 11g" for your configuration scenario in <a class="olink HTMIG" href="../../install.40/e15513/toc.htm"><span class="italic">Oracle Application Express Installation Guide</span></a>.</div>
+<p class="subhead2"><a id="sthref327" name="sthref327"></a>Topics:</p>
+<ul>
+<li>
+<p><a href="#BABIECEE">Configuring Report Printing in a Full Development Environment</a></p>
+</li>
+<li>
+<p><a href="#BABDEGAC">Configuring Report Printing Settings in a Runtime Environment</a></p>
+</li>
+<li>
+<p><a href="#BABFADCA">Determining Report Printing Settings in a Runtime Environment</a></p>
+</li>
+</ul>
+<a id="BABIECEE" name="BABIECEE"></a>
+<div class="sect4">
+<h4 class="sect4"><a name="AEADM220" id="AEADM220"></a>Configuring Report Printing in a <a id="sthref328" name="sthref328"></a>Full Development Environment</h4>
+<p>To configure the printing of reports in a full development environment:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Instance Settings</span>.</p>
+</li>
+<li>
+<p>Scroll down to Report Printing:</p>
+</li>
+<li>
+<p>For Printer Server:</p>
+<ul>
+<li>
+<p><span class="bold">Standard</span> - This is the default setting. Standard Support enables you to print report regions and report queries using either the built-in templates provided with Oracle Application Express or other XSL-FO compatible formats you provide. This setting does not support RTF (rich text format).</p>
+<p>Standard provides declarative formatting of report regions and report queries with basic control over page attributes, including orientation, size, column heading formats, page header, and page footer.</p>
+</li>
+<li>
+<p><span class="bold">Advanced (requires Oracle BI Publisher)</span> - This option requires a valid license of Oracle BI Publisher (also known as Oracle XML Publisher). Advanced Support provides you with all the capabilities of the Standard setting plus the ability to define RTF-based report layouts developed using the BI Publisher Word Template Builder.</p>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<span class="italic">PDF Printing in Application Express</span> to learn more about installing and configuring Oracle BI Publisher. Go to:
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://www.oracle.com/technology/products/database/application_express/html/configure_printing.html">http://www.oracle.com/technology/products/database/application_express/html/configure_printing.html</a>
+</pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>For Print Server Protocol, select the protocol that the print server uses.</p>
+</li>
+<li>
+<p>For Print Server Host Address, specify the host address of the print server engine.</p>
+</li>
+<li>
+<p>For Print Server Port, define the port of the print server engine. By default, this is set to <code>8888</code> when the report server is installed.</p>
+</li>
+<li>
+<p>For Print Server Script, define the script that is the print server engine. The default setting is:</p>
+<pre xml:space="preserve" class="oac_no_warn">/xmlpserver/convert
+</pre></li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" -->
+<a id="BABDEGAC" name="BABDEGAC"></a>
+<div class="sect4">
+<h4 class="sect4"><a name="AEADM221" id="AEADM221"></a>Configuring Report Printing Settings in a <a id="sthref329" name="sthref329"></a>Runtime Environment</h4>
+<p>To configure report printing settings in a runtime environment:</p>
+<ol>
+<li>
+<p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code>SYS</code>. For example:</p>
+<ul>
+<li>
+<p>On Windows:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+<li>
+<p>On UNIX and Linux:</p>
+<pre xml:space="preserve" class="oac_no_warn">$ sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+</ul>
+<p>When prompted enter the appropriate password.</p>
+</li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">ALTER SESSION SET CURRENT_SCHEMA = APEX_040000
+</pre></li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">BEGIN
+    APEX_INSTANCE_ADMIN.SET_PARAMETER(<span class="italic">PARAMETER_NAME</span>, <span class="italic">PARAMETER_VALUE</span>);
+END;
+</pre>
+<p>For a description of available parameters, see <a href="#BABCHEJI">Table 2-5</a>.</p>
+<div class="tblformal">
+<p class="titleintable"><a id="sthref330" name="sthref330"></a><a id="BABCHEJI" name="BABCHEJI"></a>Table 2-5 Report Printing Parameters in Runtime Environment</p>
+<table class="Formal" title="Report Printing Parameters in Runtime Environment" summary="This table describes report printing parameters in runtime environment." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t39">Parameter Name</th>
+<th align="left" valign="bottom" id="r1c2-t39">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t39" headers="r1c1-t39">
+<p><code>PRINT_BIB_LICENSED</code></p>
+</td>
+<td align="left" headers="r2c1-t39 r1c2-t39">
+<p>Specify either standard support or advanced support. Advanced support requires an Oracle BI Publisher license. Valid values include:</p>
+<ul>
+<li>
+<p><code>STANDARD</code></p>
+</li>
+<li>
+<p><code>ADVANCED</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t39" headers="r1c1-t39">
+<p><code>PRINT_SVR_PROTOCOL</code></p>
+</td>
+<td align="left" headers="r3c1-t39 r1c2-t39">
+<p>Valid values include:</p>
+<ul>
+<li>
+<p><code>http</code></p>
+</li>
+<li>
+<p><code>https</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t39" headers="r1c1-t39">
+<p><code>PRINT_SVR_HOST</code></p>
+</td>
+<td align="left" headers="r4c1-t39 r1c2-t39">
+<p>Specifies the host address of the print server converting engine, for example, <code>localhost</code>. Enter the appropriate host address if the print server is installed at another location.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t39" headers="r1c1-t39">
+<p><code>PRINT_SVR_PORT</code></p>
+</td>
+<td align="left" headers="r5c1-t39 r1c2-t39">
+<p>Defines the port of the print server engine, for example <code>8888</code>. Value must be a positive integer.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t39" headers="r1c1-t39">
+<p><code>PRINT_SVR_SCRIPT</code></p>
+</td>
+<td align="left" headers="r6c1-t39 r1c2-t39">
+<p>Defines the script that is the print server engine, for example:</p>
+<pre xml:space="preserve" class="oac_no_warn">/xmlpserver/convert
+</pre></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+"SET_PARAMETER Procedure" in <a class="olink AEAPI246" href="../../apirefs.40/e15519/apex_instance.htm#AEAPI246"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a></div>
+</div>
+<!-- class="sect4" -->
+<a id="BABFADCA" name="BABFADCA"></a>
+<div class="sect4">
+<h4 class="sect4"><a name="AEADM222" id="AEADM222"></a>Determining Report Printing <a id="sthref331" name="sthref331"></a>Settings in a Runtime Environment</h4>
+<p>To determine report printing settings in a runtime environment:</p>
+<ol>
+<li>
+<p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code>SYS</code>. For example:</p>
+<ul>
+<li>
+<p>On Windows:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+<li>
+<p>On UNIX and Linux:</p>
+<pre xml:space="preserve" class="oac_no_warn">$ sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+</ul>
+<p>When prompted enter the appropriate password.</p>
+</li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">ALTER SESSION SET CURRENT_SCHEMA = APEX_040000
+</pre></li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">SELECT 
+APEX_INSTANCE_ADMIN.GET_PARAMETER(<span class="italic">PARAMETER_NAME</span>)
+FROM DUAL;
+</pre>
+<p>For a description of available parameters, see <a href="#BABCHEJI">Table 2-5</a>.</p>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+"GET_PARAMETER Function" in <a class="olink AEAPI247" href="../../apirefs.40/e15519/apex_instance.htm#AEAPI247"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a></div>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<a id="BABHECDD" name="BABHECDD"></a>
+<div class="sect3">
+<h3 class="sect3"><a name="AEADM224" id="AEADM224"></a>Configuring Workspace <a id="sthref332" name="sthref332"></a><a id="sthref333" name="sthref333"></a><a id="sthref334" name="sthref334"></a>Size Options for Requests</h3>
+<p>Instance administrators can configure the workspace sizes available when users request:</p>
+<ul>
+<li>
+<p>a new workspace and schema</p>
+</li>
+<li>
+<p>additional space for an existing workspace</p>
+</li>
+</ul>
+<p>To configure workspace size options:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Instance Settings</span>.</p>
+</li>
+<li>
+<p>Scroll down to New Workspace Request Size and Workspace Change Request Size. Specify the following:</p>
+<ul>
+<li>
+<p>Size in Megabytes - Edit the default numbers to change the size options.</p>
+</li>
+<li>
+<p>Display - Select <span class="bold">Yes</span> for all the size options you want to appear in the select list for workspace size.</p>
+</li>
+<li>
+<p>Default - Select the default value to appear in the storage field for workspace and change requests.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<a href="#CHDJJGDG">"Enabling Auto Extend Tablespaces"</a></div>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="CHDBFHHA" name="CHDBFHHA"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h2 class="sect2">Purging Inactive <a id="sthref335" name="sthref335"></a>Workspaces</h2>
+<p>Inactive workspaces consume valuable storage space and degrade system performance. By enabling Workspace Purge Settings, you can configure Oracle Application Express to purge inactive workspaces.</p>
+<p>If a workspace is designated as inactive, a notification email is sent to each workspace administrator indicating that the workspace will be purged in a specific number of days. The workspace administrator can prevent the workspace from being purged by following an embedded link and following the online instructions.</p>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<a href="#BEJBCEEH">"Configuring Email"</a>, <a href="#CIHBCEEF">"Deleting Mail Log Entries"</a>, "Sending Email from an Application" in <a class="olink HTMDB13006" href="../../user.40/e15517/advnc.htm#HTMDB13006"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a></div>
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref336" name="sthref336"></a>
+<h3 class="sect3">Configuring Workspace Purge Settings</h3>
+<p>To purge inactive workspaces:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Workspace Purge Settings</span>.</p>
+<p>The Workspace Purge Settings page appears.</p>
+</li>
+<li>
+<p>From Enabled, select <span class="bold">Yes</span> to enable the workspace purge process. Select <span class="bold">No</span> to disable the workspace purge process.</p>
+</li>
+<li>
+<p>From Language, select the language of the text of emails sent to workspace administrators of inactive workspaces. Note that only one language can be selected for each instance.</p>
+</li>
+<li>
+<p>For Application Express Instance URL, enter the URL to the Oracle Application Express instance, inclusive of the DAD and trailing slash.</p>
+</li>
+<li>
+<p>For Application Express Images URL, enter the URL to the Oracle Application Express images directory, inclusive of the trailing slash.</p>
+</li>
+<li>
+<p>For Purge Administration Email Address, enter the email address (or From address) from which emails are sent to workspace administrators.</p>
+</li>
+<li>
+<p>For Send Summary Email To, enter a list of email addresses separated by commas. Recipients will receive a daily email summary of the purge process.</p>
+</li>
+<li>
+<p>For Days Until Purge, enter the number of days before a workspace is physically purged. For example, entering <code>10</code> means a workspace will be purged 10 days after it is added to the inactive list.</p>
+</li>
+<li>
+<p>For Reminder Days in Advance, enter the number of days before the purge date to send a reminder email to workspace administrators. Reminder email criteria includes:</p>
+<ul>
+<li>
+<p>The workspace is on the inactive list</p>
+</li>
+<li>
+<p>There has been no activity in the workspace</p>
+</li>
+<li>
+<p>The workspace administrator has not chosen to follow the link in the email to prevent the workspace from being purged</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Days Inactive, enter the number of days of inactivity before a workspace is classified as inactive. Inactivity includes not logging into the workspace and the no runtime activity of any application in the workspace.</p>
+</li>
+<li>
+<p>For Grace Period (Days), enter the number of days for the grace period. The grace period starts after workspace administrators click the link in the email to not have their workspace purged. If there is no activity during the grace period, the workspace will be added back to the list of inactive workspaces.</p>
+</li>
+<li>
+<p>For Maximum Execution Time (Hours), enter the number limiting the number of hours that the purge process may execute per run of the workspace purge job.</p>
+</li>
+<li>
+<p>For Maximum Number of Workspaces, enter the maximum number of workspaces to be purged per run of the workspace purge job.</p>
+</li>
+<li>
+<p>For Maximum Number of Emails, enter the maximum number of reminder emails and workspace inactive emails to be send per run of the workspace purge job.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="CIHIGGHG" name="CIHIGGHG"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h2 class="sect2"><a name="AEADM189" id="AEADM189"></a>Managing<a id="sthref337" name="sthref337"></a> Public Themes</h2>
+<p>Instance administrators manage the theme repository for an entire Oracle Application Express instance. Only an Instance administrators can add or delete a theme from the repository.</p>
+<p>When you create a public theme, you add it to the theme repository. Public themes are available when you create an application or when you create a theme for an existing application.</p>
+<p class="subhead2"><a id="sthref338" name="sthref338"></a>Topics:</p>
+<ul>
+<li>
+<p><a href="#CIHDHFAB">Adding a Public Theme to the Theme Repository</a></p>
+</li>
+<li>
+<p><a href="#CIHFJEIC">Deleting a Public Theme</a></p>
+</li>
+<li>
+<p><a href="#CIHFDGEA">Modifying a Public Theme</a></p>
+</li>
+<li>
+<p><a href="#CIHHJJGC">About Exporting a Public Theme</a></p>
+</li>
+</ul>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+"Managing Workspace Themes" in <a class="olink HTMDB06014" href="../../user.40/e15517/themes.htm#HTMDB06014"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a></div>
+<a id="CIHDHFAB" name="CIHDHFAB"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM190" id="AEADM190"></a>Adding a Public Theme to <a id="sthref339" name="sthref339"></a>the Theme Repository</h3>
+<p>To add a theme to the Theme repository:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Manage Shared Components, click <span class="bold">Public Themes</span>.</p>
+<p>The Public Themes page appears.</p>
+</li>
+<li>
+<p>Select <span class="bold">Create</span>.</p>
+</li>
+<li>
+<p>For Workspace, select a workspace and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Application, select an application and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Theme, select a theme and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Name, specify the following:</p>
+<ol>
+<li>
+<p>Theme Number - Enter a number that uniquely identifies a theme within a workspace.</p>
+</li>
+<li>
+<p>Theme Name - Enter a name for the workspace theme.</p>
+</li>
+<li>
+<p>Description - Enter a description.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <span class="bold">Create Public Theme</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHFJEIC" name="CIHFJEIC"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM191" id="AEADM191"></a>Deleting a <a id="sthref340" name="sthref340"></a>Public Theme</h3>
+<p>To delete a public theme:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Manage Shared Components, click <span class="bold">Public Themes</span>.</p>
+<p>The Public Themes page appears.</p>
+</li>
+<li>
+<p>Select the theme to be deleted.</p>
+</li>
+<li>
+<p>Click <span class="bold">Delete</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHFDGEA" name="CIHFDGEA"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM192" id="AEADM192"></a>Modifying a <a id="sthref341" name="sthref341"></a>Public Theme</h3>
+<p>You cannot edit a public theme directly. To modify a public theme, you must create a new application using the theme, modify it, and then manually add it to the theme repository.</p>
+<p>To modify a public theme:</p>
+<ol>
+<li>
+<p>Create an application using the theme you want to modify. See "Creating an Application" in <a class="olink HTMDB05002" href="../../user.40/e15517/bldapp.htm#HTMDB05002"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+<li>
+<p>Modify the theme. See "Editing a Theme" in <a class="olink HTMDB25600" href="../../user.40/e15517/bldr_pgs.htm#HTMDB25600"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+<li>
+<p>Delete the existing public theme. See <a href="#CIHFJEIC">"Deleting a Public Theme"</a>.</p>
+</li>
+<li>
+<p>Add the modified theme to the theme repository. See <a href="#CIHDHFAB">"Adding a Public Theme to the Theme Repository"</a>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHHJJGC" name="CIHHJJGC"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM193" id="AEADM193"></a>About Exporting a <a id="sthref342" name="sthref342"></a>Public Theme</h3>
+<p>You export a theme in the same way you export any related application files. Exporting a public theme involves the following steps:</p>
+<ol>
+<li>
+<p>Create an application using the theme. See "Creating an Application" in <a class="olink HTMDB05002" href="../../user.40/e15517/bldapp.htm#HTMDB05002"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+<li>
+<p>Export the application. See "Exporting an Application" in <a class="olink HTMDB25818" href="../../user.40/e15517/deploy.htm#HTMDB25818"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+<li>
+<p>Import the exported file into the target Oracle Application Express instance. See "Importing an Application or Page" in <a class="olink HTMDB25833" href="../../user.40/e15517/deploy.htm#HTMDB25833"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+<li>
+<p>Install the exported file from the Export Repository. See "Installing Export Files" in <a class="olink HTMDB11007" href="../../user.40/e15517/deploy.htm#HTMDB11007"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="CIHGEBEC" name="CIHGEBEC"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h2 class="sect2"><a name="AEADM181" id="AEADM181"></a>Managing Session <a id="sthref343" name="sthref343"></a><a id="sthref344" name="sthref344"></a>State</h2>
+<p>A session is a logical construct that is used to establish persistence (or stateful behavior) across page views. Each session is assigned a unique ID, which the Application Express engine uses to store and retrieve an application's working set of data (or session state) before and after each page view. An automatic process clears sessions older than 24 hours every eight hours. Instance administrators can also purge them manually.</p>
+<p>An Instance administrator can view session state statistics and purge the session state on the Session State page.</p>
+<p class="subhead2"><a id="sthref345" name="sthref345"></a>Topics:</p>
+<ul>
+<li>
+<p><a href="#CIHBJBFJ">Viewing Session Details Before Purging</a></p>
+</li>
+<li>
+<p><a href="#CIHDABFE">Purging Sessions by Age</a></p>
+</li>
+<li>
+<p><a href="#CIHHBEJD">Viewing Session Statistics Before Purging</a></p>
+</li>
+</ul>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+"Managing Session State" in <a class="olink HTMDB03011" href="../../user.40/e15517/concept.htm#HTMDB03011"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a></div>
+<a id="CIHBJBFJ" name="CIHBJBFJ"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM183" id="AEADM183"></a>Viewing Session Details Before Purging</h3>
+<p>Before purging sessions, Instance administrators can use the Recent Sessions page to first view a listing of recent sessions and then drill down on session details.</p>
+<p>To purge sessions by age:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Manage Meta Data, click <span class="bold">Session State</span>.</p>
+<p>The Session State page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Recent Sessions, with drill down to session details</span>.</p>
+</li>
+<li>
+<p>On the Recent Sessions page, you can:</p>
+<ul>
+<li>
+<p>Click a session number to view additional details.</p>
+</li>
+<li>
+<p>Click <span class="bold">Purge Sessions</span> to delete the displayed sessions.</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHDABFE" name="CIHDABFE"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM182" id="AEADM182"></a>Purging Sessions by Age</h3>
+<p>Using the Purge Session page, Instance administrators can purge sessions by age.</p>
+<p>To view specific session details:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Manage Meta Data, click <span class="bold">Session State</span>.</p>
+<p>The Session State page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Purge Sessions, by age</span>.</p>
+</li>
+<li>
+<p>On the Purge Sessions page, specify:</p>
+<ul>
+<li>
+<p>The maximum number of sessions to be purged</p>
+</li>
+<li>
+<p>The age of sessions to be purged</p>
+</li>
+</ul>
+</li>
+<li>
+<p>To view a report of session statistics, click <span class="bold">Count Sessions</span>.</p>
+</li>
+<li>
+<p>To purge the selected sessions, click <span class="bold">Purge Sessions</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHHBEJD" name="CIHHBEJD"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM184" id="AEADM184"></a>Viewing Session Statistics Before Purging</h3>
+<p>On the Session State Statistics page, Instance administrators can view statistics about current sessions before purging.</p>
+<p>To view session state statistics:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Manage Meta Data, click <span class="bold">Session State</span>.</p>
+<p>The Session State page appears.</p>
+</li>
+<li>
+<p>Select <span class="bold">Session State Statistics</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Purge Sessions</span> to delete the current sessions.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="CIHFCAHD" name="CIHFCAHD"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h2 class="sect2"><a name="AEADM185" id="AEADM185"></a> <a id="sthref346" name="sthref346"></a><a id="sthref347" name="sthref347"></a><a id="sthref348" name="sthref348"></a>Managing the<a id="sthref349" name="sthref349"></a> Mail Queue</h2>
+<p>Instance administrators can manage email sent from applications by monitoring email messages in the mail queue and Mail Log.</p>
+<p>To monitor messages in the mail queue:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Manage Meta Data, click <span class="bold">Mail Queue</span>.</p>
+<p>The Mail Queue page appears.</p>
+</li>
+<li>
+<p>To send email messages, click <span class="bold">Send All Mail</span>.</p>
+</li>
+<li>
+<p>To delete email messages, select the messages to be deleted and click <span class="bold">Delete</span>.</p>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<a href="#BEJBCEEH">"Configuring Email"</a>, <a href="#CIHBCEEF">"Deleting Mail Log Entries"</a>, "Sending Email from an Application" in <a class="olink HTMDB13006" href="../../user.40/e15517/advnc.htm#HTMDB13006"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a></div>
+</div>
+<!-- class="sect2" -->
+<a id="CIHEHEDF" name="CIHEHEDF"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h2 class="sect2"><a name="AEADM174" id="AEADM174"></a>Managing <a id="sthref350" name="sthref350"></a><a id="sthref351" name="sthref351"></a>Logs</h2>
+<p>Instance administrators can delete log entries.</p>
+<p class="subhead2"><a id="sthref352" name="sthref352"></a>Topics:</p>
+<ul>
+<li>
+<p><a href="#CIHJCCDG">Deleting SQL Workshop Logs</a></p>
+</li>
+<li>
+<p><a href="#CIHJFABC">Deleting Page View Activity Log Entries</a></p>
+</li>
+<li>
+<p><a href="#CIHHBCFA">Deleting Developer Activity Log Entries</a></p>
+</li>
+<li>
+<p><a href="#CIHDAHBC">Deleting Click Counting Log Entries</a></p>
+</li>
+<li>
+<p><a href="#CIHBCEEF">Deleting Mail Log Entries</a></p>
+</li>
+<li>
+<p><a href="#CIHIBDIG">Deleting the Login Access Log</a></p>
+</li>
+</ul>
+<a id="CIHJCCDG" name="CIHJCCDG"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM175" id="AEADM175"></a>Deleting SQL Workshop <a id="sthref353" name="sthref353"></a>Logs</h3>
+<p>The SQL Workshop logs maintain a history of recent commands and scripts run in the SQL Commands</p>
+<p>To delete log files entries:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Manage Logs and Files, click <span class="bold">SQL Workshop logs</span>.</p>
+</li>
+<li>
+<p>Click one of the following:</p>
+<ul>
+<li>
+<p><span class="bold">Script File executions log entries</span></p>
+</li>
+<li>
+<p><span class="bold">SQL Command Processor history entries</span></p>
+</li>
+</ul>
+</li>
+<li>
+<p>On the Clean up Logs page:</p>
+<ul>
+<li>
+<p>To delete entries by age, specify the age of the entries to be deleted and click <span class="bold">Delete Entries</span>.</p>
+</li>
+<li>
+<p>To delete all entries, click <span class="bold">Truncate Log</span>.</p>
+</li>
+</ul>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1"><span class="bold">See Also</span>:</p>
+"Accessing a Command from Command History"in <a class="olink AEUTL235" href="../../user.40/e15520/sql_proc.htm#AEUTL235"><span class="italic">Oracle Application Express SQL Workshop Guide</span></a></div>
+</div>
+<!-- class="sect3" -->
+<a id="CIHJFABC" name="CIHJFABC"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM176" id="AEADM176"></a>Deleting Page View Activity Log <a id="sthref354" name="sthref354"></a>Entries</h3>
+<p>Page view activity logs track user activity for an application. Developers enable logging within their application using the Logging attribute on the Edit Application Definition page.</p>
+<div class="infoboxnotealso">
+<p class="notep1"><span class="bold">See Also</span>:</p>
+"Editing the Application Definition" in <a class="olink HTMDB25068" href="../../user.40/e15517/bldr.htm#HTMDB25068"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a></div>
+<p>The Application Express engine uses two logs to track user activity. At any given time, one log is designated as current. For each rendered page view, the Application Express engine inserts one row into the log file. A log switch occurs at the interval listed on the Page View Activity Logs page. At that point, the Application Express engine removes all entries in the noncurrent log and designates it as current.</p>
+<p>To truncate the activity logs manually:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Manage Logs and Files, click <span class="bold">Page View Activity Logs, with option to truncate</span>.</p>
+<p>The Page View Activity Logs page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Truncate Logs</span>.</p>
+</li>
+<li>
+<p>Click either <span class="bold">Truncate Log 1</span> or <span class="bold">Truncate Log 2</span>.</p>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1"><span class="bold">See Also</span>:</p>
+<a href="aadm_activity.htm#BEJCBDGD">"Viewing Workspace Dashboards"</a></div>
+</div>
+<!-- class="sect3" -->
+<a id="CIHHBCFA" name="CIHHBCFA"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM177" id="AEADM177"></a>Deleting Developer Activity Log <a id="sthref355" name="sthref355"></a>Entries</h3>
+<p>The Developer Activity Log tracks changes to applications within an individual workspace. Log entries older than one month are automatically deleted.</p>
+<p>To delete Developer Activity Log entries:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Manage Logs and Files, click <span class="bold">Developer Activity Logs, with option to delete entries</span>.</p>
+<p>The Developer Activity Log page appears.</p>
+</li>
+<li>
+<p>On the Developer Activity Log page, click <span class="bold">Manage</span>.</p>
+</li>
+<li>
+<p>Specify the age of the entries to be deleted and click <span class="bold">Delete Entries</span>.</p>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1"><span class="bold">See Also</span>:</p>
+<a href="aadm_activity.htm#CIHJDFDI">"About the Developer Activity Dashboard"</a> for information about the Developer Activity Log</div>
+</div>
+<!-- class="sect3" -->
+<a id="CIHDAHBC" name="CIHDAHBC"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM178" id="AEADM178"></a>Deleting Click Counting Log <a id="sthref356" name="sthref356"></a>Entries</h3>
+<p>The External Clicks Log counts clicks from an Oracle Application Express application to an external site. You can implement this functionality using the <code>APEX_UTIL.COUNT_CLICK</code> procedure.</p>
+<p>To delete click counting log entries:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Manage Logs and Files, click <span class="bold">External Click Counting Log, with option to truncate</span>.</p>
+<p>The External Click Counting Log page appears.</p>
+</li>
+<li>
+<p>On the External Click Counting Log page, click <span class="bold">Manage</span>.</p>
+</li>
+<li>
+<p>Specify the age of the entries to be deleted and click <span class="bold">Delete Entries</span>.</p>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1"><span class="bold">See Also</span>:</p>
+"COUNT_CLICK Procedure" in <a class="olink AEAPI112" href="../../apirefs.40/e15519/apex_util.htm#AEAPI112"><span class="italic">Oracle Application Express API Reference</span></a></div>
+</div>
+<!-- class="sect3" -->
+<a id="CIHBCEEF" name="CIHBCEEF"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM179" id="AEADM179"></a>Deleting Mail Log Entries<a id="sthref357" name="sthref357"></a></h3>
+<p>The Oracle Application Express Mail Log records the message header information and send date of successfully sent mail message.</p>
+<p>To truncate the mail log:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Manage Logs and Files, click <span class="bold">Mail Log</span>.</p>
+<p>The Mail Log page appears.</p>
+<p>This page displays as an interactive report. To customize the report, use the Search bar at the top of the page. See "Customizing Interactive Reports" in <a class="olink HTMDB25950" href="../../user.40/e15517/app_comp.htm#HTMDB25950"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+<li>
+<p>On the Mail Log page, click <span class="bold">Truncate</span>.</p>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<a href="#BEJBCEEH">"Configuring Email"</a></div>
+</div>
+<!-- class="sect3" -->
+<a id="CIHIBDIG" name="CIHIBDIG"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM180" id="AEADM180"></a>Deleting the Login Access Log<a id="sthref358" name="sthref358"></a></h3>
+<p>This table records authentication events by developers and administrators accessing the Oracle Application Express environment and by end users of Oracle Application Express applications that use the built-in login APIs available to developers. Log entries are aged out of the log tables and purged periodically.</p>
+<p>To truncate the Login Access log:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Manage Logs and Files, click <span class="bold">Login Access Log</span>.</p>
+<p>The Login Access Log page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage</span>.</p>
+</li>
+<li>
+<p>On the Manage Login Access Log page, click <span class="bold">Delete Entries</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="CIHGBABB" name="CIHGBABB"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h2 class="sect2"><a name="AEADM188" id="AEADM188"></a>Viewing Installed <a id="sthref359" name="sthref359"></a><a id="sthref360" name="sthref360"></a>Translations</h2>
+<p>Instance administrators can view a page showing which translated languages have been installed within the current development instance.</p>
+<p>To view the list of installed translations:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Manage Meta Data, click <span class="bold">Installed Translations</span>.</p>
+<p>The Installed Translations page appears. This page displays a list of languages and indicates if the translations have been loaded.</p>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+"Managing Application Globalization" in <a class="olink HTMDB14000" href="../../user.40/e15517/global.htm#HTMDB14000"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a></div>
+</div>
+<!-- class="sect2" -->
+<a id="CIHIIIJJ" name="CIHIIIJJ"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h2 class="sect2"><a name="AEADM195" id="AEADM195"></a>Managing a Runtime Environment</h2>
+<p>An Oracle Application Express runtime environment enables you to run production applications, but it does not provide a Web interface for administration. A runtime environment only includes the packages necessary to run your application, making it a more hardened environment.You administer the Oracle Application Express runtime environment using SQL*Plus and the <code>APEX_INSTANCE_ADMIN</code> API. To learn more, see "APEX_INSTANCE_ADMIN" in <a class="olink AEAPI245" href="../../apirefs.40/e15519/apex_instance.htm#AEAPI245"><span class="italic">Oracle Application Express API Reference</span></a>.</p>
+<div class="infoboxnotealso">
+<p class="notep1">Tip:</p>
+Websheets are not supported in an Oracle Application Express runtime environment.</div>
+<p>To install an exported application into a runtime installation, you must:</p>
+<ol>
+<li>
+<p>Export the workspace from the Application Express instance where the application was developed as described in <a href="adm_mg_wrkspc.htm#CHDHGFHE">"Exporting and Importing a Workspace"</a>.</p>
+</li>
+<li>
+<p>Use SQL*Plus to import your workspace in to the runtime environment:</p>
+<ul>
+<li>
+<p>Connect as <code>APEX_040000</code>, <code>SYS</code>, <code>SYSTEM</code>, or any schema to which the role <code>APEX_ADMINISTRATOR_ROLE</code> has been granted.</p>
+</li>
+<li>
+<p>Run the workspace import file.</p>
+<p>If the workspace export file was created with a version of Oracle Application Express lower than 3.2, you must connect as <code>APEX_040000</code>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Export and then import your application using SQL*Plus in to the runtime environment. See "Exporting an Application and Related Files" in <a class="olink HTMDB11005" href="../../user.40/e15517/deploy.htm#HTMDB11005"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+<a href="adm_create_wkspc.htm#BABIHJEE">"Creating a Workspace Manually in a Runtime Environment"</a>, <a href="adm_mg_wrkspc.htm#CHDBDCCJ">"Managing Workspace to Schema Assignments"</a>, <a href="adm_mg_wrkspc.htm#CHDCCIJH">"Removing a Schema Mapping from a Workspace in a Runtime Environment"</a>, and <a href="adm_mg_wrkspc.htm#CHDJACDI">"Deleting Workspaces in a Runtime Development Environment"</a></div>
+</div>
+<!-- class="sect2" -->
+<a id="CHDJFJJE" name="CHDJFJJE"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h2 class="sect2"><a name="AEADM225" id="AEADM225"></a>Managing <a id="sthref361" name="sthref361"></a><a id="sthref362" name="sthref362"></a>Messages</h2>
+<p>Instance administrators can communicate with all users in an Oracle Application Express instance by creating login and system messages. Typically, administrators use a login message in conjunction with a system message to communicate with all system users, such as regarding privacy notices or access restrictions.</p>
+<p class="subhead2"><a id="sthref363" name="sthref363"></a>Topics:</p>
+<ul>
+<li>
+<p><a href="#CHDGCACB">Defining a Login Message</a></p>
+</li>
+<li>
+<p><a href="#CHDDFIHH">Defining a System Message</a></p>
+</li>
+<li>
+<p><a href="#BABFGEDI">Creating a Site-Specific Tasks List</a></p>
+</li>
+</ul>
+<a id="CHDGCACB" name="CHDGCACB"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM226" id="AEADM226"></a>Defining a Login Message<a id="sthref364" name="sthref364"></a><a id="sthref365" name="sthref365"></a></h3>
+<p>A login message displays on the Oracle Application Express login page. Instance administrators can create a login message using the Login Message section of the Messages page.</p>
+<p>To create a login message:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Messages, click <span class="bold">Define Login Message</span>.</p>
+</li>
+<li>
+<p>In Message, enter a message. The message can contain any text and can optionally include HTML formatting.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+<p>To disable a login message:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Messages, click <span class="bold">Define Login Message</span>.</p>
+</li>
+<li>
+<p>For Login Message, select <span class="bold">No Message</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CHDDFIHH" name="CHDDFIHH"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect3"><a name="AEADM227" id="AEADM227"></a>Defining a System Message<a id="sthref366" name="sthref366"></a><a id="sthref367" name="sthref367"></a></h3>
+<p>System messages display on the Workspace home page, Application Builder home page, Application home page, SQL Workshop home page, and the Oracle Application Express Utilities page.</p>
+<p>Instance administrators can create a system message using the System Message section of the Messages page.</p>
+<div class="infoboxnotealso">
+<p class="notep1">Tip:</p>
+You can also access the Set System Message page by clicking <span class="bold">Edit System Message</span> icon on the Instance Administration home page.</div>
+<div class="sect4"><!-- infolevel="all" infotype="General" --><a id="sthref368" name="sthref368"></a>
+<h4 class="sect4"><a name="AEADM228" id="AEADM228"></a>Create a System Message</h4>
+<p>To create a system message:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Messages, click <span class="bold">Define System Message</span>.</p>
+</li>
+<li>
+<p>For System Message, select <span class="bold">Custom Message</span>.</p>
+</li>
+<li>
+<p>In Message, enter a message. The message can contain any text and can optionally include HTML formatting.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><!-- infolevel="all" infotype="General" --><a id="sthref369" name="sthref369"></a>
+<h4 class="sect4"><a name="AEADM229" id="AEADM229"></a>Disable a System Message</h4>
+<p>To disable a system message:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Messages, click <span class="bold">Define System Message</span>.</p>
+</li>
+<li>
+<p>For System Message, select <span class="bold">No Message</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<a id="BABFGEDI" name="BABFGEDI"></a>
+<div class="sect3">
+<h3 class="sect3"><a name="AEADM170" id="AEADM170"></a>Creating a Site-Specific <a id="sthref370" name="sthref370"></a>Tasks List</h3>
+<p>The Site-Specific Tasks list is a list of links that appears on the Workspace home page or login page. If links are defined, a Site-Specific Tasks region appears. If no Site-Specific Tasks are defined, the region does not display. This feature enables Instance administrators to customize the Workspace home page for an entire development instance. Typical uses for the Site-Specific Tasks list include links to training, discussion forums, and user feedback applications.</p>
+<p class="subhead2"><a id="sthref371" name="sthref371"></a>Topics:</p>
+<ul>
+<li>
+<p><a href="#BABHDGFH">Adding a New Task</a></p>
+</li>
+<li>
+<p><a href="#BABBJCHG">Editing an Existing Task</a></p>
+</li>
+<li>
+<p><a href="#BABIDDCI">Deleting a Task</a></p>
+</li>
+</ul>
+<a id="BABHDGFH" name="BABHDGFH"></a>
+<div class="sect4">
+<h4 class="sect4"><a name="AEADM171" id="AEADM171"></a>Adding a New <a id="sthref372" name="sthref372"></a>Task</h4>
+<p>To add a new task to a Site-Specific Tasks list:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Messages, click <span class="bold">Site-Specific Tasks</span>.</p>
+<p>The Site-Specific Tasks page appears.</p>
+</li>
+<li>
+<p>To create a new link, click <span class="bold">Create</span>.</p>
+</li>
+<li>
+<p>On the Create/Edit Site-Specific Tasks page, you can specify the following:</p>
+<ol>
+<li>
+<p><span class="bold">Display Sequence</span> - Indicate the relative order of this task within the list.</p>
+</li>
+<li>
+<p><span class="bold">Display Location</span> - Indicate the page on which the task should display (that is, the Workspace Login page or Workspace home page).</p>
+</li>
+<li>
+<p><span class="bold">Task Name</span> - Enter a name for this task.</p>
+</li>
+<li>
+<p><span class="bold">Tasks Link</span> - Enter the link target for this task using either a relative URL (for example, using <code>f?p</code> syntax) or an absolute URL (such as <code>http://otn.oracle.com</code>).</p>
+</li>
+<li>
+<p><span class="bold">Displayed</span> - Select <span class="bold">Yes</span> to display the task link.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+</li>
+</ol>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+"Using f?p Syntax to Link Pages" in <a class="olink HTMDB03019" href="../../user.40/e15517/concept.htm#HTMDB03019"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a></div>
+</div>
+<!-- class="sect4" -->
+<a id="BABBJCHG" name="BABBJCHG"></a>
+<div class="sect4">
+<h4 class="sect4"><a name="AEADM172" id="AEADM172"></a>Editing an Existing <a id="sthref373" name="sthref373"></a>Task</h4>
+<p>To edit an existing task:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Messages, click <span class="bold">Site-Specific Tasks</span>.</p>
+<p>The Site-Specific Tasks page appears.</p>
+</li>
+<li>
+<p>Select the task name.</p>
+</li>
+<li>
+<p>On the Create/Edit Site-Specific Tasks page, edit the appropriate attributes.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" -->
+<a id="BABIDDCI" name="BABIDDCI"></a>
+<div class="sect4">
+<h4 class="sect4"><a name="AEADM173" id="AEADM173"></a>Deleting a <a id="sthref374" name="sthref374"></a>Task</h4>
+<p>To delete an existing task:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Messages, click <span class="bold">Site-Specific Tasks</span>.</p>
+<p>The Site-Specific Tasks page appears.</p>
+</li>
+<li>
+<p>Select the task name.</p>
+</li>
+<li>
+<p>Click <span class="bold">Delete</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" --></div>
+<!-- class="ind" -->
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="33%" />
+<col width="*" />
+<col width="33%" />
+<tr>
+<td align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="98">
+<tr>
+<td align="center" valign="top"><a href="adm_ser_rqst.htm"><img width="24" height="24" src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="adm_schema.htm"><img width="24" height="24" src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="font-size: 90%" align="center" class="copyrightlogo"><img width="144" height="18" src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img width="24" height="24" src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img width="24" height="24" src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img width="24" height="24" src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img width="24" height="24" src="../../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img width="24" height="24" src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

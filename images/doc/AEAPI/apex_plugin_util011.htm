@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>GET_PLSQL_EXPRESSION_RESULT Function</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:40Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="GET_PLSQL_EXPRESSION_RESULT Function" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_plugin_util010.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_plugin_util012.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_plugin_util010.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin_util012.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABDFAID" name="BABDFAID"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>GET_PLSQL_EXPRESSION_RESULT <a id="sthref844" name="sthref844"></a>Function</h1>
+<p>This function executes a PL/SQL expression and returns a result. This function also performs the binding of any bind variables in the provided PL/SQL expression. This function is usually used for plug-in attributes of type PL/SQL Expression.</p>
+<a id="sthref845" name="sthref845"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_PLUGIN_UTIL.GET_PLSQL_EXPRESSION_RESULT (
+    p_plsql_expression IN VARCHAR2)
+RETURN VARCHAR2;
+</pre>
+<a id="sthref846" name="sthref846"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#BABEGFIJ">Table: GET_PLSQL_EXPRESSION_RESULT Parameters</a> describes the parameters available in the <code>GET_PLSQL_EXPRESSION_RESULT</code> function.</p>
+<div class="tblformal"><a id="sthref847" name="sthref847"></a><a id="BABEGFIJ" name="BABEGFIJ"></a>
+<p class="titleintable">GET_PLSQL_EXPRESSION_RESULT Parameters</p>
+<table class="Formal" title="GET_PLSQL_EXPRESSION_RESULT Parameters" summary="This table describes the parameters available in the GET_PLSQL_EXPRESSION_RESULT function." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="38%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t14">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t14">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t14" headers="r1c1-t14">
+<p><code>p_plsql_expression_result</code></p>
+</td>
+<td align="left" headers="r2c1-t14 r1c2-t14">
+<p>A PL/SQL expression that returns a string.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref848" name="sthref848"></a>
+<p class="subhead2">Return</p>
+<p><a href="#BABCGHHH">Table: GET_PLSQL_EXPRESSION_RESULT Return</a> describes the return value by the function GET_PLSQL_EXPRESSION_RESULT.</p>
+<div class="tblformal"><a id="sthref849" name="sthref849"></a><a id="BABCGHHH" name="BABCGHHH"></a>
+<p class="titleintable">GET_PLSQL_EXPRESSION_RESULT Return</p>
+<table class="Formal" title="GET_PLSQL_EXPRESSION_RESULT Return" summary="This table describes the returns for the GET_PLSQL_EXPRESSION_RESULT function." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t15">Return</th>
+<th align="left" valign="bottom" id="r1c2-t15">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t15" headers="r1c1-t15">
+<p><code>VARCHAR2</code></p>
+</td>
+<td align="left" headers="r2c1-t15 r1c2-t15">
+<p>String result value returned by the PL/SQL Expression.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref850" name="sthref850"></a>
+<p class="subhead2">Example</p>
+<p>This example executes and returns the result of the PL/SQL expression which is specified in <code>attribute_03</code> of an item type plug-in attribute of type "PL/SQL Expression".</p>
+<pre xml:space="preserve" class="oac_no_warn">
+l_result := apex_plugin_util.get_plsql_expression_result (
+    p_plsql_expression =&gt; p_item.attribute_03 );
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_plugin_util010.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin_util012.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

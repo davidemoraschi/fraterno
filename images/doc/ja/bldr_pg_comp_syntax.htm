@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Understanding Computation Points and Computation Syntax</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:1Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Understanding Computation Points and Computation Syntax" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="bldr_pgs.htm" title="Working with Application Pages" type="text/html" />
+<link rel="up" href="bldr_pg_comp.htm" title="Understanding Page Computat..." type="text/html" />
+<link rel="up" href="bldr_pg_comp_syntax.htm" title="Understanding Computation P..." type="text/html" />
+<link rel="prev" href="bldr_pg_comp_create.htm" title="Previous" type="text/html" />
+<link rel="next" href="bldr_pg_comp_att.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="bldr_pgs.htm" title="Working with Application Pages">Working with Application Pages</a> &gt; <a href="bldr_pg_comp.htm" title="Understanding Page Computat...">Understanding Page Computat...</a> &gt; Understanding Computation P...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="bldr_pg_comp_create.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldr_pg_comp_att.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABIIFED" name="BABIIFED"></a></p>
+<div class="sect2">
+<h1><a name="HTMDB25137" id="HTMDB25137"></a>Understanding Computation Points and Computation Syntax<a id="sthref712" name="sthref712"></a><a id="sthref713" name="sthref713"></a></h1>
+<p>A good example of using computations can be illustrated by a page containing form fields for entering phone numbers. In this example, the phone number is stored in one database column; however, the data entry form breaks the phone number into three components: area code, prefix, and line number. In this example, the page items are called <code>P10_AREA_CODE</code>, <code>P10_PREFIX</code>, and <code>P10_LINE_NUMBER</code>.</p>
+<p>Next, suppose you need to combine the values stored in these items into a single string. You could accomplish this by using an After Submit computation and store the combined values in an item called <code>P10_PHONE_NUMBER</code>.</p>
+<p>To create a computation to store the combined values of <code>P10_AREA_CODE</code>, <code>P10_PREFIX</code>, and <code>P10_LINE_NUMBER</code> in new items:</p>
+<ol>
+<li>
+<p>Navigate to the appropriate Page Definition. See <a href="bldr_pg_def_access.htm#BABJAICG">"Accessing the Page Definition"</a>.</p>
+</li>
+<li>
+<p>Create a item named <code>P10_PHONE_NUMBER</code> to store the combined values of <code>P10_AREA_CODE</code>, <code>P10_PREFIX</code>, and <code>P10_LINE_NUMBER</code>. See <a href="bldapp_item_diffs.htm#CEGGIDGB">"Differences Between Page Items and Application Items"</a>.</p>
+</li>
+<li>
+<p>Access the Create Computation Wizard:</p>
+<ul>
+<li>
+<p>Tree view - Under the appropriate event, locate Computations. Right-click and select <span class="bold">Create</span>.</p>
+</li>
+<li>
+<p>Component view - Under Computations, click the <span class="bold">Create</span> icon.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Item Location, select <span class="bold">Item on this Page</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Computation, select <span class="bold">P10_PHONE_NUMBER.</span></p>
+</li>
+<li>
+<p>For Sequence, select the order of evaluation.</p>
+</li>
+<li>
+<p>For Computation, you have the option of creating one of the following computation types:</p>
+<ol>
+<li>
+<p>Static Assignment:</p>
+<ul>
+<li>
+<p>For Computation Type, select <span class="bold">Static Assignment</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Enter the following computation:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+(&amp;P10_AREA_CODE.) &amp;P10_PREFIX.-&amp;P10_LINE_NUMBER.
+</pre></li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>PL/SQL Function Body:</p>
+<ul>
+<li>
+<p>For Computation Type, select <span class="bold">PL/SQL Function Body</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Enter the following computation:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+DECLARE
+l_return_value  VARCHAR2(300) DEFAULT NULL;
+BEGIN
+    l_return_value :=
+'('||:P10_AREA_CODE||')'||:P10_PREFIX||'-'||:P10_LINE_NUMBER;
+RETURN l_return_value;
+END;
+</pre></li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>SQL Query (return colon separated value):</p>
+<ul>
+<li>
+<p>For Computation Type, select <span class="bold">SQL Query (return colon separated value)</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Enter the following computation:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT '('||:P10_AREA_CODE||')'||:P10_PREFIX||'-'||:P10_LINE_NUMBER FROM DUAL
+</pre></li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>PLSQL Expression:</p>
+<ul>
+<li>
+<p>For Computation Type, select <span class="bold">PLSQL Expression</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Enter the following computation:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+'('||:P10_AREA_CODE||')'||:P10_PREFIX||'-'||:P10_LINE_NUMBER
+</pre></li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="bldr_pg_comp_create.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldr_pg_comp_att.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

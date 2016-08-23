@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>JOBS_ARE_ENABLED Function</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:39Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="JOBS_ARE_ENABLED Function" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_plsql_job001.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_plsql_job003.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_plsql_job001.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plsql_job003.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BGBJBCFG" name="BGBJBCFG"></a></p>
+<hr />
+<div class="refsect1">
+<h1><a id="sthref750" name="sthref750"></a>JOBS_ARE_ENABLED Function</h1>
+<p>Call this function to determine whether or not the database is currently in a mode that supports submitting jobs to the APEX_PLSQL_JOB package.</p>
+<a id="sthref751" name="sthref751"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_PLSQL_JOB.JOBS_ARE_ENABLED
+RETURN BOOLEAN;
+</pre>
+<a id="sthref752" name="sthref752"></a>
+<p class="subhead2">Parameters</p>
+<p>None.</p>
+<a id="sthref753" name="sthref753"></a>
+<p class="subhead2">Example</p>
+<p>The following example shows how to use the <code>JOBS_ARE_ENABLED</code> function. In the example, if the function returns <code>TRUE</code> the message 'Jobs are enabled on this database instance' is displayed, otherwise the message 'Jobs are not enabled on this database instance' is displayed.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN
+    IF APEX_PLSQL_JOB.JOBS_ARE_ENABLED THEN
+        HTP.P('Jobs are enabled on this database instance.');
+    ELSE
+        HTP.P('Jobs are not enabled on this database instance.');
+    END IF;
+END;
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_plsql_job001.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plsql_job003.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

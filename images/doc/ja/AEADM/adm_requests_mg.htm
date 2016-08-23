@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Managing Workspace Requests</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-27T14:38:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Managing Workspace Requests" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15521-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="adm_wrkspc.htm" title="Oracle Application Express ..." type="text/html" />
+<link rel="up" href="adm_ser_rqst.htm" title="Managing Workspace and Chan..." type="text/html" />
+<link rel="up" href="adm_requests_mg.htm" title="Managing Workspace Requests" type="text/html" />
+<link rel="prev" href="adm_requests_wrksp.htm" title="Previous" type="text/html" />
+<link rel="next" href="adm_chg_rqst.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="adm_wrkspc.htm" title="Oracle Application Express ...">Oracle Application Express ...</a> &gt; <a href="adm_ser_rqst.htm" title="Managing Workspace and Chan...">Managing Workspace and Chan...</a> &gt; Managing Workspace Requests</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="adm_requests_wrksp.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_chg_rqst.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CIHBIJGH" name="CIHBIJGH"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1>Managing Workspace Requests</h1>
+<p>A <span class="bold">Workspace Request</span> enables a user to request a workspace by clicking a link on the login page to access a request form. Once submitted, the Instance administrator can review the request and either approve or decline it. To learn more about configuring an instance to use workspace requests, see <a href="adm_provision_mode.htm#CHDBAFDG">"Specifying a Provisioning Mode"</a>.</p>
+<a id="sthref236" name="sthref236"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#CIHIIBIJ">Approving or Declining a Pending Workspace Request</a></p>
+</li>
+<li>
+<p><a href="#CIHHAFAI">Changing the Status of an Existing Workspace Request</a></p>
+</li>
+<li>
+<p><a href="#CIHJDGBC">Deleting a Workspace Request</a></p>
+</li>
+</ul>
+<a id="CIHIIBIJ" name="CIHIIBIJ"></a>
+<div class="sect3">
+<h2><a name="AEADM257" id="AEADM257"></a>Approving or Declining a Pending <a id="sthref237" name="sthref237"></a><a id="sthref238" name="sthref238"></a>Workspace Request</h2>
+<p>To approve or decline a pending workspace request:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Requests</span>.</p>
+</li>
+<li>
+<p>Click the <span class="bold">All Workspace Requests</span> tab.</p>
+<p>The Workspace Requests page displays as an interactive report. To customize the report, use the Search bar at the top of the page. See "Customizing Interactive Reports" in <a href="../ir_using.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+<li>
+<p>Locate a request to review.</p>
+</li>
+<li>
+<p>To edit or review the request, click the <span class="bold">Edit</span> icon. On the Provision Request page you can:</p>
+<ul>
+<li>
+<p>Edit the request and click <span class="bold">Apply Changes</span>.</p>
+</li>
+<li>
+<p>Delete the request by clicking <span class="bold">Delete</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Return to the All Workspace Requests page.</p>
+</li>
+<li>
+<p>To approve a request:</p>
+<ol>
+<li>
+<p>Click <span class="bold">Provision</span> in the Actions column.</p>
+</li>
+<li>
+<p>On the Provisioning Administration page, click <span class="bold">Approve</span>.</p>
+</li>
+<li>
+<p>Review the email message.</p>
+</li>
+<li>
+<p>If needed, update the message and click <span class="bold">Approve and Send Email</span>.</p>
+<p>If you selected the Provisioning Status, <span class="bold">Email Verification</span>, an email containing a verification link is sent to the user. To create the workspace, the user must click the verification link to create the workspace. See <a href="adm_provision_mode.htm#CHDBAFDG">"Specifying a Provisioning Mode"</a>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>To decline a request:</p>
+<ol>
+<li>
+<p>Click <span class="bold">Provision</span> in the Actions column.</p>
+</li>
+<li>
+<p>On the Provisioning Administration page, click <span class="bold">Decline</span>.</p>
+</li>
+<li>
+<p>Review the email message.</p>
+</li>
+<li>
+<p>To add information, such as the reason for declining a request, update the message and then click <span class="bold">Decline and Send Email</span>.</p>
+<p>The email is sent to the user notifying them the request was declined.</p>
+</li>
+</ol>
+</li>
+</ol>
+<div class="sect4"><a id="sthref239" name="sthref239"></a>
+<h3><a name="AEADM258" id="AEADM258"></a>More About the Approval Process</h3>
+<p>If you are using Email Verification, when an Instance administrator approves a workspace request, the following events occur:</p>
+<ol>
+<li>
+<p>An email containing a verification link is sent to the user.</p>
+</li>
+<li>
+<p>When user clicks the verification link, the workspace is created.</p>
+</li>
+<li>
+<p>Another email is sent to the user containing login credentials (that is, the workspace name, User ID, and password).</p>
+</li>
+<li>
+<p>The status of the workspace request changes from <code>Accepted</code> to <code>Approved</code>.</p>
+</li>
+</ol>
+<p>If the user fails to click the verification link, you can quickly delete the request by clicking the <span class="bold">DELETE</span> link in the Action column.</p>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><a id="sthref240" name="sthref240"></a>
+<h3><a name="AEADM259" id="AEADM259"></a>When an Error Occurs</h3>
+<p>If an error occurs during the workspace creation process, the status of the request reverts to <code>Requested</code> and an email is sent to the user containing the following message:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+Please contact administrator.
+</pre>
+<p>Once the issue is resolved, the administrator can again repeat the previous procedure and approve the request.</p>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<a id="CIHHAFAI" name="CIHHAFAI"></a>
+<div class="sect3">
+<h2><a name="AEADM260" id="AEADM260"></a>Changing the Status of an Existing <a id="sthref241" name="sthref241"></a><a id="sthref242" name="sthref242"></a>Workspace Request</h2>
+<p>To change the status of an existing workspace request:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Requests</span>.</p>
+</li>
+<li>
+<p>Click the <span class="bold">All Workspace Requests</span> tab.</p>
+<p>The Workspace Requests page displays as an interactive report. To customize the report, use the Search bar at the top of the page. See "Customizing Interactive Reports" in <a href="../ir_using.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+<li>
+<p>Uncheck the <span class="bold">Filter Status_Code = '1'</span> to review all workspace requests.</p>
+</li>
+<li>
+<p>Locate a request to review.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Adjust</span> link in the Actions column.</p>
+<p>The Adjust Request page appears.</p>
+</li>
+<li>
+<p>From the Project Status list, select a new status.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Be careful when setting the Project Status to <span class="bold">Requested</span>. Although <span class="bold">Requested</span> enables you to reprovision a workspace, it could result in data corruption due to the manner in which accounts are provisioned. The provisioning system assumes Requested workspace requests do not have the corresponding schemas and dictionary entries for a Workspace administrator or developers. If you must change the Project Status for an <span class="bold">Approved</span> workspace to <span class="bold">Requested</span>, terminate the service first and then change the status to Requested.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+</div>
+<!-- class="sect3" -->
+<a id="CIHJDGBC" name="CIHJDGBC"></a>
+<div class="sect3">
+<h2><a name="AEADM261" id="AEADM261"></a>Deleting a <a id="sthref243" name="sthref243"></a>Workspace Request</h2>
+<p>To delete a workspace request:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Requests</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">All Workspace Requests</span>.</p>
+<p>The Workspace Requests page appears.</p>
+</li>
+<li>
+<p>Uncheck the <span class="bold">Filter Status_Code = '1'</span> to review all workspace requests.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Edit</span> icon for the request you want to delete.</p>
+</li>
+<li>
+<p>On the Provision Request page, click the appropriate button:</p>
+<ul>
+<li>
+<p>If the Project Status is <code>Approved</code>, click <span class="bold">Terminate or Delete</span>.</p>
+</li>
+<li>
+<p>If the Project Status is <code>Declined</code>, <code>Requested</code>, <code>Terminated</code>, or <code>Accepted</code>, click <span class="bold">Delete</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">Delete Request</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="adm_requests_wrksp.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_chg_rqst.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

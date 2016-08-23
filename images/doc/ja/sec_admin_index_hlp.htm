@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Enabling Indexing of Online Help in Oracle Database 11gR2 and Higher</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:10Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Enabling Indexing of Online Help in Oracle Database 11gR2 and Higher" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="sec.htm" title="Managing Application Security" type="text/html" />
+<link rel="up" href="sec_admin_ssl.htm" title="Understanding Administrator..." type="text/html" />
+<link rel="up" href="sec_admin_index_hlp.htm" title="Enabling Indexing of Online..." type="text/html" />
+<link rel="prev" href="sec_admin_net_srvc.htm" title="Previous" type="text/html" />
+<link rel="next" href="sec_dev.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="sec.htm" title="Managing Application Security">Managing Application Security</a> &gt; <a href="sec_admin_ssl.htm" title="Understanding Administrator...">Understanding Administrator...</a> &gt; Enabling Indexing of Online...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="sec_admin_net_srvc.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="sec_dev.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BCGEEIEG" name="BCGEEIEG"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB25973" id="HTMDB25973"></a>Enabling Indexing of Online <a id="sthref2245" name="sthref2245"></a><a id="sthref2246" name="sthref2246"></a>Help in Oracle Database 11gR2 and Higher</h1>
+<p>The ability to search Oracle Application Express online Help is accomplished through Oracle Text and a URL datastore. There is a change in the default behavior and permissions to use an Oracle Text URL datastore in database 11gR2 and higher.</p>
+<p>If users attempt to search Oracle Application Express online Help in Oracle database 11gR2 and encounter the following error, then the permission to use an Oracle Text URL datastore has not been granted to database user <code>APEX_040000</code>.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+ORA-29855: error occurred in the execution of ODCIINDEXCREATE routine 
+ORA-20000: Oracle Text error: 
+DRG-10758: index owner does not have the privilege to use file or URL datastore
+</pre>
+<p>To enable the indexing of online Help in Oracle Application Express, the permission to use an Oracle Text URL datastore must be granted to the <code>APEX_040000</code> database user. This is accomplished by assigning this specific privilege to a database role and then granting this role to the <code>APEX_040000</code> database user.</p>
+<p>To determine if the ability to use an Oracle Text URL datastore is already granted to a database role:</p>
+<ol>
+<li>
+<p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code>SYS</code> specifying the <code>SYSDBA</code> role. For example:</p>
+<ul>
+<li>
+<p>On Windows:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+<span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+<li>
+<p>On UNIX and Linux:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: <span class="italic">SYS_password</span>
+</pre></li>
+</ul>
+</li>
+<li>
+<p>Run the following command:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT par_value FROM ctxsys.ctx_parameters WHERE par_name = 'FILE_ACCESS_ROLE';
+</pre>
+<p>This returns either <code>NULL</code> or the database role which is granted the ability to use an Oracle Text URL datastore.</p>
+</li>
+<li>
+<p>If no value is returned by step 2, then create a new database role as shown in the following example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+CREATE ROLE APEX_URL_DATASTORE_ROLE;
+</pre></li>
+<li>
+<p>Grant this role to the database user <code>APEX_040000</code> with the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+GRANT <span class="italic">APEX_URL_DATASTORE_ROLE</span> to APEX_040000;
+</pre>
+<p>If step 2 returned a value, use this database role name instead of the example <code><span class="codeinlineitalic">APEX_URL_DATASTORE_ROLE</span></code>.</p>
+</li>
+<li>
+<p>Lastly, if step 2 did not return a value, then use the Oracle Text API to grant permission to the newly created database role with the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+EXEC ctxsys.ctx_adm.set_parameter('file_access_role', 'APEX_URL_DATASTORE_ROLE');
+</pre></li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="sec_admin_net_srvc.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="sec_dev.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

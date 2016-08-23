@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Managing Session State</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-27T14:38:55Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Managing Session State" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15521-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="wrkspc.htm" title="Workspace and Application A..." type="text/html" />
+<link rel="up" href="aadm_mg_sessions.htm" title="Managing Session State and ..." type="text/html" />
+<link rel="up" href="aadm_purge_session.htm" title="Managing Session State" type="text/html" />
+<link rel="prev" href="aadm_mg_sessions.htm" title="Previous" type="text/html" />
+<link rel="next" href="aadm_user_pref.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="wrkspc.htm" title="Workspace and Application A...">Workspace and Application A...</a> &gt; <a href="aadm_mg_sessions.htm" title="Managing Session State and ...">Managing Session State and ...</a> &gt; Managing Session State</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="aadm_mg_sessions.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="aadm_user_pref.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CIHGIFAH" name="CIHGIFAH"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEADM111" id="AEADM111"></a>Managing Session State</h1>
+<p>A session establishes persistence (or stateful behavior) across page views. You can review session details for the current session or for recent sessions. You can also purge the current session state or purge sessions based on their age.</p>
+<a id="sthref138" name="sthref138"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#BEJJFIFI">Removing Session State After Reviewing Session Details</a></p>
+</li>
+<li>
+<p><a href="#CHDJHFCI">Viewing Session State for the Current Session</a></p>
+</li>
+<li>
+<p><a href="#BABCHIBG">Purging Sessions by Age</a></p>
+</li>
+<li>
+<p><a href="#BEJECJID">Purging Session State for the Current Session</a></p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+"What Is a Session?" in <a href="../concept_ses_about.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<a id="BEJJFIFI" name="BEJJFIFI"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM112" id="AEADM112"></a>Removing Session <a id="sthref139" name="sthref139"></a><a id="sthref140" name="sthref140"></a>State After Reviewing Session Details</h2>
+<p>You can determine whether to remove existing sessions by first reviewing session details. From the Session Details page, you can then remove the session record or session state.</p>
+<p>To view session details and remove session state:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express. See "Logging In to Oracle Application Express" in <a href="../start_login.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+<p>The Workspace home page appears.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Administration</span> icon.</p>
+</li>
+<li>
+<p>On the Administration page, click <span class="bold">Manage Service</span>.</p>
+</li>
+<li>
+<p>Under Manage Meta Data, click <span class="bold">Session State</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Recent Sessions with Drill-Down to Session Details</span>.</p>
+</li>
+<li>
+<p>You can customize the appearance the page using the Search bar at the top of the page. See "Customizing Interactive Reports" in <a href="../ir_using.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+<li>
+<p>To view session details, select the session ID.</p>
+<p>The Session Details page appears.</p>
+</li>
+<li>
+<p>Click one of the following buttons:</p>
+<ul>
+<li>
+<p><span class="bold">Remove State</span> clears the session data from the session state tables (including collections data) but does not remove the session record. Removing a session is a good approach for developers during debugging.</p>
+<p>This is the equivalent of clearing session state for the current session using the Clear Cache argument value <code>SESSION</code> in the f?p URL. This option might also be used by developers during debugging.</p>
+</li>
+<li>
+<p><span class="bold">Remove Session</span> removes the record of the session from the <code>SESSIONS</code> table along with the session state (including collections data) associated with the session.</p>
+<p>Any user using a session that is removed will no longer be able to use the session and will be prompted to re-authenticate upon their next page request (in most situations). This option can be used by administrators who need to ensure a specific user can no longer access an Oracle Application Express application.</p>
+</li>
+</ul>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+"Debugging an Application" in <a href="../debug.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect3" -->
+<a id="CHDJHFCI" name="CHDJHFCI"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM113" id="AEADM113"></a>Viewing Session State for the Current Session</h2>
+<p>To view session state for the current or recent sessions:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express. See "Logging In to Oracle Application Express" in <a href="../start_login.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+<p>The Workspace home page appears.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Administration</span> icon.</p>
+</li>
+<li>
+<p>On the Administration page, click <span class="bold">Manage Service</span>.</p>
+</li>
+<li>
+<p>Under Manage Meta Data, click <span class="bold">Session State</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Report Session State for Current Session</span>.</p>
+</li>
+<li>
+<p>You can customize the appearance the page using the Search bar at the top of the page. See "Customizing Interactive Reports" in <a href="../ir_using.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="#BEJJFIFI">"Removing Session State After Reviewing Session Details"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect3" -->
+<a id="BABCHIBG" name="BABCHIBG"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM115" id="AEADM115"></a>Purging Sessions by <a id="sthref141" name="sthref141"></a>Age</h2>
+<p>To purge existing sessions by age:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express. See "Logging In to Oracle Application Express" in <a href="../start_login.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+<p>The Workspace home page appears.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Administration</span> icon.</p>
+</li>
+<li>
+<p>On the Administration page, click <span class="bold">Manage Service</span>.</p>
+</li>
+<li>
+<p>Under Manage Meta Data, click <span class="bold">Session State</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Purge sessions by Age</span>.</p>
+</li>
+<li>
+<p>Make a selection from the Sessions older than list.</p>
+</li>
+<li>
+<p>Click one of the following buttons:</p>
+<ul>
+<li>
+<p><span class="bold">Purge Sessions</span> purges existing sessions by the age you selected.</p>
+</li>
+<li>
+<p><span class="bold">Report Sessions</span> generates a report detailing the total number of sessions for the workspace, the number of users, and the number of old sessions.</p>
+</li>
+</ul>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+"Viewing Session State" in <a href="../concept_ses_view.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect3" -->
+<a id="BEJECJID" name="BEJECJID"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM114" id="AEADM114"></a>Purging Session State<a id="sthref142" name="sthref142"></a> for the Current Session</h2>
+<p>To purge session state for the current session:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express. See "Logging In to Oracle Application Express" in <a href="../start_login.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+<p>The Workspace home page appears.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Administration</span> icon.</p>
+</li>
+<li>
+<p>On the Administration page, click <span class="bold">Manage Service</span>.</p>
+</li>
+<li>
+<p>Under Manage Meta Data, click <span class="bold">Session State</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Purge Session State for Current Session</span>.</p>
+</li>
+<li>
+<p>Click one of the following buttons:</p>
+<ul>
+<li>
+<p><span class="bold">View Session State</span> - Displays information about the current session.</p>
+</li>
+<li>
+<p><span class="bold">Purge Session State</span> - Resets the session state for the current session.</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="aadm_mg_sessions.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="aadm_user_pref.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

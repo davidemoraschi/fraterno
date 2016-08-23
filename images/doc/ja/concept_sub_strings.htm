@@ -1,0 +1,1456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>About Built-in Substitution Strings</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:4:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="About Built-in Substitution Strings" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="concept.htm" title="Application Builder Concepts" type="text/html" />
+<link rel="up" href="concept_sub.htm" title="Understanding Substitution ..." type="text/html" />
+<link rel="up" href="concept_sub_strings.htm" title="About Built-in Substitution..." type="text/html" />
+<link rel="prev" href="concept_sub_using.htm" title="Previous" type="text/html" />
+<link rel="next" href="demo.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="concept.htm" title="Application Builder Concepts">Application Builder Concepts</a> &gt; <a href="concept_sub.htm" title="Understanding Substitution ...">Understanding Substitution ...</a> &gt; About Built-in Substitution...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="concept_sub_using.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="demo.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BEIIBAJD" name="BEIIBAJD"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB03024|About Built-in Substitution Strings"></a>About Built-in Substitution <a id="sthref149" name="sthref149"></a><a id="sthref150" name="sthref150"></a>Strings</h1>
+<p>Application Builder supports a number of built-in substitution strings. You may need to reference these values to achieve specific types of functionality.</p>
+<p>The following sections describe these substitution strings, when to use them, and what supported syntax is currently available. Note that bind variable <code>:USER</code> has special meaning within the database. Also, the term <span class="bold">Direct PL/SQL</span> refers to PL/SQL that can be used in stored database objects such as procedures and functions.</p>
+<a id="sthref151" name="sthref151"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#BEIGGDII">APP_ALIAS</a></p>
+</li>
+<li>
+<p><a href="#BEIBCBBE">APP_ID</a></p>
+</li>
+<li>
+<p><a href="#BEIDCGAJ">APP_IMAGES</a></p>
+</li>
+<li>
+<p><a href="#BEIEIDAB">APP_PAGE_ID</a></p>
+</li>
+<li>
+<p><a href="#BEIEHEJI">APP_SESSION</a></p>
+</li>
+<li>
+<p><a href="#BEICBHCG">APP_UNIQUE_PAGE_ID</a></p>
+</li>
+<li>
+<p><a href="#BEIHCJBG">APP_USER</a></p>
+</li>
+<li>
+<p><a href="#BEIJEDHH">AUTHENTICATED_URL_PREFIX</a></p>
+</li>
+<li>
+<p><a href="#BEIDEHFE">BROWSER_LANGUAGE</a></p>
+</li>
+<li>
+<p><a href="#BEIDBCBG">CURRENT_PARENT_TAB_TEXT</a></p>
+</li>
+<li>
+<p><a href="#BEIFAGIE">DEBUG</a></p>
+</li>
+<li>
+<p><a href="#CIHHHHDD">HOME_LINK</a></p>
+</li>
+<li>
+<p><a href="#BCEHHHGD">LOGIN_URL</a></p>
+</li>
+<li>
+<p><a href="#BEIGJJBG">IMAGE_PREFIX</a></p>
+</li>
+<li>
+<p><a href="#BEIJFFEE">Application Express SCHEMA OWNER</a></p>
+</li>
+<li>
+<p><a href="#BEIFGGJB">PRINTER_FRIENDLY</a></p>
+</li>
+<li>
+<p><a href="#BEICHGAC">LOGOUT_URL</a></p>
+</li>
+<li>
+<p><a href="#BEIJDAHC">PROXY_SERVER</a></p>
+</li>
+<li>
+<p><a href="#BEIIGFGF">PUBLIC_URL_PREFIX</a></p>
+</li>
+<li>
+<p><a href="#BEIFJJBC">REQUEST</a></p>
+</li>
+<li>
+<p><a href="#BEIECHFH">SQLERRM</a></p>
+</li>
+<li>
+<p><a href="#BEIGGIFI">SYSDATE_YYYYMMDD</a></p>
+</li>
+<li>
+<p><a href="#BEICEJEA">WORKSPACE_IMAGES</a></p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li>
+<p><a href="bldr_attr_standard.htm#CHDBEHDJ">"Substitutions"</a> for information about defining static substitution strings as an application attribute</p>
+</li>
+<li>
+<p><a href="sec_authentication.htm#BABHIEIA">"Establishing User Identity Through Authentication"</a> for information about authentication</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<a id="BEIGGDII" name="BEIGGDII"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25033" id="HTMDB25033"></a>APP_ALIAS<a id="sthref152" name="sthref152"></a></h2>
+<p><code>APP_ALIAS</code> is an alphanumeric name for the current application. <code>APP_ALIAS</code> is different from the <code>APP_ID</code> in that the <code>APP_ID</code> must be unique over all workspaces and all applications hosted in one database. In contrast, <code>APP_ALIAS</code> must be unique within a workspace. For example, by using the same <code>APP_ALIAS</code> you can create the application, ABC, in two different workspaces. You can use <code>APP_ALIAS</code> almost anywhere <code>APP_ID</code> can be used. For example, <code>f?p</code> syntax can use an <code>APP_ALIAS</code> or an application ID as demonstrated in this example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+f?p=ABC:1:&amp;APP_SESSION.
+</pre>
+<p>This example runs application ABC, page 1 using the current session.</p>
+<p><a href="#BEIIDDEJ">Table: APP_ALIAS Syntax</a> describes the supported syntax for referencing <code>APP_ALIAS</code>.</p>
+<div class="tblformal"><a id="sthref153" name="sthref153"></a><a id="BEIIDDEJ" name="BEIIDDEJ"></a>
+<p class="titleintable">APP_ALIAS Syntax</p>
+<table class="Formal" title="APP_ALIAS Syntax" summary="This table describes the supported syntax for referencing APP_ALIAS." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="41%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t21">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t21">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t21" headers="r1c1-t21">
+<p>Bind variable</p>
+</td>
+<td align="left" headers="r2c1-t21 r1c2-t21">
+<p><code>:APP_ALIAS</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t21" headers="r1c1-t21">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t21 r1c2-t21">
+<p><code>V('APP_ALIAS')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t21" headers="r1c1-t21">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r4c1-t21 r1c2-t21">
+<p><code>&amp;APP_ALIAS.</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p>The following is an HTML example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+Click me to go to page 1 &lt;a href="f?p=&amp;APP_ALIAS.:1:&amp;APP_SESSION."&gt; of the current application&lt;/a&gt;
+</pre></div>
+<!-- class="sect3" -->
+<a id="BEIBCBBE" name="BEIBCBBE"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25034" id="HTMDB25034"></a>APP_ID<a id="sthref154" name="sthref154"></a></h2>
+<p><code>APP_ID</code> identifies the application ID of the currently executing application. <a href="#BEIIGDCA">Table: APP_ID Syntax</a> describes the supported syntax for referencing <code>APP_ID</code>.</p>
+<div class="tblformal"><a id="sthref155" name="sthref155"></a><a id="BEIIGDCA" name="BEIIGDCA"></a>
+<p class="titleintable">APP_ID Syntax</p>
+<table class="Formal" title="APP_ID Syntax" summary="This table describes the supported syntax for referencing APP_ID." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="28%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t22">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t22">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t22" headers="r1c1-t22">
+<p>Bind variable</p>
+</td>
+<td align="left" headers="r2c1-t22 r1c2-t22">
+<p><code>:APP_ID</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t22" headers="r1c1-t22">
+<p>Direct PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t22 r1c2-t22">
+<p><code>APEX_APPLICATION.G_FLOW_ID (A NUMBER)</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t22" headers="r1c1-t22">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r4c1-t22 r1c2-t22">
+<p><code>NV('APP_ID')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t22" headers="r1c1-t22">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r5c1-t22 r1c2-t22">
+<p><code>&amp;APP_ID.</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p>The following is an example of a substitution string reference:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+f?p=&amp;APP_ID.:40:&amp;APP_SESSION.
+</pre></div>
+<!-- class="sect3" -->
+<a id="BEIDCGAJ" name="BEIDCGAJ"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25035" id="HTMDB25035"></a>APP_IMAGES<a id="sthref156" name="sthref156"></a></h2>
+<p>Use this substitution string to reference uploaded images, JavaScript, and cascading style sheets that are specific to a given application and are not shared over many applications. If you upload a file and make it specific to an application, then you must use this substitution string, or bind variable. <a href="#BEIGIHGH">Table: APP_IMAGES Syntax</a> describes the supported syntax for referencing <code>APP_IMAGES</code>.</p>
+<div class="tblformal"><a id="sthref157" name="sthref157"></a><a id="BEIGIHGH" name="BEIGIHGH"></a>
+<p class="titleintable">APP_IMAGES Syntax</p>
+<table class="Formal" title="APP_IMAGES Syntax" summary="This table describes the supported syntax for referencing APP_IMAGES." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t23">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t23">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t23" headers="r1c1-t23">
+<p>Bind variable</p>
+</td>
+<td align="left" headers="r2c1-t23 r1c2-t23">
+<p><code>:APP_IMAGES</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t23" headers="r1c1-t23">
+<p>Direct PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t23 r1c2-t23">
+<p>Not available.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t23" headers="r1c1-t23">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r4c1-t23 r1c2-t23">
+<p><code>V('APP_IMAGES')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t23" headers="r1c1-t23">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r5c1-t23 r1c2-t23">
+<p><code>&amp;APP_IMAGES.</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t23" headers="r1c1-t23">
+<p>Template substitution</p>
+</td>
+<td align="left" headers="r6c1-t23 r1c2-t23">
+<p><code>#APP_IMAGES#</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="#BEIGJJBG">"IMAGE_PREFIX"</a>, <a href="#BEICEJEA">"WORKSPACE_IMAGES"</a>, and <a href="ui_upload_img.htm#BABDIEBI">"Managing Images"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect3" -->
+<a id="BEIEIDAB" name="BEIEIDAB"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25036" id="HTMDB25036"></a>APP_PAGE_ID<a id="sthref158" name="sthref158"></a></h2>
+<p><code>APP_PAGE_ID</code> is the current application ID. For example, if your application was on page 3, then the result would be 3. Using this syntax is useful when writing application components that need to work generically in multiple applications. <a href="#BEIDDHCJ">Table: APP_PAGE_ID Syntax</a> describes the supported syntax for referencing <code>APP_PAGE_ID</code>.</p>
+<div class="tblformal"><a id="sthref159" name="sthref159"></a><a id="BEIDDHCJ" name="BEIDDHCJ"></a>
+<p class="titleintable">APP_PAGE_ID Syntax</p>
+<table class="Formal" title="APP_PAGE_ID Syntax" summary="This table describes the supported syntax for referencing APP_PAGE_ID." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="33%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t25">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t25">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t25" headers="r1c1-t25">
+<p>Bind variable</p>
+</td>
+<td align="left" headers="r2c1-t25 r1c2-t25">
+<p><code>:APP_PAGE_ID</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t25" headers="r1c1-t25">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t25 r1c2-t25">
+<p><code>:APP_PAGE_ID</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t25" headers="r1c1-t25">
+<p>PL/SQL and Direct PL</p>
+</td>
+<td align="left" headers="r4c1-t25 r1c2-t25">
+<p><code>NV('APP_PAGE_ID')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t25" headers="r1c1-t25">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r5c1-t25 r1c2-t25">
+<p><code>&amp;APP_PAGE_ID</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p>The following is an example of a substitution string reference:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+f?p=&amp;APP_ID.:&amp;APP_PAGE_ID.:&amp;APP_SESSION.
+</pre></div>
+<!-- class="sect3" -->
+<a id="BEIEHEJI" name="BEIEHEJI"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25037" id="HTMDB25037"></a>APP_SESSION<a id="sthref160" name="sthref160"></a></h2>
+<p><code>APP_SESSION</code> is one of the most commonly used built-in substitution strings. You can use this substitution string to create hypertext links between application pages that maintain a session state by passing the session number. Note that you can also use the substitution string <code>SESSION</code> in place of <code>APP_SESSION</code>. <a href="#BEIDDEFB">Table: APP_SESSION Syntax</a> describes the supported syntax for referencing <code>APP_SESSION</code>.</p>
+<div class="tblformal"><a id="sthref161" name="sthref161"></a><a id="BEIDDEFB" name="BEIDDEFB"></a>
+<p class="titleintable">APP_SESSION Syntax</p>
+<table class="Formal" title="APP_SESSION Syntax" summary="This table describes the supported syntax for referencing APP_SESSION." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="40%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t26">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t26">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t26" headers="r1c1-t26">
+<p>Bind variable</p>
+</td>
+<td align="left" headers="r2c1-t26 r1c2-t26">
+<p><code>:APP_SESSION</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t26" headers="r1c1-t26">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t26 r1c2-t26">
+<p><code>V('APP_SESSION')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t26" headers="r1c1-t26">
+<p>Short PL/SQL</p>
+</td>
+<td align="left" headers="r4c1-t26 r1c2-t26">
+<p><code>V('SESSION')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t26" headers="r1c1-t26">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r5c1-t26 r1c2-t26">
+<p><code>&amp;APP_SESSION.</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p>Consider the following examples:</p>
+<ul>
+<li>
+<p>From within an HTML region:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+&lt;a href="f?p=100:5:&amp;APP_SESSION."&gt;click me&lt;/a&gt; 
+</pre></li>
+<li>
+<p>Using PL/SQL:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+htf.anchor('f?p=100:5:'||V('APP_SESSION'),'click me');
+</pre></li>
+<li>
+<p>Using a SQL query:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT htf.anchor('f?p=100:5:'||:APP_SESSION,'clickme') FROM DUAL;
+</pre></li>
+</ul>
+</div>
+<!-- class="sect3" -->
+<a id="BEICBHCG" name="BEICBHCG"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25038" id="HTMDB25038"></a>APP_UNIQUE_PAGE_ID<a id="sthref162" name="sthref162"></a></h2>
+<p><code>APP_UNIQUE_PAGE_ID</code> is an integer generated from an Oracle sequence which is unique for each page view. This number is used by applications to prevent duplicate page submissions and can be used for other purposes. For example, to make a unique URL and avoid browser caching issues, you can embed this number in the request or debug column in calls to the <code>f</code> procedure. <a href="#BEIGGEHC">Table: APP_UNIQUE_PAGE_ID Syntax</a> describes the supported syntax for referencing <code>APP_UNIQUE_PAGE_ID</code>.</p>
+<div class="tblformal"><a id="sthref163" name="sthref163"></a><a id="BEIGGEHC" name="BEIGGEHC"></a>
+<p class="titleintable">APP_UNIQUE_PAGE_ID Syntax</p>
+<table class="Formal" title="APP_UNIQUE_PAGE_ID Syntax" summary="This table describes the supported syntax for referencing APP_UNIQUE_PAGE_ID." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="35%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t27">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t27">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t27" headers="r1c1-t27">
+<p>Bind variable</p>
+</td>
+<td align="left" headers="r2c1-t27 r1c2-t27">
+<p><code>:APP_UNIQUE_PAGE_ID</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t27" headers="r1c1-t27">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t27 r1c2-t27">
+<p><code>V('APP_UNIQUE_PAGE_ID')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t27" headers="r1c1-t27">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r4c1-t27 r1c2-t27">
+<p><code>&amp;APP_UNIQUE_PAGE_ID</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p>The following is an HTML example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT 'f?p=100:1:'||:APP_SESSION||':'||:APP_UNIQUE_PAGE_ID||
+    ':::P1_EMPNO:'||employee_id,
+   first_name,
+    job_id
+FROM employees
+</pre>
+<p>Note the use of the <code>APP_UNIQUE_PAGE_ID</code> in the request column. This makes this URL unique and may avoid excessive browser caching problems.</p>
+</div>
+<!-- class="sect3" -->
+<a id="BEIHCJBG" name="BEIHCJBG"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25039" id="HTMDB25039"></a>APP_USER<a id="sthref164" name="sthref164"></a></h2>
+<p><code>APP_USER</code> is the current user running the application. Depending upon your authentication model, the value of the user is set differently. If the application is running using database authentication, then the value of the user is the same as the database pseudo column USER. If the application uses an authentication scheme that requires the user to authenticate, the value of <code>APP_USER</code> is set by the authentication scheme, usually to the user name used during authentication. <a href="#BEIHFDGB">Table: APP_USER Syntax</a> describes the supported syntax for referencing <code>APP_USER</code>.</p>
+<div class="tblformal"><a id="sthref165" name="sthref165"></a><a id="BEIHFDGB" name="BEIHFDGB"></a>
+<p class="titleintable">APP_USER Syntax</p>
+<table class="Formal" title="APP_USER Syntax" summary="This table describes the supported syntax for referencing APP_USER." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="30%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t28">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t28">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t28" headers="r1c1-t28">
+<p>Bind variable</p>
+</td>
+<td align="left" headers="r2c1-t28 r1c2-t28">
+<p><code>:APP_USER</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t28" headers="r1c1-t28">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t28 r1c2-t28">
+<p><code>V('APP_USER')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t28" headers="r1c1-t28">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r4c1-t28 r1c2-t28">
+<p><code>&amp;APP_USER.</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p>Consider the following examples:</p>
+<ul>
+<li>
+<p>From within an HTML region:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+Hello you are logged in as &amp;APP_USER.
+</pre></li>
+<li>
+<p>Using PL/SQL:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+htp.p('Hello you are logged in as'||V('APP_USER')); 
+</pre></li>
+<li>
+<p>As a bind variable:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT * FROM some_table WHERE user_id = :APP_USER
+</pre>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="bldr_attr_sec.htm#CHDIFJEI">"Authentication"</a> for information about the Public User attribute</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</li>
+</ul>
+</div>
+<!-- class="sect3" -->
+<a id="BEIJEDHH" name="BEIJEDHH"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25040" id="HTMDB25040"></a>AUTHENTICATED_URL_PREFIX<a id="sthref166" name="sthref166"></a></h2>
+<p>This application-level attribute identifies a valid authenticated prefix (that is, a logged in URL prefix). You can use a relative path or a full path beginning with <code>http</code>. This item is useful if your application can be run in both authenticated (logged in) and public (not logged in) modes. You can use <code>AUTHENTICATED_URL_PREFIX</code> to construct a link to an authenticated page. This item is most useful when using basic database authentication because changes to the URL can require authentication. <a href="#BEIHJJHH">Table: AUTHENTICATED_URL_PREFIX Syntax</a> describes the supported syntax for referencing <code>AUTHENTICATED_URL_PREFIX</code>.</p>
+<div class="tblformal"><a id="sthref167" name="sthref167"></a><a id="BEIHJJHH" name="BEIHJJHH"></a>
+<p class="titleintable">AUTHENTICATED_URL_PREFIX Syntax</p>
+<table class="Formal" title="AUTHENTICATED_URL_PREFIX Syntax" summary="This table describes the supported syntax for referencing AUTHENTICATED_URL_PREFIX." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="32%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t30">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t30">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t30" headers="r1c1-t30">
+<p>Bind variable</p>
+</td>
+<td align="left" headers="r2c1-t30 r1c2-t30">
+<p><code>:AUTHENTICATED_URL_PREFIX</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t30" headers="r1c1-t30">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t30 r1c2-t30">
+<p><code>V('AUTHENTICATED_URL_PREFIX')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t30" headers="r1c1-t30">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r4c1-t30 r1c2-t30">
+<p><code>&amp;AUTHENTICATED_URL_PREFIX.</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></div>
+<!-- class="sect3" -->
+<a id="BEIDEHFE" name="BEIDEHFE"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25041" id="HTMDB25041"></a>BROWSER_LANGUAGE<a id="sthref168" name="sthref168"></a></h2>
+<p><code>BROWSER_LANGUAGE</code> refers to the Web browser's current language preference. <a href="#BEIDAHGH">Table: BROWSER_LANGUAGE Syntax</a> describes the supported syntax for referencing <code>BROWSER_LANGUAGE</code>.</p>
+<div class="tblformal"><a id="sthref169" name="sthref169"></a><a id="BEIDAHGH" name="BEIDAHGH"></a>
+<p class="titleintable">BROWSER_LANGUAGE Syntax</p>
+<table class="Formal" title="BROWSER_LANGUAGE Syntax" summary="This table describes the supported syntax for referencing BROWSER_LANGUAGE." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="38%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t31">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t31">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t31" headers="r1c1-t31">
+<p>Bind variable</p>
+</td>
+<td align="left" headers="r2c1-t31 r1c2-t31">
+<p><code>:BROWSER_LANGUAGE</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t31" headers="r1c1-t31">
+<p>Direct PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t31 r1c2-t31">
+<p><code>APEX_APPLICATION.G_BROWSER_LANGUAGE</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t31" headers="r1c1-t31">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r4c1-t31 r1c2-t31">
+<p><code>V('BROWSER_LANGUAGE')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t31" headers="r1c1-t31">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r5c1-t31 r1c2-t31">
+<p><code>:BROWSER_LANGUAGE.</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t31" headers="r1c1-t31">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r6c1-t31 r1c2-t31">
+<p><code>&amp;BROWSER_LANGUAGE.</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></div>
+<!-- class="sect3" -->
+<a id="BEIDBCBG" name="BEIDBCBG"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25042" id="HTMDB25042"></a>CURRENT_PARENT_TAB_TEXT<a id="sthref170" name="sthref170"></a></h2>
+<p><code>CURRENT_PARENT_TAB_TEXT</code> is most useful in page templates, but is only relevant for applications that use two-level tabs (that is, parent and standard tabs). Use this string to reference the parent tab label. This substitution string enables you to repeat the currently selected parent tab within the page template. <a href="#BEIBJDEJ">Table: CURRENT_PARENT_TAB_TEXT Syntax</a> describes the supported syntax for referencing <code>CURRENT_PARENT_TAB_TEXT</code>.</p>
+<div class="tblformal"><a id="sthref171" name="sthref171"></a><a id="BEIBJDEJ" name="BEIBJDEJ"></a>
+<p class="titleintable">CURRENT_PARENT_TAB_TEXT Syntax</p>
+<table class="Formal" title="CURRENT_PARENT_TAB_TEXT Syntax" summary="This table describes the supported syntax for referencing CURRENT_PARENT_TAB_TEXT." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="39%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t32">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t32">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t32" headers="r1c1-t32">
+<p>Bind variable</p>
+</td>
+<td align="left" headers="r2c1-t32 r1c2-t32">
+<p>Not Available.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t32" headers="r1c1-t32">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r3c1-t32 r1c2-t32">
+<p><code>&amp;CURRENT_PARENT_TAB_TEXT.</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></div>
+<!-- class="sect3" -->
+<a id="BEIFAGIE" name="BEIFAGIE"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25043" id="HTMDB25043"></a>DEBUG<a id="sthref172" name="sthref172"></a></h2>
+<p>Valid values for the <code>DEBUG</code> flag are Yes or No. Turning debug on shows details about application processing. If you write your own custom code, you may want to generate debug information only if the debug mode is set to Yes. <a href="#BEIBAFJD">Table: DEBUG Syntax</a> describes the supported syntax for referencing <code>DEBUG</code>.</p>
+<div class="tblformal"><a id="sthref173" name="sthref173"></a><a id="BEIBAFJD" name="BEIBAFJD"></a>
+<p class="titleintable">DEBUG Syntax</p>
+<table class="Formal" title="DEBUG Syntax" summary="This table describes the supported syntax for referencing DEBUG." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="33%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t33">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t33">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t33" headers="r1c1-t33">
+<p>Bind variable</p>
+</td>
+<td align="left" headers="r2c1-t33 r1c2-t33">
+<p>:<code>DEBUG</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t33" headers="r1c1-t33">
+<p>Direct PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t33 r1c2-t33">
+<p><code>APEX_APPLICATION.G_DEBUG</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t33" headers="r1c1-t33">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r4c1-t33 r1c2-t33">
+<p><code>V('DEBUG')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t33" headers="r1c1-t33">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r5c1-t33 r1c2-t33">
+<p><code>&amp;DEBUG</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p>The following is an example of a substitution string reference that preserves the current value of <code>DEBUG</code>:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+f?p=100:1:&amp;APP_SESSION.::&amp;DEBUG
+</pre></div>
+<!-- class="sect3" -->
+<a id="CIHHHHDD" name="CIHHHHDD"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25044" id="HTMDB25044"></a>HOME_LINK</h2>
+<p><code>HOME_LINK</code> is the home page of an application. The Application Express engine will redirect to this location if no page is given and if no alternative page is dictated by the authentication scheme's logic. You define the Home Link on the Application Attributes page.</p>
+<p><a href="#CIHIHJBA">Table: HOME_LINK Syntax</a> describes the supported syntax for referencing HOME_LINK.</p>
+<div class="tblformal"><a id="sthref174" name="sthref174"></a><a id="CIHIHJBA" name="CIHIHJBA"></a>
+<p class="titleintable">HOME_LINK Syntax</p>
+<table class="Formal" title="HOME_LINK Syntax" summary="This table describes the supported syntax for referencing HOME LINK." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="27%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t34">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t34">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t34" headers="r1c1-t34">
+<p>Direct PL/SQL</p>
+</td>
+<td align="left" headers="r2c1-t34 r1c2-t34">
+<p><code>APEX_APPLICATION.G_HOME_LINK</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t34" headers="r1c1-t34">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t34 r1c2-t34">
+<p><code>V('HOME_LINK')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t34" headers="r1c1-t34">
+<p>Template Reference</p>
+</td>
+<td align="left" headers="r4c1-t34 r1c2-t34">
+<p><code>#HOME_LINK#</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t34" headers="r1c1-t34">
+<p>Substitution String</p>
+</td>
+<td align="left" headers="r5c1-t34 r1c2-t34">
+<p><code>&amp;HOME_LINK.</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="bldr_attr_sec.htm#CHDIFJEI">"Authentication"</a> for information about the Home Link attribute</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect3" -->
+<a id="BCEHHHGD" name="BCEHHHGD"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25045" id="HTMDB25045"></a>LOGIN_URL</h2>
+<p>Use <code>LOGIN_URL</code> to display a link to a login page for users that are not currently logged in. <a href="#BCEICJGB">Table: LOGIN_URL Syntax</a> describes the supported syntax for <code>LOGIN_URL</code>.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="bldr_attr_sec.htm#CHDIFJEI">"Authentication"</a> and <a href="bldr_attr_sec.htm#CHDHIBHE">"About the Security Attributes Page"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<div class="tblformal"><a id="sthref175" name="sthref175"></a><a id="BCEICJGB" name="BCEICJGB"></a>
+<p class="titleintable">LOGIN_URL Syntax</p>
+<table class="Formal" title="LOGIN_URL Syntax" summary="This table describes the supported syntax for referencing LOGIN_URL." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t37">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t37">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t37" headers="r1c1-t37">
+<p>Bind variable</p>
+</td>
+<td align="left" headers="r2c1-t37 r1c2-t37">
+<p><code>:LOGIN_URL</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t37" headers="r1c1-t37">
+<p>Direct PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t37 r1c2-t37">
+<p><code>APEX_APPLICATION.G_LOGIN_URL</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t37" headers="r1c1-t37">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r4c1-t37 r1c2-t37">
+<p><code>V('LOGIN_URL')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t37" headers="r1c1-t37">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r5c1-t37 r1c2-t37">
+<p><code>&amp;LOGIN_URL.</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t37" headers="r1c1-t37">
+<p>Template Substitution</p>
+</td>
+<td align="left" headers="r6c1-t37 r1c2-t37">
+<p><code>#LOGIN_URL#</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></div>
+<!-- class="sect3" -->
+<a id="BEIGJJBG" name="BEIGJJBG"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25046" id="HTMDB25046"></a>IMAGE_PREFIX<a id="sthref176" name="sthref176"></a></h2>
+<p>The value of <code>IMAGE_PREFIX</code> determines the virtual path the Web server uses to point to the images directory distributed with Oracle Application Express. To reference uploaded images, use <code>WORKSPACE_IMAGES</code> and <code>APP_IMAGES</code>. <a href="#BEIJJICI">Table: IMAGE_PREFIX Syntax</a> describes the supported syntax for referencing <code>IMAGE_PREFIX</code>.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="#BEIDCGAJ">"APP_IMAGES"</a>,<a href="#BEICEJEA">"WORKSPACE_IMAGES"</a>, and <a href="bldr_attr_standard.htm#CHDGJHDC">"Editing the Application Definition"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<div class="tblformal"><a id="sthref177" name="sthref177"></a><a id="BEIJJICI" name="BEIJJICI"></a>
+<p class="titleintable">IMAGE_PREFIX Syntax</p>
+<table class="Formal" title="IMAGE_PREFIX Syntax" summary="This table describes the supported syntax for referencing IMAGE_PREFIX." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t39">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t39">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t39" headers="r1c1-t39">
+<p>Bind variable</p>
+</td>
+<td align="left" headers="r2c1-t39 r1c2-t39">
+<p><code>:IMAGE_PREFIX</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t39" headers="r1c1-t39">
+<p>Direct PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t39 r1c2-t39">
+<p><code>APEX_APPLICATION.G_IMAGE_PREFIX</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t39" headers="r1c1-t39">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r4c1-t39 r1c2-t39">
+<p><code>V('IMAGE_PREFIX')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t39" headers="r1c1-t39">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r5c1-t39 r1c2-t39">
+<p><code>&amp;IMAGE_PREFIX.</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t39" headers="r1c1-t39">
+<p>Template Substitution</p>
+</td>
+<td align="left" headers="r6c1-t39 r1c2-t39">
+<p><code>#IMAGE_PREFIX#</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></div>
+<!-- class="sect3" -->
+<a id="BEIJFFEE" name="BEIJFFEE"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25047" id="HTMDB25047"></a> Application Express SCHEMA OWNER <a id="sthref178" name="sthref178"></a></h2>
+<p>If you are generating calls to applications from within your PL/SQL code, you may need to reference the owner of the Oracle Application Express schema. The following describes the correct syntax for a direct PL/SQL reference:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_APPLICATION.G_FLOW_SCHEMA_OWNER
+</pre>
+<p>You may also use <code>#FLOW_OWNER#</code> to reference this value in SQL queries and PL/SQL (for example, in a region or a process).</p>
+</div>
+<!-- class="sect3" -->
+<a id="BEIFGGJB" name="BEIFGGJB"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25048" id="HTMDB25048"></a>PRINTER_FRIENDLY<a id="sthref179" name="sthref179"></a></h2>
+<p>The value of <code>PRINTER_FRIENDLY</code> determines if the Application Express engine is running in print view mode. This setting can be referenced in conditions to eliminate elements not desired in a printed document from a page. <a href="#BEIGFGGE">Table: PRINTER_FRIENDLY Syntax</a> describes the supported syntax for referencing <code>PRINTER_FRIENDLY</code>.</p>
+<div class="tblformal"><a id="sthref180" name="sthref180"></a><a id="BEIGFGGE" name="BEIGFGGE"></a>
+<p class="titleintable">PRINTER_FRIENDLY Syntax</p>
+<table class="Formal" title="PRINTER_FRIENDLY Syntax" summary="This table describes the supported syntax for referencing PRINTER_FRIENDLY." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="25%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t40">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t40">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t40" headers="r1c1-t40">
+<p>Direct PL/SQL</p>
+</td>
+<td align="left" headers="r2c1-t40 r1c2-t40">
+<p><code>APEX_APPLICATION.G_PRINTER_FRIENDLY (VARCHAR2 DATATYPE)</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t40" headers="r1c1-t40">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t40 r1c2-t40">
+<p><code>V('PRINTER_FRIENDLY')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t40" headers="r1c1-t40">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r4c1-t40 r1c2-t40">
+<p><code>&amp;PRINTER_FRIENDLY.</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></div>
+<!-- class="sect3" -->
+<a id="BEICHGAC" name="BEICHGAC"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25049" id="HTMDB25049"></a>LOGOUT_URL<a id="sthref181" name="sthref181"></a></h2>
+<p><code>LOGOUT_URL</code> is an application-level attribute used to identify the logout URL. This is a URL that navigates the user to a logout page or optionally directly logs out a user. To create a logout navigation bar entry, add a trailing period to <code>&amp;LOGOUT_URL</code> (<code>&amp;LOGOUT_URL.</code>). If you are coding a page template, use <code>#LOGOUT_URL#</code>. <a href="#BEIIAGGB">Table: LOGOUT_URL Syntax</a> describes the supported syntax for referencing <code>LOGOUT_URL</code>.</p>
+<div class="tblformal"><a id="sthref182" name="sthref182"></a><a id="BEIIAGGB" name="BEIIAGGB"></a>
+<p class="titleintable">LOGOUT_URL Syntax</p>
+<table class="Formal" title="LOGOUT_URL Syntax" summary="This table describes the supported syntax for referencing LOGOUT_URL." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="32%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t41">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t41">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t41" headers="r1c1-t41">
+<p>Bind variable</p>
+</td>
+<td align="left" headers="r2c1-t41 r1c2-t41">
+<p><code>:LOGOUT_URL</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t41" headers="r1c1-t41">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t41 r1c2-t41">
+<p><code>V('LOGOUT_URL')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t41" headers="r1c1-t41">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r4c1-t41 r1c2-t41">
+<p><code>&amp;LOGOUT_URL.</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t41" headers="r1c1-t41">
+<p>Template substitution</p>
+</td>
+<td align="left" headers="r5c1-t41 r1c2-t41">
+<p><code>#LOGOUT_URL#</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></div>
+<!-- class="sect3" -->
+<a id="BEIJDAHC" name="BEIJDAHC"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25050" id="HTMDB25050"></a>PROXY_SERVER<a id="sthref183" name="sthref183"></a></h2>
+<p><code>PROXY_SERVER</code> is an application attribute. The attribute may be used by regions whose source comes from a URL. The following is the correct syntax for a direct PL/SQL reference used when you are writing PL/SQL to access remote Web servers from within the database (for example, when using the <code>utl_http</code> package shipped with the database).</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_APPLICATION.G_PROXY_SERVER
+</pre></div>
+<!-- class="sect3" -->
+<a id="BEIIGFGF" name="BEIIGFGF"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25051" id="HTMDB25051"></a>PUBLIC_URL_PREFIX<a id="sthref184" name="sthref184"></a></h2>
+<p><code>PUBLIC_URL_PREFIX</code> is an application-level attribute that identifies a URL to toggle out of a logged in mode to a public view. <a href="#BEIEBGBE">Table: PUBLIC_URL_PREFIX Syntax</a> describes the supported syntax for referencing <code>PUBLIC_URL_PREFIX</code>.</p>
+<div class="tblformal"><a id="sthref185" name="sthref185"></a><a id="BEIEBGBE" name="BEIEBGBE"></a>
+<p class="titleintable">PUBLIC_URL_PREFIX Syntax</p>
+<table class="Formal" title="PUBLIC_URL_PREFIX Syntax" summary="This table describes the supported syntax for referencing PUBLIC_URL_PREFIX." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="32%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t42">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t42">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t42" headers="r1c1-t42">
+<p>Bind variable</p>
+</td>
+<td align="left" headers="r2c1-t42 r1c2-t42">
+<p><code>:PUBLIC_URL_PREFIX</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t42" headers="r1c1-t42">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t42 r1c2-t42">
+<p><code>V('PUBLIC_URL_PREFIX')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t42" headers="r1c1-t42">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r4c1-t42 r1c2-t42">
+<p><code>&amp;PUBLIC_URL_PREFIX.</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t42" headers="r1c1-t42">
+<p>Template substitution</p>
+</td>
+<td align="left" headers="r5c1-t42 r1c2-t42">
+<p><code>#PUBLIC_URL_PREFIX#</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></div>
+<!-- class="sect3" -->
+<a id="BEIFJJBC" name="BEIFJJBC"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25052" id="HTMDB25052"></a>REQUEST <a id="sthref186" name="sthref186"></a><a id="sthref187" name="sthref187"></a><a id="sthref188" name="sthref188"></a></h2>
+<p>Each application button sets the value of <code>REQUEST</code> to the name of the button or to the request value attribute associated with the button. This enables accept processing to reference the name of the button when a user clicks it. In the <code>f?p</code> syntax, <code>REQUEST</code> may be set using the fourth argument.</p>
+<div class="sect4"><!-- infolevel="all" infotype="General" --><a id="sthref189" name="sthref189"></a>
+<h3><a name="HTMDB25053" id="HTMDB25053"></a>Referencing the Value of REQUEST</h3>
+<p><code>REQUEST</code> is typically referenced during Accept processing (that is, the processing that occurs when you post a page). <a href="#BEIDAIED">Table: REQUEST Syntax</a> describes the supported syntax for referencing <code>REQUEST</code>.</p>
+<div class="tblformal"><a id="sthref190" name="sthref190"></a><a id="BEIDAIED" name="BEIDAIED"></a>
+<p class="titleintable">REQUEST Syntax</p>
+<table class="Formal" title="REQUEST Syntax" summary="This table describes the supported syntax for referencing REQUEST." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="29%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t43">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t43">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t43" headers="r1c1-t43">
+<p>Bind variable</p>
+</td>
+<td align="left" headers="r2c1-t43 r1c2-t43">
+<p><code>:REQUEST</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t43" headers="r1c1-t43">
+<p>Direct PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t43 r1c2-t43">
+<p><code>APEX_APPLICATION.G_REQUEST</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t43" headers="r1c1-t43">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r4c1-t43 r1c2-t43">
+<p><code>V('REQUEST')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t43" headers="r1c1-t43">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r5c1-t43 r1c2-t43">
+<p><code>&amp;REQUEST</code></p>
+<p><code>&amp;REQUEST.</code> (exact syntax match)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></div>
+<!-- class="sect4" -->
+<div class="sect4"><!-- infolevel="all" infotype="General" --><a id="sthref191" name="sthref191"></a>
+<h3><a name="HTMDB25054" id="HTMDB25054"></a>Scope and Value of REQUEST for Posted Pages</h3>
+<p>When you post a page, you initiate Accept processing. Accept processing consists of computations, validations, processes, and branches. The value of <code>REQUEST</code> is available during each phase of the Accept processing. Once an application branches to a different page then <code>REQUEST</code> is set to NULL.</p>
+<p>The value of <code>REQUEST</code> is the name of the button the user clicks, or the name of the tab the user selects. For example, suppose you have a button with a name of <code>CHANGE</code>, and a label <code>Apply Change</code>. When a user clicks the button, the value of <code>REQUEST</code> is <code>CHANGE</code>.</p>
+</div>
+<!-- class="sect4" -->
+<a id="CHDDCFIJ" name="CHDDCFIJ"></a>
+<div class="sect4"><!-- infolevel="all" infotype="General" -->
+<h3><a name="HTMDB25055" id="HTMDB25055"></a>About the <a id="sthref192" name="sthref192"></a><a id="sthref193" name="sthref193"></a><a id="sthref194" name="sthref194"></a>When Button Pressed Attribute</h3>
+<p>Validations, processes, and branches have a When Button Pressed attribute. This attribute displays as a select list and contains the names of buttons that exist on the current page. If you make a selection from When Button Pressed, you associate the button's <code>REQUEST</code> value with the validation, process, or branch.</p>
+<p>When you use a button to submit a page, the <code>REQUEST</code> value is passed to the page. The Accept processing logic evaluates each validation, process, and branch that uses a When Button Pressed attribute to determine whether the component should run (or fire). When one of these components runs, do not assume that a user actually clicked the associated button and caused the page to be submitted. Keep in mind, that another button using the same request value may have submitted the page. Similarly, JavaScript on the page can also submit the page and pass in a request value.</p>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><!-- infolevel="all" infotype="General" --><a id="sthref195" name="sthref195"></a>
+<h3><a name="HTMDB25056" id="HTMDB25056"></a>Referencing REQUEST Using Declarative Conditions</h3>
+<p>It is common to reference <code>REQUEST</code> using conditions. For example, you may want to reset pagination when a user clicks <span class="bold">Go</span> on a report page. You can reset pagination by creating an on-submit page process. The page process can be made conditional using the condition <code>Request = Expression 1</code>.</p>
+<p>To conditionalize an on-submit page process:</p>
+<ol>
+<li>
+<p>Under Condition, select the condition type <span class="bold">Request = Expression 1</span>.</p>
+</li>
+<li>
+<p>In Expression 1, enter <span class="bold">GO</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><!-- infolevel="all" infotype="General" --><a id="sthref196" name="sthref196"></a>
+<h3><a name="HTMDB25057" id="HTMDB25057"></a>Using REQUEST for Show Processing</h3>
+<p>You can also use <code>REQUEST</code> for Show processing when navigating to a page using <code>f?p</code> syntax. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+f?p=100:1:&amp;APP_SESSION.:GO
+</pre>
+<p>Remember that the fourth argument in the <code>f?p</code> syntax is <code>REQUEST</code>. This example goes to application 100, page 1 for the current session, and sets the value of <code>REQUEST</code> to <code>GO</code>. Any process or region can reference the value of <code>REQUEST</code> using Show processing.</p>
+<p>The following is a similar example using PL/SQL:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+IF V ('REQUEST') = 'GO' THEN
+   htp.p('hello');
+END IF;
+</pre>
+<p>Note that <code>htp.p('hello')</code> is a call to a PL/SQL Web Toolkit package to print out the specified text string.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li>
+<p><a href="http://www.oracle.com/pls/db112/lookup?id=ADFNS"><span class="italic">Oracle Database Advanced Application Developer's Guide</span></a> for information about developing Web applications with PL/SQL</p>
+</li>
+<li>
+<p><a href="http://www.oracle.com/pls/db112/lookup?id=ARPLS"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for information about htp packages</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<a id="BEIECHFH" name="BEIECHFH"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25058" id="HTMDB25058"></a>SQLERRM<a id="sthref197" name="sthref197"></a></h2>
+<p><code>SQLERRM</code> is a template substitution only available in the Applications Region Error Message. The following describes the correct syntax for a region template substitution reference:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+#SQLERRM#
+</pre></div>
+<!-- class="sect3" -->
+<a id="BEIGGIFI" name="BEIGGIFI"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25059" id="HTMDB25059"></a>SYSDATE_YYYYMMDD<a id="sthref198" name="sthref198"></a></h2>
+<p><code>SYSDATE_YYYYMMDD</code> represents the current date on the database server, with the <code><span class="codeinlineitalic">YYYYMMDD</span></code> format mask applied. You may use this value instead of repeated calls to the <code>SYSDATE()</code> function. The following list describes the supported syntax for referencing <code>SYSDATE_YYYYMMDD</code>.</p>
+<ul>
+<li>
+<p>Bind variable</p>
+<pre xml:space="preserve" class="oac_no_warn">
+:SYSDATE_YYYYMMDD
+</pre></li>
+<li>
+<p>PL/SQL</p>
+<pre xml:space="preserve" class="oac_no_warn">
+V('SYSDATE_YYYYMMDD')
+</pre></li>
+<li>
+<p>Direct PL/SQL</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_APPLICATION.G_SYSDATE (DATE DATATYPE)
+</pre></li>
+</ul>
+<div class="tblformal"><a id="sthref199" name="sthref199"></a><a id="BEIHFJDA" name="BEIHFJDA"></a>
+<p class="titleintable">SYSDATE_YYYYMMDD Syntax</p>
+<table class="Formal" title="SYSDATE_YYYYMMDD Syntax" summary="This table describes the supported syntax for referencing SYSDATE_YYYYMMDD." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t45">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t45">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t45" headers="r1c1-t45">
+<p>Bind variable</p>
+</td>
+<td align="left" headers="r2c1-t45 r1c2-t45">
+<p><code>:SYSDATE_YYYYMMDD</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t45" headers="r1c1-t45">
+<p>Direct PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t45 r1c2-t45">
+<p><code>APEX_APPLICATION.G_SYSDATE (DATE DATATYPE)</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t45" headers="r1c1-t45">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r4c1-t45 r1c2-t45">
+<p><code>V('SYSDATE_YYYYMMDD')</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></div>
+<!-- class="sect3" -->
+<a id="BEICEJEA" name="BEICEJEA"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25060" id="HTMDB25060"></a>WORKSPACE_IMAGES<a id="sthref200" name="sthref200"></a></h2>
+<p>Use this substitution string to reference uploaded images, JavaScript, and cascading style sheets that are shared over many applications within a workspace. <a href="#BEIEEHGB">Table: WORKSPACE_IMAGES Syntax</a> describes the supported syntax for referencing <code>WORKSPACE_IMAGES</code>.</p>
+<div class="tblformal"><a id="sthref201" name="sthref201"></a><a id="BEIEEHGB" name="BEIEEHGB"></a>
+<p class="titleintable">WORKSPACE_IMAGES Syntax</p>
+<table class="Formal" title="WORKSPACE_IMAGES Syntax" summary="This table describes the supported syntax for referencing WORKSPACE_IMAGES." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="35%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t46">Reference Type</th>
+<th align="left" valign="bottom" id="r1c2-t46">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t46" headers="r1c1-t46">
+<p>Bind variable</p>
+</td>
+<td align="left" headers="r2c1-t46 r1c2-t46">
+<p><code>:WORKSPACE_IMAGES</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t46" headers="r1c1-t46">
+<p>Direct PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t46 r1c2-t46">
+<p>Not available</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t46" headers="r1c1-t46">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r4c1-t46 r1c2-t46">
+<p><code>V('WORKSPACE_IMAGES')</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t46" headers="r1c1-t46">
+<p>Substitution string</p>
+</td>
+<td align="left" headers="r5c1-t46 r1c2-t46">
+<p><code>&amp;WORKSPACE_IMAGES.</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t46" headers="r1c1-t46">
+<p>Template substitution</p>
+</td>
+<td align="left" headers="r6c1-t46 r1c2-t46">
+<p><code>#WORKSPACE_IMAGES#</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="#BEIDCGAJ">"APP_IMAGES"</a> and <a href="#BEIGJJBG">"IMAGE_PREFIX"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="concept_sub_using.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="demo.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

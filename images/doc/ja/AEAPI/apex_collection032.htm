@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>UPDATE_MEMBER Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:37Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="UPDATE_MEMBER Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_collection031.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_collection033.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_collection031.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection033.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CJACBDDD" name="CJACBDDD"></a></p>
+<hr />
+<div class="refsect1">
+<h1><a id="sthref275" name="sthref275"></a>UPDATE_MEMBER Procedure</h1>
+<p>Use this procedure to update the specified member in the given named collection. If a collection does not exist with the specified name for the current user in the same session and for the current Application ID, an application error will be raised. If the member specified by sequence ID p_seq does not exist, an application error is raised.</p>
+<a id="sthref276" name="sthref276"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_COLLECTION.UPDATE_MEMBER (
+    p_collection_name IN VARCHAR2,
+    p_seq  IN VARCHAR2 DEFAULT NULL,
+    p_c001 IN VARCHAR2 DEFAULT NULL,
+    p_c002 IN VARCHAR2 DEFAULT NULL,
+    p_c003 IN VARCHAR2 DEFAULT NULL,
+    ...
+    p_c050 IN VARCHAR DEFAULT NULL,
+    p_n001 IN NUMBER DEFAULT NULL,
+    p_n002 IN NUMBER DEFAULT NULL,
+    p_n003 IN NUMBER DEFAULT NULL,
+    p_n004 IN NUMBER DEFAULT NULL,
+    p_n005 IN NUMBER DEFAULT NULL,
+    p_d001 IN DATE DEFAULT NULL,
+    p_d002 IN DATE DEFAULT NULL,
+    p_d003 IN DATE DEFAULT NULL,
+    p_d004 IN DATE DEFAULT NULL,
+    p_d005 IN DATE DEFAULT NULL,   
+    p_clob001 IN CLOB DEFAULT empty_clob(),
+    p_blob IN BLOB DEFAULT empty-blob(),
+    p_xmltype001 IN XMLTYPE DEFAULT NULL);
+</pre>
+<a id="sthref277" name="sthref277"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#CJAJIAAE">Table: UPDATE_MEMBER Parameters</a> describes the parameters available in the <code>UPDATE_MEMBER</code> procedure.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Any character attribute exceeding 4,000 characters is truncated to 4,000 characters. Also, the number of members added is based on the number of elements in the first array.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+<div class="tblformal"><a id="sthref278" name="sthref278"></a><a id="CJAJIAAE" name="CJAJIAAE"></a>
+<p class="titleintable">UPDATE_MEMBER Parameters</p>
+<table class="Formal" title="UPDATE_MEMBER Parameters" summary="This table describes the parameters available in the UNEXPIRE_END_USER_ACCOUNT procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t70">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t70">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t70" headers="r1c1-t70">
+<p><code>p_collection_name</code></p>
+</td>
+<td align="left" headers="r2c1-t70 r1c2-t70">
+<p>The name of the collection to update. Maximum length is 255 bytes. Collection names are not case sensitive and are converted to upper case.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t70" headers="r1c1-t70">
+<p><code>p_c001 through p_c050</code></p>
+</td>
+<td align="left" headers="r3c1-t70 r1c2-t70">
+<p>Attribute value of the member to be added. Maximum length is 4,000 bytes. Any character attribute exceeding 4,000 characters is truncated to 4,000 characters.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t70" headers="r1c1-t70">
+<p><code>p_n001 through p_n005</code></p>
+</td>
+<td align="left" headers="r4c1-t70 r1c2-t70">
+<p>Attribute value of the numeric attributes to be added or updated.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t70" headers="r1c1-t70">
+<p><code>p_d001</code> through <code>p_d005</code></p>
+</td>
+<td align="left" headers="r5c1-t70 r1c2-t70">
+<p>Attribute value of the date attributes to be added or updated.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t70" headers="r1c1-t70">
+<p><code>p_clob001</code></p>
+</td>
+<td align="left" headers="r6c1-t70 r1c2-t70">
+<p>Use p_clob001 for collection member attributes that exceed 4,000 characters.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t70" headers="r1c1-t70">
+<p><code>p_blob001</code></p>
+</td>
+<td align="left" headers="r7c1-t70 r1c2-t70">
+<p>Use p_blob001 for binary collection member attributes.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t70" headers="r1c1-t70">
+<p><code>p_xmltype001</code></p>
+</td>
+<td align="left" headers="r8c1-t70 r1c2-t70">
+<p>Use p_xmltype001 to store well-formed XML.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref279" name="sthref279"></a>
+<p class="subhead2">Example</p>
+<p>Update the second member of the collection named 'Departments', updating the first member attribute to 'Engineering' and the second member attribute to 'Sales'.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN;
+    APEX_COLLECTION.UPDATE_MEMBER (
+        p_collection_name =&gt; 'Departments',
+        p_seq =&gt; '2',
+        p_c001 =&gt; 'Engineering',
+        p_c002 =&gt; 'Sales');
+</pre>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection033.htm#CJAJEJJC">"UPDATE_MEMBERS Procedure"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_collection031.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection033.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

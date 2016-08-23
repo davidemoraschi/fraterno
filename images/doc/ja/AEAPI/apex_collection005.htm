@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Managing Collections</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:37Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Managing Collections" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_collection004.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_collection006.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_collection004.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection006.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABBFIAA" name="BABBFIAA"></a></p>
+<hr />
+<h1>Managing <a id="sthref141" name="sthref141"></a>Collections</h1>
+<p><a id="sthref142" name="sthref142"></a></p>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#CHDBCGAA">Obtaining a Member Count</a></p>
+</li>
+<li>
+<p><a href="#CHDBGHCD">Resequencing a Collection</a></p>
+</li>
+<li>
+<p><a href="#CHDDHCIF">Verifying Whether a Collection Exists</a></p>
+</li>
+<li>
+<p><a href="#CHDDADFF">Adjusting a Member Sequence ID</a></p>
+</li>
+<li>
+<p><a href="#CHDFFJCE">Sorting Collection Members</a></p>
+</li>
+<li>
+<p><a href="#BAGDGEJD">Clearing Collection Session State</a></p>
+</li>
+</ul>
+<p><a id="CHDBCGAA" name="CHDBCGAA"></a></p>
+<h2>Obtaining a Member Count</h2>
+<p>Use <code>COLLECTION_MEMBER_COUNT</code> to return the total count of all members in a collection. Note that this count does not indicate the highest sequence in the collection.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection011.htm#CJAFFEAH">"COLLECTION_MEMBER_COUNT Function"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<p><a id="CHDBGHCD" name="CHDBGHCD"></a></p>
+<h2>Resequencing a Collection</h2>
+<p>Use <code>RESEQUENCE_COLLECTION</code> to resequence a collection to remove any gaps in sequence IDs while maintaining the same element order.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection027.htm#CJAFCEEA">"RESEQUENCE_COLLECTION Procedure"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<p><a id="CHDDHCIF" name="CHDDHCIF"></a></p>
+<h2>Verifying Whether a Collection Exists</h2>
+<p>Use <code>COLLECTION_EXISTS</code> to determine if a collection exists.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection009.htm#CJAEEGJA">"COLLECTION_EXISTS Function"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<p><a id="CHDDADFF" name="CHDDADFF"></a></p>
+<h2>Adjusting a Member Sequence ID</h2>
+<p>You can adjust the sequence ID of a specific member within a collection by moving the ID up or down. When you adjust a sequence ID, the specified ID is exchanged with another ID. For example, if you were to move the ID 2 up, 2 becomes 3, and 3 would become 2.</p>
+<p>Use <code>MOVE_MEMBER_UP</code> to adjust a member sequence ID up by one. Alternately, use <code>MOVE_MEMBER_DOWN</code> to adjust a member sequence ID down by one.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection025.htm#CJAJGIBF">"MOVE_MEMBER_DOWN Procedure"</a>, <a href="apex_collection026.htm#CJAHIDAJ">"MOVE_MEMBER_UP Procedure"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<p><a id="CHDFFJCE" name="CHDFFJCE"></a></p>
+<h2>Sorting Collection Members</h2>
+<p>Use the <code>SORT_MEMBERS</code> method to reorder members of a collection by the column number. This method sorts the collection by a particular column number and also reassigns the sequence IDs for each member to remove gaps.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection030.htm#CJAJGIAI">"SORT_MEMBERS Procedure"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<p><a id="BAGDGEJD" name="BAGDGEJD"></a></p>
+<h2>Clearing Collection <a id="sthref143" name="sthref143"></a>Session State</h2>
+<p>Clearing the session state of a collection removes the collection members. A shopping cart is a good example of when you might need to clear collection session state. When a user requests to empty the shopping cart and start again, you must clear the session state for a collection. You can remove session state of a collection by calling the <code>TRUNCATE_COLLECTION</code> method or by using <code>f?p</code> syntax.</p>
+<p>Calling the <code>TRUNCATE_COLLECTION</code> method deletes the existing collection and then recreates it, for example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+<a id="sthref144" name="sthref144"></a>APEX_COLLECTION.TRUNCATE_COLLECTION(
+    p_collection_name =&gt; collection name);
+</pre>
+<p>You can also use the sixth <code>f?p</code> syntax argument to clear session state, for example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+f?p=App:Page:Session::NO:collection name
+</pre>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection031.htm#CJADGFHA">"TRUNCATE_COLLECTION Procedure"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<p><a id="BABIAEDH" name="BABIAEDH"></a></p>
+<h2>Determining Collection <a id="sthref145" name="sthref145"></a>Status</h2>
+<p>The <code>p_generate_md5</code> parameter determines if the MD5 message digests are computed for each member of a collection. The collection status flag is set to <code>FALSE</code> immediately after you create a collection. If any operations are performed on the collection (such as add, update, truncate, and so on), this flag is set to <code>TRUE</code>.</p>
+<p>You can reset this flag manually by calling <code>RESET_COLLECTION_CHANGED</code>.</p>
+<p>Once this flag has been reset, you can determine if a collection has changed by calling <code>COLLECTION_HAS_CHANGED</code>.</p>
+<p>When you add a new member to a collection, an MD5 message digest is computed against all 50 attributes and the CLOB attribute if the <code>p_generated_md5</code> parameter is set to <code>YES</code>. You can access this value from the <code>MD5_ORIGINAL</code> column of the view <code>APEX_COLLECTION</code>. You can access the MD5 message digest for the current value of a specified collection member by using the function <code>GET_MEMBER_MD5</code>.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection028.htm#CJADHAAJ">"RESET_COLLECTION_CHANGED Procedure"</a>, <a href="apex_collection010.htm#CJAIJBBI">"COLLECTION_HAS_CHANGED Function"</a>, <a href="apex_collection023.htm#CJAIFADF">"GET_MEMBER_MD5 Function"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_collection004.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection006.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

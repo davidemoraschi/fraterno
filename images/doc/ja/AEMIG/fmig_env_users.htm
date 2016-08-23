@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Creating Oracle Application Express Users</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-28T10:25:25Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Creating Oracle Application Express Users" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15518-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="appmgr_forms.htm" title="Converting an Oracle Forms ..." type="text/html" />
+<link rel="up" href="fmig_env.htm" title="Step 2: Create a Workspace ..." type="text/html" />
+<link rel="up" href="fmig_env_users.htm" title="Creating Oracle Application..." type="text/html" />
+<link rel="prev" href="fmig_env_wrkspc.htm" title="Previous" type="text/html" />
+<link rel="next" href="fmig_login.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="appmgr_forms.htm" title="Converting an Oracle Forms ...">Converting an Oracle Forms ...</a> &gt; <a href="fmig_env.htm" title="Step 2: Create a Workspace ...">Step 2: Create a Workspace ...</a> &gt; Creating Oracle Application...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="fmig_env_wrkspc.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="fmig_login.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDFCJHE" name="CHDFCJHE"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1>Creating Oracle Application Express <a id="sthref104" name="sthref104"></a><a id="sthref105" name="sthref105"></a>Users</h1>
+<p>To create an Oracle Application Express user account:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See "Logging in to Oracle Application Express Administration Services" in <a href="../AEADM/adm_login.htm"><span class="italic">Oracle Application Express Administration Guide</span></a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Workspaces</span>.</p>
+</li>
+<li>
+<p>Under Manage Workspaces, click <span class="bold">Manage Developers and Users</span>.</p>
+<p>The Manage Developers and Users page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create User</span>.</p>
+<p>The Create/Edit User page appears.</p>
+</li>
+<li>
+<p>Under User Attributes, enter:</p>
+<ol>
+<li>
+<p><span class="bold">Username</span> - Enter the username used to log in to the system. Restrictions include:</p>
+<ul>
+<li>
+<p>Maximum length of 100 characters</p>
+</li>
+<li>
+<p>No spaces</p>
+</li>
+<li>
+<p>Only these special characters are permitted: amerpsand (@) and period (.)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Email Address</span> - Enter the valid email address for this user.</p>
+</li>
+<li>
+<p><span class="bold">First Name</span> - Enter the first or given name to further identify the user (optional).</p>
+</li>
+<li>
+<p><span class="bold">Last Name</span> - Enter the last or family name to further identify the user (optional).</p>
+</li>
+<li>
+<p><span class="bold">Description</span> - Enter comments about this user (optional).</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Under Account Privileges:</p>
+<ol>
+<li>
+<p><span class="bold">Workspace</span> - Select a workspace in which to create the user.</p>
+</li>
+<li>
+<p><span class="bold">Default Schema</span> - Specify the default schema used for data browsing, application creation, and SQL script execution.</p>
+</li>
+<li>
+<p><span class="bold">User is an administrator</span> - Specify if this user should have workspace administrator privileges.</p>
+<p>Administrators are given access to all components. Additionally, they can manage user accounts, groups, and development services. Components may not be available if they are switched off by Instance Administrators.</p>
+</li>
+<li>
+<p><span class="bold">User is a developer</span> - Specify if this user should have developer privileges.</p>
+<p>Developers must have access to either Application Builder, SQL Workshop, or both. Components may not be available if they are switched off by Instance Administrators.</p>
+</li>
+<li>
+<p><span class="bold">Application Builder Access</span> - Determines whether a developer has access to the Application Builder.</p>
+</li>
+<li>
+<p><span class="bold">SQL Workshop Access</span> - Determines whether a developer has access to the SQL Workshop.</p>
+</li>
+<li>
+<p><span class="bold">Team Development Access</span> - Determines whether a developer has access to the Team Development.</p>
+</li>
+<li>
+<p><span class="bold">Account Availability</span> - Select <span class="bold">Locked</span> to prevent the account from being used. Select <span class="bold">Unlocked</span> to allow the account to be used.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Under Password:</p>
+<ul>
+<li>
+<p><span class="bold">Password</span> - Enter a case sensitive password.</p>
+</li>
+<li>
+<p><span class="bold">Confirm Password</span> - Enter the password again.</p>
+</li>
+<li>
+<p><span class="bold">Require Change of Password On First Use</span> - Select <span class="bold">No</span> to require this user to change his or her password at first log in. Select <span class="bold">Yes</span> to require the user to change the password immediately after logging in the first time.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="fmig_env_wrkspc.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="fmig_login.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

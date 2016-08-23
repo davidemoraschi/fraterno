@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>UPDATE_MEMBERS Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:37Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="UPDATE_MEMBERS Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_collection032.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_collection034.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_collection032.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection034.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CJAJEJJC" name="CJAJEJJC"></a></p>
+<hr />
+<div class="refsect1">
+<h1><a id="sthref280" name="sthref280"></a>UPDATE_MEMBERS Procedure</h1>
+<p>Use this procedure to update the array of members for the given named collection. If a collection does not exist with the specified name for the current user in the same session and for the current Application ID, an application error will be raised. The count of elements in the p_seq PL/SQL table will be used as the total number of items across all PL/SQL tables. That is, if p_seq.count = 2 and p_c001.count = 10, only 2 members will be updated. If p_seq is null, an application error is raised. If the member specified by sequence ID p_seq does not exist, an application error is raised.</p>
+<a id="sthref281" name="sthref281"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_COLLECTION.UPDATE_MEMBERS (
+    p_collection_name IN VARCHAR2,
+    p_seq  IN wwv_flow_global.VC_ARR2 DEFAULT empty_vc_arr,
+    p_c001 IN wwv_flow_global.VC_ARR2 DEFAULT empty_vc_arr,
+    p_c002 IN wwv_flow_global.VC_ARR2 DEFAULT empty_vc_arr,
+    p_c003 IN wwv_flow_global.VC_ARR2 DEFAULT empty_vc_arr,
+    ...
+    p_c050 IN wwv_flow_global.VC_ARR2 DEFAULT empty_vc_arr,
+    p_n001 IN wwv_flow_global.N_ARR DEFAULT empty_n_arr,
+    p_n002 IN wwv_flow_global.N_ARR DEFAULT empty_n_arr,
+    p_n003 IN wwv_flow_global.N_ARR DEFAULT empty_n_arr,
+    p_n004 IN wwv_flow_global.N_ARR DEFAULT empty_n_arr,
+    p_n005 IN wwv_flow_global.N_ARR DEFAULT empty_n_arr,
+    p_d001 IN wwv_flow_global.D_ARR DEFAULT empty_d_arr,
+    p_d002 IN wwv_flow_global.D_ARR DEFAULT empty_d_arr,
+    p_d003 IN wwv_flow_global.D_ARR DEFAULT empty_d_arr,
+    p_d004 IN wwv_flow_global.D_ARR DEFAULT empty_d_arr,
+    p_d005 IN wwv_flow_global.D_ARR DEFAULT empty_d_arr)
+</pre>
+<a id="sthref282" name="sthref282"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#CJAIECGG">Table: UPDATE_MEMBERS Parameters</a> describes the parameters available in the <code>UPDATE_MEMBERS</code> procedure.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Any character attribute exceeding 4,000 characters is truncated to 4,000 characters. Also, the number of members added is based on the number of elements in the first array.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+<div class="tblformal"><a id="sthref283" name="sthref283"></a><a id="CJAIECGG" name="CJAIECGG"></a>
+<p class="titleintable">UPDATE_MEMBERS Parameters</p>
+<table class="Formal" title="UPDATE_MEMBERS Parameters" summary="This table describes the parameters available in the UNEXPIRE_END_USER_ACCOUNT procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t73">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t73">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t73" headers="r1c1-t73">
+<p><code>p_collection_name</code></p>
+</td>
+<td align="left" headers="r2c1-t73 r1c2-t73">
+<p>The name of the collection to update. Maximum length is 255 bytes. Collection names are not case sensitive and are converted to upper case.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t73" headers="r1c1-t73">
+<p><code>p_seq</code></p>
+</td>
+<td align="left" headers="r3c1-t73 r1c2-t73">
+<p>Array of member sequence IDs to be updated. The count of the p_seq array is used across all arrays.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t73" headers="r1c1-t73">
+<p><code>p_c001 through p_c050</code></p>
+</td>
+<td align="left" headers="r4c1-t73 r1c2-t73">
+<p>Array of attribute values to be updated.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t73" headers="r1c1-t73">
+<p><code>p_n001 through p_n005</code></p>
+</td>
+<td align="left" headers="r5c1-t73 r1c2-t73">
+<p>Attribute value of numeric</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t73" headers="r1c1-t73">
+<p><code>p_d001</code> through <code>p_d005</code></p>
+</td>
+<td align="left" headers="r6c1-t73 r1c2-t73">
+<p>Array of date attribute values to be updated.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref284" name="sthref284"></a>
+<p class="subhead2">Example</p>
+<pre xml:space="preserve" class="oac_no_warn">
+DECLARE
+    l_seq   apex_application_global.vc_arr2;
+    l_carr  apex_application_global.vc_arr2;
+    l_narr  apex_application_global.n_arr;
+    l_darr  apex_application_global.d_arr;
+BEGIN
+    l_seq(1)  := 10;
+    l_seq(2)  := 15;
+    l_carr(1) := 'Apples';
+    l_carr(2) := 'Grapes';
+    l_narr(1) := 100;
+    l_narr(2) := 150;
+    l_darr(1) := sysdate;
+    l_darr(2) := sysdate;
+ 
+    APEX_COLLECTION.UPDATE_MEMBERS (
+        p_collection_name =&gt; 'Groceries',
+        p_seq  =&gt; l_seq,
+        p_c001 =&gt; l_carr,
+        p_n001 =&gt; l_narr,
+        p_d001 =&gt; l_darr);
+END;
+</pre>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection032.htm#CJACBDDD">"UPDATE_MEMBER Procedure"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_collection032.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection034.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

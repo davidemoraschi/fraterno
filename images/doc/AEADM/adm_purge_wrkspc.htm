@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Purging Inactive Workspaces</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-27T14:38:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Purging Inactive Workspaces" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15521-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="adm_wrkspc.htm" title="Oracle Application Express ..." type="text/html" />
+<link rel="up" href="adm_mg_service_set.htm" title="Managing Instance Settings" type="text/html" />
+<link rel="up" href="adm_purge_wrkspc.htm" title="Purging Inactive Workspaces" type="text/html" />
+<link rel="prev" href="adm_env.htm" title="Previous" type="text/html" />
+<link rel="next" href="adm_pub_themes.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="adm_wrkspc.htm" title="Oracle Application Express ...">Oracle Application Express ...</a> &gt; <a href="adm_mg_service_set.htm" title="Managing Instance Settings">Managing Instance Settings</a> &gt; Purging Inactive Workspaces</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="adm_env.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_pub_themes.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDBFHHA" name="CHDBFHHA"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1>Purging Inactive <a id="sthref336" name="sthref336"></a>Workspaces</h1>
+<p>Inactive workspaces consume valuable storage space and degrade system performance. By enabling Workspace Purge Settings, you can configure Oracle Application Express to purge inactive workspaces.</p>
+<p>If a workspace is designated as inactive, a notification email is sent to each workspace administrator indicating that the workspace will be purged in a specific number of days. The workspace administrator can prevent the workspace from being purged by following an embedded link and following the online instructions.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="adm_env.htm#BEJBCEEH">"Configuring Email"</a>, <a href="adm_logs.htm#CIHBCEEF">"Deleting Mail Log Entries"</a>, "Sending Email from an Application" in <a href="../aadm_email.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref337" name="sthref337"></a>
+<h2>Configuring Workspace Purge Settings</h2>
+<p>To purge inactive workspaces:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Workspace Purge Settings</span>.</p>
+<p>The Workspace Purge Settings page appears.</p>
+</li>
+<li>
+<p>From Enabled, select <span class="bold">Yes</span> to enable the workspace purge process. Select <span class="bold">No</span> to disable the workspace purge process.</p>
+</li>
+<li>
+<p>From Language, select the language of the text of emails sent to workspace administrators of inactive workspaces. Note that only one language can be selected for each instance.</p>
+</li>
+<li>
+<p>For Application Express Instance URL, enter the URL to the Oracle Application Express instance, inclusive of the DAD and trailing slash.</p>
+</li>
+<li>
+<p>For Application Express Images URL, enter the URL to the Oracle Application Express images directory, inclusive of the trailing slash.</p>
+</li>
+<li>
+<p>For Purge Administration Email Address, enter the email address (or From address) from which emails are sent to workspace administrators.</p>
+</li>
+<li>
+<p>For Send Summary Email To, enter a list of email addresses separated by commas. Recipients will receive a daily email summary of the purge process.</p>
+</li>
+<li>
+<p>For Days Until Purge, enter the number of days before a workspace is physically purged. For example, entering <code>10</code> means a workspace will be purged 10 days after it is added to the inactive list.</p>
+</li>
+<li>
+<p>For Reminder Days in Advance, enter the number of days before the purge date to send a reminder email to workspace administrators. Reminder email criteria includes:</p>
+<ul>
+<li>
+<p>The workspace is on the inactive list</p>
+</li>
+<li>
+<p>There has been no activity in the workspace</p>
+</li>
+<li>
+<p>The workspace administrator has not chosen to follow the link in the email to prevent the workspace from being purged</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Days Inactive, enter the number of days of inactivity before a workspace is classified as inactive. Inactivity includes not logging into the workspace and the no runtime activity of any application in the workspace.</p>
+</li>
+<li>
+<p>For Grace Period (Days), enter the number of days for the grace period. The grace period starts after workspace administrators click the link in the email to not have their workspace purged. If there is no activity during the grace period, the workspace will be added back to the list of inactive workspaces.</p>
+</li>
+<li>
+<p>For Maximum Execution Time (Hours), enter the number limiting the number of hours that the purge process may execute per run of the workspace purge job.</p>
+</li>
+<li>
+<p>For Maximum Number of Workspaces, enter the maximum number of workspaces to be purged per run of the workspace purge job.</p>
+</li>
+<li>
+<p>For Maximum Number of Emails, enter the maximum number of reminder emails and workspace inactive emails to be send per run of the workspace purge job.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="adm_env.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_pub_themes.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

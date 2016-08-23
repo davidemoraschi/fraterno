@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>What Screen Reader Mode Does</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:13Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="What Screen Reader Mode Does" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="advnc.htm" title="Advanced Programming Techni..." type="text/html" />
+<link rel="up" href="advnc_screen_rdr.htm" title="About Screen Reader Mode" type="text/html" />
+<link rel="up" href="advnc_scrn_rdr_about.htm" title="What Screen Reader Mode Does" type="text/html" />
+<link rel="prev" href="advnc_screen_rdr.htm" title="Previous" type="text/html" />
+<link rel="next" href="advnc_scrn_rdr_enable.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="advnc.htm" title="Advanced Programming Techni...">Advanced Programming Techni...</a> &gt; <a href="advnc_screen_rdr.htm" title="About Screen Reader Mode">About Screen Reader Mode</a> &gt; What Screen Reader Mode Does</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="advnc_screen_rdr.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_scrn_rdr_enable.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CIHCEDGF" name="CIHCEDGF"></a></p>
+<div class="sect2">
+<h1>What Screen <a id="sthref2630" name="sthref2630"></a>Reader Mode Does</h1>
+<p>Enabling Screen reader mode currently does the following, by default:</p>
+<ul>
+<li>
+<p>Application Express Flash charts are not currently accessible to screen readers, therefore when running in screen reader mode the user will get a report representation of the information conveyed in the chart. A separate report will be generated for each series of a multiple-series chart. When running in screen reader mode, these data tables contain descriptive text, in the following format:</p>
+<ul>
+<li>
+<p>Summary Text - In Websheets, the section title is used as the summary text.</p>
+</li>
+<li>
+<p>Summary Text - In Application Builder, a combination of the chart title and chart series title are used.</p>
+</li>
+<li>
+<p>Column Headers - In Websheets, the Data Grid report labels are used to identify the columns in the report.</p>
+</li>
+<li>
+<p>Column Headers - In Application Builder, the column name/alias in the chart series query is used to identify the columns in the report.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Only Flash chart 5 supports this. For users wishing to view their Flash 3 chart data in Screen Reader mode, they must first upgrade their Flash chart 3 charts to Flash chart 5, using the Upgrade Application. Once the Flash 3 charts have been upgraded, and the user is running in Screen Reader mode, a report on the Flash Chart chart series query is displayed.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="bldapp_chrt_flash.htm#BABBBABH">"Upgrading all Flash 3 Charts to Flash 5"</a>, <a href="bldapp_chrt_flash.htm#BABDJAIF">"Upgrading a Flash 3 Chart to Flash 5"</a>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</li>
+</ul>
+</li>
+<li>
+<p>Radio and checkbox page items are rendered within a <code>FIELDSET</code> HTML tag. <code>FIELDSET</code> elements require a text description that is used as context for any elements within it, for example the individual radio inputs. This is done using the <code>LEGEND</code> HTML tag. When running in screen reader mode, this tag is generated and is given the value of the page item's <code>Label</code>.</p>
+</li>
+<li>
+<p>Interactive report regions heavily rely on partial page refresh during user interaction to specify a filter, search, sort and so on. In order for a screen reader user to be notified that the page has been partially refreshed, define Interactive Report Regions as WAI-ARIA Live regions, when running in screen reader mode. This means the user is notified when the partial page refresh is complete. This uses a <code>polite</code> setting, meaning that the screen reader announces the update only when they are not doing anything else on the page. You must be using both a screen reader and browser that supports WAI-ARIA Live Regions. Application Express is only tested with the most recent JAWS screen reader (11.0.1430), which supports Live Regions. The current list of browsers that support this include:</p>
+<ul>
+<li>
+<p>Firefox 3.0 and later</p>
+</li>
+<li>
+<p>IE version 8</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Interactive report regions in <code>Report View</code> or <code>Group By View</code> use data tables to convey information. Data tables require a text description that describes what information the table contains to a screen reader user. When running in screen reader mode, these data tables now contain detailed summary text, in the following format:</p>
+<ul>
+<li>
+<p>Region - The name of the region defined by the developer.Report - The name of the current <code>Saved Report</code> within the Interactive Report. Default to <code>Primary Default</code> if no saved report is defined.View - The current view of the report (Either <code>Report</code> or <code>Group By</code>).Displayed Rows Start - The starting row of the currently displayed set of rows.Displayed Rows End - The ending row of the currently displayed set of rows.Total Rows - The total number of rows returned by the report.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Interactive report regions provide the ability to add <code>Aggregates</code> to your report data. One of the available aggregates is to <code>Sum</code> a column's values. When running in screen reader mode, the text <code>Sum:</code> is displayed as a prefix to the summed value. In standard mode only the summed value is displayed. All other aggregates display an aggregate type prefix by default, regardless of mode.</p>
+</li>
+<li>
+<p>Item level help text is provided differently in screen reader mode. In standard mode, a dialog is displayed on your page displaying the help text for a specific item. But as these dialogs have many problems when used with screen readers, therefore the classic popup page is used to display item help text when running in screen reader mode.</p>
+</li>
+<li>
+<p>In the Application Builder of the Application Express development environment, the Page Definition page used to manage page information contains 2 different views, Component View and Tree View. The tree used in Tree View is not accessible using a screen reader and therefore, when running this page in screen reader mode the default is Component View.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="advnc_screen_rdr.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_scrn_rdr_enable.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

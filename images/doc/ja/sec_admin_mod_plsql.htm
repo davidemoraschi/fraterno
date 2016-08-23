@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>About Configuring Oracle HTTP Server with mod_plsql for Oracle Application Express</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:10Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="About Configuring Oracle HTTP Server with mod_plsql for Oracle Application Express" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="sec.htm" title="Managing Application Security" type="text/html" />
+<link rel="up" href="sec_admin_ssl.htm" title="Understanding Administrator..." type="text/html" />
+<link rel="up" href="sec_admin_mod_plsql.htm" title="About Configuring Oracle HT..." type="text/html" />
+<link rel="prev" href="sec_admin_plsql_gate.htm" title="Previous" type="text/html" />
+<link rel="next" href="sec_admin_util_ssl.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="sec.htm" title="Managing Application Security">Managing Application Security</a> &gt; <a href="sec_admin_ssl.htm" title="Understanding Administrator...">Understanding Administrator...</a> &gt; About Configuring Oracle HT...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="sec_admin_plsql_gate.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="sec_admin_util_ssl.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BCGGCDGC" name="BCGGCDGC"></a></p>
+<div class="sect2">
+<h1><a name="HTMDB25967" id="HTMDB25967"></a>About Configuring Oracle HTTP S<a id="sthref2226" name="sthref2226"></a><a id="sthref2227" name="sthref2227"></a>erver with mod_plsql for Oracle Application Express</h1>
+<p>Oracle HTTP Server uses the <code>mod_plsql</code> plug-in to communicate with the Oracle Application Express engine within the Oracle database. <code>mod_plsql</code> functions act as a communication broker between the Web server and the Oracle Application Express engine in the Oracle database.</p>
+<p>Each <code>mod_plsql</code> request is associated with a set of configuration values used to access the database called a Database Access Descriptor (DAD). <code>mod_plsql</code> provides a DAD parameter called <code>PlsqlRequestValidationFunction</code> which enables you to allow or disallow further processing of a requested procedure. You can utilize this parameter to implement tighter security for your PL/SQL application by blocking package and procedure calls which should not be allowed to run from the DAD. Oracle recommends a DAD configuration for Oracle Application Express which utilizes the <code>PlsqlRequestValidationFunction</code> directive with a value of <code>wwv_flow_epg_include_modules.authorize</code>.</p>
+<p>The purpose of the <code>PlsqlRequestValidationFunction</code> parameter is to control which procedures can be invoked through <code>mod_plsql</code>. By default, the only procedures permitted are the public entry points of Oracle Application Express. This can be extended using the validation functions shipped with Oracle Application Express. To learn more, see "<a href="AEADM/adm_env.htm">Restricting Access to Oracle Application Express</a>" in <span class="italic">Oracle Application Express Administration Guide</span>.</p>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="sec_admin_plsql_gate.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="sec_admin_util_ssl.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

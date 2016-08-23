@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Installing Export Files from SQL*Plus</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:12Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Installing Export Files from SQL*Plus" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="deploy.htm" title="Deploying an Application" type="text/html" />
+<link rel="up" href="deploy_install.htm" title="Installing Export Files" type="text/html" />
+<link rel="up" href="deploy_install_exprt.htm" title="Installing Export Files fro..." type="text/html" />
+<link rel="prev" href="deploy_del_files.htm" title="Previous" type="text/html" />
+<link rel="next" href="deploy_app_url.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="deploy.htm" title="Deploying an Application">Deploying an Application</a> &gt; <a href="deploy_install.htm" title="Installing Export Files">Installing Export Files</a> &gt; Installing Export Files fro...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="deploy_del_files.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="deploy_app_url.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BGBJGJCC" name="BGBJGJCC"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB25845" id="HTMDB25845"></a>Installing Export Files from SQL*Plus<a id="sthref2489" name="sthref2489"></a><a id="sthref2490" name="sthref2490"></a><a id="sthref2491" name="sthref2491"></a></h1>
+<p>You can also install export files from SQL*Plus.</p>
+<p>The following restrictions apply for export files:</p>
+<ul>
+<li>
+<p>The export file must originate from the same user database account as the one into which you are installing.</p>
+</li>
+<li>
+<p>If the export file is a database application, the application ID will be overwritten. Therefore, the target workspace must own the ID of the application being installed.</p>
+</li>
+<li>
+<p>If the export file contains Supporting Object scripts, the scripts are not run when the application is installed. You can either log in to the Application Builder to install Supporting Objects, or copy the installation scripts to a standalone SQL*Plus script and run them from there.</p>
+</li>
+<li>
+<p>If the export file is a Websheet application, the target workspace must have Websheet Database objects set-up.</p>
+</li>
+<li>
+<p>If the export file is a Websheet application, the export file must be installed using the Websheet schema in the target workspace.</p>
+</li>
+<li>
+<p>If the export file is a Websheet application, the application ID will be overwritten.</p>
+</li>
+</ul>
+<a id="sthref2492" name="sthref2492"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#BGBCEFFE">Verifying If Source and Target Workspace IDs Are Identical</a></p>
+</li>
+<li>
+<p><a href="#BGBFAGGI">Using SQL*Plus to Install Export Files</a></p>
+</li>
+</ul>
+<a id="BGBCEFFE" name="BGBCEFFE"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25846" id="HTMDB25846"></a>Verifying If Source and Target Workspace IDs Are Identical</h2>
+<p>You can verify that the source and target workspaces are identical by running a query in SQL Command Processor.</p>
+<p>To verify that the source and target workspaces are identical:</p>
+<ol>
+<li>
+<p>Log in to the source workspace.</p>
+</li>
+<li>
+<p>Click the <span class="bold">SQL Workshop</span> icon on the Workspace home page.</p>
+</li>
+<li>
+<p>Click <span class="bold">SQL Commands</span>.</p>
+</li>
+<li>
+<p>Enter the following in the SQL editor pane and click <span class="bold">Run</span>:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT &amp;WORKSPACE_ID. FROM DUAL
+</pre></li>
+<li>
+<p>Note the workspace ID.</p>
+</li>
+<li>
+<p>Log in to the target workspace.</p>
+</li>
+<li>
+<p>Repeat steps 2 through 5 to verify the workspace IDs match.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="BGBFAGGI" name="BGBFAGGI"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25847" id="HTMDB25847"></a>Using SQL*Plus to Install Export Files</h2>
+<p>To install Oracle Application Express export files from SQL*Plus:</p>
+<ol>
+<li>
+<p>Log in to SQL*Plus.</p>
+</li>
+<li>
+<p>Run the export file.</p>
+<p>For example, if your export file is names f144.sql by default, you would type <code>@f144</code> at the command prompt.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="deploy_del_files.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="deploy_app_url.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Specifying a Provisioning Mode</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-27T14:38:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Specifying a Provisioning Mode" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15521-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="adm_wrkspc.htm" title="Oracle Application Express ..." type="text/html" />
+<link rel="up" href="adm_create_wkspc.htm" title="Creating Workspaces" type="text/html" />
+<link rel="up" href="adm_provision_mode.htm" title="Specifying a Provisioning Mode" type="text/html" />
+<link rel="prev" href="adm_provision.htm" title="Previous" type="text/html" />
+<link rel="next" href="adm_wrkspac_manual.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="adm_wrkspc.htm" title="Oracle Application Express ...">Oracle Application Express ...</a> &gt; <a href="adm_create_wkspc.htm" title="Creating Workspaces">Creating Workspaces</a> &gt; Specifying a Provisioning Mode</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="adm_provision.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_wrkspac_manual.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDBAFDG" name="CHDBAFDG"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEADM241" id="AEADM241"></a>Specifying a Provisioning <a id="sthref397" name="sthref397"></a><a id="sthref398" name="sthref398"></a>Mode</h1>
+<p>The Instance administrator determines how the process of provisioning (or creating) a workspace works for a specific Oracle Application Express instance.</p>
+<p>In <span class="bold">Manual</span> provision mode, an Instance administrator creates new workspaces and notifies the Workspace administrator of the login information. In <span class="bold">Request</span> or <span class="bold">Email Verification</span> provision modes, users request workspaces directly in a self-service fashion. In this scenario, users use a link on the login page to access a request form. After the workspace request has been granted, users are automatically emailed the appropriate login information.</p>
+<p>To specify a provisioning mode:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Instance</span>.</p>
+</li>
+<li>
+<p>Under Instance Settings, click <span class="bold">Instance Settings</span>.</p>
+</li>
+<li>
+<p>Under Self Service, select a provisioning status:</p>
+<ul>
+<li>
+<p><span class="bold">Manual</span> - An Instance administrator manually creates new workspaces and notifies the Workspace administrator of the login information.</p>
+</li>
+<li>
+<p><span class="bold">Request</span> - Users request workspaces directly in a self-service fashion. Selecting this option displays a link on the Login page enabling users to request a workspace. When a user requests a workspace, each request is submitted to a queue for approval. When the request is approved, the user is sent an email containing login credentials (the workspace name, User ID, and password).</p>
+</li>
+<li>
+<p><span class="bold">Email Verification</span> - Works similar to <span class="bold">Request</span> except each user receives an initial email containing a verification link. Clicking this link validates the user's email address and then the request is processed. Then another email is sent to the user containing login credentials (that is, the workspace name, User ID, and password).</p>
+<p>If you select Email Verification, you can disable workspace provisioning and send users a message:</p>
+<ol>
+<li>
+<p>Locate the Email Provisioning section.</p>
+</li>
+<li>
+<p>From Email Provisioning, select <span class="bold">Disabled</span>.</p>
+</li>
+<li>
+<p>In the Message field, enter message that explains why email provisioning is disabled.</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>If you select <span class="bold">Request</span> or <span class="bold">Email Verification</span> in the previous step, enter a URL in Development Service URL (optional).</p>
+<p>The value you enter is used in the email when the request is approved. This setting defines the URL for the service. If this setting is not present, the URL is derived from your environment.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+To enable users to request a workspace using a link on the Login page, you must choose the provisioning status of <span class="bold">Request</span> or <span class="bold">Email Verification</span> as described in the previous procedure. If the provisioning status is set to <span class="bold">Manual</span>, no link appears on the login page.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="adm_env.htm#BEJBCEEH">"Configuring Email"</a> and <a href="adm_ser_rqst.htm#CIHJBIGB">"Managing Workspace and Change Requests"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="adm_provision.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_wrkspac_manual.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

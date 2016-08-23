@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Converting FormModules, ObjectLibraries, or MenuModules to XML</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-28T10:25:25Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Converting FormModules, ObjectLibraries, or MenuModules to XML" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15518-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="appmgr_forms.htm" title="Converting an Oracle Forms ..." type="text/html" />
+<link rel="up" href="fmig_cnvrt.htm" title="Step 1: Convert Oracle Form..." type="text/html" />
+<link rel="up" href="fmig_cnvrt_xml.htm" title="Converting FormModules, Obj..." type="text/html" />
+<link rel="prev" href="fmig_cnvrt.htm" title="Previous" type="text/html" />
+<link rel="next" href="fmig_cnvrt_plsql.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="appmgr_forms.htm" title="Converting an Oracle Forms ...">Converting an Oracle Forms ...</a> &gt; <a href="fmig_cnvrt.htm" title="Step 1: Convert Oracle Form...">Step 1: Convert Oracle Form...</a> &gt; Converting FormModules, Obj...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="fmig_cnvrt.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="fmig_cnvrt_plsql.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDCFFIC" name="CHDCFFIC"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1>Converting FormModules, <a id="sthref86" name="sthref86"></a><a id="sthref87" name="sthref87"></a><a id="sthref88" name="sthref88"></a>ObjectLibraries, or MenuModules to XML</h1>
+<p>You can convert Oracle Forms FormModule, MenuModule, and ObjectLibrary files to Extensible Markup Language (XML) using the Oracle Forms to XML conversion tool, <code>Forms2XML</code>.</p>
+<a id="sthref89" name="sthref89"></a>
+<p class="subhead2">Topics</p>
+<ul>
+<li>
+<p><a href="#CHDFHAHA">About the Forms2XML Conversion Tool</a></p>
+</li>
+<li>
+<p><a href="#CHDFJHFD">Using the Forms2XML Conversion Tool From a Command Line</a></p>
+</li>
+<li>
+<p><a href="#CHDIGICA">Using the Forms2XML Conversion Tool in a Java Program</a></p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+The <code>Forms2XML</code> utility must generate an XML file in English only. If the generated XML tags are not in English then the file will fail to load.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<a id="CHDFHAHA" name="CHDFHAHA"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2>About the <a id="sthref90" name="sthref90"></a><a id="sthref91" name="sthref91"></a>Forms2XML Conversion Tool</h2>
+<p>The Oracle Forms to XML conversion tool, <code>Forms2XML</code> was introduced in Oracle9<span class="italic">i</span> Oracle Developer Suite and is also available in Oracle Developer Suite 10g. This tool should also work on files from earlier releases of Oracle Forms. If the Oracle Forms to XML Conversion tool does not work for a specific file from an earlier version of Oracle Forms then that file will must be upgraded to Oracle Developer Suite 9<span class="italic">i</span> or 10<span class="italic">g</span> and then converted to XML</p>
+<p><code>Forms2XML</code> produces an XML file that has the same base name as the Forms file with a <code>.xml</code> extension. The extension <code>_fmb</code>, <code>_mmb</code>, or <code>_olb</code> is added to the base file name to indicate whether the original file was a Forms Modules, a MenuModule, or an Object Library. The following table displays a few examples of the changes the tool makes to the name of the file being converted:</p>
+<div class="inftblinformal">
+<table class="Informal" title="Forms2XML File Name Formats" summary="This table demonstrates how Forms2XML adds the extension _fmb, _mmb, or _olb to the base file name to indicate whether the original file was a FormModule, a MenuModule, or an Object Library." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="*" />
+<col width="50%" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t4">File name before conversion</th>
+<th align="left" valign="bottom" id="r1c2-t4">File name after conversion</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t4" headers="r1c1-t4"><code><span class="codeinlineitalic">myForm</span></code><code>.fmb</code></td>
+<td align="left" headers="r2c1-t4 r1c2-t4"><code><span class="codeinlineitalic">myForm</span></code><code>_fmb.xml</code></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t4" headers="r1c1-t4"><code><span class="codeinlineitalic">myMenu</span></code><code>.mmb</code></td>
+<td align="left" headers="r3c1-t4 r1c2-t4"><code><span class="codeinlineitalic">myMenu</span></code><code>_mmb.xml</code></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t4" headers="r1c1-t4"><code><span class="codeinlineitalic">myLibrary</span></code><code>.olb</code></td>
+<td align="left" headers="r4c1-t4 r1c2-t4"><code><span class="codeinlineitalic">myLibrary</span></code><code>_olb.xml</code></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblinformal" --></div>
+<!-- class="sect3" -->
+<a id="CHDFJHFD" name="CHDFJHFD"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2>Using the <a id="sthref92" name="sthref92"></a>Forms2XML Conversion Tool From a Command Line</h2>
+<p>The <code>Forms2XML</code> command takes one or more Forms Module files as an argument. The files can be FormsModule (<code>.fmb</code>), ObjectLibrary (<code>.olb</code>), or MenuModule (<code>.mmb</code>) files. The output is placed in the current folder. The command has the following syntax:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+frmf2xml [options] <span class="italic">file1</span> [<span class="italic">file2</span>...]
+java oracle.forms.util.xmltools.Forms2XML [options] <span class="italic">file1</span> [<span class="italic">file2</span>...]
+
+</pre>
+<p>Available options are described in the following table.</p>
+<div class="inftblinformal">
+<table class="Informal" title="Forms2XML Options" summary="This table describes options when using the XML2Forms conversion tool." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="49%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t5">Options</th>
+<th align="left" valign="bottom" id="r1c2-t5">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t5" headers="r1c1-t5"><code>USE_PROPERTY_IDS=YES/NO</code></td>
+<td align="left" headers="r2c1-t5 r1c2-t5">Setting <code>USE_PROPERTY_IDS</code> to <code>YES</code> causes the Forms to XML conversion tool to write the internal ID for Real or Character into the XML file.
+<p>The default value (<code>NO</code>) generates property value names as before.</p>
+<p><span class="bold">Note:</span> The Forms2XML utility must be run with <code>USE_PROPERTY_IDS=NO</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t5" headers="r1c1-t5"><code>OVERWRITE=YES/NO</code></td>
+<td align="left" headers="r3c1-t5 r1c2-t5">Valid values are <code>YES</code> or <code>NO</code>.
+<p>If <code>OVERWRITE=YES</code>, the tool overwrites any XML files with the same name that already exist in the output directory.</p>
+<p>If <code>OVERWRITE=NO</code>, (default) the tool does not overwrite any XML files with the same name that already exist in the output directory. The tool will stop processing and return the message:</p>
+<p>If the file <code><span class="codeinlineitalic">file</span></code> already exists. Use argument <code>OVERWRITE=YES</code> to replace.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t5" headers="r1c1-t5"><code>DUMP=ALL/OVERRIDEN</code></td>
+<td align="left" headers="r4c1-t5 r1c2-t5">If <code>DUMP=ALL</code>, the tool dumps all properties.
+<p>If <code>DUMP=OVERRIDEN</code>, the tool dumps only those properties that are overridden.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblinformal" --></div>
+<!-- class="sect3" -->
+<a id="CHDIGICA" name="CHDIGICA"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2>Using the Forms2XML <a id="sthref93" name="sthref93"></a>Conversion Tool in a Java Program</h2>
+<p>You can pass the <code>Forms2XML</code> tool a <code>JdapiModule</code> Java object (class <code>oracle.forms.jdapi.JdapiModule</code>) and dump its objects and properties to an <code>XMLDocument</code> (class <code>oracle.xml.parser.v2.XMLDocument</code>). For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+...
+ // get the modules in the session
+ JdapiIterator mods = Jdapi.getModules(); 
+    // ... and iterate round them 
+    while(mods.hasNext())
+      {
+        JdapiModule mod = (JdapiModule)mods.next();
+        Forms2XML converter = new Forms2XML(
+        XMLDocument doc = converter.dumpModule(false);
+              ... 
+       }
+</pre>
+<p>Note that the Boolean argument taken by the <code>dumpModule()</code> method instructs <code>converter</code> to dump all properties to the <code>XMLDocument doc,</code> not just those which are overridden.</p>
+<p>Once you have the module as a <code>XMLDocument</code> object, you could then use the XDK classes to manipulate it. For example, you could traverse it, remove or add objects, change properties, copy objects into other modules that are also saved as <code>XMLDocument</code> objects, and more&mdash;all programmatically.</p>
+<p>To learn more about Oracle Forms, see the following hosted Help file:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+<code><a href="http://www.oracle.com/webapps/online-help/forms/">http://www.oracle.com/webapps/online-help/forms/</a></code>
+</pre></div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="fmig_cnvrt.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="fmig_cnvrt_plsql.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

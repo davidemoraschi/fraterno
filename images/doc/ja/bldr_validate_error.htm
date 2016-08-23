@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Defining How Validation Error Messages Display</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:1Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Defining How Validation Error Messages Display" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="bldr_pgs.htm" title="Working with Application Pages" type="text/html" />
+<link rel="up" href="bldr_validate.htm" title="Understanding Validations" type="text/html" />
+<link rel="up" href="bldr_validate_error.htm" title="Defining How Validation Err..." type="text/html" />
+<link rel="prev" href="bldr_validate_create.htm" title="Previous" type="text/html" />
+<link rel="next" href="bldr_validate_cond.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="bldr_pgs.htm" title="Working with Application Pages">Working with Application Pages</a> &gt; <a href="bldr_validate.htm" title="Understanding Validations">Understanding Validations</a> &gt; Defining How Validation Err...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="bldr_validate_create.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldr_validate_cond.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABHFDGH" name="BABHFDGH"></a></p>
+<div class="sect2">
+<h1><a name="HTMDB25142" id="HTMDB25142"></a>Defining How Validation Error Messages Display<a id="sthref725" name="sthref725"></a></h1>
+<p>You can choose to have validation error messages display inline (that is, on the page where the validation is performed) or on a separate error page.</p>
+<p>To define how a validation error message displays:</p>
+<ol>
+<li>
+<p>Navigate to the appropriate Page Definition. See <a href="bldr_pg_def_access.htm#BABJAICG">"Accessing the Page Definition"</a>.</p>
+</li>
+<li>
+<p>Go to the Edit Validations page:</p>
+<ul>
+<li>
+<p>Tree view - Under Page Processing, locate Validating and expand the Validations branch. Right-click on the validation name and select <span class="bold">Edit</span>.</p>
+</li>
+<li>
+<p>Component view - Under Validations, select the appropriate validation.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Scroll down to Error Message.</p>
+</li>
+<li>
+<p>In Error Message, enter your error message text.</p>
+</li>
+<li>
+<p>From Error message display location, select a display location.</p>
+<p>This attribute identifies where a validation error message displays. <span class="bold">Validation error messages</span> can display on an error page or inline within the existing page. <span class="bold">Inline error messages</span> can display in a notification area (defined as part of the page template) or within the field label.</p>
+<p>To create a hard error that stops all processing (including validations), you must display the error on an error page.</p>
+</li>
+<li>
+<p>If you select Inline with Field or Inline with Field and in Notification, you must associate an item with the error message. To associate an item with the error message, select the item from the Associated Item list.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Tip:</p>
+If you select <span class="bold">Inline with Field</span> or <span class="bold">Inline with Field and in Notification</span>, be aware that the Application Express engine does not execute computations or processes during the re-rendering of the page when the validation error messages appear.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="bldr_validate_create.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldr_validate_cond.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

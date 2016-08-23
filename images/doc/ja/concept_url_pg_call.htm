@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Calling a Page Using an Application and Page Alias</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:4:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Calling a Page Using an Application and Page Alias" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="concept.htm" title="Application Builder Concepts" type="text/html" />
+<link rel="up" href="concept_url.htm" title="Understanding URL Syntax" type="text/html" />
+<link rel="up" href="concept_url_pg_call.htm" title="Calling a Page Using an App..." type="text/html" />
+<link rel="prev" href="concept_url_link.htm" title="Previous" type="text/html" />
+<link rel="next" href="concept_url_button.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="concept.htm" title="Application Builder Concepts">Application Builder Concepts</a> &gt; <a href="concept_url.htm" title="Understanding URL Syntax">Understanding URL Syntax</a> &gt; Calling a Page Using an App...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="concept_url_link.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="concept_url_button.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BCECAIFD" name="BCECAIFD"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB03020|Calling a Page Using an Application and Page Alias"></a>Calling a Page Using an Application and Page <a id="sthref115" name="sthref115"></a>Alias</h1>
+<p>Application and page aliases must consist of valid Oracle identifiers, cannot contain any whitespace, and are not case-sensitive. The following example calls a page using an application and a page alias from within an application. It runs the page <code><span class="codeinlineitalic">home</span></code> of the application <code><span class="codeinlineitalic">myapp</span></code> and uses the current session ID.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+f?p=<span class="italic">myapp</span>:<span class="italic">home</span>:&amp;APP_SESSION.
+</pre>
+<p>Application aliases must be unique within a workspace. If an application in a different workspace has the same application alias, use the <code>&amp;c</code> argument to specify the workspace name. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+f?p=common_alias:home:&amp;APP_SESSION.&amp;c=WORKSPACE_A
+</pre></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="concept_url_link.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="concept_url_button.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>LOG_PAGE_SESSION_STATE Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:38Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="LOG_PAGE_SESSION_STATE Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_debug004.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_debug006.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_debug004.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_debug006.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CEGBIJCC" name="CEGBIJCC"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>LOG_PAGE_SESSION_STATE <a id="sthref429" name="sthref429"></a>Procedure</h1>
+<p>This procedure is used to log the session state of a page.</p>
+<a id="sthref430" name="sthref430"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_DEBUG_MESSAGE.LOG_PAGE_SESSION_STATE (
+    p_page_id    IN NUMBER    DEFAULT NULL,
+    p_enabled    IN BOOLEAN   DEFAULT FALSE,
+    p_level      IN NUMBER    DEFAULT 7);
+</pre>
+<a id="sthref431" name="sthref431"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#CEGGABBC">Table: LOG_PAGE_SESSION_STATE Parameters</a> describes the parameters available in the <code>LOG_PAGE_SESSION_STATE</code> procedure.</p>
+<div class="tblformal"><a id="sthref432" name="sthref432"></a><a id="CEGGABBC" name="CEGGABBC"></a>
+<p class="titleintable">LOG_PAGE_SESSION_STATE Parameters</p>
+<table class="Formal" title="LOG_PAGE_SESSION_STATE Parameters" summary="This table describes the parameters available in the CACHE_GET_DATE_OF_PAGE_CACHE procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t8">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t8">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t8" headers="r1c1-t8">
+<p><code>p_page_id</code></p>
+</td>
+<td align="left" headers="r2c1-t8 r1c2-t8">
+<p>Identifies a page within the current application and workspace. If no value is passed for this parameter, the application's current page will be used.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t8" headers="r1c1-t8">
+<p><code>p_enabled</code></p>
+</td>
+<td align="left" headers="r3c1-t8 r1c2-t8">
+<p>Set to <code>TRUE</code> to always log messages, irrespective of whether debugging is enabled. Set to <code>FALSE</code> to only log messages if debugging is enabled.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t8" headers="r1c1-t8">
+<p>p_level</p>
+</td>
+<td align="left" headers="r4c1-t8 r1c2-t8">
+<p>Identifies the level of the long log message. Must be an integer from 1 to 7, where level 1 is the most important and level 7 (the default) is the least important.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref433" name="sthref433"></a>
+<p class="subhead2">Example</p>
+<p>This example shows how to enable debug message logging for 1, 2 and 3 level messages and display a level 1 message containing all the session state for the application's current page. Note, the <code>p_enabled</code> parameter need not be specified, as debugging has been explicitly enabled and the default of false for this parameter respects this enabling. Also note the <code>p_page_id</code> has not been specified, as this example just shows session state information for the application's current page.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN
+    APEX_DEBUG_MESSAGE.ENABLE_DEBUG_MESSAGES(p_level =&gt; 3);
+    
+    APEX_DEBUG_MESSAGE.LOG_PAGE_SESSION_STATE (p_level =&gt; 1);
+    
+END;
+</pre>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_debug004.htm#CEGGFAJI">LOG_LONG_MESSAGE Procedure</a>, <a href="apex_debug003.htm#CEGBHABA">LOG_MESSAGE Procedure</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_debug004.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_debug006.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

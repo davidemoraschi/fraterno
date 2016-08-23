@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Exporting and Importing a Workspace</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-27T14:38:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Exporting and Importing a Workspace" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15521-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="adm_wrkspc.htm" title="Oracle Application Express ..." type="text/html" />
+<link rel="up" href="adm_mg_wrkspc.htm" title="Managing Existing Workspaces" type="text/html" />
+<link rel="up" href="adm_wrkspc_exprt.htm" title="Exporting and Importing a W..." type="text/html" />
+<link rel="prev" href="adm_file_util.htm" title="Previous" type="text/html" />
+<link rel="next" href="adm_app.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="adm_wrkspc.htm" title="Oracle Application Express ...">Oracle Application Express ...</a> &gt; <a href="adm_mg_wrkspc.htm" title="Managing Existing Workspaces">Managing Existing Workspaces</a> &gt; Exporting and Importing a W...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="adm_file_util.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_app.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDHGFHE" name="CHDHGFHE"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEADM284" id="AEADM284"></a>Exporting and Importing a <a id="sthref445" name="sthref445"></a><a id="sthref446" name="sthref446"></a><a id="sthref447" name="sthref447"></a><a id="sthref448" name="sthref448"></a>Workspace</h1>
+<p>To move a workspace and all associated users to a new Oracle Application Express instance, an Instance administrator must export the workspace. When you export a workspace, Oracle Application Express generates a text file. This file contains information about your workspace, all the users in your workspace, and any groups in your workspace (if applicable). You can use this file to import your workspace into another Oracle Application Express instance.</p>
+<p>Exporting a workspace and importing it into a new database instance enables developers to import application components. Therefore, to provide maximum capabilities Oracle recommends that when building new environments (for example, for production or testing) create these workspaces by importing the development workspaces.</p>
+<p>Keep in mind, this method only imports workspace, users, and groups. This file does not contain:</p>
+<ul>
+<li>
+<p>The schemas associated with this workspace or the objects in those schemas.</p>
+</li>
+<li>
+<p>Any applications, images, cascading style sheets, and static text files.</p>
+</li>
+</ul>
+<p>These items must be exported separately.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1"><span class="bold">See Also</span>:</p>
+"Deploying an Application" in <a href="../deploy.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<a id="sthref449" name="sthref449"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#CHDDFCJA">Exporting a Workspace</a></p>
+</li>
+<li>
+<p><a href="#CHDEGBBH">Importing a Workspace</a></p>
+</li>
+</ul>
+<a id="CHDDFCJA" name="CHDDFCJA"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM285" id="AEADM285"></a>Exporting a Workspace</h2>
+<p>To export a workspace:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Workspaces</span>.</p>
+</li>
+<li>
+<p>Under Export Import, click <span class="bold">Export Workspace</span>.</p>
+</li>
+<li>
+<p>Select a workspace and then click <span class="bold">Export Workspace</span>.</p>
+</li>
+<li>
+<p>To export the selected workspace, click <span class="bold">Save File</span>.</p>
+</li>
+<li>
+<p>Follow the on-screen instructions.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CHDEGBBH" name="CHDEGBBH"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM286" id="AEADM286"></a>Importing a Workspace</h2>
+<p>To import a workspace:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Workspaces</span>.</p>
+</li>
+<li>
+<p>Under Export Import, click <span class="bold">Import Workspace</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Browse</span>, select a workspace export file, and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>To install the workspace, click <span class="bold">Install</span>.</p>
+</li>
+<li>
+<p>Follow the on-screen instructions.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="adm_file_util.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_app.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

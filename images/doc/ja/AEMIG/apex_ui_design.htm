@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Evaluating User Interface Design</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-28T10:25:23Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Evaluating User Interface Design" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15518-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="appmgr_overview.htm" title="Overview of the Migration P..." type="text/html" />
+<link rel="up" href="apex_features.htm" title="Key Differences with Oracle..." type="text/html" />
+<link rel="up" href="apex_ui_design.htm" title="Evaluating User Interface D..." type="text/html" />
+<link rel="prev" href="apex_stateless.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_bus_logic.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="appmgr_overview.htm" title="Overview of the Migration P...">Overview of the Migration P...</a> &gt; <a href="apex_features.htm" title="Key Differences with Oracle...">Key Differences with Oracle...</a> &gt; Evaluating User Interface D...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_stateless.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_bus_logic.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CJAIEFHJ" name="CJAIEFHJ"></a></p>
+<div class="sect2">
+<h1>Evaluating User Interface Design</h1>
+<p>Oracle Forms and Microsoft Access use different underlying technologies to present screens to users. In contrast, Oracle HTTP Server renders HTML through a Web browser. As a consequence the design of screens and items is markedly different.</p>
+<p>When thinking about screen design, some screen layouts commonly used in Oracle Forms are not readily reproducible in Oracle Application Express. Oracle Application Express renders a complete HTML page and does not support the concept of windows and canvases. Oracle Application Express also has a limitation of one tabular form per page. Therefore, it is important to understand that it may be difficult to exactly reproduce the screen layouts of the source application. This also presents opportunities to redesign some of the key business processes and potentially streamline them or include addition paths to provide greater flexibility.</p>
+<p>For example, a common layout in Oracle Forms, such as a master-detail-detail form, can be redeployed using a master form with reports for each of the detail views that link to separate pages for editing these details. These same detail pages can also be accessed from elsewhere in the application very easily.</p>
+<p>Oracle Forms often uses the same screen for both querying records and then updating a single record at a time. This is achieved by performing a query directly on the form used for updating a single record. Oracle Application Express does not support the notion of Enter Query and Execute Query. Therefore, the conversion project generates an interactive report where records can be queried with a link to a form for editing a single record.</p>
+<p>Oracle Application Express does not support coordinate positioning of fields on a page out-of-the-box, but uses HTML tables to set out elements such as labels and items. Items can be specified with attributes (such as New Line, New Field, Column Span, and Row Span) to determine how items are located within the HTML table.</p>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_stateless.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_bus_logic.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

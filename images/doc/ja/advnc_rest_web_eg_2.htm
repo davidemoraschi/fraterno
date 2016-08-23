@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Example: Creating a Web Service Reference from a WSDL</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:13Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Example: Creating a Web Service Reference from a WSDL" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="advnc.htm" title="Advanced Programming Techni..." type="text/html" />
+<link rel="up" href="advnc_web_services.htm" title="Implementing Web Services" type="text/html" />
+<link rel="up" href="advnc_rest_web_eg_2.htm" title="Example: Creating a Web Ser..." type="text/html" />
+<link rel="prev" href="advnc_rest_web_eg_1.htm" title="Previous" type="text/html" />
+<link rel="next" href="advnc_rest_web_eg_3.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="advnc.htm" title="Advanced Programming Techni...">Advanced Programming Techni...</a> &gt; <a href="advnc_web_services.htm" title="Implementing Web Services">Implementing Web Services</a> &gt; Example: Creating a Web Ser...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="advnc_rest_web_eg_1.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_rest_web_eg_3.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CIHGDHFJ" name="CIHGDHFJ"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1>Example: <a id="sthref2579" name="sthref2579"></a>Creating a Web Service Reference from a WSDL</h1>
+<p>To utilize Web services in Oracle Application Express, you create a Web service reference using a wizard. When you create the Web reference, you can follow one of these methods:</p>
+<ul>
+<li>
+<p>You supply the URL to a WSDL document. The wizard then analyzes the WSDL and collects all the necessary information to create a valid SOAP message.</p>
+<p>The wizard provides a step where you can locate a WSDL using the Universal Description, Discovery, and Integration (UDDI) registry. A UDDI registry is a directory where businesses register their Web services. You search for the WSDL by entering either a service or business name.</p>
+</li>
+<li>
+<p>You supply the relevant information on how to interact with the Web service, including the SOAP request envelope, and create the Web reference manually.</p>
+</li>
+<li>
+<p>You supply the relevant information on how to interact with a RESTful style Web service including the URL endpoint, HTTP method and input parameters or payload.</p>
+</li>
+</ul>
+<p>In this example, you create a Web service reference by supplying the location of a WSDL document to a Web service. You then test the Web service reference and create a form and report to display movie theaters and locations.</p>
+<ul>
+<li>
+<p><a href="#CIHHFAJG">Create a Web Service Reference from a WSDL</a></p>
+</li>
+<li>
+<p><a href="#CIHIEDAC">Create a Form and Report of the Web Service Result</a></p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+If your environment requires a proxy server to access the Internet, you must specify a proxy server address on the Application Attributes page before you can create a Web service reference. See <a href="advnc_web_about.htm#CIHGBICJ">Specifying an Application Proxy Server Address</a> for instructions.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" title="D" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+The following example is dependent upon the availability of the specified Web service ultimately invoked. If the Web service is unavailable, you may experience difficulties completing this exercise.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" -->
+<a id="CIHHFAJG" name="CIHHFAJG"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2>Create a Web Service Reference from a WSDL</h2>
+<p>To create a new Web reference by supplying the WSDL location:</p>
+<ol>
+<li>
+<p>On the Application home page, click <span class="bold">Shared Components</span>.</p>
+<p>The Shared Components page appears.</p>
+</li>
+<li>
+<p>Under Logic, select <span class="bold">Web Service References</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create.</span></p>
+</li>
+<li>
+<p>Choose <span class="bold">Based on WSDL</span> and click Next.</p>
+</li>
+<li>
+<p>When prompted whether to search a UDDI registry to find a WSDL, select <span class="bold">No</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>In the WSDL Location field enter the following and click <span class="bold">Next</span>:</p>
+<p><code>http://www.ignyte.com/webservices/ignyte.whatsshowing.webservice/moviefunctions.asmx?wsdl</code></p>
+<p>A summary page appears describing the selected Web service.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create Reference</span>.</p>
+<p>The Create Web Service Reference page appears. The Web service reference for MovieInformation is added to the Web Service References Repository.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHIEDAC" name="CIHIEDAC"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2>Create a Form and Report of the Web Service Result</h2>
+<p>Next, you need to create a page that contains a form and report to use with your Web Service Reference.</p>
+<p>To create a form and report after creating a Web Service Reference:</p>
+<ol>
+<li>
+<p>On the Create Web Service Reference success page, select <span class="bold">Create Form and Report on Web Service</span>.</p>
+</li>
+<li>
+<p>For Choose Service and Operation:</p>
+<ol>
+<li>
+<p>Web Service Reference - Select <span class="bold">MovieInformation</span>.</p>
+</li>
+<li>
+<p>Operation - Select <span class="bold">GetTheatersAndMovies</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Page and Region Attributes:</p>
+<ol>
+<li>
+<p>Form Region Title - Change to <code>Theater Information</code>.</p>
+</li>
+<li>
+<p>Accept the other defaults and click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Input Items:</p>
+<ol>
+<li>
+<p>For P2_ZIPCODE and P2_RADIUS, accept the default, <span class="bold">Yes</span>, in the Create column.</p>
+</li>
+<li>
+<p>For P2_ZIPCODE, change the Item Label default to <code>ZIP Code</code>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Web Service Results:</p>
+<ol>
+<li>
+<p>Temporary Result Set Name (Collection) - Accept the default.</p>
+</li>
+<li>
+<p>Result Tree to Report On - Select <span class="bold">Theater (tns:Theater)</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Result Parameters, select all the parameters and click <span class="bold">Finish</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Run Page</span>.</p>
+</li>
+<li>
+<p>If prompted to log in, enter the user name and password for your workspace and click <span class="bold">Login</span>.</p>
+<p>A form and report resembling <a href="#CIHIHFHB">Figure: Theater Information Form and Report without Data</a> appear. Notice that the Theater Information Form at the top of the page contains a data entry field and a submit button, but the Results Report does not contain any data.</p>
+<div class="figure"><a id="CIHIHFHB" name="CIHIHFHB"></a>
+<p class="titleinfigure">Theater Information Form and Report without Data</p>
+<img src="img/web_name.gif" alt="Description of this figure follows" title="Description of this figure follows" longdesc="img_text/web_name.htm" /><br />
+<a id="sthref2580" name="sthref2580" href="img_text/web_name.htm">Description of "Theater Information Form and Report without Data"</a><br />
+<br /></div>
+<!-- class="figure" --></li>
+<li>
+<p>To test the form, enter <code>43221</code> in the ZIP Code field and <code>5</code> in the Radius field. Then click <span class="bold">Submit</span>.</p>
+<p>The report at the bottom of the page should resemble <a href="#CIHIBHIB">Figure: Theater Information Report Showing Resulting Data</a>. The report lists the names and addresses of movie theaters matching the entered ZIP code and radius.</p>
+<div class="figure"><a id="CIHIBHIB" name="CIHIBHIB"></a>
+<p class="titleinfigure">Theater Information Report Showing Resulting Data</p>
+<img src="img/web_name_2.gif" alt="Description of this figure follows" title="Description of this figure follows" longdesc="img_text/web_name_2.htm" /><br />
+<a id="sthref2581" name="sthref2581" href="img_text/web_name_2.htm">Description of "Theater Information Report Showing Resulting Data"</a><br />
+<br /></div>
+<!-- class="figure" --></li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="advnc_rest_web_eg_1.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_rest_web_eg_3.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>PARSE_RESPONSE Function</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:42Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="PARSE_RESPONSE Function" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_web_service010.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_web_service012.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_web_service010.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_web_service012.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABIBFFF" name="BABIBFFF"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>PARSE_RESPONSE <a id="sthref1663" name="sthref1663"></a>Function</h1>
+<p>Use this function to parse the response from a Web service that is stored in a collection and return the result as a VARCHAR2 type.</p>
+<a id="sthref1664" name="sthref1664"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_WEB_SERVICE.PARSE_RESPONSE (
+    p_collection_name   IN VARCHAR2,
+    p_xpath             IN VARCHAR2,
+    p_ns                IN VARCHAR2 default null ) 
+RETURN VARCHAR2;
+</pre>
+<a id="sthref1665" name="sthref1665"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#BABHCBAB">Table: PARSE_RESPONSE Function Parameters</a> describes the parameters available in the <code>PARSE_RESPONSE</code> function.</p>
+<div class="tblformal"><a id="sthref1666" name="sthref1666"></a><a id="BABHCBAB" name="BABHCBAB"></a>
+<p class="titleintable">PARSE_RESPONSE Function Parameters</p>
+<table class="Formal" title="PARSE_RESPONSE Function Parameters" summary="This table contains the parameters for the PARSE_RESPONSE function." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t7">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t7">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t7" headers="r1c1-t7">
+<p><code>p_collection_name</code></p>
+</td>
+<td align="left" headers="r2c1-t7 r1c2-t7">
+<p>The name of the collection where the Web service response is stored.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t7" headers="r1c1-t7">
+<p><code>p_xpath</code></p>
+</td>
+<td align="left" headers="r3c1-t7 r1c2-t7">
+<p>The XPath expression to the desired node.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t7" headers="r1c1-t7">
+<p><code>p_ns</code></p>
+</td>
+<td align="left" headers="r4c1-t7 r1c2-t7">
+<p>The namespace to the desired node.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref1667" name="sthref1667"></a>
+<p class="subhead2">Example</p>
+<p>The following example parses a response stored in a collection called <code>STELLENT_CHECKIN</code> and stores the value in a locally declared VARCHAR2 variable.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+declare
+    l_response_msg  VARCHAR2(4000);
+BEGIN
+    l_response_msg := apex_web_service.parse_response(
+        p_collection_name=&gt;'STELLENT_CHECKIN',
+        p_xpath =&gt;
+'//idc:CheckInUniversalResponse/idc:CheckInUniversalResult/idc:StatusInfo/idc:statusMessage/text()',
+        p_ns=&gt;'xmlns:idc="http://www.stellent.com/CheckIn/"');
+END;
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_web_service010.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_web_service012.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

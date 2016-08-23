@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Creating a Web Service Reference Manually</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:12Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Creating a Web Service Reference Manually" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="advnc.htm" title="Advanced Programming Techni..." type="text/html" />
+<link rel="up" href="advnc_web_services.htm" title="Implementing Web Services" type="text/html" />
+<link rel="up" href="advnc_web_create_man.htm" title="Creating a Web Service Refe..." type="text/html" />
+<link rel="prev" href="advnc_web_create.htm" title="Previous" type="text/html" />
+<link rel="next" href="advnc_rest_web_create.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="advnc.htm" title="Advanced Programming Techni...">Advanced Programming Techni...</a> &gt; <a href="advnc_web_services.htm" title="Implementing Web Services">Implementing Web Services</a> &gt; Creating a Web Service Refe...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="advnc_web_create.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_rest_web_create.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BCGIJAJB" name="BCGIJAJB"></a></p>
+<div class="sect2">
+<h1><a name="HTMDB25889" id="HTMDB25889"></a>Creating a Web Service <a id="sthref2551" name="sthref2551"></a>Reference Manually</h1>
+<p>To create a Web service reference manually:</p>
+<ol>
+<li>
+<p>Navigate to the Web Service References page. See <a href="advnc_web_about.htm#BABBFIDF">"Accessing the Web Service References Page"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+</li>
+<li>
+<p>Select <span class="bold">Manual</span> and click <span class="bold">Next</span>.</p>
+<p>The Create/Edit Web Service page appears.</p>
+</li>
+<li>
+<p>In Name, enter a name to identify the reference.</p>
+</li>
+<li>
+<p>Under Service Description:</p>
+<ol>
+<li>
+<p>URL - Enter the URL endpoint of the Web service.</p>
+</li>
+<li>
+<p>Action - Enter the action of the Web service (optional).</p>
+</li>
+<li>
+<p>Proxy - Enter a proxy if you want to override the application proxy for this service.</p>
+</li>
+<li>
+<p>SOAP Version - Select <span class="bold">1.1</span> or <span class="bold">1.2</span>.</p>
+</li>
+<li>
+<p>Basic Authentication - Choose whether the Web service requires authentication. Select <span class="bold">Yes</span> or <span class="bold">No</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For SOAP Envelope, enter the SOAP envelope for this request.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+You can reference items from session state in the SOAP envelope by using <code>#ITEM_NAME#</code> syntax.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+</li>
+<li>
+<p>For Store Response in Collection, enter the name of a collection to store the response (optional).</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+</li>
+</ol>
+<p>The Web service reference is added to the Web Service References Repository.</p>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="advnc_web_create.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_rest_web_create.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

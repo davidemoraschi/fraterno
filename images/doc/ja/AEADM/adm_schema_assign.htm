@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Managing Workspace to Schema Assignments</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-27T14:38:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Managing Workspace to Schema Assignments" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15521-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="adm_wrkspc.htm" title="Oracle Application Express ..." type="text/html" />
+<link rel="up" href="adm_mg_wrkspc.htm" title="Managing Existing Workspaces" type="text/html" />
+<link rel="up" href="adm_schema_assign.htm" title="Managing Workspace to Schem..." type="text/html" />
+<link rel="prev" href="adm_wrkspc_lock.htm" title="Previous" type="text/html" />
+<link rel="next" href="adm_mg_comp.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="adm_wrkspc.htm" title="Oracle Application Express ...">Oracle Application Express ...</a> &gt; <a href="adm_mg_wrkspc.htm" title="Managing Existing Workspaces">Managing Existing Workspaces</a> &gt; Managing Workspace to Schem...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="adm_wrkspc_lock.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_mg_comp.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDBDCCJ" name="CHDBDCCJ"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEADM245" id="AEADM245"></a>Managing Workspace to Schema <a id="sthref419" name="sthref419"></a><a id="sthref420" name="sthref420"></a>Assignments</h1>
+<p>When users log in to Oracle Application Express, they log in to a shared work area called a <span class="bold">workspace</span>. Each workspace can have multiple associated (or mapped) schemas. By associating a workspace with a schema, developers in that workspace can:</p>
+<ul>
+<li>
+<p>Build applications that interact with the database objects in that schema.</p>
+</li>
+<li>
+<p>Create new database objects in that schema.</p>
+</li>
+</ul>
+<a id="sthref421" name="sthref421"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#CHDHAHCI">Viewing Schema and Workspace Assignments in a Development Environment</a></p>
+</li>
+<li>
+<p><a href="#CHDHJCGE">Viewing Schema and Workspace Assignments in a Runtime Environment</a></p>
+</li>
+<li>
+<p><a href="#CHDJBDID">Editing Existing Schema and Workspace Assignments</a></p>
+</li>
+<li>
+<p><a href="#CHDFAECE">Associating Additional Schemas with a Workspace</a></p>
+</li>
+<li>
+<p><a href="#CHDCCIJH">Removing a Schema Mapping from a Workspace in a Runtime Environment</a></p>
+</li>
+<li>
+<p><a href="#CHDGEIFC">Creating a New Schema</a></p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="adm_schema.htm#CIHIEEDI">"Managing Schemas"</a> and <a href="adm_app_parse_as.htm#CHDBDAJI">"Viewing the Parsing Schemas Report"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<a id="CHDHAHCI" name="CHDHAHCI"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM246" id="AEADM246"></a>Viewing Schema and Workspace <a id="sthref422" name="sthref422"></a>Assignments in a Development Environment</h2>
+<p>Instance administrators can view the existing schema to workspace assignment on the Manage Workspace to Schema Assignments page.</p>
+<p>To view the existing schema to workspace assignment:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Workspaces</span>.</p>
+</li>
+<li>
+<p>Under Workspace Actions, click <span class="bold">Manage Workspace to Schema Assignments</span>.</p>
+<p>'The Manage Workspace to Schema Assignments page appears and lists all workspaces in your environment along with their associated schemas.</p>
+<p>This page displays as an interactive report. To customize the report, use the Search bar at the top of the page. See "Customizing Interactive Reports" in <a href="../ir_using.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CHDHJCGE" name="CHDHJCGE"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM247" id="AEADM247"></a>Viewing Schema and <a id="sthref423" name="sthref423"></a>Workspace Assignments in a Runtime Environment</h2>
+<p>To view the existing schema to workspace assignment in a runtime environment:</p>
+<ol>
+<li>
+<p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code>SYS</code>. For example:</p>
+<ul>
+<li>
+<p>On Windows:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+<span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+<li>
+<p>On UNIX and Linux:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+$ sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+</ul>
+<p>When prompted enter the appropriate password.</p>
+</li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+ALTER SESSION SET CURRENT_SCHEMA = APEX_040000
+</pre></li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT APEX_INSTANCE_ADMIN.GET_SCHEMAS(<span class="italic">WORKSPACE_NAME</span>) 
+FROM DUAL;
+</pre>
+<p>Where <code>WORKSPACE_NAME</code> is the name of the workspace.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CHDJBDID" name="CHDJBDID"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM248" id="AEADM248"></a>Editing Existing Schema and<a id="sthref424" name="sthref424"></a><a id="sthref425" name="sthref425"></a> Workspace Assignments</h2>
+<p>To edit an existing schema and workspace assignment:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Workspaces</span>.</p>
+</li>
+<li>
+<p>Under Manage Workspaces, click <span class="bold">Manage Workspace to Schema Assignments</span>.</p>
+<p>The Manage Workspace to Schema Assignments page appears.</p>
+</li>
+<li>
+<p>To edit an existing workspace to schema assignment:</p>
+<ol>
+<li>
+<p>Select the workspace name.</p>
+<p>The Edit Schema to Workspace Assignment page appears.</p>
+</li>
+<li>
+<p>Select a new workspace or schema.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CHDFAECE" name="CHDFAECE"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM249" id="AEADM249"></a>Associating Additional Schemas with a <a id="sthref426" name="sthref426"></a>Workspace</h2>
+<p>Instance administrators can associate (or map) additional existing schemas to a workspace.</p>
+<div class="sect4"><!-- infolevel="all" infotype="General" --><a id="sthref427" name="sthref427"></a>
+<h3><a name="AEADM250" id="AEADM250"></a>Associating Additional Schemas in a Full Development Environment</h3>
+<p>To associate additional schemas with a workspace:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Workspaces</span>.</p>
+</li>
+<li>
+<p>Under Workspace Actions, click <span class="bold">Manage Workspace to Schema Assignments</span>.</p>
+<p>The Manage Workspace to Schema Assignments page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+<p>The Add Schema wizard appears.</p>
+</li>
+<li>
+<p>For New or Existing Schema, select <span class="bold">Existing</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Follow the on-screen instructions to associate the existing schema to a workspace.</p>
+</li>
+<li>
+<p>To verify that the new schema is added to the workspace:</p>
+<ol>
+<li>
+<p>Log in to the workspace on Oracle Application Express.</p>
+</li>
+<li>
+<p>Review the Workspace Schemas list on the Workspace home page. The list shows all schemas currently associated with this workspace.</p>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><!-- infolevel="all" infotype="General" --><a id="sthref428" name="sthref428"></a>
+<h3><a name="AEADM251" id="AEADM251"></a>Associating Additional Schemas in a Runtime Environment</h3>
+<p>To associate additional schemas with a workspace in a runtime environment:</p>
+<ol>
+<li>
+<p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code>SYS</code>. For example:</p>
+<ul>
+<li>
+<p>On Windows:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+<span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+<li>
+<p>On UNIX and Linux:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+$ sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+</ul>
+<p>When prompted enter the appropriate password.</p>
+</li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+ALTER SESSION SET CURRENT_SCHEMA = APEX_040000
+</pre></li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN
+APEX_INSTANCE_ADMIN.ADD_SCHEMA(<span class="italic">WORKSPACE_NAME</span>, <span class="italic">SCHEMA_NAME</span>)
+END;
+</pre>
+<p>Where:</p>
+<ul>
+<li>
+<p><code>WORKSPACE_NAME</code> is the name of the workspace.</p>
+</li>
+<li>
+<p><code>SCHEMA_NAME</code> is the name of the schema.</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<a id="CHDCCIJH" name="CHDCCIJH"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM252" id="AEADM252"></a>Removing a Schema Mapping from a <a id="sthref429" name="sthref429"></a>Workspace in a Runtime Environment</h2>
+<p>To remove a schema mapping from a workspace in a runtime environment:</p>
+<ol>
+<li>
+<p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code>SYS</code>. For example:</p>
+<ul>
+<li>
+<p>On Windows:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+<span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+<li>
+<p>On UNIX and Linux:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+$ sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+</ul>
+<p>When prompted enter the appropriate password.</p>
+</li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+ALTER SESSION SET CURRENT_SCHEMA = APEX_040000
+</pre></li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN
+APEX_INSTANCE_ADMIN.REMOVE_SCHEMA(<span class="italic">WORKSPACE_NAME</span>, <span class="italic">SCHEMA_NAME</span>)
+END;
+</pre>
+<p>Where:</p>
+<ul>
+<li>
+<p><code>WORKSPACE_NAME</code> is the name of the workspace.</p>
+</li>
+<li>
+<p><code>SCHEMA_NAME</code> is the name of the schema.</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CHDGEIFC" name="CHDGEIFC"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM253" id="AEADM253"></a>Creating a New <a id="sthref430" name="sthref430"></a>Schema</h2>
+<p>Instance administrators can create a new schema and associate it with a workspace.</p>
+<p>To create a new schema for a workspace:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Workspaces</span>.</p>
+</li>
+<li>
+<p>Under Workspace Actions, click <span class="bold">Manage Workspace to Schema Assignments</span>.</p>
+<p>The Manage Workspace to Schema Assignments page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+<p>The Add Schema wizard appears.</p>
+</li>
+<li>
+<p>For New or Existing Schema, select <span class="bold">New</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Choose Workspace, select the workspace that you want to associate the new schema with and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Identify Schema:</p>
+<ol>
+<li>
+<p>Schema - Enter a unique name containing only letters.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Tip:</p>
+To verify that the new schema name is unique, open the select list and search for the name.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</li>
+<li>
+<p>Password - Enter a case-sensitive password.</p>
+</li>
+<li>
+<p>Default Tablespace - Identify the default tablespace that you want this schema to use.</p>
+</li>
+<li>
+<p>Temporary Tablespace - Identify the temporary tablespace you want this schema to use.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Confirm the information and click <span class="bold">Add Schema</span>.</p>
+</li>
+<li>
+<p>To verify that the new schema is added to the workspace:</p>
+<ol>
+<li>
+<p>Log in to the workspace on Oracle Application Express.</p>
+</li>
+<li>
+<p>Review the Workspace Schemas list on the Workspace home page. The list shows all schemas associated with this workspace.</p>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="adm_wrkspc_lock.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_mg_comp.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Creating a Plug-in</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:13Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Creating a Plug-in" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="advnc.htm" title="Advanced Programming Techni..." type="text/html" />
+<link rel="up" href="advnc_plugins.htm" title="Implementing Plug-ins" type="text/html" />
+<link rel="up" href="advnc_plugins_create.htm" title="Creating a Plug-in" type="text/html" />
+<link rel="prev" href="advnc_plugins_edit.htm" title="Previous" type="text/html" />
+<link rel="next" href="advnc_plugins_attr.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="advnc.htm" title="Advanced Programming Techni...">Advanced Programming Techni...</a> &gt; <a href="advnc_plugins.htm" title="Implementing Plug-ins">Implementing Plug-ins</a> &gt; Creating a Plug-in</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="advnc_plugins_edit.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_plugins_attr.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDGIJDI" name="CHDGIJDI"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB27009" id="HTMDB27009"></a>Creating<a id="sthref2592" name="sthref2592"></a> a Plug-in</h1>
+<p>To create a plug-in:</p>
+<ol>
+<li>
+<p>Navigate to the Plug-ins page. See <a href="advnc_plugins_access.htm#CIHBGDEE">Accessing Plug-ins</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+<p>The Plug-in Create/Edit page appears.</p>
+</li>
+<li>
+<p>Under Name:</p>
+<ol>
+<li>
+<p>Name (Required) - Enter name of the plug-in.</p>
+</li>
+<li>
+<p>Internal Name (Required) - Enter the internal name of the plug-in. This name must be unique within the current application.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Tip:</p>
+To insure the internal name is a globally unique name worldwide, it is recommended that your organization domain name be used as a prefix to internal plug-in names. For example, a domain name of <code>mycompany.com</code> prefixed to a plug-in named <code>Slider</code>, would result in an internal name of <code>COM.MYCOMPANY.SLIDER</code>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+</li>
+<li>
+<p>Type (Required) - Select the type of component that can use this plug-in. Settings under Callbacks and Standard Attributes will be different depending on the plug-in type selected. Refer to following sections for details.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Under Subscription:</p>
+<ul>
+<li>
+<p>Reference Master Plug-in From - If you want to base this plug-in on another plug-in in this workspace, select the plug-in from the pop up list. Otherwise, leave the field blank to make this the master copy of this plug-in.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Settings:</p>
+<ul>
+<li>
+<p>File Prefix - Use the default, #PLUGIN_PREFIX#, to reference files that are stored with your plug-in definition in the database. This prefix determines the virtual path the Web server uses to point to the files of the plug-in. For improved performance, you can also store your plug-in files on your Web server and use #IMAGE_PREFIX# or any valid URL to reference them.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Under Source:</p>
+<ol>
+<li>
+<p>PL/SQL Code - Enter a PL/SQL anonymous block of code that contains the procedures for rendering, validating, executing and performing AJAX callbacks for this plug-in.</p>
+</li>
+<li>
+<p>Do not validate PL/SQL code (parse PL/SQL code at runtime only) - Check this option if you want to parse the PL/SQL code at runtime only. Otherwise, the code will be parsed when the plug-in is created.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Under Callbacks:</p>
+<ol>
+<li>
+<p>Render Function Name (only available for Region, Item and Dynamic Action type plug-ins) - Enter the name of the PL/SQL function called to render the plug-in.</p>
+</li>
+<li>
+<p>AJAX Function Name (only available for Region, Item and Dynamic Action type plug-ins) - Enter the name of the PL/SQL function used by the plug-in to load additional data with an AJAX call.</p>
+</li>
+<li>
+<p>Validation Function Name (only available for Item type plug-ins)- Enter the name of the PL/SQL function the plug-in can use to perform basic validations on the submitted data.</p>
+</li>
+<li>
+<p>Execute Function Name (only available for Process type plug-ins) - Enter the name of the PL/SQL function called to execute the plug-in.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+All Callback function names can reference a function of the anonymous PL/SQL code block, a function within a package or a stand alone function in the database. See item help for further details and examples.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+</li>
+<li>
+<p>Under Standard Attributes (not available for Process type plug-ins):</p>
+<p>For Dynamic Action type plug-ins, the following descriptions apply when the option is checked:</p>
+<ol>
+<li>
+<p>For Item(s) - The dynamic action supports selection of items as the affected elements.</p>
+</li>
+<li>
+<p>For Region - The dynamic action supports selection of a region as the affected elements.</p>
+</li>
+<li>
+<p>For DOM Object - The dynamic action supports selection of DOM Objects as the affected elements.</p>
+</li>
+<li>
+<p>For jQuery Selector - The dynamic action supports specifying a jQuery selector as the affected elements.</p>
+</li>
+<li>
+<p>For Triggering Element - The dynamic action supports selection of the triggering element as the affected elements.</p>
+</li>
+<li>
+<p>For Event Source - The dynamic action supports selection of your event source as the affected elements.</p>
+</li>
+<li>
+<p>Affected Element Required - The dynamic action requires an affected element to be specified.</p>
+</li>
+<li>
+<p>Check "Fire on page load" - Defines the default value for the action's Fire on Page Load field.</p>
+</li>
+<li>
+<p>Has Stop Execution on Error Attribute - The Stop Execution on Error field is available for the action.</p>
+</li>
+</ol>
+<p>For Item type plug-ins, check the following to enable options as described here:</p>
+<ol>
+<li>
+<p>Is Visible Widget - The widget is visible.</p>
+</li>
+<li>
+<p>Session State Changeable - The value for an item can be changed in session state. The Is Visible Widget attribute must be checked.</p>
+</li>
+<li>
+<p>Has Read Only Attribute - The user can specify a "Read Only" condition for the item. The Is Visible Widget attribute must be checked for this attribute to be enabled.</p>
+</li>
+<li>
+<p>Has Escape Output Attribute - The item has the Escape special characters field in the Security section when the item is edited. The Is Visible Widget attribute must be checked.</p>
+</li>
+<li>
+<p>Has Quick Pick Attributes - The item has quick pick attributes. The Is Visible Widget attribute must be checked.</p>
+</li>
+<li>
+<p>Has Source Attributes - The item has source related attributes such as Source Used, Source Type and Format Mask.</p>
+</li>
+<li>
+<p>Format Mask Date Only - For items that handle date information, the Format Mask field popup restricts the date selections by displaying date values to select from. The Has Source Attributes must be checked.</p>
+</li>
+<li>
+<p>Format Mask Number Only - For items that handle numeric information, the Format Mask field popup restricts the numeric selections by displaying numeric values to select from.</p>
+</li>
+<li>
+<p>Has Element Attributes - The item has element attributes such as Horizontal/Vertical Alignment, HTML Form Element Attributes and Pre/Post Element Text.</p>
+</li>
+<li>
+<p>Has Width Attributes - The item width can be controlled.</p>
+</li>
+<li>
+<p>Has Height Attribute - The item height can be controlled.</p>
+</li>
+<li>
+<p>Has Element Option Attribute - The item allows specification of additional option attributes when rendering multi-selection elements such as radio groups of check boxes.</p>
+</li>
+<li>
+<p>Has Encrypt Session State Attribute - When editing the item, the Store value encrypted in session state displays under the Security region.</p>
+</li>
+<li>
+<p>Has List of Values - The item has an associated list of values. The Is Visible Widget attribute must be checked.</p>
+</li>
+<li>
+<p>List of Values Required - For items that handle lists of values, a list of values must be defined. The Has List of Values attribute must be checked.</p>
+</li>
+<li>
+<p>Has LOV Display Null Attributes - The item is associated with a list of values that is allowed to include null values. The Has List of Values attribute must be checked.</p>
+</li>
+<li>
+<p>Has Cascading LOV Attributes - The item has cascading LOV related attributes. The Has List of Values attribute must be checked.</p>
+</li>
+</ol>
+<p>For Region type plug-ins, check the following to enable options as described here:</p>
+<ol>
+<li>
+<p>Region Source is SQL Statement - The region source is a SQL Statement. When checked, a minimum and a maximum number of columns the query can return can be specified and SQL Examples display to help the user.</p>
+</li>
+<li>
+<p>Region Source is Plain Text - The region source is plain text.</p>
+</li>
+<li>
+<p>Region Source Required - If region source is a SQL Statement, this attribute makes this a required value.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Information:</p>
+<ol>
+<li>
+<p>Version - Enter a string to identify the plug-in version.</p>
+</li>
+<li>
+<p>About URL - Enter a URL to the plug-in authors home page or to additional information about the plug-in.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Help Text, enter help text used by the user to understand how the plug-in works.</p>
+</li>
+<li>
+<p>For Comments, enter comments and notes that will never be displayed when the application is running.</p>
+<p>To learn more about each option, see item Help.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+<p>Now that the plug-in is created, you can specify additional custom attributes, upload files such as image, CSS and JavaScript files to associate with your plug-in and add events. See <a href="advnc_plugins_attr.htm#CHDHHAJI">"Adding Custom Attributes to a Plug-in"</a>, <a href="advnc_plugins_upload.htm#CHDJADFD">"Uploading Files to Associate with a Plug-in"</a>, and <a href="advnc_plugins_events.htm#CHDGFFAD">"Adding Events to a Plug-in"</a>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="advnc_plugins_edit.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_plugins_attr.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

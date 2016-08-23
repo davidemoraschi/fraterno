@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Exposing a Report Region as a RESTful Web Service</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:12Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Exposing a Report Region as a RESTful Web Service" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="advnc.htm" title="Advanced Programming Techni..." type="text/html" />
+<link rel="up" href="advnc_web_services.htm" title="Implementing Web Services" type="text/html" />
+<link rel="up" href="advnc_rest_web_rpt_reg.htm" title="Exposing a Report Region as..." type="text/html" />
+<link rel="prev" href="advnc_web_hist.htm" title="Previous" type="text/html" />
+<link rel="next" href="advnc_rest_web_eg_1.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="advnc.htm" title="Advanced Programming Techni...">Advanced Programming Techni...</a> &gt; <a href="advnc_web_services.htm" title="Implementing Web Services">Implementing Web Services</a> &gt; Exposing a Report Region as...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="advnc_web_hist.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_rest_web_eg_1.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDDBGAI" name="CHDDBGAI"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB27000" id="HTMDB27000"></a>Exposing a <a id="sthref2574" name="sthref2574"></a>Report Region as a RESTful Web Service</h1>
+<p>RESTful Web services, that are callable with a URL and return either JSON or XML, can be exposed in report regions. In order to expose a report region as a RESTful Web service, the following steps must be performed:</p>
+<ol>
+<li>
+<p>The instance administrator must enable the REST provider feature in instance settings. To enable RESTful access to an Application Express instance, see "Enabling RESTful Access" in the <a href="AEADM/adm_config_sec.htm"><span class="italic">Oracle Application Express Administration Guide</span></a>.</p>
+</li>
+<li>
+<p>A developer must enable RESTful access to a report region. See <a href="#CHDFIJDJ">Enabling RESTful Access to a Report Region</a>.</p>
+</li>
+<li>
+<p>The page that contains the report must not require authentication.</p>
+</li>
+</ol>
+<a id="sthref2575" name="sthref2575"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#CHDFIJDJ">Enabling RESTful Access to a Report Region</a></p>
+</li>
+<li>
+<p><a href="#CHDEHFJI">Accessing a RESTful Enabled Report Region from a Web Service Client</a></p>
+</li>
+</ul>
+<a id="CHDFIJDJ" name="CHDFIJDJ"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2>Enabling RESTful Access to a Report Region</h2>
+<p>To enable RESTful access to a report regions, you must make the page public so no authentication is required and enable the report for RESTful access.</p>
+<p>To make a page public:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click the Application Builder.</p>
+</li>
+<li>
+<p>Select an application.</p>
+</li>
+<li>
+<p>Select the page that contains the report you want to enable.</p>
+<p>The Page Definition appears.</p>
+</li>
+<li>
+<p>Under Page, click the edit icon.</p>
+</li>
+<li>
+<p>Under Security, select <span class="bold">Page is Public</span> from the Authentication list.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+<p>To enable a report region for RESTful access:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click <span class="bold">Application Builder</span>.</p>
+</li>
+<li>
+<p>Select an application.</p>
+<p>Application Builder appears.</p>
+</li>
+<li>
+<p>Select the page that contains the report you want to enable.</p>
+<p>The Page Definition appears.</p>
+</li>
+<li>
+<p>Under Regions, click the name of the region that contains the report you want to enable.</p>
+</li>
+<li>
+<p>Under Attributes, enter a value for Static ID field. This value is used to access the report RESTfully.</p>
+</li>
+<li>
+<p>From the Enable RESTful Access List, select <span class="bold">Yes</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CHDEHFJI" name="CHDEHFJI"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2>Accessing a RESTful Enabled Report Region from a Web Service Client</h2>
+<p>Once you enabled a report for RESTful access, you need to know the endpoint URL and parameters to pass to the RESTful Web service. The endpoint URL is similar to the URL used to access this instance of Application Express followed by the resource apex_rest.getReport. For example:</p>
+<p><code>http://apex.oracle.com/apex/apex_rest.getReport</code></p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Tip:</p>
+If your client uses the POST method, you must also set the HTTP Header, <code>Content-Type</code>, to the value <code>application/x-www-form-urlencoded</code>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<div class="inftblinformal">
+<table class="Informal" summary="This table describes parameters available for apex_rest.getReport." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="26%" />
+<col width="16%" />
+<col width="18%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t20">Name</th>
+<th align="left" valign="bottom" id="r1c2-t20">Default</th>
+<th align="left" valign="bottom" id="r1c3-t20">Required</th>
+<th align="left" valign="bottom" id="r1c4-t20">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t20" headers="r1c1-t20"><code>app</code></td>
+<td align="left" headers="r2c1-t20 r1c2-t20"><code>N/A</code></td>
+<td align="left" headers="r2c1-t20 r1c3-t20">Yes</td>
+<td align="left" headers="r2c1-t20 r1c4-t20">The numeric ID or alias of the application that contains the RESTful enabled report.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t20" headers="r1c1-t20"><code>page</code></td>
+<td align="left" headers="r3c1-t20 r1c2-t20"><code>N/A</code></td>
+<td align="left" headers="r3c1-t20 r1c3-t20">Yes</td>
+<td align="left" headers="r3c1-t20 r1c4-t20">The numeric ID or alias of the page that contains the RESTful enabled report.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t20" headers="r1c1-t20"><code>reportid</code></td>
+<td align="left" headers="r4c1-t20 r1c2-t20"><code>N/A</code></td>
+<td align="left" headers="r4c1-t20 r1c3-t20">Yes</td>
+<td align="left" headers="r4c1-t20 r1c4-t20">The Static ID attribute of the RESTful enabled report.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t20" headers="r1c1-t20"><code>parmvalues</code></td>
+<td align="left" headers="r5c1-t20 r1c2-t20"><code>null</code></td>
+<td align="left" headers="r5c1-t20 r1c3-t20">No</td>
+<td align="left" headers="r5c1-t20 r1c4-t20">Values for the report parameters can be sent in a comma separated list. For example: CLERK,10</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t20" headers="r1c1-t20"><code>lang</code></td>
+<td align="left" headers="r6c1-t20 r1c2-t20"><code>en</code></td>
+<td align="left" headers="r6c1-t20 r1c3-t20">No</td>
+<td align="left" headers="r6c1-t20 r1c4-t20">Sets the NLS environment variables prior to running the report based on the language passed in. For example: de</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t20" headers="r1c1-t20"><code>output</code></td>
+<td align="left" headers="r7c1-t20 r1c2-t20"><code>xml</code></td>
+<td align="left" headers="r7c1-t20 r1c3-t20">Yes</td>
+<td align="left" headers="r7c1-t20 r1c4-t20">This determines whether XML or JSON will be returned to the client. Domain of possible values are: xml, json</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblinformal" -->
+<p>The apex_rest service also has an operation to allow discoverability of RESTful enabled reports, given an application ID or alias. The response is an XML document with a description of all reports that can be accessed by RESTful Web services. This service is invoked with a URL similar to the following:</p>
+<p><code>http://apex.oracle.com/apex/apex_rest.getServiceDescription?app=691</code></p>
+<p>In the URL above, 691 is the numeric ID of an application. The document returned is similar to the following:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+&lt;?xml version="1.0"?&gt;
+&lt;urn:getServiceDescriptionResponse xmlns:urn="urn:oasis:names:tc:wsrp:v1:types"&gt;
+        &lt;urn:requiresRegistration&gt;false&lt;/urn:requiresRegistration&gt;
+        &lt;urn:offeredPortlets&gt;
+                    &lt;urn:PortletDescription&gt;
+                              &lt;urn:portletHandle&gt;employees&lt;/urn:portletHandle&gt;
+                              &lt;urn:markupTypes&gt;
+                                        &lt;urn:mimeType&gt;application/xml&lt;/urn:mimeType&gt;
+                                        &lt;urn:mimeType&gt;application/json&lt;/urn:mimeType&gt;
+                              &lt;/urn:markupTypes&gt;
+                              &lt;urn:groupID&gt;1&lt;/urn:groupID&gt;
+                              &lt;urn:description/&gt;
+                              &lt;urn:title&gt;EMP&lt;/urn:title&gt;
+                              &lt;urn:keywords&gt;
+                                &lt;urn:value&gt;P1_JOB&lt;/urn:value&gt;
+                                      &lt;urn:value&gt;P1_DEPTNO&lt;/urn:value&gt;
+                              &lt;/urn:keywords&gt;
+                    &lt;/urn:PortletDescription&gt;
+        &lt;/urn:offeredPortlets&gt;
+&lt;/urn:getServiceDescriptionResponse
+</pre>
+<p>The <code>portletHandle</code> maps to the Static ID of the report region or the <code>reportid</code> parameter in the REST request. The <code>groupID</code> maps to the page id or the page parameter in the REST request. Finally, any parameters used by the SQL report are listed as children of the <code>keywords</code> node.</p>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="advnc_web_hist.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_rest_web_eg_1.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

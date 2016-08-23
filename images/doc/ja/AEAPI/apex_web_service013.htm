@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>PARSE_XML Function</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:42Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="PARSE_XML Function" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_web_service012.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_web_service014.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_web_service012.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_web_service014.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABHIGGA" name="BABHIGGA"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>PARSE_XML <a id="sthref1673" name="sthref1673"></a>Function</h1>
+<p>Use this function to parse the response from a Web service returned as an XMLTYPE and return the value requested as a VARCHAR2.</p>
+<a id="sthref1674" name="sthref1674"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_WEB_SERVICE.PARSE_XML (
+    p_xml               IN XMLTYPE,
+    p_xpath             IN VARCHAR2,
+    p_ns                IN VARCHAR2 default null ) 
+RETURN VARCHAR2;
+</pre>
+<a id="sthref1675" name="sthref1675"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#BABBCGFI">Table: PARSE_XML Function Parameters</a> describes the parameters available in the <code>PARSE_XML</code> function.</p>
+<div class="tblformal"><a id="sthref1676" name="sthref1676"></a><a id="BABBCGFI" name="BABBCGFI"></a>
+<p class="titleintable">PARSE_XML Function Parameters</p>
+<table class="Formal" title="PARSE_XML Function Parameters" summary="This table contains the parameters for the PARSE_XML function." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t9">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t9">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t9" headers="r1c1-t9">
+<p><code>p_xml</code></p>
+</td>
+<td align="left" headers="r2c1-t9 r1c2-t9">
+<p>The XML document as an XMLTYPE to parse.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t9" headers="r1c1-t9">
+<p><code>p_xpath</code></p>
+</td>
+<td align="left" headers="r3c1-t9 r1c2-t9">
+<p>The XPath expression to the desired node.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t9" headers="r1c1-t9">
+<p><code>p_ns</code></p>
+</td>
+<td align="left" headers="r4c1-t9 r1c2-t9">
+<p>The namespace to the desired node.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref1677" name="sthref1677"></a>
+<p class="subhead2">Example</p>
+<p>The following example uses the <code>make_request</code> function to call a Web service and store the results in a local XMLTYPE variable. The <code>parse_xml</code> function is then used to pull out a specific node of the XML document stored in the XMLTYPE and stores it in a locally declared VARCHAR2 variable.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+declare
+    l_envelope CLOB;
+    l_xml XMLTYPE;
+    l_movie VARCHAR2(4000);
+BEGIN
+    l_envelope := ' &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:tns="http://www.ignyte.com/whatsshowing"
+xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+   &lt;soap:Body&gt;
+      &lt;tns:GetTheatersAndMovies&gt;
+         &lt;tns:zipCode&gt;43221&lt;/tns:zipCode&gt;
+         &lt;tns:radius&gt;5&lt;/tns:radius&gt;
+      &lt;/tns:GetTheatersAndMovies&gt;
+   &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;';
+ 
+   l_xml := apex_web_service.make_request(
+     p_url =&gt; ' http://www.ignyte.com/webservices/ignyte.whatsshowing.webservice/moviefunctions.asmx',
+     p_action =&gt; ' http://www.ignyte.com/whatsshowing/GetTheatersAndMovies',
+     p_envelope =&gt; l_envelope );
+ 
+   l_movie := apex_web_service.parse_xml(
+     p_xml =&gt; l_xml,
+     p_xpath =&gt; ' //GetTheatersAndMoviesResponse/GetTheatersAndMoviesResult/Theater/Movies/Movie/Name[1]',
+     p_ns =&gt; ' xmlns="http://www.ignyte.com/whatsshowing"' );
+ 
+END;
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_web_service012.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_web_service014.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

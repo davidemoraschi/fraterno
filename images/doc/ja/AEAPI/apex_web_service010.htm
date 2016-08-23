@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MAKE_REST_REQUEST Function</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:42Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="MAKE_REST_REQUEST Function" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_web_service009.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_web_service011.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_web_service009.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_web_service011.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABEDJHJ" name="BABEDJHJ"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>MAKE_REST_REQUEST <a id="sthref1658" name="sthref1658"></a>Function</h1>
+<p>Use this function to invoke a RESTful style Web service supplying either name value pairs, a character based payload or a binary payload and returning the response in a CLOB.</p>
+<a id="sthref1659" name="sthref1659"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_WEB_SERVICE.MAKE_REST_REQUEST(
+    p_url               IN VARCHAR2,
+    p_http_method       IN VARCHAR2,
+    p_username          IN VARCHAR2 default null,
+    p_password          IN VARCHAR2 default null,
+    p_proxy_override    IN VARCHAR2 default null,
+    p_body              IN CLOB default empty_clob(),
+    p_body_blob         IN BLOB default empty_blob(),
+    p_parm_name         IN WWV_FLOW_GLOBAL.VC_ARR2 default empty_vc_arr,
+    p_parm_value        IN WWV_FLOW_GLOBAL.VC_ARR2 default empty_vc_arr,
+    p_wallet_path       IN VARCHAR2 default null,
+    p_wallet_pwd        IN VARCHAR2 default null ) 
+RETURN CLOB;
+</pre>
+<a id="sthref1660" name="sthref1660"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#BABEDIGI">Table: MAKE_REST_REQUEST Function Parameters</a> describes the parameters available in the <code>MAKE_REST_REQUEST</code> function.</p>
+<div class="tblformal"><a id="sthref1661" name="sthref1661"></a><a id="BABEDIGI" name="BABEDIGI"></a>
+<p class="titleintable">MAKE_REST_REQUEST Function Parameters</p>
+<table class="Formal" title="MAKE_REST_REQUEST Function Parameters" summary="This table contains the parameters for the MAKE_REQUEST_REQUEST function" dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t6">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t6">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t6" headers="r1c1-t6">
+<p><code>p_url</code></p>
+</td>
+<td align="left" headers="r2c1-t6 r1c2-t6">
+<p>The URL endpoint of the Web service.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t6" headers="r1c1-t6">
+<p><code>p_http_method</code></p>
+</td>
+<td align="left" headers="r3c1-t6 r1c2-t6">
+<p>The HTTP method to use, PUT, POST, GET, HEAD, or DELETE.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t6" headers="r1c1-t6">
+<p><code>p_username</code></p>
+</td>
+<td align="left" headers="r4c1-t6 r1c2-t6">
+<p>The username if basic authentication is required for this service.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t6" headers="r1c1-t6">
+<p><code>p_password</code></p>
+</td>
+<td align="left" headers="r5c1-t6 r1c2-t6">
+<p>The password if basic authentication is required for this service</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t6" headers="r1c1-t6">
+<p><code>p_proxy_override</code></p>
+</td>
+<td align="left" headers="r6c1-t6 r1c2-t6">
+<p>The proxy to use for the request. The proxy supplied overrides the proxy defined in the application attributes.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t6" headers="r1c1-t6">
+<p><code>p_body</code></p>
+</td>
+<td align="left" headers="r7c1-t6 r1c2-t6">
+<p>The HTTP payload to be sent as CLOB.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t6" headers="r1c1-t6">
+<p><code>p_body_blob</code></p>
+</td>
+<td align="left" headers="r8c1-t6 r1c2-t6">
+<p>The HTTP payload to be sent as binary BLOB. For example, posting a file.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t6" headers="r1c1-t6">
+<p><code>p_parm_name</code></p>
+</td>
+<td align="left" headers="r9c1-t6 r1c2-t6">
+<p>The name of the parameters to be used in name/value pairs.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t6" headers="r1c1-t6">
+<p><code>p_parm_value</code></p>
+</td>
+<td align="left" headers="r10c1-t6 r1c2-t6">
+<p>The value of the parameters to be used in name/value pairs.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r11c1-t6" headers="r1c1-t6">
+<p><code>p_wallet_path</code></p>
+</td>
+<td align="left" headers="r11c1-t6 r1c2-t6">
+<p>The file system path to a wallet if the URL endpoint is https. For example, file:/usr/home/oracle/WALLETS. The wallet path provided overrides the wallet defined in the instance settings.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r12c1-t6" headers="r1c1-t6">
+<p><code>p_wallet_pwd</code></p>
+</td>
+<td align="left" headers="r12c1-t6 r1c2-t6">
+<p>The password to access the wallet.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref1662" name="sthref1662"></a>
+<p class="subhead2">Example</p>
+<p>The following example calls a RESTful style Web service using the <code>make_rest_request</code> function passing the parameters to the service as name/value pairs. The response from the service is stored in a locally declared CLOB.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+declare
+    l_clob       CLOB;
+BEGIN
+ 
+    l_clob := apex_web_service.make_rest_request(
+        p_url =&gt; 'http://us.music.yahooapis.com/ video/v1/list/published/popular',
+        p_http_method =&gt; 'GET',
+        p_parm_name =&gt; apex_util.string_to_table('appid:format'),
+        p_parm_value =&gt; apex_util.string_to_table('xyz:xml'));
+ 
+END
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_web_service009.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_web_service011.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

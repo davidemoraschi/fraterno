@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>About the Application Migrations Page</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-28T10:25:25Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="About the Application Migrations Page" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15518-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="appmgr_forms.htm" title="Converting an Oracle Forms ..." type="text/html" />
+<link rel="up" href="fmig_rev.htm" title="Step 5: Review and Edit For..." type="text/html" />
+<link rel="up" href="fmig_rev_proj_page.htm" title="About the Application Migra..." type="text/html" />
+<link rel="prev" href="fmig_rev.htm" title="Previous" type="text/html" />
+<link rel="next" href="fmig_edit_proj_details.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="appmgr_forms.htm" title="Converting an Oracle Forms ...">Converting an Oracle Forms ...</a> &gt; <a href="fmig_rev.htm" title="Step 5: Review and Edit For...">Step 5: Review and Edit For...</a> &gt; About the Application Migra...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="fmig_rev.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="fmig_edit_proj_details.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDJIICE" name="CHDJIICE"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1>About the <a id="sthref113" name="sthref113"></a><a id="sthref114" name="sthref114"></a>Application Migrations Page</h1>
+<p>The Project page shows a high-level overview of your Oracle Forms conversion project.</p>
+<img src="img/project_page_forms.gif" alt="Description of project_page_forms.gif follows" title="Description of project_page_forms.gif follows" longdesc="img_text/project_page_forms.htm" /><br />
+<a id="sthref115" name="sthref115" href="img_text/project_page_forms.htm">Description of the illustration project_page_forms.gif</a><br />
+<br />
+<a id="sthref116" name="sthref116"></a>
+<p class="subhead2">Topics</p>
+<ul>
+<li>
+<p><a href="#CHDDAICH">Understanding the Project Page</a></p>
+</li>
+<li>
+<p><a href="fmig_edit_proj_details.htm#CHDHBADG">Editing Project Details</a></p>
+</li>
+<li>
+<p><a href="#CHDHCCFH">Uploading Additional Files</a></p>
+</li>
+</ul>
+<a id="CHDDAICH" name="CHDDAICH"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2>Understanding the Project Page</h2>
+<p>To view project details, click the project name. The Project page appears.</p>
+<img src="img/fmb_project_detail.gif" alt="Description of fmb_project_detail.gif follows" title="Description of fmb_project_detail.gif follows" longdesc="img_text/fmb_project_detail.htm" /><br />
+<a id="sthref117" name="sthref117" href="img_text/fmb_project_detail.htm">Description of the illustration fmb_project_detail.gif</a><br />
+<br />
+<p>With the exception of the File Name column, most of the information on the Project page only applies to FormModule <code>XML</code> files (for example, Blocks, Triggers, and Program Units columns). If a column does not apply to the uploaded file, a <code>0</code> displays.</p>
+<p>The Project page lists the following information about uploaded files:</p>
+<ul>
+<li>
+<p><span class="bold">Type</span> - Identifies the type uploaded by displaying the appropriate file extension (for example, <code>RPT</code> for Report and <code>FMB</code> for FormModule files).</p>
+</li>
+<li>
+<p><span class="bold">File Name</span> - Displays the file name and extension (<code>XML</code> or <code>TXT</code>) uploaded into the project.</p>
+</li>
+<li>
+<p><span class="bold">Blocks</span> - Displays a count of blocks in FormModule XML file. A single block can be mapped to a region in Oracle Application Express. A region is a area on a page that serves as a container for content. Each page can have any number of regions. You control the appearance of a region through a specific region template.</p>
+</li>
+<li>
+<p><span class="bold">DB Blocks</span> - Displays the database data blocks in the uploaded <code>FormModule</code> XML file. These blocks can be based on any of the following block data source types: table; procedure; transactional trigger; or subquery. Blocks included in the DB Blocks count are not control blocks. Note that the associated Database Block property is set to <code>Yes</code>.</p>
+</li>
+<li>
+<p><span class="bold">Triggers</span> - Displays a count of all form-level, block-level and item-level triggers associated with the uploaded <code>FormModule</code> XML file.</p>
+</li>
+<li>
+<p><span class="bold">Record Groups</span> - Displays a count of Record Groups in the uploaded <code>FormModule</code> XML file.</p>
+</li>
+<li>
+<p><span class="bold">Lists of Values</span> - Displays a count of lists of values (LOVs) in the uploaded <code>FormModule</code> XML file.</p>
+</li>
+<li>
+<p><span class="bold">Alerts</span> - Displays a count of alerts in the uploaded <code>FormModule</code> XML file.</p>
+</li>
+<li>
+<p><span class="bold">Program Units</span> - Displays the number of schema objects that enable you to access and manipulate database information.</p>
+</li>
+<li>
+<p><span class="bold">Component Count</span> - Lists the number of components that have been uploaded to the Conversion project.</p>
+</li>
+<li>
+<p><span class="bold">Completed Components</span> - Displays a count of components within the conversion process that have been reviewed and have been marked as Complete.</p>
+</li>
+<li>
+<p><span class="bold">Percent Complete</span> - Lists percent of components which have been marked as Complete.</p>
+</li>
+</ul>
+<p>You can review Forms attributes and track manual conversion by clicking the links on this page.</p>
+<div class="sect4"><a id="sthref118" name="sthref118"></a>
+<h3>Utilizing Interactive Reports</h3>
+<p>Many pages in Application Migration Workshop display as interactive reports. You can customize the appearance of these pages using the Search bar at the top of each page.</p>
+<img src="img/search.gif" alt="Description of search.gif follows" title="Description of search.gif follows" longdesc="img_text/search.htm" /><br />
+<a id="sthref119" name="sthref119" href="img_text/search.htm">Description of the illustration search.gif</a><br />
+<br />
+<p>Use the Search bar to create custom searches and customize and filter the information that appears on the page.</p>
+<p>Available controls on the Search bar include:</p>
+<ul>
+<li>
+<p><span class="bold">Search icon</span> - Resembles a magnifying glass. Click this icon to narrow your search to only specific columns. To search all columns, select <span class="bold">All Columns</span>.</p>
+</li>
+<li>
+<p><span class="bold">Text area</span> - Enter case insensitive search criteria (wild card characters are implied) and then click <span class="bold">Go</span>.</p>
+</li>
+<li>
+<p><span class="bold">Go button</span> - Executes a search or applies a filter.</p>
+</li>
+<li>
+<p><span class="bold">Actions menu</span> - Use this menu to customize an interactive report.</p>
+</li>
+</ul>
+<p>To learn more, see "Customizing Interactive Reports" in <a href="../ir_using.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><a id="sthref120" name="sthref120"></a>
+<h3>About the <a id="sthref121" name="sthref121"></a>Upload File, <a id="sthref122" name="sthref122"></a>Create Application, and <a id="sthref123" name="sthref123"></a>Run Application Buttons</h3>
+<p>Three buttons display to the right of the Search Bar:</p>
+<ul>
+<li>
+<p>Click <span class="bold">Upload File</span> to add files to your conversion project. See <a href="#CHDHCCFH">"Uploading Additional Files"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create Application</span> to create an Oracle Application Express application based on the components included in your conversion project. See <a href="fmig_gen_app.htm#CHDJGIDA">"Step 6: Generate the Oracle Application Express Application"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Run Application</span> to submit the pages within your Oracle Application Express application to the Oracle Application Express and render viewable HTML. Note this button only appears after you generate an application.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><a id="sthref124" name="sthref124"></a>
+<h3>About <a id="sthref125" name="sthref125"></a>Associated Application</h3>
+<p>The Associated Application only displays after you create an application. This box displays application name, number of application pages, last update date, and the user who performed the updates. Click the application name to link to the Application home page within Application Builder.</p>
+<img src="img/project_ass_app.gif" alt="Description of project_ass_app.gif follows" title="Description of project_ass_app.gif follows" longdesc="img_text/project_ass_app.htm" /><br />
+<a id="sthref126" name="sthref126" href="img_text/project_ass_app.htm">Description of the illustration project_ass_app.gif</a><br />
+<br /></div>
+<!-- class="sect4" -->
+<div class="sect4"><a id="sthref127" name="sthref127"></a>
+<h3>About the <a id="sthref128" name="sthref128"></a>Tasks List</h3>
+<p>The Tasks list displays on the right side of the page.</p>
+<img src="img/fmb_project_tasks.gif" alt="Description of fmb_project_tasks.gif follows" title="Description of fmb_project_tasks.gif follows" longdesc="img_text/fmb_project_tasks.htm" /><br />
+<a id="sthref129" name="sthref129" href="img_text/fmb_project_tasks.htm">Description of the illustration fmb_project_tasks.gif</a><br />
+<br />
+<p>The Tasks list contains the following links:</p>
+<ul>
+<li>
+<p><span class="bold">Delete Project</span> deletes the current project.</p>
+</li>
+<li>
+<p><span class="bold">Edit Project Details and Applicability</span> links to the Project Details page. See <a href="fmig_edit_proj_details.htm#CHDHBADG">"Editing Project Details"</a>.</p>
+</li>
+<li>
+<p><span class="bold">About Forms Conversion</span> links to a page that explains how to convert Oracle Forms applications.</p>
+</li>
+<li>
+<p><span class="bold">Set Application Defaults</span> links to the Set Application Defaults page. See <a href="fmig_app_default.htm#CHDIAFGI">"Setting Up Application Defaults"</a>.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><a id="sthref130" name="sthref130"></a>
+<h3>About the <a id="sthref131" name="sthref131"></a>Completion Status Box</h3>
+<p>A Completion Status box displays on the right side of the page listing the total number of components, completed components, and percent complete.</p>
+<img src="img/project_page_status.gif" alt="Description of project_page_status.gif follows" title="Description of project_page_status.gif follows" longdesc="img_text/project_page_status.htm" /><br />
+<a id="sthref132" name="sthref132" href="img_text/project_page_status.htm">Description of the illustration project_page_status.gif</a><br />
+<br /></div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<a id="CHDHCCFH" name="CHDHCCFH"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2>Uploading <a id="sthref133" name="sthref133"></a>Additional Files</h2>
+<p>To add files to your conversion project:</p>
+<ol>
+<li>
+<p>Go to the Project page:</p>
+<ol>
+<li>
+<p>Log in the workspace you created for your conversion project as described in <a href="fmig_login.htm#CHDIJGIF">"Logging in to Your Oracle Application Express Workspace"</a>.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Application Builder</span> icon.</p>
+</li>
+<li>
+<p>Click <span class="bold">Migrations</span> on the right side of the page.</p>
+</li>
+<li>
+<p>Click a project name.</p>
+<p>The Project page appears.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>On the Project page, click <span class="bold">Upload File</span>.</p>
+</li>
+<li>
+<p>For File Type, select one of the following:</p>
+<ul>
+<li>
+<p><span class="bold">Forms Module</span> - Upload a FormModule in XML format (<code><span class="codeinlineitalic">myForm</span></code><code>_fmb.xml</code>). Use the <code>Forms2XML</code> conversion tool to convert Oracle FormModule <code>.FMB</code> files to <code>.XML</code> format.</p>
+</li>
+<li>
+<p><span class="bold">PL/SQL Library</span> - Upload a PL/SQL Library associated with your Oracle Forms application (<code><span class="codeinlineitalic">myLibrary</span></code><code>.PLD</code>). The library must be in text format. Use the <code>File &gt; Convert</code> option in Oracle Forms Builder to convert PL/SQL library <code>.PLLs</code> to <code>.PLD</code> text files.</p>
+</li>
+<li>
+<p><span class="bold">Oracle Report</span> - Upload an Oracle Report in XML format (<code><span class="codeinlineitalic">myReport</span></code><code>.XML</code>). Use the File Conversion option in Oracle Reports Builder to convert binary(<code>.RDF</code>), ASCII (<code>.REX</code>), and <code>.JSP</code> Reports to <code>XML</code> format.</p>
+</li>
+<li>
+<p><span class="bold">Object Library</span> - Upload an Object Library in XML format (<code><span class="codeinlineitalic">myObjects</span></code><code>_olb.XML</code>). Use the <code>Forms2XML</code> conversion tool to convert Object Library <code>.OLB</code> files to <code>.XML</code> format.</p>
+</li>
+<li>
+<p><span class="bold">Forms Menu</span> - Upload an Oracle Form Menu in XML format (<code><span class="codeinlineitalic">myMenu</span></code><code>_mmb.XML</code>). Use the <code>Forms2XML</code> conversion tool to convert FormsMenu <code>.MMB</code> file to <code>.XML</code> format.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>File - Click <span class="bold">Browse</span> and locate the file your want to upload.</p>
+</li>
+<li>
+<p>Click <span class="bold">Upload</span>.</p>
+<p>The Confirm page appears.</p>
+</li>
+<li>
+<p>To add more files, click <span class="bold">Upload and Upload Another</span> and repeat the previous step until all files appear on the Confirm page.</p>
+</li>
+<li>
+<p>Review the file details, and click <span class="bold">Finish</span>.</p>
+<p>The Project page appears.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="fmig_rev.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="fmig_edit_proj_details.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

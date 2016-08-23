@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Creating an Application from a Spreadsheet</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:1Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Creating an Application from a Spreadsheet" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="bldapp.htm" title="Creating Applications" type="text/html" />
+<link rel="up" href="bldapp_wiz_using.htm" title="About Creating a Database A..." type="text/html" />
+<link rel="up" href="bldapp_wiz_spreadsheet.htm" title="Creating an Application fro..." type="text/html" />
+<link rel="prev" href="bldapp_db_app.htm" title="Previous" type="text/html" />
+<link rel="next" href="bldapp_copy_app.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="bldapp.htm" title="Creating Applications">Creating Applications</a> &gt; <a href="bldapp_wiz_using.htm" title="About Creating a Database A...">About Creating a Database A...</a> &gt; Creating an Application fro...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="bldapp_db_app.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldapp_copy_app.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABICHBC" name="BABICHBC"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB25227" id="HTMDB25227"></a>Creating an Application from a <a id="sthref866" name="sthref866"></a>Spreadsheet</h1>
+<p>You can create an application based on spreadsheet data by selecting <span class="bold">Create from Spreadsheet</span> in the Create Application Wizard.</p>
+<p>To create an application from spreadsheet data:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click the <span class="bold">Application Builder</span> icon.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Create</span> button.</p>
+</li>
+<li>
+<p>For Application Type, select <span class="bold">Database</span>.</p>
+</li>
+<li>
+<p>Select <span class="bold">From Spreadsheet</span>.</p>
+</li>
+<li>
+<p>For Load Method, specify how spreadsheet data will be uploaded. Select one of the following and click <span class="bold">Next</span>:</p>
+<ol>
+<li>
+<p><span class="bold">Upload file, comma separated (*.csv) or tab delimited</span>. Specify the following and click <span class="bold">Next</span>:</p>
+<ul>
+<li>
+<p>Text File - Click <span class="bold">Browse</span> to locate the file to be uploaded.</p>
+</li>
+<li>
+<p>Separator - Specify the column separator character. Use \t for tab separators.</p>
+</li>
+<li>
+<p>Optionally Enclosed By - Enter a delimiter character. You can use this character to deliminate the starting and ending boundary of a data value. If you specify a delimiter character, the wizard ignores white space occurring before the starting and ending boundary of a data value. You can also use this option to enclose a data value with the specified delimiter character.</p>
+</li>
+<li>
+<p>File Character Set - Choose the character set in which the text file is encoded.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Copy and paste</span>. Copy and paste the tab delimited data you want to import.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Table Properties, review how your table will display and click <span class="bold">Next</span>. Specify the table name and column names, or modify the data types. To specify whether to include a column, make a selection from the Upload list.</p>
+</li>
+<li>
+<p>For User Interface Defaults:</p>
+<ol>
+<li>
+<p>Review the displayed Singular Name and enter a Plural Name.</p>
+</li>
+<li>
+<p>(Optional) Under Column User Interface Defaults, review the displayed column labels.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Application Options, specify the following:</p>
+<ol>
+<li>
+<p>Application Name - Enter an alphanumeric name for this application.</p>
+</li>
+<li>
+<p>Create Mode:</p>
+<ul>
+<li>
+<p><span class="bold">Read and Write</span> includes insert and update pages.</p>
+</li>
+<li>
+<p><span class="bold">Read Only</span> does not include insert and update pages.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Report Implementation:</p>
+<ul>
+<li>
+<p><span class="bold">Classic</span> creates a SQL report.</p>
+</li>
+<li>
+<p><span class="bold">Interactive</span> creates an interactive report.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For User Interface Theme, select a theme and click <span class="bold">Next</span>.</p>
+<p>Themes are collections of templates that can be used to define the layout and style of an entire application. See <a href="ui_themes.htm#BABJEDBB">"Managing Themes"</a>.</p>
+</li>
+<li>
+<p>Confirm your selections and click <span class="bold">Create</span>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+"Building Queries with Query Builder" in <a href="AEUTL/qry_bldr.htm"><span class="italic">Oracle Application Express SQL Workshop Guide</span></a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="bldapp_db_app.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldapp_copy_app.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

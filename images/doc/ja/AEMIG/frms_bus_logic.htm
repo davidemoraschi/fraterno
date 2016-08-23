@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Implementing Business Logic</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-28T10:25:26Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Implementing Business Logic" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15518-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="objects.htm" title="Oracle Forms Generation Cap..." type="text/html" />
+<link rel="up" href="frms_modules.htm" title="Oracle Forms Modules" type="text/html" />
+<link rel="up" href="frms_bus_logic.htm" title="Implementing Business Logic" type="text/html" />
+<link rel="prev" href="frms_lovs.htm" title="Previous" type="text/html" />
+<link rel="next" href="reports_about.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="objects.htm" title="Oracle Forms Generation Cap...">Oracle Forms Generation Cap...</a> &gt; <a href="frms_modules.htm" title="Oracle Forms Modules">Oracle Forms Modules</a> &gt; Implementing Business Logic</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="frms_lovs.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="reports_about.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABCEHCC" name="BABCEHCC"></a></p>
+<div class="sect2">
+<h1>Implementing B<a id="sthref246" name="sthref246"></a>usiness Logic</h1>
+<p>Within Oracle Forms applications, business logic is often interspersed with Oracle Forms user interface functionality. The Oracle Forms user interface functionality used to manipulate the screen (for example, <code>go_block</code>, <code>go_item</code>, <code>set_item_property</code> and so on) are often not appropriate within Oracle Application Express due to the inherent differences in the user interface.</p>
+<p>Business logic can be found in Oracle Forms triggers and program units, or in PL/SQL libraries. The business logic can be written directly into the objects as SQL or PL/SQL. This code may in turn call database packages, procedures, or functions. The underlying tables may also have database triggers defined which implement business logic.</p>
+<p>Because database triggers operate on the underlying tables regardless of the user interface, they do not need to be altered when converting an application to Oracle Application Express. You can call database packages, procedures, or functions from Oracle Application Express because it also uses SQL and PL/SQL. Note that these database objects do not need to be altered when used within the Oracle Application Express development environment.</p>
+<p>In order to re-implement the business logic defined within Oracle Forms you must analyze the triggers, program units, and PL/SQL libraries and manually write corresponding logic within Oracle Application Express. Note that Oracle Forms triggers, program units, and PL/SQL library code are not automatically generated except for <code>POST-QUERY</code> triggers. <code>POST-QUERY</code> triggers can be incorporated into Enhanced Queries as part of the block definition and subsequently included in the Oracle Application Express application.</p>
+<p>Oracle Application Express uses processes, computations, and validations to implement such business logic. Before undertaking the post-generation task of re-implementing business logic, it is important to understand how and when to invoke the various types of processes, computations, and validations. It is also important to understand how conditional processing can be applied to these types of components to customize the circumstances under which they execute. For more information, see <span class="italic"><a href="../preface.htm">Oracle Application Express Application Builder User's Guide</a></span>.</p>
+<div class="sect3"><a id="sthref247" name="sthref247"></a>
+<h2>Proc<a id="sthref248" name="sthref248"></a>esses</h2>
+<p>Processes are logic controls used to execute data manipulation language (DML) or PL/SQL. A process performs an action at a specified point during the rendering or submission of the page. For example, you can create a process to execute logic or to make a call to the Application Express engine. A process is a unit of logic that runs when a specific event occurs, such as loading or submitting a page. For more information, see "Understanding Page Processes" in <span class="italic"><a href="../bldr_pg_procs_about.htm">Oracle Application Express Application Builder User's Guide</a></span>.</p>
+<p>Processes can be defined as either an application-level process or a page-level process. From a functional perspective, there is no difference between page-level and application-level processes. Application-level processes can be called form any page within the application and may be called On Demand which is especially useful when you have PL/SQL logic that you would like to run from different execution points across multiple pages. Page-level processes can only be called from the page on which they are defined.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref249" name="sthref249"></a>
+<h2>Com<a id="sthref250" name="sthref250"></a>putations</h2>
+<p>Computations are units of logic used to assign a value to an identified item when a page is submitted or displayed.</p>
+<p>Computations can be defined as either an application-level computation or a page-level computation. Most application-level computations are performed for every page in an application. In contrast, computations created at the page-level only execute when that page is rendered or processed. For more information, see <a href="../bldr_pg_comp.htm">"Understanding Page Computations"</a> and <a href="../bldr_app_comp.htm">"Understanding Application Computation</a> in <span class="italic">Oracle Application Express Application Builder User's Guide</span>.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref251" name="sthref251"></a>
+<h2>Valid<a id="sthref252" name="sthref252"></a>ations</h2>
+<p>Validations enable you to create logic controls to verify whether user input is valid. For example, a validation can check whether a value has been entered into a mandatory field. When a validation fails then an error message is displayed and subsequent page processes and computations will not occur. For more information, see "Understanding Validations" in <span class="italic"><a href="../bldr_validate.htm">Oracle Application Express Application Builder User's Guide</a></span>.</p>
+<p>There are two distinct types of validations:</p>
+<ul>
+<li>
+<p>Item-level validations which are specific to a single item.</p>
+</li>
+<li>
+<p>Page-level validations which do not apply to any single item, but apply to an entire page.</p>
+</li>
+</ul>
+<p>There are several validation methods:</p>
+<ul>
+<li>
+<p>SQL - Compares item values to data in the database.</p>
+</li>
+<li>
+<p>PL/SQL - Enables you to enter complex logic to validate entered data.</p>
+</li>
+<li>
+<p>Item Level Null - Checks if an item's value in session state is <code>NULL</code>.</p>
+</li>
+<li>
+<p>Item String Comparison - Compares the value of an item to a specific string.</p>
+</li>
+<li>
+<p>Regular Expression - Provides a method to describe text patterns.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="frms_lovs.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="reports_about.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

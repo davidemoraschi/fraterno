@@ -1,0 +1,841 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Accessibility in Oracle Application Express</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = document) - Version 5.1" />
+<meta name="Date" content="2010-09-14T17:7:42Z" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="doctitle" content="Oracle&reg; Application Express Installation Guide Release 4.0" />
+<meta name="partno" content="E15513-02" />
+<meta name="docid" content="HTMIG" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<script type="text/javascript" src="../../dcommon/js/doccd.js">
+</script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="trouble.htm" title="Previous" type="text/html" />
+<link rel="Next" href="index.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../e15513.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Application Express Installation Guide<br />
+Release 4.0</b><br />
+Part Number E15513-02</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img width="24" height="24" src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img width="24" height="24" src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img width="24" height="24" src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img width="24" height="24" src="../../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img width="24" height="24" src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="98">
+<tr>
+<td align="center" valign="top"><a href="trouble.htm"><img width="24" height="24" src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img width="24" height="24" src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top" style="font-size: 90%"><a href="../e15513.pdf">View PDF</a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="sthref285" name="sthref285"></a>
+<h1 class="appendix"><span class="secnum">B</span> <a name="HTMIG301" id="HTMIG301"></a> Accessibility in Oracle Application Express</h1>
+<p>This section attempts to provide information for users who are accessing Oracle Application Express utilizing only a keyboard or Freedom Scientific's screen reader JAWS.</p>
+<p class="subhead2"><a id="sthref286" name="sthref286"></a>Topics:</p>
+<ul>
+<li>
+<p><a href="#BABCCHDI">Screen Reader Mode</a></p>
+</li>
+<li>
+<p><a href="#BABFAJAE">Accessing Interactive Reports Using JAWS</a></p>
+</li>
+<li>
+<p><a href="#CDDEJEHH">Accessing Form Pages Using JAWS</a></p>
+</li>
+<li>
+<p><a href="#BABDCGBB">Accessing Components Using a Keyboard</a></p>
+</li>
+</ul>
+<p>For additional information about the accessibility of Oracle products, see:</p>
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://www.oracle.com/accessibility/">http://www.oracle.com/accessibility</a>
+</pre>
+<div class="infoboxnotealso">
+<p class="notep1">Note:</p>
+JAWS release 11.0.1430 with all default settings was used in writing this section.</div>
+<a id="BABCCHDI" name="BABCCHDI"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" -->
+<h2 class="sect1"><span class="secnum">B.1</span> Screen Reader Mode</h2>
+<p>In Oracle Application Express release 4.0 sessions can now be defined as optimized for use with screen readers. This includes both when using the Application Express development environment and also for use in your own applications. To learn more, see "Advanced Programming Techniques" in <a class="olink HTMDB13000" href="../../user.40/e15517/advnc.htm#HTMDB13000"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+<p>You can enable screen reader mode in the development environment by selecting the <span class="bold">Set Screen Reader Mode On</span> link, located on:</p>
+<ul>
+<li>
+<p>Workspace home page</p>
+</li>
+<li>
+<p>Oracle Application Express Administration Services page</p>
+</li>
+</ul>
+<p>You can also enable screen reader mode in the Application Express Websheet runtime by clicking the <span class="bold">Set Screen Reader Mode On</span> link located on any websheet application home page, which you are taken to after logging in to a websheet application.</p>
+<p>If you intend on using the Oracle Application Express development environment with a screen reader, please ensure that you have this option enabled.</p>
+</div>
+<!-- class="sect1" -->
+<a id="BABFAJAE" name="BABFAJAE"></a>
+<div class="sect1">
+<h2 class="sect1"><span class="secnum">B.2</span> Accessing Interactive Reports Using JAWS</h2>
+<p>Interactive report regions contain an Actions menu which is the main entry point to much of the functionality offered by these regions.</p>
+<p>To access the Actions menu with JAWS:</p>
+<ol>
+<li>
+<p>Press <span class="bold">INSERT + F5</span> to load the Select a Form Field dialog box.</p>
+</li>
+<li>
+<p>Press <span class="bold">A</span> repeatedly to reach the Actions Button field.</p>
+</li>
+<li>
+<p>Press <span class="bold">ENTER</span> to navigate to the Actions button.</p>
+</li>
+<li>
+<p>Press <span class="bold">ENTER</span> to open the Actions menu.</p>
+<p>You must now switch off the JAWS virtual PC cursor. The Actions menu is fully keyboard accessible.</p>
+</li>
+<li>
+<p>Press <span class="bold">INSERT + Z</span> to switch off the JAWS virtual PC cursor.</p>
+<p>JAWS announces, "Use Virtual PC Cursor Off."</p>
+</li>
+<li>
+<p>Press <span class="bold">UP</span> and <span class="bold">DOWN</span> to move up and down the current level of menu and <span class="bold">LEFT</span> and <span class="bold">RIGHT</span> to navigate in and out of sub-menus. The menu consists of:</p>
+<ul>
+<li>
+<p>Select Columns</p>
+</li>
+<li>
+<p>Filter</p>
+</li>
+<li>
+<p>Rows Per Page (Contains sub-menu to select the number of rows the report displays)</p>
+</li>
+<li>
+<p>Format (Contains sub-menu to specify Sort, Control Break, Highlight, Compute, Aggregate, Chart, Group By).</p>
+</li>
+<li>
+<p>Save Report</p>
+</li>
+<li>
+<p>Reset</p>
+</li>
+<li>
+<p>Help</p>
+</li>
+<li>
+<p>Download</p>
+</li>
+<li>
+<p>Subscription</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Once you have chosen the specific action you wish to perform, press <span class="bold">ENTER</span> to load the relevant dialog.</p>
+<p>For example, assume you select <span class="bold">Filter</span>. The Filter dialog loads. When it is updated, JAWS announces the name of the current page followed by the first form field in the dialog which has focus.</p>
+</li>
+<li>
+<p>Refresh the virtual cursor now, by pressing <span class="bold">INSERT + ESC</span>.</p>
+<p>JAWS announces, "Screen Updated."</p>
+</li>
+<li>
+<p>To switch the JAWS virtual PC cursor back on, press <span class="bold">INSERT + Z</span>.</p>
+<p>JAWS announces, "Use Virtual PC Cursor On."</p>
+<p>Next, define your filter attributes. This dialog contains slightly different form fields depending on your filter type and subsequent selections. The default fields for defining a Column filter are a Column select list, Operator select list, and Expression input.</p>
+</li>
+<li>
+<p>To hear these fields, just press the JAWS shortcut key <span class="bold">F</span> and <span class="bold">SHIFT + F</span> a few times to move around these field items. Then, select or enter your filter details into these form fields.</p>
+<p>Next, apply the filter. The dialog ends with a Cancel and Apply button, which can be navigated to using the JAWS shortcut key B.</p>
+</li>
+<li>
+<p>Press <span class="bold">B</span> until you hear, "Apply" and then press <span class="bold">ENTER</span>.</p>
+<p>The page refreshes and JAWS announces when the content has refreshed by starting to read the current report settings.</p>
+</li>
+<li>
+<p>To go straight to the report information, press the JAWS shortcut key <span class="bold">T</span> to go to the data table containing the information with the applied filter.</p>
+<p>Other dialogs for other functionality can be added in a similar fashion.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect1" -->
+<a id="CDDEJEHH" name="CDDEJEHH"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" -->
+<h2 class="sect1"><span class="secnum">B.3</span> Accessing Form Pages Using JAWS</h2>
+<p>Many of the pages in Oracle Application Express are form pages designed for maintaining application metadata. This section describes how you can gain an understanding of the structure of these pages and interact with them using a screen reader such as JAWS.</p>
+<p class="subhead2"><a id="sthref287" name="sthref287"></a>Topics:</p>
+<ul>
+<li>
+<p><a href="#CDDGBBEG">Understanding the Structure of a Page</a></p>
+</li>
+<li>
+<p><a href="#CDDFGIFB">Using the Tasks Links on a Page</a></p>
+</li>
+<li>
+<p><a href="#CDDJHDCG">Accessing Help Text</a></p>
+</li>
+<li>
+<p><a href="#CDDEFJIJ">Dealing with Raised Validations</a></p>
+</li>
+</ul>
+<a id="CDDGBBEG" name="CDDGBBEG"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect2"><span class="secnum">B.3.1</span> Understanding the Structure of a Page</h3>
+<p>Many form pages are logically broken up into different regions. For example, the Edit Page Item page has the following regions containing form fields for maintaining information about the page item:</p>
+<ul>
+<li>
+<p>Name</p>
+</li>
+<li>
+<p>Displayed</p>
+</li>
+<li>
+<p>Label</p>
+</li>
+<li>
+<p>Settings</p>
+</li>
+<li>
+<p>List of Values (depending on item type)</p>
+</li>
+<li>
+<p>Element</p>
+</li>
+<li>
+<p>Source</p>
+</li>
+<li>
+<p>Default</p>
+</li>
+<li>
+<p>Quick Picks (depending on item type)</p>
+</li>
+<li>
+<p>Conditions</p>
+</li>
+<li>
+<p>Read Only</p>
+</li>
+<li>
+<p>Security</p>
+</li>
+<li>
+<p>Configuration</p>
+</li>
+<li>
+<p>Help Text</p>
+</li>
+<li>
+<p>Comments</p>
+</li>
+</ul>
+<p>Oracle Application Express uses Heading (<code>Hn</code>) tags throughout its development interface to help define the structure of a page. For example, the Edit Page Item page has the following Headings defined:</p>
+<ul>
+<li>
+<p>Level 1 (H1)*</p>
+<ul>
+<li>
+<p>Application Express</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>Level 2 (H2)*</p>
+<ul>
+<li>
+<p>Name</p>
+</li>
+<li>
+<p>Displayed</p>
+</li>
+<li>
+<p>Label</p>
+</li>
+<li>
+<p>Settings</p>
+</li>
+<li>
+<p>Element</p>
+</li>
+<li>
+<p>Source</p>
+</li>
+<li>
+<p>Default</p>
+</li>
+<li>
+<p>Conditions</p>
+</li>
+<li>
+<p>Read Only</p>
+</li>
+<li>
+<p>Security</p>
+</li>
+<li>
+<p>Configuration</p>
+</li>
+<li>
+<p>Help Text</p>
+</li>
+<li>
+<p>Comments</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>Level 3 (H3)*</p>
+<ul>
+<li>
+<p>Page Items</p>
+</li>
+<li>
+<p>Tasks</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>The previous list represents of how headings are used in the Oracle Application Express development environment. Note the following:</p>
+<ul>
+<li>
+<p>Level 1 headings (<code>H1</code>) provides a link to the relevant root page depending on the context of where you are in the development environment (for example when editing an application this takes you to the home page for the application in the Application Builder).</p>
+</li>
+<li>
+<p>Level 2 headings (<code>H2</code>) contain sections integral to the primary function of the current page.</p>
+</li>
+<li>
+<p>Level 3 headings (<code>H3</code>) that contain sections that are related to the function of the current page.</p>
+</li>
+</ul>
+<p>To gain an overview of all the headings on the current page, press <span class="bold">INSERT+F6</span> to list the current page's headings.</p>
+<p>You can also utilize other JAWS keystrokes to navigate through the page headings. For example, to navigate around level 2 headings:</p>
+<ol>
+<li>
+<p>Press <span class="bold">INSERT+ALT+CTRL+2</span> to go to the first heading on the page at level 2.</p>
+<p>On the Edit Page Item page, JAWS announces, "Name heading level 2."</p>
+</li>
+<li>
+<p>Press <span class="bold">2</span> to go to the next heading at level 2.</p>
+<p>On the Edit Page Item page, JAWS announces, "Displayed heading level 2."</p>
+</li>
+<li>
+<p>Press <span class="bold">SHIFT+2</span> to go to the previous heading at level 2.</p>
+<p>On the Edit Page Item page, JAWS announces, "Name heading level 2."</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="CDDFGIFB" name="CDDFGIFB"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect2"><span class="secnum">B.3.2</span> Using the Tasks Links on a Page</h3>
+<p>Many pages in Oracle Application Express contain a Tasks region on the right-hand side of the page. For example, the Edit Page Item page has a Tasks region on the right side containing a list of links relevant to the current item type. This region has a level 3 Heading (H3) defined on the section title Tasks (as this is a section that is related to the primary function of the current page).</p>
+<p>To navigate to the Tasks region using JAWS:</p>
+<ol>
+<li>
+<p>Press <span class="bold">INSERT+ALT+CTRL+3</span> to go to the first heading on the page at level 3.</p>
+<p>JAWS announces, "Page Items heading level 3" on the Edit Page Item page. This contains general help information about page items.</p>
+</li>
+<li>
+<p>Press <span class="bold">3</span> to go to the next heading at level 3.</p>
+<p>On the Edit Page Item page, JAWS announces, "Tasks heading level 3." This contains a list of links to related tasks.</p>
+</li>
+<li>
+<p>Press <span class="bold">L</span> once to navigate to the list.</p>
+<p>JAWS announces, "List of <span class="italic">x</span> items" (where <span class="italic">x</span> depends on the type of page item currently being edited).</p>
+</li>
+<li>
+<p>Press <span class="bold">I</span> to navigate through the list items and press <span class="bold">ENTER</span> to activate a link.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="CDDJHDCG" name="CDDJHDCG"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect2"><span class="secnum">B.3.3</span> Accessing Help Text</h3>
+<p>This section describes how to use JAWS to access Item-level help in Oracle Application Express.</p>
+<p class="subhead2"><a id="sthref288" name="sthref288"></a>Topics:</p>
+<ul>
+<li>
+<p><a href="#CDDDCFFF">Accessing Item Help</a></p>
+</li>
+</ul>
+<a id="CDDDCFFF" name="CDDDCFFF"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h4 class="sect3"><span class="secnum">B.3.3.1</span> Accessing Item Help</h4>
+<p>Most items within the user interface have field-level Help available by activating or clicking on the field label. If Help text is available, the adjacent label will be implemented as a link, where the link text will match that of the current form item's label text. Activating this link will load a separate window containing the help text.</p>
+<p>To access this field-level Help for an item using JAWS:</p>
+<ol>
+<li>
+<p>Press <span class="bold">CTRL+HOME</span> to go to the top of the page.</p>
+<p>JAWS announces the page name.</p>
+</li>
+<li>
+<p>Press <span class="bold">INSERT+ F7</span> to load the Links List dialog box.</p>
+</li>
+<li>
+<p>Press the first letter of the link text you wish to locate, repeatedly.</p>
+<p>If there is no link text matching the label of the form item you wish to get help for, then there is no help available for that item</p>
+</li>
+<li>
+<p>If the appropriate link is found, press <span class="bold">ENTER</span> to activate the link.</p>
+<p>A separate window containing the Help text appears</p>
+</li>
+<li>
+<p>Press the JAWS navigation quick key <span class="bold">N</span> to go to the help text.</p>
+</li>
+<li>
+<p>Once you are finished reading the help text, press <span class="bold">ALT+F4</span> to close the Help window and return to page.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="CDDEFJIJ" name="CDDEFJIJ"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect2"><span class="secnum">B.3.4</span> Dealing with Raised Validations</h3>
+<p>If a validation fails when submitting a form, you are redirected back to the same page and an error message displays in a list at the top of the page. Additionally, error text displays inline next to the page item associated with the validation.</p>
+<p>The following procedure explains how to identify when a validation fails, review error messages, and rectify the necessary values in order to pass the validation, all within the context of the Edit Page Item form page.</p>
+<p class="subhead2"><a id="sthref289" name="sthref289"></a>Topics:</p>
+<ul>
+<li>
+<p><a href="#CDDIEJGF">Identifying when a Validation Fails</a></p>
+</li>
+<li>
+<p><a href="#CDDEAAFJ">Reviewing Error Messages</a></p>
+</li>
+<li>
+<p><a href="#CDDBBGIJ">Fixing a Validation Error</a></p>
+</li>
+</ul>
+<a id="CDDIEJGF" name="CDDIEJGF"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h4 class="sect3"><span class="secnum">B.3.4.1</span> Identifying when a Validation Fails</h4>
+<p>When a validation fails, the same page loads with details of the failure. In this situation JAWS does not read the page as it would normally when loading a new page. You can quickly check if a validation error has occurred by searching for any images with an <code>alt</code> text of <code>Error</code>.</p>
+<p>To check for images having an <code>alt</code> text of <code>Error</code>:</p>
+<ol>
+<li>
+<p>Press <span class="bold">CTRL+HOME</span> to go to the top of the page.</p>
+<p>JAWS announces the page name.</p>
+</li>
+<li>
+<p>Press <span class="bold">CTRL+INSERT+G</span> to launch the Select a Graphic dialog box.</p>
+</li>
+<li>
+<p>Press <span class="bold">E</span> repeatedly to try and locate the error image. If there is an error image, then this means a validation has failed.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CDDEAAFJ" name="CDDEAAFJ"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h4 class="sect3"><span class="secnum">B.3.4.2</span> Reviewing Error Messages</h4>
+<p>If a validation error occurs, a list appears at the top of the page and contains list items with the error text for the failed validations.</p>
+<p>To navigate to the list containing error text:</p>
+<ol>
+<li>
+<p>Press <span class="bold">CTRL+HOME</span> to go to the top of the page.</p>
+<p>JAWS announces the page name.</p>
+</li>
+<li>
+<p>Press the JAWS navigation quick key <span class="bold">L</span> to go to the first list on the page.</p>
+<p>JAWS announces, "list of <span class="italic">x</span> items" where <code><span class="codeinlineitalic">x</span></code> is the number of errors that has occurred.</p>
+</li>
+<li>
+<p>Press the JAWS navigation quick key <span class="bold">I</span> to read through each error message.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CDDBBGIJ" name="CDDBBGIJ"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h4 class="sect3"><span class="secnum">B.3.4.3</span> Fixing a Validation Error</h4>
+<p>There is no simple way to navigate from the summary list of error messages to the page item associated with the failed validation. One approach is to navigate to the error image that displays next to the associated page item and then use JAWS reading commands to understand which error you are dealing with.</p>
+<p>To navigate to the error image:</p>
+<ol>
+<li>
+<p>Press <span class="bold">CTRL+HOME</span> to go to the top of the page.</p>
+<p>JAWS announces the page name.</p>
+</li>
+<li>
+<p>Press <span class="bold">CTRL+INSERT+G</span> to load the Select a Graphic dialog box.</p>
+</li>
+<li>
+<p>Press <span class="bold">E</span> repeatedly to locate the error image.</p>
+</li>
+<li>
+<p>Press <span class="bold">ENTER</span> to navigate to the error image.</p>
+</li>
+<li>
+<p>Press <span class="bold">DOWN ARROW</span> once to go to the Help text link for the associated field.</p>
+<p>This tells you which field has a validation error since the link text is the same as the form field label.</p>
+</li>
+<li>
+<p>Press the <span class="bold">DOWN ARROW</span> again to go to the error message.</p>
+</li>
+<li>
+<p>Press the JAWS navigation quick key <span class="bold">F</span> to go to the page item.</p>
+</li>
+<li>
+<p>Press <span class="bold">ENTER</span> to enable Forms Mode and provide a new value.</p>
+<p>Once you provide a new value and fix the error, you need to locate subsequent error images on the page.</p>
+</li>
+<li>
+<p>To locate subsequent error messages on the page:</p>
+<ol>
+<li>
+<p>Press the <span class="bold">PLUS</span> sign (+) on the numeric keypad to go back into Virtual PC Cursor mode.</p>
+</li>
+<li>
+<p>Press the JAWS navigation quick key <span class="bold">G</span> repeatedly until you locate the next error image.</p>
+<p>JAWS announces, "graphic error."</p>
+</li>
+<li>
+<p>Once you have located the next error image, repeat steps 5 to 8 until all errors have been addressed.</p>
+</li>
+<li>
+<p>Once all errors have been addressed, you need to click the <span class="bold">Apply Changes</span> button:</p>
+<ul>
+<li>
+<p>Press the JAWS navigation quick key <span class="bold">B</span> until you hear JAWS announce, "Apply Changes Button."</p>
+</li>
+<li>
+<p>Press <span class="bold">ENTER</span> to apply your changes.</p>
+<p>If your changes fixed all the validation errors, you are back to the Page Definition page.</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BABDCGBB" name="BABDCGBB"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" -->
+<h2 class="sect1"><span class="secnum">B.4</span> Accessing Components Using a Keyboard</h2>
+<p>This section describes how to access components in Oracle Application Express using a keyboard.</p>
+<p class="subhead2"><a id="sthref290" name="sthref290"></a>Topics:</p>
+<ul>
+<li>
+<p><a href="#BABFEIED">Using New Date Pickers</a></p>
+</li>
+<li>
+<p><a href="#CDDBHIDC">Accessing Interactive Report Regions</a></p>
+</li>
+</ul>
+<div class="infoboxnotealso">
+<p class="notep1">Tip:</p>
+If using Oracle Application Express using only a keyboard, you should enable Screen Reader Mode since tree regions are not keyboard accessible. When running in screen reader mode, a hierarchichal unordered list displays instead and can be easily navigated with keyboard-only using <span class="bold">TAB</span>, <span class="bold">SHIFT + TAB</span> and <span class="bold">ENTER</span> keys to activate a specific list item.</div>
+<a id="BABFEIED" name="BABFEIED"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect2"><span class="secnum">B.4.1</span> Using New Date Pickers</h3>
+<p>In Oracle Application Express release 4.0 there are many keyboard shortcuts for the new Date Picker.</p>
+<p>To open a Date Picker:</p>
+<ol>
+<li>
+<p>Tab to the relevant input field.</p>
+</li>
+<li>
+<p>Press <span class="bold">CTRL+HOME</span> to open the Date Picker.</p>
+</li>
+<li>
+<p>Once the Date Picker is open, you have the following navigation options:</p>
+<ul>
+<li>
+<p>By month:</p>
+<ul>
+<li>
+<p>Press <span class="bold">PAGE UP</span> to go to the previous month.</p>
+</li>
+<li>
+<p>Press <span class="bold">PAGE DOWN</span> to go to the next month.</p>
+</li>
+<li>
+<p>Press <span class="bold">CTRL +HOME</span> to go to the current month.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>By week:</p>
+<ul>
+<li>
+<p>Press <span class="bold">CTRL+UP</span> to go to the previous week.</p>
+</li>
+<li>
+<p>Press <span class="bold">CTRL+DOWN</span> to go to the next week.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>By day:</p>
+<ul>
+<li>
+<p>Press <span class="bold">CTRL+LEFT</span> to go to the previous day.</p>
+</li>
+<li>
+<p>Press <span class="bold">CTRL+RIGHT</span> to go to the next day.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>Once you are finished with the Date Picker:</p>
+<ol>
+<li>
+<p>Press <span class="bold">ENTER</span> to accept the selected date.</p>
+</li>
+<li>
+<p>Press <span class="bold">ESCAPE</span> to close the date picker without selection.</p>
+</li>
+<li>
+<p>Press <span class="bold">CTRL+END</span> to close the date picker and erase the date.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="CDDBHIDC" name="CDDBHIDC"></a>
+<div class="sect2">
+<h3 class="sect2"><span class="secnum">B.4.2</span> Accessing Interactive Report Regions</h3>
+<p>This section describes how to access common features within Interactive Report regions.</p>
+<p class="subhead2"><a id="sthref291" name="sthref291"></a>Topics:</p>
+<ul>
+<li>
+<p><a href="#BABBHJJD">Searching Data in an Interactive Report</a></p>
+</li>
+<li>
+<p><a href="#BABDEABH">Using the Actions Menu</a></p>
+</li>
+<li>
+<p><a href="#BABIHIAA">Managing Bulk Updates</a></p>
+</li>
+<li>
+<p><a href="#BABCFBAH">Utilizing Drill Down Links</a></p>
+</li>
+<li>
+<p><a href="#BABHAEBE">Editing Existing Filters</a></p>
+</li>
+<li>
+<p><a href="#BABFCAAE">Loading Saved Reports</a></p>
+</li>
+</ul>
+<a id="BABBHJJD" name="BABBHJJD"></a>
+<div class="sect3">
+<h4 class="sect3"><span class="secnum">B.4.2.1</span> Searching Data in an Interactive Report</h4>
+<p>If a search bar displays above an interactive report then the Include Search Bar attribute has been enabled in Report Attributes. This attribute is enabled by default when a new interactive report is created.</p>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+"Editing Interactive Reports as a Developer" in <a class="olink HTMDB25353" href="../../user.40/e15517/app_comp.htm#HTMDB25353"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a></div>
+<p>To execute a search:</p>
+<ol>
+<li>
+<p>Press <span class="bold">TAB</span> until the search field has focus.</p>
+</li>
+<li>
+<p>Type your search keywords into the search field.</p>
+</li>
+<li>
+<p>Press <span class="bold">ENTER</span> to invoke the search.</p>
+</li>
+<li>
+<p>To refine your search to a specific column:</p>
+<ol>
+<li>
+<p>Press <span class="bold">TAB</span> to access the magnifying glass icon to the left of the search field.</p>
+</li>
+<li>
+<p>Press <span class="bold">ENTER</span> to activate the pull down menu and display a list of all available columns to search.</p>
+</li>
+<li>
+<p>Press the <span class="bold">DOWN</span> or <span class="bold">UP</span> arrow keys on your keyboard to navigate through the list of <span class="bold">columns</span>.</p>
+</li>
+<li>
+<p>Press <span class="bold">ENTER</span> to select the column you wish to search on. This sets the context of the subsequent search as specific to the column selected.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Repeat steps 1 and 2 to execute your column specific search.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="BABDEABH" name="BABDEABH"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h4 class="sect3"><span class="secnum">B.4.2.2</span> Using the Actions Menu</h4>
+<p>By default, new interactive reports include both a search bar and Actions menu. Both of these features are controlled by the developer by enabling the Include Search Bar and Actions menu attributes on the Report Attributes page. To learn more, see "Editing Interactive Reports as a Developer" in <span class="italic"><a class="olink HTMDB25353" href="../../user.40/e15517/app_comp.htm#HTMDB25353">Oracle Application Express Application Builder User's Guide</a></span>.</p>
+<p>Depending upon how the developer creates the report, the Action menu can contain different options. To learn more about using the Actions menu, see "Customizing an Interactive Reports as a Developer" in <span class="italic"><a class="olink HTMDB25950" href="../../user.40/e15517/app_comp.htm#HTMDB25950">Oracle Application Express Application Builder User's Guide</a></span>.</p>
+<p>To access the Actions menu using a keyboard:</p>
+<ol>
+<li>
+<p>Press <span class="bold">TAB</span> until the Actions menu has focus.</p>
+</li>
+<li>
+<p>Press <span class="bold">ENTER</span> to open the menu.</p>
+</li>
+<li>
+<p>Once the menu is open, you have the following navigation options:</p>
+<ul>
+<li>
+<p>Press the <span class="bold">DOWN</span> arrow key to go down the menu.</p>
+</li>
+<li>
+<p>Press the <span class="bold">UP</span> arrow key to go up the menu.</p>
+</li>
+<li>
+<p>Press the <span class="bold">RIGHT</span> arrow key to open a sub-menu (indicated by a right arrow) and move focus to the first item in the sub-menu.</p>
+</li>
+<li>
+<p>Press the <span class="bold">LEFT</span> arrow key to close a sub-menu and move focus back to the appropriate item in the parent menu.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>To exit the Action menu:</p>
+<ul>
+<li>
+<p>Press <span class="bold">ENTER</span> to load the action specific dialog. Focus is set to the first focusable element within the dialog box.</p>
+</li>
+<li>
+<p>Press <span class="bold">ESC</span> to close the menu without selection.</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="BABIHIAA" name="BABIHIAA"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h4 class="sect3"><span class="secnum">B.4.2.3</span> Managing Bulk Updates</h4>
+<p>Some interactive reports in Oracle Application Express contain form items for applying bulk updates to components. All form items within the report and buttons to apply the changes are keyboard accessible. Also some pages feature a check box in the first row to perform bulk processing and corresponding <span class="bold">Select All</span> and <span class="bold">Deselect All</span> links below the report. All of these items are keyboard accessible.</p>
+</div>
+<!-- class="sect3" -->
+<a id="BABCFBAH" name="BABCFBAH"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h4 class="sect3"><span class="secnum">B.4.2.4</span> Utilizing Drill Down Links</h4>
+<p>Some interactive reports in Oracle Application Express contain at least one link to edit or view a specific sub-components. These are all standard links and are therefore keyboard accessible.</p>
+</div>
+<!-- class="sect3" -->
+<a id="BABHAEBE" name="BABHAEBE"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h4 class="sect3"><span class="secnum">B.4.2.5</span> Editing Existing Filters</h4>
+<p>When an existing search filter is applied to an interactive report, a search filter displays below the Search bar.</p>
+<p>You can access the search filter using the keyboard to:</p>
+<ul>
+<li>
+<p>Edit the search filter.</p>
+<p>Press <span class="bold">TAB</span> to navigate to the search filter and then press <span class="bold">ENTER</span> to open the Filter dialog box. Focus will be automatically set to first focusable element in the dialog box.</p>
+</li>
+<li>
+<p>Disable or enable the search filter.</p>
+<p>Press <span class="bold">TAB</span> to navigate to the check box to the right of the filter and <span class="bold">SPACEBAR</span> to disable or enable the filter.</p>
+</li>
+<li>
+<p>Delete the search filter.</p>
+<p>Press <span class="bold">TAB</span> to navigate to the search filter and then <span class="bold">ENTER</span> to open the Filter dialog box. Press <span class="bold">TAB</span> or <span class="bold">SHIFT+TAB</span> to navigate to the Delete button and then press <span class="bold">ENTER</span>.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect3" -->
+<a id="BABFCAAE" name="BABFCAAE"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h4 class="sect3"><span class="secnum">B.4.2.6</span> Loading Saved Reports</h4>
+<p>If an Interactive Report includes a Search bar, Actions menu, and support for saved reports, then these options have been enabled by the developer on the Report Attributes page. To learn more, see "Editing Interactive Reports as a Developer" in <span class="italic"><a class="olink HTMDB25353" href="../../user.40/e15517/app_comp.htm#HTMDB25353">Oracle Application Express Application Builder User's Guide</a></span>.</p>
+<p>To load a saved report:</p>
+<ol>
+<li>
+<p>Press <span class="bold">TAB</span> until the Reports select list has focus. Note that the Reports select list only displays if there are saved reports.</p>
+</li>
+<li>
+<p>Press the <span class="bold">UP</span> and <span class="bold">DOWN</span> keys to select the specific saved report you wish to view.</p>
+</li>
+<li>
+<p>Press <span class="bold">ENTER</span> to view the saved report.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" --></div>
+<!-- class="ind" -->
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="33%" />
+<col width="*" />
+<col width="33%" />
+<tr>
+<td align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="98">
+<tr>
+<td align="center" valign="top"><a href="trouble.htm"><img width="24" height="24" src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img width="24" height="24" src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="font-size: 90%" align="center" class="copyrightlogo"><img width="144" height="18" src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img width="24" height="24" src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img width="24" height="24" src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img width="24" height="24" src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img width="24" height="24" src="../../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img width="24" height="24" src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

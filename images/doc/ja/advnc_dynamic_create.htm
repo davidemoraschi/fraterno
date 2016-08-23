@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Creating a Dynamic Action</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:13Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Creating a Dynamic Action" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="advnc.htm" title="Advanced Programming Techni..." type="text/html" />
+<link rel="up" href="advnc_dynamic_actions.htm" title="Implementing Dynamic Actions" type="text/html" />
+<link rel="up" href="advnc_dynamic_create.htm" title="Creating a Dynamic Action" type="text/html" />
+<link rel="prev" href="advnc_dynamic_about.htm" title="Previous" type="text/html" />
+<link rel="next" href="advnc_dynamic_edit.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="advnc.htm" title="Advanced Programming Techni...">Advanced Programming Techni...</a> &gt; <a href="advnc_dynamic_actions.htm" title="Implementing Dynamic Actions">Implementing Dynamic Actions</a> &gt; Creating a Dynamic Action</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="advnc_dynamic_about.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_dynamic_edit.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CIHBBGIH" name="CIHBBGIH"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB28003" id="HTMDB28003"></a>Creating a <a id="sthref2606" name="sthref2606"></a>Dynamic Action</h1>
+<p>Creating a Dynamic Action involves specifying when the action will happen (with optional conditions), what action or actions are performed, and what elements are affected by the action.</p>
+<p>To create a dynamic action:</p>
+<ol>
+<li>
+<p>Navigate to the appropriate Page Definition. See <a href="bldr_pg_def_access.htm#BABJAICG">"Accessing the Page Definition"</a>.</p>
+</li>
+<li>
+<p>Access the Create Dynamic Action Wizard:</p>
+<ul>
+<li>
+<p>Tree view - Under Page Rendering, locate Dynamic Actions. Right-click and select <span class="bold">Create</span>.</p>
+<p>You can also invoke the wizard by right-clicking on a specific page item or region that you want to be the trigger for the dynamic action. This makes definition faster because certain When values will be pre-filled</p>
+</li>
+<li>
+<p>Component view - Under Page Rendering, scroll down to Dynamic Actions and click the <span class="bold">Create</span> icon.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Implementation, select one of the following dynamic action types and click <span class="bold">Next</span>.</p>
+<ul>
+<li>
+<p>Standard - Select this option to create simple actions that show, hide, enable and disable page elements when a page item's value changes.</p>
+</li>
+<li>
+<p>Advanced - Select this option to create complex actions such as setting a value, adding a class and using a dynamic action plug-in. This option also allows the selection of different events that will trigger the dynamic action.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Identification, enter the following and click <span class="bold">Next</span>.</p>
+<ul>
+<li>
+<p>Name - Enter the name of the dynamic action.</p>
+</li>
+<li>
+<p>Sequence - Enter the sequence of this component. The sequence determines the order of evaluation.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For When, specify when the action is performed and click <span class="bold">Next</span>. Options on this page include:</p>
+<ol>
+<li>
+<p>Event - Dynamic actions can be defined to fire based on events that happen on the page. There are three different categories of events that can be utilized, Browser events, Framework events and Component events. Here are the details of all the supported events, including the internal JavaScript event name in brackets:</p>
+<p>Browser Events</p>
+<ul>
+<li>
+<p>Change (change) - Fires when a control loses the input focus and its value has been modified since gaining focus. This is the default setting.</p>
+</li>
+<li>
+<p>Click (click) - Fires when the pointing device button is clicked over the triggering element.</p>
+</li>
+<li>
+<p>Double Click (dblclick) - Fires when the pointing device button is double clicked over the triggering element.</p>
+</li>
+<li>
+<p>Get Focus (focusin) - Fires when the triggering element receives focus either via a pointing device or by tabbing into the element.</p>
+</li>
+<li>
+<p>Key Down (keydown) - Fires when a key on the keyboard is pressed. Use this event when you want to capture special keystrokes such as arrow keys, after a key has been pressed.</p>
+</li>
+<li>
+<p>Key Press (keypress) - Fires when a key on the keyboard is pressed resulting in text being entered. Use this event when you want to capture actual text entry.</p>
+</li>
+<li>
+<p>Key Release (keyup) - Fires when a key on the keyboard is released. Use this event when you want to capture special keystrokes such as arrow keys, after a key has been released.</p>
+</li>
+<li>
+<p>Lose Focus (focusout) - Fires when the triggering element loses focus either via the pointing device or by tabbing out of the element.</p>
+</li>
+<li>
+<p>Mouse Button Press (mousedown) - Fires when the pointing device button is pressed over the triggering element.</p>
+</li>
+<li>
+<p>Mouse Button Release (mouseup) - Fires when the pointing device button is released over the triggering element.</p>
+</li>
+<li>
+<p>Mouse Enter (mouseenter) - Fires once when the pointing device is moved into the triggering element.</p>
+</li>
+<li>
+<p>Mouse Leave (mouseleave) - Fires once when the pointing device is moved away from the triggering element.</p>
+</li>
+<li>
+<p>Mouse Move (mousemove) - Fires when the pointing device is moved while it is over the triggering element.</p>
+</li>
+<li>
+<p>Page Load (ready) &ndash; Fires when the page loads.</p>
+</li>
+<li>
+<p>Page Unload (unload) - Fires when a page is unloaded.</p>
+</li>
+<li>
+<p>Resize (resize) - Fires when the browser window is resized.</p>
+</li>
+<li>
+<p>Resource Load (load) - When the triggering element is the window element (using a 'DOM Object' value of 'window' in the 'When' attributes) the event fires when the browser finishes loading all content within a document, including window, frames, objects and images. For other elements, it fires when the target element and all of its content has finished loading.</p>
+</li>
+<li>
+<p>Scroll (scroll) - Fires when a scrollable triggering element is scrolled. This could be the browser window (using a 'DOM Object' value of 'window' in the 'When' attributes), scrollable frames or elements with the 'overflow' CSS property set to 'scroll' (or 'auto' when the element's explicit height is less than the height of its contents).</p>
+</li>
+<li>
+<p>Select (select) - Fires when a user selects some text in a text field.</p>
+</li>
+</ul>
+<p>Framework Events</p>
+<ul>
+<li>
+<p>After Refresh (apexafterrefresh) - Fires after the triggering element has been refreshed. The event is only valid for triggering elements that perform 'Partial Page Refresh' and fire this event, for example Interactive Reports, Classic Reports, and all item types with cascading LOV support. Plug-ins might support this event as well.</p>
+</li>
+<li>
+<p>Before Page Submit (apexbeforepagesubmit) &ndash; Fires prior to a page being submitted.</p>
+</li>
+<li>
+<p>Before Refresh (apexbeforerefresh) &ndash; Fires before the triggering element has been refreshed. The event is only valid for triggering elements that perform 'Partial Page Refresh' and fire this event, for example Interactive Reports, Classic Reports, and all item types with cascading LOV support. Plug-ins might support this event as well.</p>
+</li>
+</ul>
+<p>Component Events</p>
+<p>These events will only be available when there is a component (either an item, region or dynamic action) available to your application that triggers a custom event. These events will appear in the following format Event name [Component Name], for example the Change Order event triggered by the Shuttle native item type will appear as Change Order [Shuttle]. In Application Express, these events are triggered from either native components shipped with plug-in components you have installed into your application.</p>
+<ul>
+<li>
+<p>Events triggered by native components:</p>
+<p>Change Order [Shuttle] (shuttlechangeorder) &ndash; Fires when the order of a value in the right hand select list is changed (either using Move Top, Move Up, Move Down or Move Bottom). There are currently no other events triggered by native components in Application Express.</p>
+</li>
+<li>
+<p>Events triggered by plug-in components:</p>
+<p>These will be available when added to your current application and will be in the format Event name [Component Name]. For help related to events raised by plug-ins, please refer to help text on the plug-in configuration page, by navigating to Shared Components &gt; Plug-ins &gt; [plugin name] &gt; Help Text, where the plug-in author may have included documentation.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Selection Type - Select the type of page element that triggers the dynamic action. A corresponding name field displays to specify the name of the page element.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Only available if the event selected supports definition of a page element. Selecting any of the following events will hide this field: Page Load, Page Unload, Resize, Before Page Submit. All other event types show this field.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+</li>
+<li>
+<p>Item(s), Region, DOM Object, or jQuery Selector - Specify the name of the page element as follows:</p>
+<ul>
+<li>
+<p>Item(s) - Enter or select one or more page item names that trigger the dynamic action. For multiple items, please separate page items with a comma.</p>
+</li>
+<li>
+<p>Region - Select the region name that triggers the dynamic action. The region selected must use a region template that includes a container element with an ID attribute set to <code>#REGION_STATIC_ID#</code>. The dynamic action framework relies on this ID value to reference the region.</p>
+<p>The region can fire the event itself, such as in the case of Before Refresh or After Refresh events, or can be a container to catch events that fire on items or other elements in the region. Only the following subset of events support this: Change (change), Click (click), Double Click (dblclick), Get Focus (focus), Key Down (keydown), Key Press, Key Release (keyup), Lose Focus (blur), Mouse Button Press (mousedown), Mouse Button Release (mouseup), Mouse Move (mousemove).</p>
+</li>
+<li>
+<p>DOM Object - Enter either the Document Object Model (DOM) object or the ID of a DOM object that triggers the dynamic action.</p>
+</li>
+<li>
+<p>jQuery Selector - Enter the jQuery selector syntax to return one or more page elements that trigger the dynamic action.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Condition - To conditionalize the trigger, make a selection from the Condition Type list and enter text in the Value field. Based on whether this condition is met, it is possible to define both True (when it is met) and False (when it is not) actions. If No Condition is specified, only True actions will fire. For further information, see the item level help.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Specify the action that is performed when the previously specified event occurs and conditions are satisfied, then click <span class="bold">Next</span>.</p>
+<ul>
+<li>
+<p>For True/False Actions (Standard), specify the True Action:</p>
+<ul>
+<li>
+<p>Show - The item displays when the event is true or No Condition is specified.</p>
+</li>
+<li>
+<p>Hide - The item does not display when the event is true or No Condition is specified.</p>
+</li>
+<li>
+<p>Enable - The item is enabled when the event is true or No Condition is specified.</p>
+</li>
+<li>
+<p>Disable - Disables the affected elements. By disabling the affected elements, the page item will be non-editable and does not retain the item's value when the page is submitted.</p>
+</li>
+<li>
+<p>Create Opposite False Action - For the selected true action above, create an opposite action to occur when the event is false. The Standard branch of the wizard allows selection of either Show, Hide, Enable or Disable actions for the True Action and provides the facility to create the logical opposite of this. For example, if Show' is selected for the True Action, checking the Create Opposite False Action checkbox would also create a Hide false action.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Create Opposite False Action only available if a Condition has been specified.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+</li>
+</ul>
+</li>
+<li>
+<p>For True Actions (Advanced only) - The Advanced branch of the wizard allows selection of all actions and allows selection of different True and False Actions. For both the True Action and False Action pages you specify. Depending on the selected action, additional options display. Use these options to specify additional settings and values required to perform the action.</p>
+<p>Component</p>
+<ul>
+<li>
+<p>Clear - Clears the affected elements.</p>
+</li>
+<li>
+<p>Disable - Disables the affected elements. By disabling the affected elements, the page item will be non-editable and does not retain the item's value when the page is submitted.</p>
+</li>
+<li>
+<p>Enable - Enables the affected elements.</p>
+</li>
+<li>
+<p>Hide - Hides the affected elements. Also has the option to Hide all page items on the same line.</p>
+</li>
+<li>
+<p>Refresh - Triggers a refresh of the affected elements. Note that not all elements support a refresh, you can use it for interactive reports, classic reports and all item types with cascading LOV support. Plug-ins might support this action as well.</p>
+</li>
+<li>
+<p>Set Focus - Sets the focus to the affected elements. This will default to the first of the affected elements if there are multiple. This can be especially useful when used in conjunction with the Show and Enable actions to take the user straight to the appropriate item.</p>
+</li>
+<li>
+<p>Set Value - Sets the value of the affected elements. This supports the following Set Types: Static Assignment, JavaScript Expression, SQL Statement, PL/SQL Expression, PL/SQL Function Body.</p>
+</li>
+<li>
+<p>Show - Shows the affected elements. Also has the option to Show all the page items on the same line.</p>
+</li>
+</ul>
+<p>Execute</p>
+<ul>
+<li>
+<p>Execute JavaScript Code - Allows you to define or call custom, page specific JavaScript code to use within the dynamic action framework. If you are defining JavaScript code that is specific to just one page, you can also make use of the new page level attribute 'Function and Global Variable Declaration' to define this. Functions and variables defined here can subsequently be referenced from this action.</p>
+</li>
+<li>
+<p>Execute PL/SQL Code - Executes some PL/SQL code on the server. If an error occurs during execution, the user will be alerted.</p>
+</li>
+</ul>
+<p>Notification</p>
+<ul>
+<li>
+<p>Alert - Displays an Alert.</p>
+</li>
+<li>
+<p>Confirm - Displays a confirmation dialog. If the user chooses Cancel then the proceeding actions are not executed and the current event is canceled.</p>
+</li>
+</ul>
+<p>Style</p>
+<ul>
+<li>
+<p>Add Class - Adds 1 or more CSS classes to the affected elements.</p>
+</li>
+<li>
+<p>Confirm - Displays a confirmation dialog. If the user chooses Cancel then the proceeding actions are not executed and the current event is canceled.</p>
+</li>
+</ul>
+<p>Miscellaneaous</p>
+<ul>
+<li>
+<p>Cancel Event - Cancels subsequent dynamic actions or events from firing, based on certain conditions. This could be useful in the following situations:</p>
+<p>If you have multiple dynamic actions on a page that are based on the same event (such as Click) and they refer to the same element on the page, the Cancel Event action can be used to prevent subsequent dynamic actions from firing, conditionally based on it's When Condition.</p>
+<p>If a dynamic action has many true or false actions, Cancel Event can be used to halt subsequent actions from being processed. Currently this has limited value as it is not possible to define a dynamic action's actions to fire conditionally, so this would just always prevent subsequent actions being processed, which could be useful in debugging.</p>
+<p>Used to cancel page submission, when used in conjunction with the Before Page Submit event of dynamic actions. For example, if you define a dynamic action that fires on the Before Page Submit even, and for the Condition define JavaScript Expression, and in the Value' some expression such as $v('P2_ENAME') == 'DO NOT SUBMIT'. Then, if you define a True Action that uses the Cancel Event action, the page will not be submitted when the ENAME field is equal to DO NOT SUBMIT.</p>
+</li>
+<li>
+<p>Submit Page - Submits the page.</p>
+</li>
+</ul>
+<p>Plug-ins</p>
+<ul>
+<li>
+<p>my_plugin_action[Plug-in] - Depending on your application configuration, you may also have additional plug-in dynamic actions available here. These will be displayed as 'my_plugin_action [Plug-in]'. Plug-in dynamic actions are installed within the application's shared components. The plug-in developer will have assigned an appropriate category for the action (Component, Execute and so forth).</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Fire On Page Load (Advanced only) - Select this option to also trigger this action when the page loads. This may or may not be checked by default, depending on the type of Action selected.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Affected Elements (available only for actions that support affected elements), specify the elements affected by this dynamic action and how they are affected then click <span class="bold">Next</span>.</p>
+<p>The final step in creating the dynamic action is different depending on whether the action you have selected supports selection of affected elements. Some actions, such as Submit Page, do not required affected elements to be selected. Other actions, such as Show, do. If the action selected does not support selection of affected elements, the last page will just be a Confirm page where you can review details of the dynamic action. If the action selected does support selection of affected elements, options on this page include:</p>
+<ul>
+<li>
+<p>Selection Type - Select the type of page element that is affected by the dynamic action. Depending on the selected type, additional options display. Use these options to specify additional settings and values required to specify how the element is affected.</p>
+</li>
+<li>
+<p>Item(s), Region, DOM Object, or jQuery Selector - Specify the name of the page element as follows:</p>
+<ul>
+<li>
+<p>Item(s) - Select the item name that is affected by the dynamic action.</p>
+</li>
+<li>
+<p>Region - Enter or select the region name that is affected by the dynamic action. The region selected must use a region template that includes a container element with an ID attribute set to <code>#REGION_STATIC_ID#</code>. The dynamic action framework relies on this ID value in order to reference the region.</p>
+</li>
+<li>
+<p>DOM Object - Enter either the Document Object Model (DOM) object or the ID of a DOM object that is affected by the dynamic action.</p>
+</li>
+<li>
+<p>jQuery Selector - Enter the jQuery selector syntax to return one or more page elements that is affected by the dynamic action.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="advnc_dynamic_about.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_dynamic_edit.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Example: Creating a Web Service Reference on a RESTful Style Web Service</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:12Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Example: Creating a Web Service Reference on a RESTful Style Web Service" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="advnc.htm" title="Advanced Programming Techni..." type="text/html" />
+<link rel="up" href="advnc_web_services.htm" title="Implementing Web Services" type="text/html" />
+<link rel="up" href="advnc_rest_web_eg_1.htm" title="Example: Creating a Web Ser..." type="text/html" />
+<link rel="prev" href="advnc_rest_web_rpt_reg.htm" title="Previous" type="text/html" />
+<link rel="next" href="advnc_rest_web_eg_2.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="advnc.htm" title="Advanced Programming Techni...">Advanced Programming Techni...</a> &gt; <a href="advnc_web_services.htm" title="Implementing Web Services">Implementing Web Services</a> &gt; Example: Creating a Web Ser...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="advnc_rest_web_rpt_reg.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_rest_web_eg_2.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CIHJICFA" name="CIHJICFA"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1>Example: <a id="sthref2576" name="sthref2576"></a>Creating a Web Service Reference on a RESTful Style Web Service</h1>
+<p>To utilize Web services in Oracle Application Express, you create a Web service reference using a wizard. When you create the Web reference, you can follow one of these methods:</p>
+<ul>
+<li>
+<p>You supply the URL to a WSDL document. The wizard then analyzes the WSDL and collects all the necessary information to create a valid SOAP message.</p>
+<p>The wizard provides a step where you can locate a WSDL using the Universal Description, Discovery, and Integration (UDDI) registry. A UDDI registry is a directory where businesses register their Web services. You search for the WSDL by entering either a service or business name.</p>
+</li>
+<li>
+<p>You supply the relevant information on how to interact with the Web service, including the SOAP request envelope, and create the Web reference manually.</p>
+</li>
+<li>
+<p>You supply the relevant information on how to interact with a RESTful style Web service including the URL endpoint, HTTP method and input parameters or payload.</p>
+</li>
+</ul>
+<p>In this example, you create a Web reference to a RESTful Web service. RESTful style Web service references are created by examining the documentation for the services and supplying that information when running the Create Web Reference wizard. You then create a form and report to interact with the service and display the results.</p>
+<p>Topics included in this section:</p>
+<ul>
+<li>
+<p><a href="#CIHHHECD">Create a Web Service Reference for a RESTfull Style Web Service</a></p>
+</li>
+<li>
+<p><a href="#CIHCIHDE">Create a Form and Report of Web Service Results</a></p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+If your environment requires a proxy server to access the Internet, you must specify a proxy server address on the Application Attributes page before you can create a Web service reference. See <a href="advnc_web_about.htm#CIHGBICJ">Specifying an Application Proxy Server Address</a> for instructions.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" title="D" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+The following example is dependent upon the availability of the specified Web service ultimately invoked. If the Web service is unavailable, you may experience difficulties completing this exercise.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" -->
+<a id="CIHHHECD" name="CIHHHECD"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2>Create a Web Service Reference for a RESTfull Style Web Service</h2>
+<p>To create a new Web reference on a RESTful style Web service:</p>
+<ol>
+<li>
+<p>Enter the following in your web browser to open the documentation for the Web service:</p>
+<p><code>https://developer.yahoo.com/maps/rest/V1/</code></p>
+</li>
+<li>
+<p>Follow the instructions to get an application ID.</p>
+</li>
+<li>
+<p>On your Application home page, click <span class="bold">Shared Components</span>.</p>
+</li>
+<li>
+<p>Under Logic, click <span class="bold">Web Service References</span>.</p>
+</li>
+<li>
+<p>Select <span class="bold">REST</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For REST Details, make these changes:</p>
+<ol>
+<li>
+<p>Name - Enter Yahoo Map.</p>
+</li>
+<li>
+<p>URL - Enter the following: <code>http://local.yahooapis.com/MapsService/V1/mapImage</code></p>
+</li>
+<li>
+<p>Accept all other defaults and click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For REST Inputs, make these changes:</p>
+<ol>
+<li>
+<p>Name - Enter <code>appid</code>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Add Parameter</span>.</p>
+</li>
+<li>
+<p>Name - Enter <code>location</code>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For REST Outputs, make these changes:</p>
+<ol>
+<li>
+<p>XPath to Output Parameters - Enter <code>/Result</code></p>
+</li>
+<li>
+<p>Name - Enter <code>URL</code></p>
+</li>
+<li>
+<p>Path - Enter <code>/text()</code></p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+<p>The Create Web Service Reference Success page appears. The Web service reference for Yahoo Map is added to the Web Service References Repository.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHCIHDE" name="CIHCIHDE"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2>Create a Form and Report of Web Service Results</h2>
+<p>Next, you create a page that contains a form and a report to interact with the Web service described by the Web Service Reference you created in the previous steps.</p>
+<p>To create a form and report after creating a Web Service Reference:</p>
+<ol>
+<li>
+<p>On the Create Web Service Reference success page, select <span class="bold">Create Form and Report on Web Service</span>.</p>
+</li>
+<li>
+<p>For Choose Service and Operation, make these changes:</p>
+<ol>
+<li>
+<p>Web Service Reference - Select <span class="bold">Yahoo Map</span>.</p>
+</li>
+<li>
+<p>Operation - Select <span class="bold">doREST</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Page and Region Attributes, make these changes:</p>
+<ol>
+<li>
+<p>Form Region Title - Enter <code>Address</code>.</p>
+</li>
+<li>
+<p>Report Region Title - Enter <code>Map</code>.</p>
+</li>
+<li>
+<p>Accept all other defaults and click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Input Items, accept all defaults and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Report Parameters, make these changes:</p>
+<ol>
+<li>
+<p>Select <span class="bold">URL</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Finish</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <span class="bold">Run Page</span>.</p>
+</li>
+<li>
+<p>If prompted to log in, enter the username and password for your workspace and click <span class="bold">login</span>.</p>
+<p>A form and report resembling <a href="#CIHJEGJH">Figure: Yahoo Map Form and Report without Data</a> appear. Notice that the Address Form at the top of the page contains data entry fields and a submit button, but the Map report does not contain any data.</p>
+<div class="figure"><a id="CIHJEGJH" name="CIHJEGJH"></a>
+<p class="titleinfigure">Yahoo Map Form and Report without Data</p>
+<img src="img/web_rest.gif" alt="Description of this figure follows" title="Description of this figure follows" longdesc="img_text/web_rest.htm" /><br />
+<a id="sthref2577" name="sthref2577" href="img_text/web_rest.htm">Description of "Yahoo Map Form and Report without Data"</a><br />
+<br /></div>
+<!-- class="figure" --></li>
+<li>
+<p>To test the form, enter the following:</p>
+<ol>
+<li>
+<p>Appid - Enter your Yahoo! application ID you requested in previous steps.</p>
+</li>
+<li>
+<p>Location - Enter <code>500 Oracle Parkway, Redwood Shores, CA 94065</code>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Submit</span>.</p>
+<p>The Map report displays a long URL to an image. Next you edit the Map Report region to display the image instead of the URL.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>On the developer bar, click <span class="bold">Edit Page 4</span>.</p>
+</li>
+<li>
+<p>On the Edit Page for page 4, in Tree View, do the following:</p>
+<ol>
+<li>
+<p>Under Page Rendering, right click on <span class="bold">Regions</span> and select <span class="bold">Expand All.</span></p>
+</li>
+<li>
+<p>Double click <span class="bold">URL</span>.</p>
+</li>
+<li>
+<p>Under Column Formatting, for HTML Expression enter:</p>
+<p><code>&lt;img src="#URL#" /&gt;</code></p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <span class="bold">Run Page</span>.</p>
+<p>The map appears in the report region as shown in <a href="#CIHBDHHI">Figure: Yahoo Map Form and Report with Data</a>.</p>
+<div class="figure"><a id="CIHBDHHI" name="CIHBDHHI"></a>
+<p class="titleinfigure">Yahoo Map Form and Report with Data</p>
+<img src="img/web_rest_map.gif" alt="Description of this figure follows" title="Description of this figure follows" longdesc="img_text/web_rest_map.htm" /><br />
+<a id="sthref2578" name="sthref2578" href="img_text/web_rest_map.htm">Description of "Yahoo Map Form and Report with Data "</a><br />
+<br /></div>
+<!-- class="figure" --></li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="advnc_rest_web_rpt_reg.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_rest_web_eg_2.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

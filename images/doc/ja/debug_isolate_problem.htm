@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Removing Controls and Components to Isolate a Problem</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:10Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Removing Controls and Components to Isolate a Problem" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="debug.htm" title="Debugging an Application" type="text/html" />
+<link rel="up" href="debug_isolate_problem.htm" title="Removing Controls and Compo..." type="text/html" />
+<link rel="prev" href="debug_sql.htm" title="Previous" type="text/html" />
+<link rel="next" href="sec.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="debug.htm" title="Debugging an Application">Debugging an Application</a> &gt; Removing Controls and Compo...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="debug_sql.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="sec.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABJBJIA" name="BABJBJIA"></a></p>
+<div class="sect1"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB10008|debug, isolating a problem"></a>Removing Controls and Components to Isolate a <a id="sthref2220" name="sthref2220"></a>Problem</h1>
+<p>If you have problems running a page, try removing controls and components one at a time. Using this approach, you can quickly determine which control or component may be the source of your problem. You can disable a control or component by selecting the Condition attribute Never.</p>
+<p>To remove a control or component using conditional attributes:</p>
+<ol>
+<li>
+<p>Navigate to the appropriate Page Definition. See <a href="bldr_pg_def_access.htm#BABJAICG">"Accessing the Page Definition"</a>.</p>
+</li>
+<li>
+<p>Select the name of the control or component you want to disable.</p>
+<p>The appropriate attributes page appears.</p>
+</li>
+<li>
+<p>Scroll down to Condition Type and select <span class="bold">Never</span> from the Condition Type list.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span> and return to the Page Definition.</p>
+</li>
+<li>
+<p>Try running the page again.</p>
+</li>
+<li>
+<p>Continue to remove controls or components until the page runs correctly.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="bldr_pg_def_access.htm#BABJAICG">"Accessing the Page Definition"</a>, <a href="bldr_pg_def_comp.htm#BABFICAI">"Editing a Page in Component View"</a>, <a href="concept_cond_process.htm#BEIEBEHI">"Understanding Conditional Rendering and Processing"</a>, and <a href="bldapp_running.htm#CHDDEHIA">"Running a Page or Application"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="debug_sql.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="sec.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

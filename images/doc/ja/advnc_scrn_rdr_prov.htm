@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Provisioning Screen Reader Mode</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:13Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Provisioning Screen Reader Mode" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="advnc.htm" title="Advanced Programming Techni..." type="text/html" />
+<link rel="up" href="advnc_screen_rdr.htm" title="About Screen Reader Mode" type="text/html" />
+<link rel="up" href="advnc_scrn_rdr_prov.htm" title="Provisioning Screen Reader ..." type="text/html" />
+<link rel="prev" href="advnc_scrn_rdr_enable.htm" title="Previous" type="text/html" />
+<link rel="next" href="advnc_scrn_rdr_extnd.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="advnc.htm" title="Advanced Programming Techni...">Advanced Programming Techni...</a> &gt; <a href="advnc_screen_rdr.htm" title="About Screen Reader Mode">About Screen Reader Mode</a> &gt; Provisioning Screen Reader ...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="advnc_scrn_rdr_enable.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_scrn_rdr_extnd.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CIHICIIA" name="CIHICIIA"></a></p>
+<div class="sect2">
+<h1><a name="HTMDB28010" id="HTMDB28010"></a>Provisioning <a id="sthref2632" name="sthref2632"></a>Screen Reader Mode</h1>
+<p>There are three ways you can provision this mode to user's of your own database applications.</p>
+<ol>
+<li>
+<p>Page template <code>#SCREEN_READER_TOGGLE#</code> substitution string - Add this substitution string to your page template and Application Express displays a link to the current page to turn on or off (toggle) the mode. So if you are in standard mode, this procedure generates a link to turn it on.</p>
+</li>
+<li>
+<p>There are also APIs that can be used to control this mode. You may want to use the APIs if you only want to render the toggle in one place and don't want to do this at page template level or if you want more control over the actual displayed link text. Please see the <a href="AEAPI/preface.htm"><span class="italic">Oracle Application Express API Reference</span></a> for more details on these APIs.</p>
+</li>
+<li>
+<p>Using <code>f?p</code> syntax <code>REQUEST</code> attribute to enable and disable screen reader mode. The general syntax for f?p is <code>f?p=application:page:session:request:...</code></p>
+<p>If the request is exactly <code>SET_SESSION_SCREEN_READER_ON</code> or <code>SET_SESSION_SCREEN_READER_OFF</code> then the session is put into or out of screen reader mode. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+&lt;a href="f?p=100:1:&amp;SESSION.:SET_SESSION_SCREEN_READER_ON"&gt;Set Screen Reader On&lt;/a&gt;
+</pre></li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="advnc_scrn_rdr_enable.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_scrn_rdr_extnd.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

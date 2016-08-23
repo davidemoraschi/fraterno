@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>REMOVE_WORKSPACE Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:38Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="REMOVE_WORKSPACE Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_instance007.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_instance009.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_instance007.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_instance009.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDGFAFH" name="CHDGFAFH"></a></p>
+<hr />
+<div class="refsect1">
+<h1><a name="AEAPI252" id="AEAPI252"></a>REMOVE_WORKSPACE <a id="sthref493" name="sthref493"></a>Procedure</h1>
+<p>The <code>REMOVE_WORKSPACE</code> procedure removes a workspace from an Application Express instance.</p>
+<a id="sthref494" name="sthref494"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_INSTANCE_ADMIN.REMOVE_WORKSPACE(
+    p_workspace         IN VARCHAR2,
+    p_drop_users        IN VARCHAR2 DEFAULT 'N',
+    p_drop_tablespaces  IN VARCHAR2 DEFAULT 'N' );
+</pre>
+<a id="sthref495" name="sthref495"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#CHDICBFJ">Table: REMOVE_WORKSPACE Parameters</a> describes the parameters available in the <code>REMOVE_WORKSPACE</code> procedure.</p>
+<div class="tblformal"><a id="sthref496" name="sthref496"></a><a id="CHDICBFJ" name="CHDICBFJ"></a>
+<p class="titleintable">REMOVE_WORKSPACE Parameters</p>
+<table class="Formal" title="REMOVE_WORKSPACE Parameters" summary="This table describes the parameters available in the REMOVE_WORKSPACE procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t9">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t9">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t9" headers="r1c1-t9">
+<p><code>p_workspace</code></p>
+</td>
+<td align="left" headers="r2c1-t9 r1c2-t9">
+<p>The name of the workspace to be removed.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t9" headers="r1c1-t9">
+<p><code>p_drop_users</code></p>
+</td>
+<td align="left" headers="r3c1-t9 r1c2-t9">
+<p><code>'Y'</code> to drop the database user associated with the workspace. The default is <code>'N'</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t9" headers="r1c1-t9">
+<p><code>p_drop_tablespaces</code></p>
+</td>
+<td align="left" headers="r4c1-t9 r1c2-t9">
+<p>'Y' to drop the tablespace associated with the database user associated with the workspace. The default is <code>'N'</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref497" name="sthref497"></a>
+<p class="subhead2">Example</p>
+<p>The following example demonstrates how to use the <code>REMOVE_WORKSPACE</code> procedure to remove an existing workspace named MY_WORKSPACE, along with the associated database users and tablespace.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN
+    APEX_INSTANCE_ADMIN.REMOVE_WORKSPACE('MY_WORKSPACE','Y','Y');
+END;
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_instance007.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_instance009.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

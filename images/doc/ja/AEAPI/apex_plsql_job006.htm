@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>UPDATE_JOB_STATUS Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:39Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="UPDATE_JOB_STATUS Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_plsql_job005.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_plugin.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_plsql_job005.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BGBHHCHH" name="BGBHHCHH"></a></p>
+<hr />
+<div class="refsect1">
+<h1><a id="sthref769" name="sthref769"></a>UPDATE_JOB_STATUS Procedure</h1>
+<p>Call this procedure to update the status of the currently running job. This procedure is most effective when called from the submitted PL/SQL.</p>
+<a id="sthref770" name="sthref770"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_PLSQL_JOB.UPDATE_JOB_STATUS (
+    p_job IN NUMBER,
+    p_status IN VARCHAR2);
+</pre>
+<a id="sthref771" name="sthref771"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#BGBHJHDE">Table: UPDATE_JOB_STATUS Parameters</a> describes the parameters available in the UPDATE_JOB_STATUS procedure.</p>
+<div class="tblformal"><a id="sthref772" name="sthref772"></a><a id="BGBHJHDE" name="BGBHJHDE"></a>
+<p class="titleintable">UPDATE_JOB_STATUS Parameters</p>
+<table class="Formal" title="UPDATE_JOB_STATUS Parameters" summary="This table describes the parameters available in the REMOVE_PREFERENCE procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="41%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t6">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t6">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t6" headers="r1c1-t6">
+<p><code>p_job</code></p>
+</td>
+<td align="left" headers="r2c1-t6 r1c2-t6">
+<p>The job ID for the job you want to update the status of.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t6" headers="r1c1-t6">
+<p>p_status</p>
+</td>
+<td align="left" headers="r3c1-t6 r1c2-t6">
+<p>The string of up to 100 characters to be used as the current status of the job.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref773" name="sthref773"></a>
+<p class="subhead2">Example</p>
+<p>The following example shows how to use the UPDATE_JOB_STATUS procedure. In this example, note that:</p>
+<ul>
+<li>
+<p>Lines 002 to 010 run a loop that inserts 100 records into the emp table.</p>
+</li>
+<li>
+<p><code>APP_JOB</code> is referenced as a bind variable inside the <code>VALUES</code> clause of the <code>INSERT</code>, and specified as the <code>p_job</code> parameter value in the call to <code>UPDATE_JOB_STATUS</code>.</p>
+</li>
+<li>
+<p><code>APP_JOB</code> represents the job number which will be assigned to this process as it is submitted to <code>APEX_PLSQL_JOB</code>. By specifying this reserved item inside your process code, it will be replaced for you at execution time with the actual job number.</p>
+</li>
+<li>
+<p>Note that this example calls to <code>UPDATE_JOB_STATUS</code> every ten records, inside the block of code. Normally, Oracle transaction rules dictate updates made inside code blocks will not be seen until the entire transaction is committed. The <code>APEX_PLSQL_JOB.UPDATE_JOB_STATUS</code> procedure, however, has been implemented in such a way that the update will happen regardless of whether or not the job succeeds or fails. This last point is important for two reasons:</p>
+<ol>
+<li>
+<p>Even if your status shows "100 rows inserted", it does not mean the entire operation was successful. If an error occurred at the time the block of code tried to commit, the user_status column of <code>APEX_PLSQL_JOBS</code> would not be affected because status updates are committed separately.</p>
+</li>
+<li>
+<p>Updates are performed autonomously. You can view the job status before the job has completed. This gives you the ability to display status text about ongoing operations in the background as they are happening.</p>
+</li>
+</ol>
+</li>
+</ul>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN
+    FOR i IN 1 .. 100 LOOP
+        INSERT INTO emp(a,b) VALUES (:APP_JOB,i);
+        IF MOD(i,10) = 0 THEN
+            APEX_PLSQL_JOB.UPDATE_JOB_STATUS(
+                P_JOB =&gt; :APP_JOB,
+                P_STATUS =&gt; i || ' rows inserted');
+        END IF;
+        APEX_UTIL.PAUSE(2);
+    END LOOP;
+END;
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_plsql_job005.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

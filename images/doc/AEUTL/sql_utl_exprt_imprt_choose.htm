@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Choosing the Right Import/Export/Load/Unload Option</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T17:42:53Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Choosing the Right Import/Export/Load/Unload Option" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15520-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface" title="Home" type="text/html" />
+<link rel="up" href="sql_utl.htm" title="Using Oracle Application Ex..." type="text/html" />
+<link rel="up" href="sql_utl_exprt_imprt_about.htm" title="About Importing, Exporting,..." type="text/html" />
+<link rel="up" href="sql_utl_exprt_imprt_choose.htm" title="Choosing the Right Import/E..." type="text/html" />
+<link rel="prev" href="sql_utl_exprt_imprt_about.htm" title="Previous" type="text/html" />
+<link rel="next" href="sql_utl_exprt_imprt.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface" title="Home">Home</a> &gt; <a href="sql_utl.htm" title="Using Oracle Application Ex...">Using Oracle Application Ex...</a> &gt; <a href="sql_utl_exprt_imprt_about.htm" title="About Importing, Exporting,...">About Importing, Exporting,...</a> &gt; Choosing the Right Import/E...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="sql_utl_exprt_imprt_about.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="sql_utl_exprt_imprt.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CBHBGGGD" name="CBHBGGGD"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEUTL245" id="AEUTL245"></a>Choosing the Right Import/Export/Load/Unload Option</h1>
+<p>The Oracle Database and Oracle Application Express provide several powerful options for importing, exporting, loading, and unloading data. <a href="#CBHEHBEA">Table: Summary of Oracle Application Express Import/Export Options</a> provides a summary of these optio<a id="sthref273" name="sthref273"></a><a id="sthref274" name="sthref274"></a>ns.</p>
+<div class="tblhruleformal"><a id="sthref275" name="sthref275"></a><a id="CBHEHBEA" name="CBHEHBEA"></a>
+<p class="titleintable">Summary of Oracle Application Express Import/Export Options</p>
+<table class="HRuleFormal" title="Summary of Oracle Application Express Import/Export Options" summary="This table provides a quick summary of the various import/export options. It contains two columns. The left column names the import/export feature. The right column lists the capabilities and uses." dir="ltr" border="1" width="100%" frame="hsides" rules="rows" cellpadding="3" cellspacing="0">
+<col width="43%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t3">Feature or Utility</th>
+<th align="left" valign="bottom" id="r1c2-t3">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t3" headers="r1c1-t3">
+<p>Data Load/Unload wizards in Oracle Application Express</p>
+</td>
+<td align="left" headers="r2c1-t3 r1c2-t3">
+<ul>
+<li>
+<p>Easy to use graphical interface</p>
+</li>
+<li>
+<p>Loads/unloads from and to external text files (delimited fields) or XML files</p>
+</li>
+<li>
+<p>Loads/unloads tables only, one table at a time</p>
+</li>
+<li>
+<p>Access only to schema of logged-in user</p>
+</li>
+<li>
+<p>No data filtering on upload.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t3" headers="r1c1-t3">
+<p>SQL*Loader utility</p>
+</td>
+<td align="left" headers="r3c1-t3 r1c2-t3">
+<ul>
+<li>
+<p>Command-line interface, invoked with <code>sqlldr</code> command</p>
+</li>
+<li>
+<p>Bulk-loads data into the database from external files</p>
+</li>
+<li>
+<p>Supports numerous input formats, including delimited, fixed record, variable record, and stream</p>
+</li>
+<li>
+<p>Loads multiple tables simultaneously</p>
+</li>
+<li>
+<p>Powerful data filtering capabilities</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t3" headers="r1c1-t3">
+<p>Data Pump Export and Data Pump Import utilities</p>
+</td>
+<td align="left" headers="r4c1-t3 r1c2-t3">
+<ul>
+<li>
+<p>Command-line interface, invoked with <code>expdp</code> and <code>impdp</code> commands</p>
+</li>
+<li>
+<p>Exports and imports from one Oracle database to another (proprietary binary format)</p>
+</li>
+<li>
+<p>Imports/exports all schema object types</p>
+</li>
+<li>
+<p>Imports/exports entire database, entire schema, multiple schemas, multiple tablespaces, or multiple tables</p>
+</li>
+<li>
+<p>Powerful data filtering capabilities</p>
+</li>
+<li>
+<p>High speed</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t3" headers="r1c1-t3">
+<p>Export and Import utilities</p>
+</td>
+<td align="left" headers="r5c1-t3 r1c2-t3">
+<ul>
+<li>
+<p>Command-line interface, invoked with <code>exp</code> and <code>imp</code> commands</p>
+</li>
+<li>
+<p>Exports and imports from one Oracle database to another (proprietary binary format)</p>
+</li>
+<li>
+<p>Supports XMLType data</p>
+</li>
+<li>
+<p>Does not support the <code>FLOAT</code> and <code>DOUBLE</code> data types</p>
+</li>
+<li>
+<p>Capabilities similar to Data Pump; Data Pump is preferred</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblhruleformal" -->
+<p><a href="#CBHEBFBD">Table: Import/Export Scenarios and Recommended Options</a> provides several load, unload, import, and export scenarios and suggests the appropriate option to use for each.</p>
+<div class="tblhruleformal"><a id="sthref276" name="sthref276"></a><a id="CBHEBFBD" name="CBHEBFBD"></a>
+<p class="titleintable">Import/Export Scenarios and Recommended Options</p>
+<table class="HRuleFormal" title="Import/Export Scenarios and Recommended Options" summary="This table provides some import/export scenarios, and for each scenario, recommends the feature or utility to use." dir="ltr" border="1" width="100%" frame="hsides" rules="rows" cellpadding="3" cellspacing="0">
+<col width="*" />
+<col width="32%" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t4">Import/Export Scenario</th>
+<th align="left" valign="bottom" id="r1c2-t4">Recommended Option</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t4" headers="r1c1-t4">
+<p>You have fewer than 10 tables to load, the data is in spreadsheets or tab- or comma-delimited text files, and there are no complex data types (such as objects or multivalued fields).</p>
+</td>
+<td align="left" headers="r2c1-t4 r1c2-t4">
+<p>Data Load/Unload wizards in Oracle Application Express</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t4" headers="r1c1-t4">
+<p>You have to load data that is not delimited. The records are fixed length, and field definitions depend on column positions.</p>
+</td>
+<td align="left" headers="r3c1-t4 r1c2-t4">
+<p>SQL*Loader</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t4" headers="r1c1-t4">
+<p>You have tab-delimited text data to load, and there are more than 10 tables.</p>
+</td>
+<td align="left" headers="r4c1-t4 r1c2-t4">
+<p>SQL*Loader</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t4" headers="r1c1-t4">
+<p>You have text data to load, and you want to load only records that meet certain selection criteria (for example, only records for employees in department number 3001).</p>
+</td>
+<td align="left" headers="r5c1-t4 r1c2-t4">
+<p>SQL*Loader</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t4" headers="r1c1-t4">
+<p>You want to import or export an entire schema from or to another Oracle database. There is no XMLType data in any of the data.</p>
+</td>
+<td align="left" headers="r6c1-t4 r1c2-t4">
+<p>Data Pump Export and Data Pump Import</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t4" headers="r1c1-t4">
+<p>You want to import or export data from or to another Oracle database. The data contains XMLType data and contains no <code>FLOAT</code> or <code>DOUBLE</code> data types.</p>
+</td>
+<td align="left" headers="r7c1-t4 r1c2-t4">
+<p>Import (<code>imp</code>) and Export (<code>exp</code>)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblhruleformal" -->
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="http://www.oracle.com/pls/db112/lookup?id=SUTIL"><span class="italic">Oracle Database Utilities</span></a> for more information on Data Pump, the Import and Export utilities, and SQL*Loader</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect2" -->
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="sql_utl_exprt_imprt_about.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="sql_utl_exprt_imprt.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

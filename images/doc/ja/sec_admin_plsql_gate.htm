@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Security Considerations When Using the Embedded PL/SQL Gateway</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:10Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Security Considerations When Using the Embedded PL/SQL Gateway" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="sec.htm" title="Managing Application Security" type="text/html" />
+<link rel="up" href="sec_admin_ssl.htm" title="Understanding Administrator..." type="text/html" />
+<link rel="up" href="sec_admin_plsql_gate.htm" title="Security Considerations Whe..." type="text/html" />
+<link rel="prev" href="sec_admin_ssl.htm" title="Previous" type="text/html" />
+<link rel="next" href="sec_admin_mod_plsql.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="sec.htm" title="Managing Application Security">Managing Application Security</a> &gt; <a href="sec_admin_ssl.htm" title="Understanding Administrator...">Understanding Administrator...</a> &gt; Security Considerations Whe...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="sec_admin_ssl.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="sec_admin_mod_plsql.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BCGEIJJE" name="BCGEIJJE"></a></p>
+<div class="sect2">
+<h1><a name="HTMDB25966" id="HTMDB25966"></a>Security Considerations When Using the E<a id="sthref2224" name="sthref2224"></a><a id="sthref2225" name="sthref2225"></a>mbedded PL/SQL Gateway</h1>
+<p>The embedded PL/SQL gateway runs in the database as part of the XML DB HTTP Protocol Listener. The XML DB HTTP Protocol Listener and embedded PL/SQL gateway provides the equivalent core features of Oracle HTTP Server and <code>mod_plsql</code>. Because the HTTP Listener runs in the same database where Oracle Application Express is installed, it is not possible to separate the HTTP listener from the database. For this reason, it is not recommended to use the embedded PL/SQL gateway for applications that run on the Internet. Additionally, the embedded PL/SQL gateway does not provide the same flexibility of configuration and detailed logging as Oracle HTTP Server with <code>mod_plsql</code>.</p>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="sec_admin_ssl.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="sec_admin_mod_plsql.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

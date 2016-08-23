@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Sessions</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T17:42:54Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Sessions" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15520-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface" title="Home" type="text/html" />
+<link rel="up" href="sql_utl.htm" title="Using Oracle Application Ex..." type="text/html" />
+<link rel="up" href="dbadm_montitor.htm" title="Monitoring the Database" type="text/html" />
+<link rel="up" href="dbadm_sessions.htm" title="Sessions" type="text/html" />
+<link rel="prev" href="dbadm_montitor.htm" title="Previous" type="text/html" />
+<link rel="next" href="dbadm_stats.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface" title="Home">Home</a> &gt; <a href="sql_utl.htm" title="Using Oracle Application Ex...">Using Oracle Application Ex...</a> &gt; <a href="dbadm_montitor.htm" title="Monitoring the Database">Monitoring the Database</a> &gt; Sessions</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="dbadm_montitor.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="dbadm_stats.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CIHJBGCE" name="CIHJBGCE"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEUTL272" id="AEUTL272"></a><a id="sthref336" name="sthref336"></a>Sessions</h1>
+<p>A session is the connection of a user to an Oracle database instance. A session lasts from the time the user connects until the time the user disconnects or exits the database application.</p>
+<p>You must have database administrator privileges to access the Sessions page.</p>
+<p>To access reports on the Sessions page:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click <span class="bold">SQL Workshop</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Utilities</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Database Monitor</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Sessions</span>.</p>
+</li>
+<li>
+<p>If prompted, enter the appropriate database administrator user name and password and click <span class="bold">Login</span>.</p>
+<p>The Sessions page appears.</p>
+</li>
+<li>
+<p>To view a report, select one of the following tabs at the top of the page:</p>
+<ul>
+<li>
+<p>Sessions</p>
+</li>
+<li>
+<p>Locks</p>
+</li>
+<li>
+<p>Waits</p>
+</li>
+<li>
+<p>I/O</p>
+</li>
+<li>
+<p>SQL</p>
+</li>
+<li>
+<p>Open Cursors</p>
+</li>
+</ul>
+<p>The sections that follow describe each report.</p>
+</li>
+</ol>
+<a id="BEJDGBFC" name="BEJDGBFC"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEUTL273" id="AEUTL273"></a>Sessions <a id="sthref337" name="sthref337"></a><a id="sthref338" name="sthref338"></a><a id="sthref339" name="sthref339"></a>Report</h2>
+<p>The Sessions Report displays information about the current sessions in the database. Use the controls at the top of page to narrow the view:</p>
+<ul>
+<li>
+<p><span class="bold">Search</span>. Enter search criteria and click <span class="bold">Go</span>. For search details, click the Search label.</p>
+</li>
+<li>
+<p><span class="bold">Status</span>. Select a status and click <span class="bold">Go</span>.</p>
+</li>
+<li>
+<p><span class="bold">Show</span>. Select how many columns to display and click <span class="bold">Go</span>.</p>
+</li>
+<li>
+<p><span class="bold">Display</span>. Select the number of rows to appear in the report and click <span class="bold">Go</span>.</p>
+</li>
+</ul>
+<p>To view session details, click the Session ID (SID). The Session Details page appears. To remove the current session, navigate to the Session Details page and click <span class="bold">Kill Session</span>.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref340" name="sthref340"></a>
+<h2><a name="AEUTL274" id="AEUTL274"></a>Locks <a id="sthref341" name="sthref341"></a><a id="sthref342" name="sthref342"></a>Report</h2>
+<p>The Locks report displays a report of sessions which have locks that are blocking other session(s). To control the number of rows that appear, make a selection from the Display list and click <span class="bold">Go</span>.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref343" name="sthref343"></a>
+<h2><a name="AEUTL275" id="AEUTL275"></a>Waits <a id="sthref344" name="sthref344"></a><a id="sthref345" name="sthref345"></a>Report</h2>
+<p>The Waits report displays the wait events for each session. Use the controls at the top of page to narrow the view:</p>
+<ul>
+<li>
+<p><span class="bold">Search</span>. Enter search criteria and click <span class="bold">Go</span>. For search details, click the Search label.</p>
+</li>
+<li>
+<p><span class="bold">Status</span>. Select a status and click <span class="bold">Go</span>.</p>
+</li>
+<li>
+<p><span class="bold">Show</span>. Select how many columns to display and click <span class="bold">Go</span>.</p>
+</li>
+<li>
+<p><span class="bold">Display</span>. Select the number of rows to appear in the report and click <span class="bold">Go</span>.</p>
+</li>
+</ul>
+<p>To view session details, click the Session ID (SID). The Session Details page appears. To remove the current session, click <span class="bold">Kill Session</span>.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref346" name="sthref346"></a>
+<h2><a name="AEUTL276" id="AEUTL276"></a>I/O <a id="sthref347" name="sthref347"></a><a id="sthref348" name="sthref348"></a>Report</h2>
+<p>The I/0 report displays details about the I/O for each session. Use the controls at the top of page to narrow the view:</p>
+<ul>
+<li>
+<p><span class="bold">Search</span>. Enter search criteria and click <span class="bold">Go</span>. For search details, click the Search label.</p>
+</li>
+<li>
+<p><span class="bold">Display</span>. Select the number of rows to appear in the report and click <span class="bold">Go</span>.</p>
+</li>
+</ul>
+<p>To view session details, click the Session ID (SID). The Session Details page appears. To remove the current session, click <span class="bold">Kill Session</span>.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref349" name="sthref349"></a>
+<h2><a name="AEUTL277" id="AEUTL277"></a>SQL <a id="sthref350" name="sthref350"></a><a id="sthref351" name="sthref351"></a>Report</h2>
+<p>The SQL report displays details about the current or last SQL statement executed for each session. Use the controls at the top of page to narrow the view:</p>
+<ul>
+<li>
+<p><span class="bold">Search</span>. Enter search criteria and click <span class="bold">Go</span>. For search details, click the Search label.</p>
+</li>
+<li>
+<p><span class="bold">Status</span>. Select a status and click <span class="bold">Go</span>.</p>
+</li>
+<li>
+<p><span class="bold">Show</span>. Select how many columns to display and click <span class="bold">Go</span>.</p>
+</li>
+<li>
+<p><span class="bold">Display</span>. Select the number of rows to appear in the report and click <span class="bold">Go</span>.</p>
+</li>
+</ul>
+<p>To view session details, click the Session ID (SID). The Session Details page appears. To remove the current session, click <span class="bold">Kill Session</span>.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref352" name="sthref352"></a>
+<h2><a name="AEUTL278" id="AEUTL278"></a>Open <a id="sthref353" name="sthref353"></a><a id="sthref354" name="sthref354"></a>Cursors</h2>
+<p>The Open Cursors report displays details about the number of open cursors for each session. Use the controls at the top of page to narrow the view:</p>
+<ul>
+<li>
+<p><span class="bold">Search</span>. Enter search criteria and click <span class="bold">Go</span>. For search details, click the Search label.</p>
+</li>
+<li>
+<p><span class="bold">Status</span>. Select a status and click <span class="bold">Go</span>.</p>
+</li>
+<li>
+<p><span class="bold">Display</span>. Select the number of rows to appear in the report and click <span class="bold">Go</span>.</p>
+</li>
+</ul>
+<p>To view details about a specific open cursor count, click the numeric link under the Open Cursor Count column.</p>
+<p>To view session details, click the Session ID (SID). The Session Details page appears. To remove the current session, click <span class="bold">Kill Session</span>.</p>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="dbadm_montitor.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="dbadm_stats.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

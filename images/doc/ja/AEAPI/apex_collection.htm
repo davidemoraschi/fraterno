@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>APEX_COLLECTION</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:37Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="APEX_COLLECTION" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_app_inst021.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_collection001.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_app_inst021.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection001.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CACFAICJ" name="CACFAICJ"></a><a name="AEAPI531" id="AEAPI531"></a></p>
+<h1>APEX_COLLECTION</h1>
+<p>Collections enable you to temporarily capture one or more nonscalar values. You can use collections to store rows and columns currently in session state so they can be accessed, manipulated, or processed during a user's specific session. You can think of a collection as a bucket in which you temporarily store and name rows of information.</p>
+<p><a id="sthref128" name="sthref128"></a></p>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="apex_collection001.htm#CJAIDBIC">About the APEX_COLLECTION API</a></p>
+</li>
+<li>
+<p><a href="apex_collection006.htm#CJAHGGFH">ADD_MEMBER Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection007.htm#CJABJFEC">ADD_MEMBER Function</a></p>
+</li>
+<li>
+<p><a href="apex_collection008.htm#CJAFADDF">ADD_MEMBERS Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection009.htm#CJAEEGJA">COLLECTION_EXISTS Function</a></p>
+</li>
+<li>
+<p><a href="apex_collection010.htm#CJAIJBBI">COLLECTION_HAS_CHANGED Function</a></p>
+</li>
+<li>
+<p><a href="apex_collection011.htm#CJAFFEAH">COLLECTION_MEMBER_COUNT Function</a></p>
+</li>
+<li>
+<p><a href="apex_collection012.htm#CJADHJCJ">CREATE_COLLECTION Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection013.htm#CJAGGCJD">CREATE_OR_TRUNCATE_COLLECTION Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection014.htm#CJAGHAJD">CREATE_COLLECTION_FROM_QUERY Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection015.htm#CJAEDIIB">CREATE_COLLECTION_FROM_QUERY2 Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection016.htm#CJAHBBGD">CREATE_COLLECTION_FROM_QUERY_B Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection017.htm#CJACABGE">CREATE_COLLECTION_FROM_QUERYB2 Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection018.htm#CJAJAJBD">DELETE_ALL_COLLECTIONS Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection019.htm#CJAIJBCI">DELETE_ALL_COLLECTIONS_SESSION Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection020.htm#CJAHDJIE">DELETE_COLLECTION Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection021.htm#CJAIIAAJ">DELETE_MEMBER Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection022.htm#CJAIBDII">DELETE_MEMBERS Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection023.htm#CJAIFADF">GET_MEMBER_MD5 Function</a></p>
+</li>
+<li>
+<p><a href="apex_collection024.htm#CJAJBDCF">MERGE_MEMBERS Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection025.htm#CJAJGIBF">MOVE_MEMBER_DOWN Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection026.htm#CJAHIDAJ">MOVE_MEMBER_UP Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection027.htm#CJAFCEEA">RESEQUENCE_COLLECTION Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection028.htm#CJADHAAJ">RESET_COLLECTION_CHANGED Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection029.htm#CJAFIBJG">RESET_COLLECTION_CHANGED_ALL Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection030.htm#CJAJGIAI">SORT_MEMBERS Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection031.htm#CJADGFHA">TRUNCATE_COLLECTION Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection032.htm#CJACBDDD">UPDATE_MEMBER Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection033.htm#CJAJEJJC">UPDATE_MEMBERS Procedure</a></p>
+</li>
+<li>
+<p><a href="apex_collection034.htm#CJAEGAAH">UPDATE_MEMBER_ATTRIBUTE Procedure Signature 1</a></p>
+</li>
+<li>
+<p><a href="apex_collection035.htm#CJAEIDHI">UPDATE_MEMBER_ATTRIBUTE Procedure Signature 2</a></p>
+</li>
+<li>
+<p><a href="apex_collection036.htm#CJAHDJIC">UPDATE_MEMBER_ATTRIBUTE Procedure Signature 3</a></p>
+</li>
+<li>
+<p><a href="apex_collection037.htm#CJAFHBEF">UPDATE_MEMBER_ATTRIBUTE Procedure Signature 4</a></p>
+</li>
+<li>
+<p><a href="apex_collection038.htm#CJAJEDHH">UPDATE_MEMBER_ATTRIBUTE Procedure Signature 5</a></p>
+</li>
+<li>
+<p><a href="apex_collection039.htm#CACFIHBG">UPDATE_MEMBER_ATTRIBUTE Procedure Signature 6</a></p>
+</li>
+</ul>
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_app_inst021.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection001.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

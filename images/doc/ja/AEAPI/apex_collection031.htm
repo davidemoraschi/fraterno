@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>TRUNCATE_COLLECTION Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:37Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="TRUNCATE_COLLECTION Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_collection030.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_collection032.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_collection030.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection032.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CJADGFHA" name="CJADGFHA"></a></p>
+<hr />
+<div class="refsect1">
+<h1><a id="sthref270" name="sthref270"></a>TRUNCATE_COLLECTION Procedure</h1>
+<p>Use this procedure to remove all members from a named collection. If a collection does not exist with the specified name for the current user in the same session and for the current Application ID, an application error will be raised.</p>
+<a id="sthref271" name="sthref271"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_COLLECTION.TRUNCATE_COLLECTION (
+    p_collection_name IN VARCHAR2);
+</pre>
+<a id="sthref272" name="sthref272"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#CJAJCGBF">Table: TRUNCATE_COLLECTION Parameters</a> describes the parameters available in the <code>TRUNCATE_COLLECTION</code> procedure.</p>
+<div class="tblformal"><a id="sthref273" name="sthref273"></a><a id="CJAJCGBF" name="CJAJCGBF"></a>
+<p class="titleintable">TRUNCATE_COLLECTION Parameters</p>
+<table class="Formal" title="TRUNCATE_COLLECTION Parameters" summary="This table describes the parameters available in the UNEXPIRE_END_USER_ACCOUNT procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t67">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t67">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t67" headers="r1c1-t67">
+<p><code>p_collection_name</code></p>
+</td>
+<td align="left" headers="r2c1-t67 r1c2-t67">
+<p>The name of the collection to truncate. An error is returned if this collection does not exist with the specified name of the current user and in the same session.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref274" name="sthref274"></a>
+<p class="subhead2">Example</p>
+<p>This example shows how to remove all members from the DEPARTMENTS collection.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN;
+    APEX_COLLECTION.TRUNCATE_COLLECTION(
+        p_collection_name =&gt; 'DEPARTMENTS');
+END;
+</pre>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection013.htm#CJAGGCJD">"CREATE_OR_TRUNCATE_COLLECTION Procedure"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_collection030.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection032.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

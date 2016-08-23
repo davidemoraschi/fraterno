@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>REMOVE_DEBUG_BY_VIEW Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:38Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="REMOVE_DEBUG_BY_VIEW Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_debug007.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_debug009.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_debug007.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_debug009.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CEGJCFCI" name="CEGJCFCI"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>REMOVE_DEBUG_BY_VIEW <a id="sthref445" name="sthref445"></a>Procedure</h1>
+<p>This procedure is used to delete all data for a specified view from the message log.</p>
+<a id="sthref446" name="sthref446"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_DEBUG_MESSAGE.REMOVE_DEBUG_BY_VIEW (
+    p_application_id    IN NUMBER,
+    p_view_id           IN NUMBER);
+</pre>
+<a id="sthref447" name="sthref447"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#CEGJCAFA">Table: REMOVE_DEBUG_BY_VIEW Parameters</a> describes the parameters available in the <code>REMOVE_DEBUG_BY_VIEW</code> procedure.</p>
+<div class="tblformal"><a id="sthref448" name="sthref448"></a><a id="CEGJCAFA" name="CEGJCAFA"></a>
+<p class="titleintable">REMOVE_DEBUG_BY_VIEW Parameters</p>
+<table class="Formal" title="REMOVE_DEBUG_BY_VIEW Parameters" summary="This table describes the parameters available in the CACHE_GET_DATE_OF_PAGE_CACHE procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t14">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t14">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t14" headers="r1c1-t14">
+<p><code>p_application_id</code></p>
+</td>
+<td align="left" headers="r2c1-t14 r1c2-t14">
+<p>The application ID of the application.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t14" headers="r1c1-t14">
+<p><code>p_view_id</code></p>
+</td>
+<td align="left" headers="r3c1-t14 r1c2-t14">
+<p>The view ID of the view.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref449" name="sthref449"></a>
+<p class="subhead2">Example</p>
+<p>This example demonstrates the removal of debug messages within the 'View Identifier' of 12345, belonging to the current application.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN
+    APEX_DEBUG_MESSAGE.REMOVE_DEBUG_BY_VIEW (
+        p_application_id =&gt; TO_NUMBER(:APP_ID),
+        p_view_id        =&gt; 12345 );
+END;
+</pre>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_debug006.htm#CEGGBJFD">"REMOVE_DEBUG_BY_AGE Procedure"</a>, <a href="apex_debug007.htm#CEGEAGIC">"REMOVE_DEBUG_BY_APP Procedure"</a>, <a href="apex_debug009.htm#CEGBBEJI">"REMOVE_SESSION_MESSAGES Procedure"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_debug007.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_debug009.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

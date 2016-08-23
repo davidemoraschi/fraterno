@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Browsing a Materialized View</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T17:42:51Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Browsing a Materialized View" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15520-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface" title="Home" type="text/html" />
+<link rel="up" href="obj_brows.htm" title="Managing Database Objects w..." type="text/html" />
+<link rel="up" href="obj_mview.htm" title="Managing Materialized Views" type="text/html" />
+<link rel="up" href="obj_mview_brows.htm" title="Browsing a Materialized View" type="text/html" />
+<link rel="prev" href="obj_mview_create.htm" title="Previous" type="text/html" />
+<link rel="next" href="obj_mview_drop.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface" title="Home">Home</a> &gt; <a href="obj_brows.htm" title="Managing Database Objects w...">Managing Database Objects w...</a> &gt; <a href="obj_mview.htm" title="Managing Materialized Views">Managing Materialized Views</a> &gt; Browsing a Materialized View</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="obj_mview_create.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="obj_mview_drop.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDGAAFJ" name="CHDGAAFJ"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEUTL183" id="AEUTL183"></a>Browsing a Materialized<a id="sthref147" name="sthref147"></a> View</h1>
+<p>To view a materialized view:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click <span class="bold">SQL Workshop</span> and then <span class="bold">Object Browser</span>.</p>
+<p>Object Browser appears.</p>
+</li>
+<li>
+<p>From the Object list, select <span class="bold">Materialized Views</span>.</p>
+</li>
+<li>
+<p>From the Object Selection pane, select a view.</p>
+<p>The Materialized View appears.</p>
+</li>
+</ol>
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref148" name="sthref148"></a>
+<h2><a name="AEUTL184" id="AEUTL184"></a>Summary of Available Views</h2>
+<p>Click the tabs at the top of the page to view different reports about the materialized view. <a href="#CHDFJIDB">Table: Available Views for Materialized View</a> describes all available views.</p>
+<div class="tblformal"><a id="sthref149" name="sthref149"></a><a id="CHDFJIDB" name="CHDFJIDB"></a>
+<p class="titleintable">Available Views for Materialized View</p>
+<table class="Formal" title="Available Views for Materialized View" summary="This table describes the alternative views availble when viewing a materialized view in Object Browser." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t28">View</th>
+<th align="left" valign="bottom" id="r1c2-t28">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t28" headers="r1c1-t28">
+<p>Materialized View</p>
+</td>
+<td align="left" headers="r2c1-t28 r1c2-t28">
+<p>(Default) Displays details about the columns in the materialized view, including:</p>
+<ul>
+<li>
+<p>Column Name</p>
+</li>
+<li>
+<p>Data type</p>
+</li>
+<li>
+<p>Nullable flag</p>
+</li>
+<li>
+<p>Default value</p>
+</li>
+<li>
+<p>Primary key</p>
+</li>
+</ul>
+<p>Click <span class="bold">Drop</span> to delete the current materialized view.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t28" headers="r1c1-t28">
+<p>Data</p>
+</td>
+<td align="left" headers="r3c1-t28 r1c2-t28">
+<p>Displays a report of the data in the columns. Actions you can perform include:</p>
+<ul>
+<li>
+<p><span class="bold"><a id="sthref150" name="sthref150"></a>Query</span> - Enables you to sort by column. To restrict specific rows, enter a condition in the Column Condition field. Use the percent sign (%) for wildcards. From Order by, select the columns you want to review and click Query.</p>
+</li>
+<li>
+<p><span class="bold">Count Rows</span> - Displays a <a id="sthref151" name="sthref151"></a>report of the data in the current table.</p>
+</li>
+<li>
+<p><span class="bold">Download</span> - Click this link to export the data as a comma-delimited file (.csv) file.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t28" headers="r1c1-t28">
+<p>Details</p>
+</td>
+<td align="left" headers="r4c1-t28 r1c2-t28">
+<p>Displays <a id="sthref152" name="sthref152"></a>object details stored in <code>DBA_SNAPSHOTS</code> such as updatable and status.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t28" headers="r1c1-t28">
+<p>Grants</p>
+</td>
+<td align="left" headers="r5c1-t28 r1c2-t28">
+<p>Displays a <a id="sthref153" name="sthref153"></a>list of grants on the current view, including grantee, privilege, and grant options. Actions you can perform in this view include <span class="bold">Grant</span> and <span class="bold">Revoke</span>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t28" headers="r1c1-t28">
+<p><a id="sthref154" name="sthref154"></a>Dependencies</p>
+</td>
+<td align="left" headers="r6c1-t28 r1c2-t28">
+<p>Displays a list of objects that use (or depend) upon this materialized view.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t28" headers="r1c1-t28">
+<p>SQL</p>
+</td>
+<td align="left" headers="r7c1-t28 r1c2-t28">
+<p>Displays the SQL necessary to re-create this materialized view.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="obj_mview_create.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="obj_mview_drop.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

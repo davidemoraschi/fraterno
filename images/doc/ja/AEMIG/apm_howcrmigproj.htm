@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Step 4: Create a Migration Project</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-28T10:25:24Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Step 4: Create a Migration Project" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15518-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="appmgr.htm" title="Migrating a Microsoft Acces..." type="text/html" />
+<link rel="up" href="apm_howcrmigproj.htm" title="Step 4: Create a Migration ..." type="text/html" />
+<link rel="prev" href="apm_login.htm" title="Previous" type="text/html" />
+<link rel="next" href="apm_proj_page.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="appmgr.htm" title="Migrating a Microsoft Acces...">Migrating a Microsoft Acces...</a> &gt; Step 4: Create a Migration ...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apm_login.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apm_proj_page.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BGBJJFID" name="BGBJJFID"></a></p>
+<div class="sect1"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEMIG110" id="AEMIG110"></a>Step 4: <a id="sthref50" name="sthref50"></a>Create a Migration Project</h1>
+<p>To create a migration project:</p>
+<ol>
+<li>
+<p>Log in the workspace you created for your conversion project as described in <a href="apm_login.htm#CIHFCGDB">"Logging in to Your Oracle Application Express Workspace"</a>.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Application Builder</span> icon.</p>
+</li>
+<li>
+<p>Click <span class="bold">Migrations</span> on the right side of the page.</p>
+<img src="img/migration_link.gif" alt="Description of migration_link.gif follows" title="Description of migration_link.gif follows" longdesc="img_text/migration_link.htm" /><br />
+<a id="sthref51" name="sthref51" href="img_text/migration_link.htm">Description of the illustration migration_link.gif</a><br />
+<br /></li>
+<li>
+<p>On the Application Migrations page, click <span class="bold">Create Project</span>.</p>
+<p>The Create Migration Project wizard appears. Note that the steps included in the wizard appear in a flowchart on the left of the page.</p>
+</li>
+<li>
+<p>Enter the project details:</p>
+<ol>
+<li>
+<p>Project Name - Enter a unique name. You might want to use the same name as the Microsoft Access <code>.mdb</code> file you used to create the project.</p>
+</li>
+<li>
+<p>Type - Select <span class="bold">Access</span>.</p>
+</li>
+<li>
+<p>Description - Enter a meaningful description for this project. You might want to describe the Microsoft Access <code>.mdb</code> file that you used to create the project.</p>
+</li>
+<li>
+<p>Schema - Select the schema.</p>
+<p>The default schema is the schema associated with your workspace. If multiple schemas are associated with your workspace, all associated schemas appear in the select list, arranged in alphabetical order. When this situation exists, select the schema associated with the SQL script you want to upload.</p>
+</li>
+<li>
+<p>Migration Export File - Click <span class="bold">Browse</span> and select the <code>.sql</code> file created by the Exporter tool for Microsoft Access.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Review the project details, and click <span class="bold">Finish</span>.</p>
+<p>The project page appears.</p>
+<img src="img/acmg_prj_pg.gif" alt="Description of acmg_prj_pg.gif follows" title="Description of acmg_prj_pg.gif follows" longdesc="img_text/acmg_prj_pg.htm" /><br />
+<a id="sthref52" name="sthref52" href="img_text/acmg_prj_pg.htm">Description of the illustration acmg_prj_pg.gif</a><br />
+<br />
+<p>This page displays as an interactive report. To customize the report, use the Search bar at the top of the page. See "Customizing Interactive Reports" in <a href="../ir_using.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apm_proj_page.htm#BGBBABAI">"About the Application Migrations"</a>, <a href="apm_howrevobj.htm#BGBHBHFA">"Step 5: Review Your Retrieved Objects"</a>, and <a href="apm_howmigproj.htm#BGBIDFDB">"How to Migrate a Microsoft Access Application"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apm_login.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apm_proj_page.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" --></div>
+</body>
+</html>

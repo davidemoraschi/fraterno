@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>PRINT_OPTION Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:40Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="PRINT_OPTION Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_plugin_util021.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_ui_default.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_plugin_util021.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_ui_default.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABEEIAG" name="BABEEIAG"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>PRINT_OPTION <a id="sthref911" name="sthref911"></a>Procedure</h1>
+<p>This procedure outputs an OPTION tag.</p>
+<a id="sthref912" name="sthref912"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_PLUGIN_UTIL.PRINT_OPTION (
+    p_display_value       IN VARCHAR2,
+    p_return_value        IN VARCHAR2,
+    p_is_selected         IN BOOLEAN,
+    p_attributes          IN VARCHAR2,
+    p_escape              IN BOOLEAN DEFAULT TRUE);
+</pre>
+<a id="sthref913" name="sthref913"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#BABDFBFF">Table: PRINT_OPTION Parameters</a> describes the parameters available in the PRINT_OPTION procedure.</p>
+<div class="tblformal"><a id="sthref914" name="sthref914"></a><a id="BABDFBFF" name="BABDFBFF"></a>
+<p class="titleintable">PRINT_OPTION Parameters</p>
+<table class="Formal" title="PRINT_OPTION Parameters" summary="This table describes the parameters available in the PRINT_OPTION procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="38%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t31">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t31">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t31" headers="r1c1-t31">
+<p><code>p_display_value</code></p>
+</td>
+<td align="left" headers="r2c1-t31 r1c2-t31">
+<p>Text which is displayed by the option.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t31" headers="r1c1-t31">
+<p><code>p_return_value</code></p>
+</td>
+<td align="left" headers="r3c1-t31 r1c2-t31">
+<p>Value which will be set when the option is picked.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t31" headers="r1c1-t31">
+<p><code>p_is_selected</code></p>
+</td>
+<td align="left" headers="r4c1-t31 r1c2-t31">
+<p>Set to TRUE if the selected attribute should be set for this option.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t31" headers="r1c1-t31">
+<p>p_attributes</p>
+</td>
+<td align="left" headers="r5c1-t31 r1c2-t31">
+<p>Additional HTML attributes which should be set for the OPTION tag.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t31" headers="r1c1-t31">
+<p>p_escape</p>
+</td>
+<td align="left" headers="r6c1-t31 r1c2-t31">
+<p>Set to TRUE if special characters in <code>p_display_value</code> should be escaped.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref915" name="sthref915"></a>
+<p class="subhead2">Example</p>
+<p>The following example could be used in an item type plug-in to create a SELECT list. <code>apex_plugin_util.is_equal</code> is used to find out which list entry should be marked as current.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+sys.htp.p('&lt;select id="'||p_item.name||'" size="'||nvl(p_item.element_height, 5)||'" '||coalesce(p_item.element_attributes, 'class="new_select_list"')||'&gt;');
+-- loop through the result and add list entries
+for i in 1 .. l_values.count
+loop
+    apex_plugin_util.print_option (
+        p_display_value =&gt; l_values(i).display_value,
+        p_return_value  =&gt; l_values(i).return_value,
+        p_is_selected   =&gt; apex_plugin_util.is_equal(l_values(i).return_value, p_value),
+        p_attributes    =&gt; p_item.element_option_attributes,
+        p_escape        =&gt; true );
+end loop;
+sys.htp.p('&lt;/select&gt;');
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_plugin_util021.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_ui_default.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

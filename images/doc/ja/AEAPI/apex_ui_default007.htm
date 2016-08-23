@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>DEL_TABLE Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:40Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="DEL_TABLE Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_ui_default006.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_ui_default008.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_ui_default006.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_ui_default008.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDBGJIE" name="CHDBGJIE"></a></p>
+<hr />
+<div class="refsect1">
+<h1><a name="AEAPI406" id="AEAPI406"></a>DEL_TABLE <a id="sthref949" name="sthref949"></a>Procedure</h1>
+<p>If the provided table exists within the user's schema's table based User Interface Defaults, the UI Defaults for it is deleted. This includes the deletion of any groups defined for the table and all the columns associated with the table.</p>
+<a id="sthref950" name="sthref950"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_UI_DEFAULT_UPDATE.DEL_TABLE (
+    p_table_name            IN VARCHAR2);
+</pre>
+<a id="sthref951" name="sthref951"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#CHDHJFII">Table: DEL_TABLE Parameters</a> describes the parameters available in the <code>DEL_TABLE</code> procedure.</p>
+<div class="tblformal"><a id="sthref952" name="sthref952"></a><a id="CHDHJFII" name="CHDHJFII"></a>
+<p class="titleintable">DEL_TABLE Parameters</p>
+<table class="Formal" title="DEL_TABLE Parameters" summary="This table describes the parameters available in the UPD_DISPLAY_IN_FORM procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t9">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t9">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t9" headers="r1c1-t9">
+<p><code>p_table_name</code></p>
+</td>
+<td align="left" headers="r2c1-t9 r1c2-t9">
+<p>Table name</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref953" name="sthref953"></a>
+<p class="subhead2">Example</p>
+<p>The following example removes the UI Defaults for the EMP table that are associated with the current schema.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+begin
+    apex_ui_default_update.del_table (
+       p_table_name =&gt; 'EMP' );
+end;
+/
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_ui_default006.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_ui_default008.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

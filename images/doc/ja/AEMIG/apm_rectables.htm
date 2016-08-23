@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Reviewing Retrieved Tables</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-28T10:25:24Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Reviewing Retrieved Tables" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15518-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="appmgr.htm" title="Migrating a Microsoft Acces..." type="text/html" />
+<link rel="up" href="apm_howrevobj.htm" title="Step 5: Review Your Retriev..." type="text/html" />
+<link rel="up" href="apm_rectables.htm" title="Reviewing Retrieved Tables" type="text/html" />
+<link rel="prev" href="apm_howrevobj.htm" title="Previous" type="text/html" />
+<link rel="next" href="apm_recquery.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="appmgr.htm" title="Migrating a Microsoft Acces...">Migrating a Microsoft Acces...</a> &gt; <a href="apm_howrevobj.htm" title="Step 5: Review Your Retriev...">Step 5: Review Your Retriev...</a> &gt; Reviewing Retrieved Tables</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apm_howrevobj.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apm_recquery.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CBBEACFC" name="CBBEACFC"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEMIG113" id="AEMIG113"></a>Reviewing <a id="sthref61" name="sthref61"></a>Retrieved Tables</h1>
+<p>Next, review the Oracle tables retrieved from the Microsoft Access database. Application Migration identifies invalid tables without primary keys as well as those without user interface defaults, which you can add before migrating.</p>
+<p>After you update the tables, select the ones you want to include in the migration. If you do not include a table, all forms and reports based on the table are excluded from the migration.</p>
+<p>To review retrieved tables:</p>
+<ol>
+<li>
+<p>From the project page, click the project name.</p>
+<img src="img/acmg_prj_link.gif" alt="Description of acmg_prj_link.gif follows" title="Description of acmg_prj_link.gif follows" longdesc="img_text/acmg_prj_link.htm" /><br />
+<a id="sthref62" name="sthref62" href="img_text/acmg_prj_link.htm">Description of the illustration acmg_prj_link.gif</a><br />
+<br /></li>
+<li>
+<p>From the project page, click <span class="bold">Tables</span>.</p>
+<p>The Tables page appears, showing the status of the objects ready for migration.</p>
+<p>For each Microsoft Access table, the Tables page shows:</p>
+<ul>
+<li>
+<p><span class="bold">Oracle Table</span> - The corresponding Oracle table, which defaults to the Microsoft Access table name in all capital letters.</p>
+<p>Note that the name might also differ from the original one because of the collision management facility in Oracle Migration Workbench. For information about naming guidelines and restrictions, click <span class="bold">Help</span> in Oracle Migration Workbench and go to the Frequently Asked Questions section.</p>
+<p>If the Microsoft Access object was not successfully migrated to Oracle, then this field will not have a corresponding Oracle table name. Instead, it will contain a link to a page where you can create a corresponding Oracle table.</p>
+</li>
+<li>
+<p><span class="bold">Primary Key</span> - Indicates if a primary key exists for the table.</p>
+<p>A table without a primary key is considered invalid in Application Migration. You can create a primary key at this point. All tables you want to migrate should have a primary key.</p>
+</li>
+<li>
+<p><span class="bold">Foreign Key</span> - Indicates if a foreign key exists for the table.</p>
+<p>If you know a relationship exists between two tables, you should create a foreign key. You can do this in Object Browser by creating a Foreign Key Constraint. For more information, see <a href="../AEUTL/preface.htm"><span class="italic">Oracle Application Express SQL Workshop and Utilities Guide</span></a>.</p>
+</li>
+<li>
+<p><span class="bold">UI Defaults</span> - Indicates if user interface defaults are set for the table.</p>
+<p>User interface defaults are used by Oracle Application Express to populate initial values for region and item properties. Using user interface defaults provides consistency across multiple applications or across multiple pages in an application.</p>
+</li>
+<li>
+<p><span class="bold">Status</span> - Table status as either Valid or Invalid.</p>
+<p>Only valid tables can be included in the migration.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>To create a table:</p>
+<ol>
+<li>
+<p>On the Tables page, click the link in the Oracle Table column for the table you want to create.</p>
+<p>The Object Browser opens.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Create</span> button.</p>
+</li>
+<li>
+<p>From the list of object types, select <span class="bold">Table</span>.</p>
+</li>
+<li>
+<p>Follow the on-screen instructions.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>To add a primary key:</p>
+<ol>
+<li>
+<p>On the Tables page, click the Oracle table name.</p>
+</li>
+<li>
+<p>In the Tasks list on the right, click <span class="bold">Create Primary Key</span>.</p>
+</li>
+<li>
+<p>For Constraint Details, fill in the information.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Tip:</p>
+To review the list of existing columns or constraints, click the <span class="bold">Existing Columns</span> or <span class="bold">Existing Constraints</span> links.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Confirm the information and click <span class="bold">Finish</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>To add an index:</p>
+<ol>
+<li>
+<p>On the Tables page, click the Oracle table name.</p>
+</li>
+<li>
+<p>In the Tasks list on the right, click <span class="bold">Create Index</span>.</p>
+</li>
+<li>
+<p>Select the type of index you want to create on this table.</p>
+<p>For indexing <code>NUMBER</code>, <code>VARCHAR</code>, and <code>DATE</code>, select <span class="bold">Normal</span>. For indexing <code>CLOB</code> columns, select <span class="bold">Text</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Index Definition, fill in the information.</p>
+<p>The following graphic shows the fields to fill out if you selected Normal as the type of index.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Tip:</p>
+To review the list of existing table indexes or columns, click the <span class="bold">Table Indexes</span> or <span class="bold">Table Columns</span> links.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Confirm the information and click <span class="bold">Finish</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>To set user interface defaults:</p>
+<ol>
+<li>
+<p>On the Tables page, click the Oracle table name.</p>
+</li>
+<li>
+<p>In the Tasks list on the right, click <span class="bold">UI Defaults</span>.</p>
+</li>
+<li>
+<p>On the UI Defaults page, click <span class="bold">Create Defaults</span>.</p>
+</li>
+<li>
+<p>On the Create Table Dictionary Defaults page, click <span class="bold">Create Defaults</span>.</p>
+<p>The Table Dictionary page appears. Note that you are now working within SQL Workshop, the component of Oracle Application Express with utilities to load and unload data from an Oracle database, generate DDL, view object reports, and restore dropped database objects.</p>
+</li>
+<li>
+<p>On the Table Dictionary report, click the Oracle table name in the Object Name column.</p>
+<p>The Table and Column Properties page appears, listing column information as it will appears in forms and reports.</p>
+</li>
+<li>
+<p>To edit the information, click the Column name.</p>
+<p>The Column Defaults page appears. You can update the column label, change the sequence the columns will appear by default, and so on.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span> to save your updates.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>To include tables in the migration, select them in the left column.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span> to save your selections.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apm_recquery.htm#CBBJEGDG">"Reviewing Retrieved Queries"</a>, <a href="apm_howrevobj.htm#BGBHBHFA">"Step 5: Review Your Retrieved Objects"</a>, and <a href="apm_howmigproj.htm#BGBIDFDB">"How to Migrate a Microsoft Access Application"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apm_howrevobj.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apm_recquery.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

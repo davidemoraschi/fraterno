@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Escape Function</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:39Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Escape Function" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_javascript011.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_lang.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_javascript011.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_lang.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BCEGGGAG" name="BCEGGGAG"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>Escape <a id="sthref672" name="sthref672"></a>Function</h1>
+<p>This function escapes a text to be used in JavaScript. This function makes the following replacements:</p>
+<div class="tblformal"><a id="sthref673" name="sthref673"></a><a id="sthref674" name="sthref674"></a>
+<p class="titleintable">Table of Replacement Values</p>
+<table class="Formal" title="Table of Replacement Values" summary="Table of replacements." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="*" />
+<col width="50%" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t15">Replacement</th>
+<th align="left" valign="bottom" id="r1c2-t15">After replacement</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t15" headers="r1c1-t15">
+<p>\</p>
+</td>
+<td align="left" headers="r2c1-t15 r1c2-t15">
+<p>\\</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t15" headers="r1c1-t15">
+<p>/</p>
+</td>
+<td align="left" headers="r3c1-t15 r1c2-t15">
+<p>\/</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t15" headers="r1c1-t15">
+<p>"</p>
+</td>
+<td align="left" headers="r4c1-t15 r1c2-t15">
+<p>\u0022</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t15" headers="r1c1-t15">
+<p>'</p>
+</td>
+<td align="left" headers="r5c1-t15 r1c2-t15">
+<p>\u0027</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t15" headers="r1c1-t15">
+<p>tab</p>
+</td>
+<td align="left" headers="r6c1-t15 r1c2-t15">
+<p>\t</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t15" headers="r1c1-t15">
+<p>chr(10)</p>
+</td>
+<td align="left" headers="r7c1-t15 r1c2-t15">
+<p>\n</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+This function does not escape HTML tags. It only prevents HTML tags from breaking the JavaScript object attribute assignment. To prevent XSS (cross site scripting) attacks, you must also call <code>SYS.HTF.ESCAPE_SC</code> to prevent embedded JavaScript code from being executed when you inject the string into the HTML page.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+<a id="sthref675" name="sthref675"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_JAVASCRIPT.ESCAPE (
+    p_text  IN VARCHAR2)
+RETURN VARCHAR2;
+</pre>
+<a id="sthref676" name="sthref676"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#BCEHFGHA">Table: ESCAPE Parameters</a> describes the parameters available in the <code>ESCAPE</code> function.</p>
+<div class="tblformal"><a id="sthref677" name="sthref677"></a><a id="BCEHFGHA" name="BCEHFGHA"></a>
+<p class="titleintable">ESCAPE Parameters</p>
+<table class="Formal" title="ESCAPE Parameters" summary="This table describes the parameters available in the ESCAPE function." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t17">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t17">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t17" headers="r1c1-t17">
+<p><code>p_text</code></p>
+</td>
+<td align="left" headers="r2c1-t17 r1c2-t17">
+<p>Text to be escaped.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref678" name="sthref678"></a>
+<p class="subhead2">Example</p>
+<p>Adds some JavaScript code to the onload buffer. The value of p_item.attribute_01 is first escaped with htf.escape_sc to prevent XSS attacks and then escaped with apex_javascript.escape to prevent that special characters like a quote break the JavaScript code.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+apex_javascript.add_onload_code (
+    'var lTest = "'||apex_javascript.escape(sys.htf.escape_sc(p_item.attribute_01))||'";'||chr(10)||
+    'showMessage(lTest);' );
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_javascript011.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_lang.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

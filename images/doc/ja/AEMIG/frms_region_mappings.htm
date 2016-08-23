@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Block to Page Region Mappings</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-28T10:25:26Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Block to Page Region Mappings" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15518-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="objects.htm" title="Oracle Forms Generation Cap..." type="text/html" />
+<link rel="up" href="frms_modules.htm" title="Oracle Forms Modules" type="text/html" />
+<link rel="up" href="frms_region_mappings.htm" title="Block to Page Region Mappings" type="text/html" />
+<link rel="prev" href="frms_generated_app.htm" title="Previous" type="text/html" />
+<link rel="next" href="frms_lovs.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="objects.htm" title="Oracle Forms Generation Cap...">Oracle Forms Generation Cap...</a> &gt; <a href="frms_modules.htm" title="Oracle Forms Modules">Oracle Forms Modules</a> &gt; Block to Page Region Mappings</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="frms_generated_app.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="frms_lovs.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABGFCCC" name="BABGFCCC"></a></p>
+<div class="sect2">
+<h1>Block to Page R<a id="sthref236" name="sthref236"></a>egion Mappings</h1>
+<p>When an Oracle Form is loaded into an Oracle Application Express project, the various blocks are analyzed to determine how they will be generated. The conversion process uses information such as block relations, the number of records displayed, and whether insert or update are allowed. There are inherent differences between Oracle Forms and Oracle Application Express that have a direct bearing on the resulting pages that are generated.</p>
+<p>Except for specific master-detail relationships, each block is generated onto a separate Oracle Application Express page. Furthermore, the canvases specified in Oracle Forms are ignored as multiple blocks are not generated as separate regions on the same page within Oracle Application Express. The sections that follow explains different Oracle Forms block types and how they are mapped into an Oracle Application Express application.</p>
+<div class="sect3"><a id="sthref237" name="sthref237"></a>
+<h2>Single R<a id="sthref238" name="sthref238"></a>ecord Block</h2>
+<p>In Oracle Forms a single record block can be used for both querying data and updating the records returned. Within Oracle Application Express, standard updatable regions cannot also be used as query regions. When an Oracle Forms block is defined as being insertable, updatable, and has a primary key, then the generation mapping defines an interactive report with a form. The interactive report enables you to query the records and the generated Edit link provides navigation to an individual record for update or deletion. A Create Record button enables you to insert records.</p>
+<p>If not all the conditions are satisfied then only an interactive report is generated for a single record block. Therefore, only an interactive report is generated and not the corresponding form if one of the following conditions exist:</p>
+<ul>
+<li>
+<p>the number of records displayed is greater than one</p>
+</li>
+<li>
+<p><code>INSERT</code> allowed is set to false</p>
+</li>
+<li>
+<p><code>UPDATE</code> allowed is set to false</p>
+</li>
+<li>
+<p>there is no primary key defined for the underlying table</p>
+</li>
+<li>
+<p>the block is based on a view</p>
+</li>
+</ul>
+<p>The interactive report uses the original query, enhanced query, or custom query defined within the project for the block. However, the form is based only on the underlying table. Items characteristics such as radio groups, check boxes, date pickers, editors and list of values will be generated where possible.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref239" name="sthref239"></a>
+<h2>Tabular F<a id="sthref240" name="sthref240"></a>orm</h2>
+<p>A tabular form defined in Oracle Forms is generated as a tabular form in Oracle Application Expresss providing the number of records displayed is greater than one. Implementing item characteristics, such as select lists, needs to be performed manually post-generation. Non-database items specified in Oracle Forms are not be generated into the tabular form generated by Oracle Application Express, even if they have been included. Implementing non-database items in a tabular form needs to be performed manually post-generation.</p>
+<p>Currently adding non-database items on a tabular form is non-declarative and is covered in the Oracle Application Express Advanced Workshop course. An alternative is to manually create a report and form to replace the tabular form post-generation where it is much easier to add validations and add items without a source of database.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref241" name="sthref241"></a>
+<h2>Master D<a id="sthref242" name="sthref242"></a>etail Blocks</h2>
+<p>Within Oracle Forms, master detail forms are defined using block relations. There are several additional criteria that must be examined in order to determine what will be generated for an Oracle Forms master detail relationship. The master block is generated as one of the following:</p>
+<ul>
+<li>
+<p>An interactive report and a master-detail form</p>
+</li>
+<li>
+<p>An interactive report and a form only</p>
+</li>
+<li>
+<p>Only an interactive report</p>
+</li>
+</ul>
+<p>The detail blocks are generated independently as either a single record block or a tabular form based on the mappings provided.</p>
+<p>An interactive report and master-detail form is only be generated if all the following criteria are satisfied:</p>
+<ul>
+<li>
+<p>The master and detail blocks are both based on tables, but not the same table, and both have primary keys.</p>
+</li>
+<li>
+<p>There is only one detail block.</p>
+</li>
+<li>
+<p>There is a valid foreign key relationship between the master and detail blocks.</p>
+</li>
+<li>
+<p>The block relations are correctly defined with the Oracle Forms file.</p>
+</li>
+</ul>
+<p>When a master detail form is generated, the detail page is also created within Oracle Application Express. You can manually remove the detail page when reviewing the pages to be generated prior to creating the Oracle Application Express application, or you can delete it manually post-generation.</p>
+<p>Alternatively, if both the master and the single detail block are based on the same table and that table has a primary key, then two interactive reports and forms are generated for each block. It is recommended that you manually modify one of the resulting forms post-generation to combine the functionality into a single form and delete the second interactive report and form. However, if the table does not have a primary key or is based on a view then only reports are generated.</p>
+<p>Oracle Application Express cannot include more than one tabular form on a page. Therefore, when a file with a master and multiple detail blocks is loaded, the relations are ignored and the master block and each detail block are treated independently as either a single record block or a tabular form based on each blocks properties.</p>
+<p>If there is no valid foreign key relationship and the table has a primary key, then the master block is generated as an interactive report and form. Otherwise, it is generated as an interactive report.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref243" name="sthref243"></a>
+<h2>Non-Database B<a id="sthref244" name="sthref244"></a>lock</h2>
+<p>If a block is not associated with a database table or view then the block is not included for generation. These blocks typically hold menus, navigation bars, and buttons. Given that such components are handled and defined very differently within Oracle Application Express it is not appropriate to generate separate pages for these. However, such blocks can be included if required and will be generated as blank pages.</p>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="frms_generated_app.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="frms_lovs.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

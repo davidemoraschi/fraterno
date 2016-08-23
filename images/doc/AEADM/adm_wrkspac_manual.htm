@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Creating a Workspace Manually</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-27T14:38:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Creating a Workspace Manually" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15521-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="adm_wrkspc.htm" title="Oracle Application Express ..." type="text/html" />
+<link rel="up" href="adm_create_wkspc.htm" title="Creating Workspaces" type="text/html" />
+<link rel="up" href="adm_wrkspac_manual.htm" title="Creating a Workspace Manually" type="text/html" />
+<link rel="prev" href="adm_provision_mode.htm" title="Previous" type="text/html" />
+<link rel="next" href="adm_mg_wrkspc.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="adm_wrkspc.htm" title="Oracle Application Express ...">Oracle Application Express ...</a> &gt; <a href="adm_create_wkspc.htm" title="Creating Workspaces">Creating Workspaces</a> &gt; Creating a Workspace Manually</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="adm_provision_mode.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_mg_wrkspc.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDCBCAA" name="CHDCBCAA"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEADM242" id="AEADM242"></a>Creating a Workspace<a id="sthref399" name="sthref399"></a><a id="sthref400" name="sthref400"></a> Manually</h1>
+<p>Instance administrators can provision a workspace manually in either a full development environment or a runtime environment.</p>
+<a id="sthref401" name="sthref401"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#BABEGJBF">Creating Workspace Manually in a Full Development Environment</a></p>
+</li>
+<li>
+<p><a href="#BABIHJEE">Creating a Workspace Manually in a Runtime Environment</a></p>
+</li>
+</ul>
+<a id="BABEGJBF" name="BABEGJBF"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM243" id="AEADM243"></a>Creating Workspace Manually in a Full Development Environment</h2>
+<p>Instance administrators can provision a workspace manually by running the <a id="sthref402" name="sthref402"></a><a id="sthref403" name="sthref403"></a>Create Workspace Wizard.</p>
+<p>To create a workspace manually:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Workspaces</span>.</p>
+</li>
+<li>
+<p>Under Workspace Actions, click <span class="bold">Create Workspace</span>.</p>
+<p>The Create Workspace Wizard appears.</p>
+</li>
+<li>
+<p>For Identify Workspace, enter the following:</p>
+<ol>
+<li>
+<p>Workspace Name - Enter a unique workspace name.</p>
+</li>
+<li>
+<p>Workspace ID - Leave Workspace ID blank to have the new Workspace ID automatically generated. A Workspace ID must be a positive integer greater than 100000.</p>
+</li>
+<li>
+<p>Workspace Description - Enter a workspace description.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Identify Workspace, enter a workspace name and description and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Identify Schema, specify whether you are re-using an existing schema or creating a new one.</p>
+<p>If you are using an existing schema:</p>
+<ol>
+<li>
+<p>For Re-use existing schema, select <span class="bold">Yes</span>.</p>
+</li>
+<li>
+<p>Select a schema from the list.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+<p>If you are creating a new schema:</p>
+<ol>
+<li>
+<p>For Re-use existing schema, select <span class="bold">No</span>.</p>
+</li>
+<li>
+<p>Enter a schema name and password.</p>
+</li>
+<li>
+<p>Specify a space quota.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Identify Administrator, enter the Workspace administrator information and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Confirm your selections and click <span class="bold">Create Workspace</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="BABIHJEE" name="BABIHJEE"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM244" id="AEADM244"></a>Creating a Workspace Manually in a Runtime Environment</h2>
+<p>To add a workspace in a runtime environment:</p>
+<ol>
+<li>
+<p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code>SYS</code>. For example:</p>
+<ul>
+<li>
+<p>On Windows:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+<span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+<li>
+<p>On UNIX and Linux:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+$ sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+</ul>
+<p>When prompted enter the appropriate password.</p>
+</li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+ALTER SESSION SET CURRENT_SCHEMA = APEX_040000
+</pre></li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN
+APEX_INSTANCE_ADMIN.ADD_WORKSPACE(WORKSPACE_ID,WORKSPACE_NAME, SCHEMA_NAME, SCHEMA_LIST)
+END;
+</pre>
+<p>Where:</p>
+<ul>
+<li>
+<p><code>WORKSPACE_ID</code> is the ID for the workspace. Auto-assigned if <code>NULL</code>.</p>
+</li>
+<li>
+<p><code>WORKSPACE_NAME</code> is the name of the workspace.</p>
+</li>
+<li>
+<p><code>SCHEMA_NAME</code> is the name of the primary schema to associate with the workspace.</p>
+</li>
+<li>
+<p><code>SCHEMA_LIST</code> is a colon delimited list of additional schemas to associate with the workspace.</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="adm_provision_mode.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_mg_wrkspc.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ADD_ATTRIBUTE Function Signature 3</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:39Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="ADD_ATTRIBUTE Function Signature 3" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_javascript002.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_javascript004.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_javascript002.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_javascript004.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BCEDADEJ" name="BCEDADEJ"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>ADD_ATTRIBUTE <a id="sthref626" name="sthref626"></a>Function Signature 3</h1>
+<p>This function returns the attribute and a JavaScript boolean of true, false, or null.</p>
+<a id="sthref627" name="sthref627"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_JAVASCRIPT.ADD_ATTRIBUTE (
+    p_name       IN VARCHAR2,
+    p_value      IN BOLLEAN,
+    p_omit_null  IN BOOLEAN:=TRUE,
+    p_add_comma  IN BOOLEAN:=TRUE)
+RETURN VARCHAR2;
+</pre>
+<a id="sthref628" name="sthref628"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#BCEFEJJI">Table: ADD_ATTRIBUTE Signature 3 Parameters</a> describes the parameters available in the <code>ADD_ATTRIBUTE</code> function signature 3.</p>
+<div class="tblformal"><a id="sthref629" name="sthref629"></a><a id="BCEFEJJI" name="BCEFEJJI"></a>
+<p class="titleintable">ADD_ATTRIBUTE Signature 3 Parameters</p>
+<table class="Formal" title="ADD_ATTRIBUTE Signature 3 Parameters" summary="This table describes the parameters available in the ADD_ATTRIBUTE function signature 3." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t5">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t5">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t5" headers="r1c1-t5">
+<p><code>p_name</code></p>
+</td>
+<td align="left" headers="r2c1-t5 r1c2-t5">
+<p>Name of the JavaScript object attribute.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t5" headers="r1c1-t5">
+<p><code>p_value</code></p>
+</td>
+<td align="left" headers="r3c1-t5 r1c2-t5">
+<p>Boolean assigned to the JavaScript object attribute.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t5" headers="r1c1-t5">
+<p><code>p_omit_null</code></p>
+</td>
+<td align="left" headers="r4c1-t5 r1c2-t5">
+<p>If <code>p_omit_null</code> is TRUE and <code>p_value</code> is NULL the function returns NULL.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t5" headers="r1c1-t5">
+<p><code>p_add_comma</code></p>
+</td>
+<td align="left" headers="r5c1-t5 r1c2-t5">
+<p>If set to TRUE a trailing comma is added when a value is returned.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref630" name="sthref630"></a>
+<p class="subhead2">Example</p>
+<p>See example for <a href="apex_javascript001.htm#BCEJDABH">ADD_ATTRIBUTE Function Signature 1</a></p>
+</div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_javascript002.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_javascript004.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>About On Demand Application Processes</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:1Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="About On Demand Application Processes" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="bldr_pgs.htm" title="Working with Application Pages" type="text/html" />
+<link rel="up" href="bldr_app_proc.htm" title="Understanding Application P..." type="text/html" />
+<link rel="up" href="bldr_app_proc_about.htm" title="About On Demand Application..." type="text/html" />
+<link rel="prev" href="bldr_app_proc.htm" title="Previous" type="text/html" />
+<link rel="next" href="bldr_app_proc_eg.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="bldr_pgs.htm" title="Working with Application Pages">Working with Application Pages</a> &gt; <a href="bldr_app_proc.htm" title="Understanding Application P...">Understanding Application P...</a> &gt; About On Demand Application...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="bldr_app_proc.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldr_app_proc_eg.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABBCFCG" name="BABBCFCG"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB25209" id="HTMDB25209"></a>About On Demand Application Processes<a id="sthref835" name="sthref835"></a></h1>
+<p>A special type of application process is the <span class="bold">On Demand</span> process. An On Demand application process has a Process Point of <span class="bold">On Demand</span> and executes when called from a page-level On Demand process or from an AJAX call from the browser. On Demand processes are useful when you have PL/SQL logic that you would like to run from different execution points across multiple pages.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="bldr_pg_procs_create.htm#BABIFFAJ">"Creating a Page Process"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref836" name="sthref836"></a>
+<h2><a name="HTMDB25210" id="HTMDB25210"></a>Running an On Demand Process from a Page Request</h2>
+<p>You can have a page request run an On Demand process by using the following syntax:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+f?p=application_id:page_id:session:APPLICATION_PROCESS=process_id
+</pre>
+<p>Where:</p>
+<ul>
+<li>
+<p><code><span class="codeinlineitalic">application_id</span></code> is the application ID or alphanumeric alias</p>
+</li>
+<li>
+<p><code><span class="codeinlineitalic">page_id</span></code> is the page number or alphanumeric alias</p>
+</li>
+<li>
+<p><code><span class="codeinlineitalic">session</span></code> is the session ID</p>
+</li>
+<li>
+<p><code><span class="codeinlineitalic">APPLICATION_PROCESS=process_id</span></code> is the keyword <code><span class="codeinlineitalic">APPLICATION_PROCESS=</span></code> followed by either the process ID or an alphanumeric name of an application-level process having a Process Point of On Demand</p>
+</li>
+</ul>
+<p>When you use this syntax, the Application Express engine recognizes the request and processes it using the following rules:</p>
+<ul>
+<li>
+<p>The page number in the URL can be the current page number or alias. A page number or alias is required in the request only as a syntactic placeholder because no specific page is accessed for this type of request.</p>
+</li>
+<li>
+<p>The process authorization scheme, the application's authorization scheme, and the process conditions are supported.</p>
+</li>
+<li>
+<p>Session state (that is, item names and values) may be set in the URL, but clear cache options are ignored.</p>
+</li>
+<li>
+<p>Any failures of authentication, authorization, or process conditions do not result in visible error messages or other indicators of such failures and most often result in a blank page being displayed. Note that if you are logged in to Application Builder as a developer, an error messages will display.</p>
+</li>
+<li>
+<p>Specifying the process by name locates the first process with the specified (case-preserved) name.</p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="concept_ses_clear.htm#BEIHCICF">"Clearing Session State"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="bldr_app_proc.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldr_app_proc_eg.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

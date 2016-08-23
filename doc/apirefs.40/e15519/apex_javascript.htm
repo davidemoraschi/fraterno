@@ -1,0 +1,926 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>APEX_JAVASCRIPT</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = document) - Version 5.1" />
+<meta name="Date" content="2010-10-20T13:9:32Z" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="doctitle" content="Oracle&reg; Application Express API Reference Release 4.0" />
+<meta name="partno" content="E15519-03" />
+<meta name="docid" content="AEAPI" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<script type="text/javascript" src="../../dcommon/js/doccd.js">
+</script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="apex_item.htm" title="Previous" type="text/html" />
+<link rel="Next" href="apex_lang.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../e15519.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Application Express API Reference<br />
+Release 4.0</b><br />
+Part Number E15519-03</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="196">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img width="24" height="24" src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img width="24" height="24" src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img width="24" height="24" src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img width="24" height="24" src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="98">
+<tr>
+<td align="center" valign="top"><a href="apex_item.htm"><img width="24" height="24" src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="apex_lang.htm"><img width="24" height="24" src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top" style="font-size: 90%"><a href="../e15519.pdf">View PDF</a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="BCECAFHG" name="BCECAFHG"></a><a id="AEAPI534" name="AEAPI534"></a>
+<h1 class="chapter"><span class="secnum">9</span> APEX_JAVASCRIPT</h1>
+<p>The <a id="sthref273" name="sthref273"></a><a id="sthref274" name="sthref274"></a><code>APEX_JAVASCRIPT</code> package provides utility functions for adding dynamic JavaScript code to HTTP output. This package is usually used for plug-in development.</p>
+<p><span class="bold">Topics</span>:</p>
+<ul>
+<li>
+<p><a href="#BCEJDABH">ADD_ATTRIBUTE Function Signature 1</a></p>
+</li>
+<li>
+<p><a href="#BCEJBIDE">ADD_ATTRIBUTE Function Signature 2</a></p>
+</li>
+<li>
+<p><a href="#BCEDADEJ">ADD_ATTRIBUTE Function Signature 3</a></p>
+</li>
+<li>
+<p><a href="#BCEHCDHH">ADD_ATTRIBUTE Function Signature 4</a></p>
+</li>
+<li>
+<p><a href="#BCECJDHF">ADD_INLINE_CODE Procedure</a></p>
+</li>
+<li>
+<p><a href="#BCEIDBFE">ADD_LIBRARY Procedure</a></p>
+</li>
+<li>
+<p><a href="#BCEBIECG">ADD_ONLOAD_CODE Procedure</a></p>
+</li>
+<li>
+<p><a href="#BCEHBCJI">ADD_VALUE Function Signature 1</a></p>
+</li>
+<li>
+<p><a href="#BCEDJBDB">ADD_VALUE Function Signature 2</a></p>
+</li>
+<li>
+<p><a href="#BCEEDEGI">ADD_VALUE Function Signature 3</a></p>
+</li>
+<li>
+<p><a href="#BCEGGCBC">ADD_VALUE Function Signature 4</a></p>
+</li>
+<li>
+<p><a href="#BCEGGGAG">Escape Function</a></p>
+</li>
+</ul>
+<a id="BCEJDABH" name="BCEJDABH"></a><a id="AEAPI1090" name="AEAPI1090"></a>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h2 class="refsect1">ADD_ATTRIBUTE <a id="sthref275" name="sthref275"></a>Function Signature 1</h2>
+<p>This function returns the attribute and the attribute's escaped text surrounded by double quotes.</p>
+<div class="infoboxnote">
+<p class="notep1">Note:</p>
+This function does not escape HTML tags. It only prevents HTML tags from breaking the JavaScript object attribute assignment. To prevent XSS (cross site scripting) attacks, you must also call <code>SYS.HTF.ESCAPE_SC</code> to prevent embedded JavaScript code from being executed when you inject the string into the HTML page.</div>
+<p class="subhead2"><a id="AEAPI1091" name="AEAPI1091"></a>Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">APEX_JAVASCRIPT.ADD_ATTRIBUTE (
+    p_name       IN VARCHAR2,
+    p_value      IN VARCHAR2,
+    p_omit_null  IN BOOLEAN:=TRUE,
+    p_add_comma  IN BOOLEAN:=TRUE)
+RETURN VARCHAR2;
+</pre>
+<p class="subhead2"><a id="AEAPI1092" name="AEAPI1092"></a>Parameters</p>
+<p><a href="#BCEFEEBI">Table 9-1</a> describes the parameters available in the <code>ADD_ATTRIBUTE</code> function signature 1.</p>
+<div class="tblformal">
+<p class="titleintable"><a id="AEAPI1093" name="AEAPI1093"></a><a id="sthref276" name="sthref276"></a><a id="BCEFEEBI" name="BCEFEEBI"></a>Table 9-1 ADD_ATTRIBUTE Signature 1 Parameters</p>
+<table class="Formal" title="ADD_ATTRIBUTE Signature 1 Parameters" summary="This table describes the parameters available in the ADD_ATTRIBUTE signature 1 function." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t3">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t3">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t3" headers="r1c1-t3">
+<p><code>p_name</code></p>
+</td>
+<td align="left" headers="r2c1-t3 r1c2-t3">
+<p>Name of the JavaScript object attribute.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t3" headers="r1c1-t3">
+<p><code>p_value</code></p>
+</td>
+<td align="left" headers="r3c1-t3 r1c2-t3">
+<p>Text to be assigned to the JavaScript object attribute.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t3" headers="r1c1-t3">
+<p><code>p_omit_null</code></p>
+</td>
+<td align="left" headers="r4c1-t3 r1c2-t3">
+<p>If set to TRUE and <code>p_value</code> is empty, returns NULL.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t3" headers="r1c1-t3">
+<p><code>p_add_comma</code></p>
+</td>
+<td align="left" headers="r5c1-t3 r1c2-t3">
+<p>If set to TRUE, a trailing comma is added when a value is returned.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p class="subhead2"><a id="AEAPI1094" name="AEAPI1094"></a>Example</p>
+<p>Adds a call to the <code>addEmployee</code> JavaScript function and passes in a JavaScript object with different attribute values. The output of this call will look like:</p>
+<pre xml:space="preserve" class="oac_no_warn">addEmployee(
+  {"FirstName":"John",
+   "LastName":"Doe",
+   "Salary":2531.29,
+   "Birthday":new Date(1970,1,15,0,0,0),
+   "isSalesman":true
+  });
+</pre>
+<p>As the last attribute you should use the parameter combination FALSE (<code>p_omit_null</code>), FALSE (<code>p_add_comma</code>) so that the last attribute is always generated. This avoids that you have to check for the other parameters if a trailing comma should be added or not.</p>
+<pre xml:space="preserve" class="oac_no_warn">apex_javascript.add_onload_code (
+    'addEmployee('||
+        '{'||
+        apex_javascript.add_attribute('FirstName',  sys.htf.escape_sc(l_first_name))||
+        apex_javascript.add_attribute('LastName',   sys.htf.escape_sc(l_last_name))||
+        apex_javascript.add_attribute('Salary',     l_salary)||
+        apex_javascript.add_attribute('Birthday',   l_birthday)||
+        apex_javascript.add_attribute('isSalesman', l_is_salesman, false, false)||
+        '});' );
+</pre></div>
+<!-- class="refsect1" -->
+<a id="BCEJBIDE" name="BCEJBIDE"></a><a id="AEAPI1095" name="AEAPI1095"></a>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h2 class="refsect1">ADD_ATTRIBUTE <a id="sthref277" name="sthref277"></a>Function Signature 2</h2>
+<p>This function returns the attribute and the attribute's number.</p>
+<p class="subhead2"><a id="AEAPI1096" name="AEAPI1096"></a>Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">APEX_JAVASCRIPT.ADD_ATTRIBUTE (
+    p_name       IN VARCHAR2,
+    p_value      IN NUMBER,
+    p_omit_null  IN BOOLEAN:=TRUE,
+    p_add_comma  IN BOOLEAN:=TRUE)
+RETURN VARCHAR2;
+</pre>
+<p class="subhead2"><a id="AEAPI1097" name="AEAPI1097"></a>Parameters</p>
+<p><a href="#BCEFFCHE">Table 9-2</a> describes the parameters available in the <code>ADD_ATTRIBUTE</code> function signature 2.</p>
+<div class="tblformal">
+<p class="titleintable"><a id="AEAPI1098" name="AEAPI1098"></a><a id="sthref278" name="sthref278"></a><a id="BCEFFCHE" name="BCEFFCHE"></a>Table 9-2 ADD_ATTRIBUTE Signature 2 Parameters</p>
+<table class="Formal" title="ADD_ATTRIBUTE Signature 2 Parameters" summary="This table describes the parameters available in the ADD_ATTRIBUTE function signature 2." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t4">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t4">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t4" headers="r1c1-t4">
+<p><code>p_name</code></p>
+</td>
+<td align="left" headers="r2c1-t4 r1c2-t4">
+<p>Name of the JavaScript object attribute.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t4" headers="r1c1-t4">
+<p><code>p_value</code></p>
+</td>
+<td align="left" headers="r3c1-t4 r1c2-t4">
+<p>Number which should be assigned to the JavaScript object attribute.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t4" headers="r1c1-t4">
+<p><code>p_omit_null</code></p>
+</td>
+<td align="left" headers="r4c1-t4 r1c2-t4">
+<p>If set to TRUE and <code>p_value</code> is empty, returns NULL.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t4" headers="r1c1-t4">
+<p><code>p_add_comma</code></p>
+</td>
+<td align="left" headers="r5c1-t4 r1c2-t4">
+<p>If set to TRUE, a trailing comma is added when a value is returned.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p class="subhead2"><a id="AEAPI1099" name="AEAPI1099"></a>Example</p>
+<p>See example for <a href="#BCEJDABH">ADD_ATTRIBUTE Function Signature 1</a>.</p>
+</div>
+<!-- class="refsect1" -->
+<a id="BCEDADEJ" name="BCEDADEJ"></a><a id="AEAPI1100" name="AEAPI1100"></a>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h2 class="refsect1">ADD_ATTRIBUTE <a id="sthref279" name="sthref279"></a>Function Signature 3</h2>
+<p>This function returns the attribute and a JavaScript boolean of true, false, or null.</p>
+<p class="subhead2"><a id="AEAPI1101" name="AEAPI1101"></a>Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">APEX_JAVASCRIPT.ADD_ATTRIBUTE (
+    p_name       IN VARCHAR2,
+    p_value      IN BOLLEAN,
+    p_omit_null  IN BOOLEAN:=TRUE,
+    p_add_comma  IN BOOLEAN:=TRUE)
+RETURN VARCHAR2;
+</pre>
+<p class="subhead2"><a id="AEAPI1102" name="AEAPI1102"></a>Parameters</p>
+<p><a href="#BCEFEJJI">Table 9-3</a> describes the parameters available in the <code>ADD_ATTRIBUTE</code> function signature 3.</p>
+<div class="tblformal">
+<p class="titleintable"><a id="AEAPI1103" name="AEAPI1103"></a><a id="sthref280" name="sthref280"></a><a id="BCEFEJJI" name="BCEFEJJI"></a>Table 9-3 ADD_ATTRIBUTE Signature 3 Parameters</p>
+<table class="Formal" title="ADD_ATTRIBUTE Signature 3 Parameters" summary="This table describes the parameters available in the ADD_ATTRIBUTE function signature 3." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t5">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t5">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t5" headers="r1c1-t5">
+<p><code>p_name</code></p>
+</td>
+<td align="left" headers="r2c1-t5 r1c2-t5">
+<p>Name of the JavaScript object attribute.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t5" headers="r1c1-t5">
+<p><code>p_value</code></p>
+</td>
+<td align="left" headers="r3c1-t5 r1c2-t5">
+<p>Boolean assigned to the JavaScript object attribute.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t5" headers="r1c1-t5">
+<p><code>p_omit_null</code></p>
+</td>
+<td align="left" headers="r4c1-t5 r1c2-t5">
+<p>If <code>p_omit_null</code> is TRUE and <code>p_value</code> is NULL the function returns NULL.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t5" headers="r1c1-t5">
+<p><code>p_add_comma</code></p>
+</td>
+<td align="left" headers="r5c1-t5 r1c2-t5">
+<p>If set to TRUE a trailing comma is added when a value is returned.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p class="subhead2"><a id="AEAPI1104" name="AEAPI1104"></a>Example</p>
+<p>See example for <a href="#BCEJDABH">ADD_ATTRIBUTE Function Signature 1</a></p>
+</div>
+<!-- class="refsect1" -->
+<a id="BCEHCDHH" name="BCEHCDHH"></a><a id="AEAPI1105" name="AEAPI1105"></a>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h2 class="refsect1">ADD_ATTRIBUTE <a id="sthref281" name="sthref281"></a>Function Signature 4</h2>
+<p>This function returns the attribute and the attribute's date. If p_value is null the value null is returned.</p>
+<p class="subhead2"><a id="AEAPI1106" name="AEAPI1106"></a>Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">APEX_JAVASCRIPT.ADD_ATTRIBUTE (
+    p_name       IN VARCHAR2,
+    p_value      IN DATE,
+    p_omit_null  IN BOOLEAN:=TRUE,
+    p_add_comma  IN BOOLEAN:=TRUE)
+RETURN VARCHAR2;
+</pre>
+<p class="subhead2"><a id="AEAPI1107" name="AEAPI1107"></a>Parameters</p>
+<p><a href="#BCEEIGDH">Table 9-4</a> describes the parameters available in the <code>ADD_ATTRIBUTE</code> function signature 4.</p>
+<div class="tblformal">
+<p class="titleintable"><a id="AEAPI1108" name="AEAPI1108"></a><a id="sthref282" name="sthref282"></a><a id="BCEEIGDH" name="BCEEIGDH"></a>Table 9-4 ADD_ATTRIBUTE SIgnature 4 Parameters</p>
+<table class="Formal" title="ADD_ATTRIBUTE SIgnature 4 Parameters" summary="This table describes the parameters available in the ADD_ATTRIBUTE function signature 4." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t6">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t6">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t6" headers="r1c1-t6">
+<p><code>p_name</code></p>
+</td>
+<td align="left" headers="r2c1-t6 r1c2-t6">
+<p>Name of the JavaScript object attribute.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t6" headers="r1c1-t6">
+<p><code>p_value</code></p>
+</td>
+<td align="left" headers="r3c1-t6 r1c2-t6">
+<p>Date assigned to the JavaScript object attribute.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t6" headers="r1c1-t6">
+<p><code>p_omit_null</code></p>
+</td>
+<td align="left" headers="r4c1-t6 r1c2-t6">
+<p>If <code>p_omit_null</code> is TRUE and <code>p_value</code> is NULL the function returns NULL.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t6" headers="r1c1-t6">
+<p><code>p_add_comma</code></p>
+</td>
+<td align="left" headers="r5c1-t6 r1c2-t6">
+<p>If set to TRUE a trailing comma is added when a value is returned.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p class="subhead2"><a id="AEAPI1109" name="AEAPI1109"></a>Example</p>
+<p>See example for <a href="#BCEJDABH">ADD_ATTRIBUTE Function Signature 1</a></p>
+</div>
+<!-- class="refsect1" -->
+<a id="BCECJDHF" name="BCECJDHF"></a><a id="AEAPI1110" name="AEAPI1110"></a>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h2 class="refsect1">ADD_INLINE_CODE <a id="sthref283" name="sthref283"></a>Procedure</h2>
+<p>This procedure adds a code snippet that is included inline into the HTML output. For example, you can use this procedure to add new functions or global variable declarations. If you want to execute code you should use <a href="#BCEBIECG">ADD_ONLOAD_CODE Procedure</a>.</p>
+<p class="subhead2"><a id="AEAPI1111" name="AEAPI1111"></a>Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">APEX_JAVASCRIPT.ADD_INLINE_CODE (
+    p_code       IN VARCHAR2,
+    p_key        IN VARCHAR2 DEFAULT NULL);
+</pre>
+<p class="subhead2"><a id="AEAPI1112" name="AEAPI1112"></a>Parameters</p>
+<p><a href="#BCEEADAE">Table 9-5</a> describes the parameters available in the <code>ADD_INLINE_CODE</code> procedure.</p>
+<div class="tblformal">
+<p class="titleintable"><a id="AEAPI1113" name="AEAPI1113"></a><a id="sthref284" name="sthref284"></a><a id="BCEEADAE" name="BCEEADAE"></a>Table 9-5 ADD_INLINE_CODE Parameters</p>
+<table class="Formal" title="ADD_INLINE_CODE Parameters" summary="This table describes the parameters available in the ADD_INLINE_CODE procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t7">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t7">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t7" headers="r1c1-t7">
+<p><code>p_code</code></p>
+</td>
+<td align="left" headers="r2c1-t7 r1c2-t7">
+<p>JavaScript code snippet. For example: <code>$s('P1_TEST',123);</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t7" headers="r1c1-t7">
+<p><code>p_key</code></p>
+</td>
+<td align="left" headers="r3c1-t7 r1c2-t7">
+<p>Identifier for the code snippet. If specified and a code snippet with the same name has already been added the new code snippet will be ignored. If <code>p_key</code> is NULL the snippet will always be added.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p class="subhead2"><a id="AEAPI1114" name="AEAPI1114"></a>Example</p>
+<p>The following example includes the JavaScript function <code>initMySuperWidget</code> in the HTML output. If the plug-in is used multiple times on the page and the <code>add_inline_code</code> is called multiple times, it is added once to the HTML output because all calls have the same value for <code>p_key</code>.</p>
+<pre xml:space="preserve" class="oac_no_warn">apex_javascript.add_inline_code (
+    p_code =&gt; 'function initMySuperWidget(){'||chr(10)||
+              '  // do something'||chr(10)||
+              '};',
+    p_key  =&gt; 'my_super_widget_function' );
+</pre></div>
+<!-- class="refsect1" -->
+<a id="BCEIDBFE" name="BCEIDBFE"></a><a id="AEAPI1115" name="AEAPI1115"></a>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h2 class="refsect1">ADD_LIBRARY <a id="sthref285" name="sthref285"></a>Procedure</h2>
+<p>This procedure adds the script tag to load a JavaScript library. If a library has been added it will not be added a second time.</p>
+<p class="subhead2"><a id="AEAPI1116" name="AEAPI1116"></a>Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">APEX_JAVASCRIPT.ADD_LIBRARY (
+    p_name           IN VARCHAR2,
+    p_directory      IN VARCHAR2 DEFAULT wwv_flow.g_image_prefix||'javascript/',
+    p_version        IN VARCHAR2 DEFAULT c_apex_version,
+    p_skip_extension IN BOOLEAN DEFAULT FALSE);
+</pre>
+<p class="subhead2"><a id="AEAPI1117" name="AEAPI1117"></a>Parameters</p>
+<p><a href="#BCEEIADD">Table 9-6</a> describes the parameters available in the <code>ADD_LIBRARY</code> procedure.</p>
+<div class="tblformal">
+<p class="titleintable"><a id="AEAPI1118" name="AEAPI1118"></a><a id="sthref286" name="sthref286"></a><a id="BCEEIADD" name="BCEEIADD"></a>Table 9-6 ADD_LIBRARY Parameters</p>
+<table class="Formal" title="ADD_LIBRARY Parameters" summary="This table describes the parameters available in the ADD_LIBRARY procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t8">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t8">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t8" headers="r1c1-t8">
+<p><code>p_name</code></p>
+</td>
+<td align="left" headers="r2c1-t8 r1c2-t8">
+<p>Name of the JavaScript file. Must not use <code>.js</code> when specifying.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t8" headers="r1c1-t8">
+<p><code>p_directory</code></p>
+</td>
+<td align="left" headers="r3c1-t8 r1c2-t8">
+<p>Must have a trailing slash.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t8" headers="r1c1-t8">
+<p><code>p_version</code></p>
+</td>
+<td align="left" headers="r4c1-t8 r1c2-t8">
+<p>Version identifier. It is recommended, but is optional, to add this to the library name.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t8" headers="r1c1-t8">
+<p><code>p_skip_extension</code></p>
+</td>
+<td align="left" headers="r5c1-t8 r1c2-t8">
+<p>If TRUE the extension <code>.js</code> is NOT added.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p class="subhead2"><a id="AEAPI1119" name="AEAPI1119"></a>Example</p>
+<p>The following example includes the JavaScript library file <code>my_library.1.2.min.js</code> in the directory specified by <code>p_plugin.file_prefix</code>. This is the recommended syntax when you include your own JavaScript files in a plug-in.</p>
+<pre xml:space="preserve" class="oac_no_warn">apex_javascript.add_library (
+    p_name      =&gt; 'mylibrary.1.2.min'
+    p_directory =&gt; p_plugin.file_prefix,
+    p_version   =&gt; null );
+</pre></div>
+<!-- class="refsect1" -->
+<a id="BCEBIECG" name="BCEBIECG"></a><a id="AEAPI1120" name="AEAPI1120"></a>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h2 class="refsect1">ADD_ONLOAD_CODE <a id="sthref287" name="sthref287"></a>Procedure</h2>
+<p>This procedure adds a javascript code snippet to the HTML output which is executed by the onload event. If an entry with the same key exists it will be ignored. If <code>p_key</code> is NULL the snippet will always be added.</p>
+<p class="subhead2"><a id="AEAPI1121" name="AEAPI1121"></a>Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">APEX_JAVASCRIPT.ADD_ONLOAD_CODE (
+    p_code           IN VARCHAR2,
+    p_key            IN VARCHAR2 DEFAULT NULL);
+</pre>
+<p class="subhead2"><a id="AEAPI1122" name="AEAPI1122"></a>Parameters</p>
+<p><a href="#BCEDGFFD">Table 9-7</a> describes the parameters available in the <code>ADD_ONLOAD_CODE</code> procedure.</p>
+<div class="tblformal">
+<p class="titleintable"><a id="AEAPI1123" name="AEAPI1123"></a><a id="sthref288" name="sthref288"></a><a id="BCEDGFFD" name="BCEDGFFD"></a>Table 9-7 ADD_ONLOAD_CODE Parameters</p>
+<table class="Formal" title="ADD_ONLOAD_CODE Parameters" summary="This table describes the parameters available in the ADD_ONLOAD_CODE procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t9">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t9">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t9" headers="r1c1-t9">
+<p><code>p_code</code></p>
+</td>
+<td align="left" headers="r2c1-t9 r1c2-t9">
+<p>Javascript code snippet to be executed during the onload event.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t9" headers="r1c1-t9">
+<p><code>p_key</code></p>
+</td>
+<td align="left" headers="r3c1-t9 r1c2-t9">
+<p>Any name to identify the specified code snippet. If specified, the code snippet is added if there has been no other call with the same <code>p_key</code>. If <code>p_key</code> is NULL the code snippet is always added.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p class="subhead2"><a id="AEAPI1124" name="AEAPI1124"></a>Example</p>
+<p>Adds the JavaScript call <code>initMySuperWidget()</code>to the onload buffer. If the plug-in is used multiple times on the page and the <code>add_onload_code</code> is called multiple times, it is added once to the HTML output because all calls have the same value for <code>p_key</code></p>
+<pre xml:space="preserve" class="oac_no_warn">apex_javascript.add_onload_code (
+    p_code =&gt; 'initMySuperWidget();'
+    p_key  =&gt; 'my_super_widget' );
+</pre></div>
+<!-- class="refsect1" -->
+<a id="BCEHBCJI" name="BCEHBCJI"></a><a id="AEAPI1125" name="AEAPI1125"></a>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h2 class="refsect1">ADD_VALUE <a id="sthref289" name="sthref289"></a>Function Signature 1</h2>
+<p>This function returns the escaped text surrounded by double quotes. For example, this string could be returned <code>"That\'s a test"</code>.</p>
+<div class="infoboxnote">
+<p class="notep1">Note:</p>
+This function does not escape HTML tags. It only prevents HTML tags from breaking the JavaScript object attribute assignment. To prevent XSS (cross site scripting) attacks, you must also call <code>SYS.HTF.ESCAPE_SC</code> to prevent embedded JavaScript code from being executed when you inject the string into the HTML page.</div>
+<p class="subhead2"><a id="AEAPI1126" name="AEAPI1126"></a>Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">APEX_JAVASCRIPT.ADD_VALUE (
+    p_value          IN VARCHAR2,
+    p_add_comma      IN BOOLEAN :=TRUE)
+RETURN VARCHAR2;
+</pre>
+<p class="subhead2"><a id="AEAPI1127" name="AEAPI1127"></a>Parameters</p>
+<p><a href="#BCEIGHGB">Table 9-8</a> describes the parameters available in the <code>ADD_VALUE</code> signature 1 function.</p>
+<div class="tblformal">
+<p class="titleintable"><a id="AEAPI1128" name="AEAPI1128"></a><a id="sthref290" name="sthref290"></a><a id="BCEIGHGB" name="BCEIGHGB"></a>Table 9-8 ADD_VALUE Signature 1 Parameters</p>
+<table class="Formal" title="ADD_VALUE Signature 1 Parameters" summary="This table describes the parameters available in the ADD_VALUE signature 1 function." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t11">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t11">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t11" headers="r1c1-t11">
+<p><code>p_value</code></p>
+</td>
+<td align="left" headers="r2c1-t11 r1c2-t11">
+<p>Text to be escaped and wrapped by double quotes.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t11" headers="r1c1-t11">
+<p><code>p_add_comma</code></p>
+</td>
+<td align="left" headers="r3c1-t11 r1c2-t11">
+<p>If <code>p_add_comma</code> is TRUE a trailing comma is added.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p class="subhead2"><a id="AEAPI1129" name="AEAPI1129"></a>Example</p>
+<p>This example adds some JavaScript code to the onload buffer. The value of <code>p_item.attribute_01</code> is first escaped with <code>htf.escape_sc</code> to prevent XSS attacks and then assigned to the JavaScript variable <code>lTest</code> by calling <code>apex_javascript.add_value</code>. <code>Add_value</code> takes care of properly escaping the value and wrapping it into double quotes. Because commas are not wanted, <code>p_add_comma</code> is set to FALSE.</p>
+<pre xml:space="preserve" class="oac_no_warn">apex_javascript.add_onload_code (
+    'var lTest = '||apex_javascript.add_value(sys.htf.escape_sc(p_item.attribute_01), FALSE)||';'||chr(10)||
+    'showMessage(lTest);' );
+</pre></div>
+<!-- class="refsect1" -->
+<a id="BCEDJBDB" name="BCEDJBDB"></a><a id="AEAPI1130" name="AEAPI1130"></a>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h2 class="refsect1">ADD_VALUE <a id="sthref291" name="sthref291"></a>Function Signature 2</h2>
+<p>This function returns <code>p_value</code> as JavaScript number, if <code>p_value</code> is NULL the value null is returned.</p>
+<p class="subhead2"><a id="AEAPI1131" name="AEAPI1131"></a>Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">APEX_JAVASCRIPT.ADD_VALUE (
+    p_value          IN NUMBER,
+    p_add_comma      IN BOOLEAN :=TRUE)
+RETURN VARCHAR2;
+</pre>
+<p class="subhead2"><a id="AEAPI1132" name="AEAPI1132"></a>Parameters</p>
+<p><a href="#BCEIGHGB">Table 9-8</a> describes the parameters available in the <code>ADD_VALUE</code> signature 2 function.</p>
+<div class="tblformal">
+<p class="titleintable"><a id="AEAPI1133" name="AEAPI1133"></a><a id="sthref292" name="sthref292"></a><a id="sthref293" name="sthref293"></a>Table 9-9 ADD_VALUE Signature 2 Parameters</p>
+<table class="Formal" title="ADD_VALUE Signature 2 Parameters" summary="This table describes the parameters available in the ADD_VALUE signature 2 function." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t12">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t12">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t12" headers="r1c1-t12">
+<p><code>p_value</code></p>
+</td>
+<td align="left" headers="r2c1-t12 r1c2-t12">
+<p>Number which should be returned as JavaScript number.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t12" headers="r1c1-t12">
+<p><code>p_add_comma</code></p>
+</td>
+<td align="left" headers="r3c1-t12 r1c2-t12">
+<p>If <code>p_add_comma</code> is TRUE a trailing comma is added. Default is TRUE.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p class="subhead2"><a id="AEAPI1134" name="AEAPI1134"></a>Example</p>
+<p>See example for <a href="#BCEHBCJI">ADD_VALUE Function Signature 1</a> .</p>
+</div>
+<!-- class="refsect1" -->
+<a id="BCEEDEGI" name="BCEEDEGI"></a><a id="AEAPI1135" name="AEAPI1135"></a>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h2 class="refsect1">ADD_VALUE <a id="sthref294" name="sthref294"></a>Function Signature 3</h2>
+<p>This function returns <code>p_value</code> as JavaScript boolean. If <code>p_value</code> is NULL the value null is returned.</p>
+<p class="subhead2"><a id="AEAPI1136" name="AEAPI1136"></a>Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">APEX_JAVASCRIPT.ADD_VALUE (
+    p_value          IN BOOLEAN,
+    p_add_comma      IN BOOLEAN :=TRUE)
+RETURN VARCHAR2;
+</pre>
+<p class="subhead2"><a id="AEAPI1137" name="AEAPI1137"></a>Parameters</p>
+<p><a href="#BCEIJJIG">Table 9-10</a> describes the parameters available in the <code>ADD_VALUE</code> signature 3 function.</p>
+<div class="tblformal">
+<p class="titleintable"><a id="AEAPI1138" name="AEAPI1138"></a><a id="sthref295" name="sthref295"></a><a id="BCEIJJIG" name="BCEIJJIG"></a>Table 9-10 ADD_VALUE Signature 3 Parameters</p>
+<table class="Formal" title="ADD_VALUE Signature 3 Parameters" summary="This table describes the parameters available in the ADD_VALUE signature 3 function." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t13">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t13">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t13" headers="r1c1-t13">
+<p><code>p_value</code></p>
+</td>
+<td align="left" headers="r2c1-t13 r1c2-t13">
+<p>Boolean which should be returned as JavaScript boolean.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t13" headers="r1c1-t13">
+<p><code>p_add_comma</code></p>
+</td>
+<td align="left" headers="r3c1-t13 r1c2-t13">
+<p>If <code>p_add_comma</code> is TRUE a trailing comma is added. Default is TRUE.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p class="subhead2"><a id="AEAPI1139" name="AEAPI1139"></a>Example</p>
+<p>See example for <a href="#BCEHBCJI">ADD_VALUE Function Signature 1</a> .</p>
+</div>
+<!-- class="refsect1" -->
+<a id="BCEGGCBC" name="BCEGGCBC"></a><a id="AEAPI1140" name="AEAPI1140"></a>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h2 class="refsect1">ADD_VALUE <a id="sthref296" name="sthref296"></a>Function Signature 4</h2>
+<p>This function returns <code>p_value</code> as JavaScript date object, if <code>p_value</code> is NULL the value null is returned.</p>
+<p class="subhead2"><a id="AEAPI1141" name="AEAPI1141"></a>Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">APEX_JAVASCRIPT.ADD_VALUE (
+    p_value          IN NUMBER,
+    p_add_comma      IN BOOLEAN :=TRUE)
+RETURN VARCHAR2;
+</pre>
+<p class="subhead2"><a id="AEAPI1142" name="AEAPI1142"></a>Parameters</p>
+<p><a href="#BCEFGJFH">Table 9-11</a> describes the parameters available in the <code>ADD_VALUE</code> signature 4 function.</p>
+<div class="tblformal">
+<p class="titleintable"><a id="AEAPI1143" name="AEAPI1143"></a><a id="sthref297" name="sthref297"></a><a id="BCEFGJFH" name="BCEFGJFH"></a>Table 9-11 ADD_VALUE Signature 4 Parameters</p>
+<table class="Formal" title="ADD_VALUE Signature 4 Parameters" summary="This table describes the parameters available in the ADD_VALUE signature 4 function." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t14">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t14">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t14" headers="r1c1-t14">
+<p><code>p_value</code></p>
+</td>
+<td align="left" headers="r2c1-t14 r1c2-t14">
+<p>Date which should be returned as JavaScript date object.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t14" headers="r1c1-t14">
+<p><code>p_add_comma</code></p>
+</td>
+<td align="left" headers="r3c1-t14 r1c2-t14">
+<p>If <code>p_add_comma</code> is TRUE a trailing comma is added. Default is TRUE.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p class="subhead2"><a id="AEAPI1144" name="AEAPI1144"></a>Example</p>
+<p>See example for <a href="#BCEHBCJI">ADD_VALUE Function Signature 1</a> .</p>
+</div>
+<!-- class="refsect1" -->
+<a id="BCEGGGAG" name="BCEGGGAG"></a><a id="AEAPI1145" name="AEAPI1145"></a>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h2 class="refsect1">Escape <a id="sthref298" name="sthref298"></a>Function</h2>
+<p>This function escapes a text to be used in JavaScript. This function makes the following replacements:</p>
+<div class="tblformal">
+<p class="titleintable"><a id="AEAPI1146" name="AEAPI1146"></a><a id="sthref299" name="sthref299"></a><a id="sthref300" name="sthref300"></a>Table 9-12 Table of Replacement Values</p>
+<table class="Formal" title="Table of Replacement Values" summary="Table of replacements." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="*" />
+<col width="50%" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t15">Replacement</th>
+<th align="left" valign="bottom" id="r1c2-t15">After replacement</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t15" headers="r1c1-t15">
+<p>\</p>
+</td>
+<td align="left" headers="r2c1-t15 r1c2-t15">
+<p>\\</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t15" headers="r1c1-t15">
+<p>/</p>
+</td>
+<td align="left" headers="r3c1-t15 r1c2-t15">
+<p>\/</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t15" headers="r1c1-t15">
+<p>"</p>
+</td>
+<td align="left" headers="r4c1-t15 r1c2-t15">
+<p>\u0022</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t15" headers="r1c1-t15">
+<p>'</p>
+</td>
+<td align="left" headers="r5c1-t15 r1c2-t15">
+<p>\u0027</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t15" headers="r1c1-t15">
+<p>tab</p>
+</td>
+<td align="left" headers="r6c1-t15 r1c2-t15">
+<p>\t</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t15" headers="r1c1-t15">
+<p>chr(10)</p>
+</td>
+<td align="left" headers="r7c1-t15 r1c2-t15">
+<p>\n</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<div class="infoboxnote">
+<p class="notep1">Note:</p>
+This function does not escape HTML tags. It only prevents HTML tags from breaking the JavaScript object attribute assignment. To prevent XSS (cross site scripting) attacks, you must also call <code>SYS.HTF.ESCAPE_SC</code> to prevent embedded JavaScript code from being executed when you inject the string into the HTML page.</div>
+<p class="subhead2"><a id="AEAPI1147" name="AEAPI1147"></a>Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">APEX_JAVASCRIPT.ESCAPE (
+    p_text  IN VARCHAR2)
+RETURN VARCHAR2;
+</pre>
+<p class="subhead2"><a id="AEAPI1148" name="AEAPI1148"></a>Parameters</p>
+<p><a href="#BCEHFGHA">Table 9-13</a> describes the parameters available in the <code>ESCAPE</code> function.</p>
+<div class="tblformal">
+<p class="titleintable"><a id="AEAPI1149" name="AEAPI1149"></a><a id="sthref301" name="sthref301"></a><a id="BCEHFGHA" name="BCEHFGHA"></a>Table 9-13 ESCAPE Parameters</p>
+<table class="Formal" title="ESCAPE Parameters" summary="This table describes the parameters available in the ESCAPE function." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t17">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t17">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t17" headers="r1c1-t17">
+<p><code>p_text</code></p>
+</td>
+<td align="left" headers="r2c1-t17 r1c2-t17">
+<p>Text to be escaped.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<p class="subhead2"><a id="AEAPI1150" name="AEAPI1150"></a>Example</p>
+<p>Adds some JavaScript code to the onload buffer. The value of p_item.attribute_01 is first escaped with htf.escape_sc to prevent XSS attacks and then escaped with apex_javascript.escape to prevent that special characters like a quote break the JavaScript code.</p>
+<pre xml:space="preserve" class="oac_no_warn">apex_javascript.add_onload_code (
+    'var lTest = "'||apex_javascript.escape(sys.htf.escape_sc(p_item.attribute_01))||'";'||chr(10)||
+    'showMessage(lTest);' );
+</pre></div>
+<!-- class="refsect1" --></div>
+<!-- class="ind" -->
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="33%" />
+<col width="*" />
+<col width="33%" />
+<tr>
+<td align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="98">
+<tr>
+<td align="center" valign="top"><a href="apex_item.htm"><img width="24" height="24" src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="apex_lang.htm"><img width="24" height="24" src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="font-size: 90%" align="center" class="copyrightlogo"><img width="144" height="18" src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="196">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img width="24" height="24" src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img width="24" height="24" src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img width="24" height="24" src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img width="24" height="24" src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

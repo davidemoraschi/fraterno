@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>UPD_FORM_REGION_TITLE Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:40Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="UPD_FORM_REGION_TITLE Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_ui_default013.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_ui_default015.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_ui_default013.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_ui_default015.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDIACFI" name="CHDIACFI"></a></p>
+<hr />
+<div class="refsect1">
+<h1><a name="AEAPI255" id="AEAPI255"></a>UPD_FORM_REGION_TITLE <a id="sthref984" name="sthref984"></a>Procedure</h1>
+<p>The <code>UPD_FORM_REGION_TITLE</code> procedure updates the Form Region Title . User interface defaults are used in wizards when you create a form based upon the specified table.</p>
+<a id="sthref985" name="sthref985"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_UI_DEFAULT_UPDATE.UPD_FORM_REGION_TITLE (
+    p_table_name            IN VARCHAR2,
+    p_form_region_title     IN VARCHAR2 DEFAULT NULL);
+</pre>
+<a id="sthref986" name="sthref986"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#CHDFAGBI">Table: APEX_UI_DEFAULT_UPDATE Parameters</a> describes the parameters available in the <code>UPD_FORM_REGION_TITLE</code> procedure.</p>
+<div class="tblformal"><a id="sthref987" name="sthref987"></a><a id="CHDFAGBI" name="CHDFAGBI"></a>
+<p class="titleintable">APEX_UI_DEFAULT_UPDATE Parameters</p>
+<table class="Formal" title="APEX_UI_DEFAULT_UPDATE Parameters" summary="This table describes the parameters available in the APEX_UI_DEFAULT_UPDATE procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t18">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t18">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t18" headers="r1c1-t18">
+<p><code>p_table_name</code></p>
+</td>
+<td align="left" headers="r2c1-t18 r1c2-t18">
+<p>Table name</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t18" headers="r1c1-t18">
+<p><code>p_form_region_title</code></p>
+</td>
+<td align="left" headers="r3c1-t18 r1c2-t18">
+<p>Desired form region title</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref988" name="sthref988"></a>
+<p class="subhead2">Example</p>
+<p>This example demonstrates how to set the Forms Region Title user interface default on the DEPT table.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_UI_DEFAULT_UPDATE.UPD_FORM_REGION_TITLE (
+    p_table_name         =&gt; 'DEPT',
+    p_form_region_title  =&gt; 'Deptartment Details');
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_ui_default013.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_ui_default015.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

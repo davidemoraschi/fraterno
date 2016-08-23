@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Browsing a Table</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T17:42:50Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Browsing a Table" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15520-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface" title="Home" type="text/html" />
+<link rel="up" href="obj_brows.htm" title="Managing Database Objects w..." type="text/html" />
+<link rel="up" href="obj_table.htm" title="Managing Tables" type="text/html" />
+<link rel="up" href="obj_table_browse.htm" title="Browsing a Table" type="text/html" />
+<link rel="prev" href="obj_table_create.htm" title="Previous" type="text/html" />
+<link rel="next" href="obj_table_edit.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface" title="Home">Home</a> &gt; <a href="obj_brows.htm" title="Managing Database Objects w...">Managing Database Objects w...</a> &gt; <a href="obj_table.htm" title="Managing Tables">Managing Tables</a> &gt; Browsing a Table</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="obj_table_create.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="obj_table_edit.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDCJBHH" name="CHDCJBHH"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEUTL111" id="AEUTL111"></a>Browsing a <a id="sthref24" name="sthref24"></a>Table</h1>
+<p>When you view a table in Object Browser, the table description appears. While viewing this description, you can add a column, modify a column, rename a column, drop a column, rename the table, copy the table, drop the table, truncate the table, or create a lookup table based upon a column in the current table. Additionally, you have access to other reports that offer related information including the table data, indexes, data model, constraints, grants, statistics, user interface defaults, triggers, dependencies, and SQL to produce the selected table.</p>
+<p>To view a table description:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click <span class="bold">SQL Workshop</span> and then <span class="bold">Object Browser</span>.</p>
+<p>Object Browser appears.</p>
+</li>
+<li>
+<p>From the Object list, ensure <span class="bold">Tables</span> is selected.</p>
+</li>
+<li>
+<p>From the Object Selection pane, select a table.</p>
+<p>The table description appears.</p>
+</li>
+</ol>
+<a id="CHDIAHGD" name="CHDIAHGD"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEUTL112" id="AEUTL112"></a>Summary of Available Views</h2>
+<p>Click the tabs at the top of the page to view different reports about the table. <a href="#CHDHCDBC">Table: Available Views for Tables</a> describes all available views.</p>
+<div class="tblformal"><a id="sthref25" name="sthref25"></a><a id="CHDHCDBC" name="CHDHCDBC"></a>
+<p class="titleintable">Available Views for Tables</p>
+<table class="Formal" title="Available Views for Tables" summary="This table describes the alternative views available when viewing a table in Object Browser." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t6">View</th>
+<th align="left" valign="bottom" id="r1c2-t6">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t6" headers="r1c1-t6">
+<p>Table</p>
+</td>
+<td align="left" headers="r2c1-t6 r1c2-t6">
+<p>Displays details of the first 57 columns including the column name, data type, nullable status, default value, and primary key. While viewing table details you can add, modify, delete, or rename a column. Additionally, you can drop, rename, copy, or truncate the table only if the referencing table has no records and create a lookup table.</p>
+<p>To export the data as a comma-delimited file (.csv) file, click the <span class="bold">Download</span> link.</p>
+<p><span class="bold">See Also:</span> <a href="obj_table_edit.htm#CHDDGJCJ">"Editing a Table"</a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t6" headers="r1c1-t6">
+<p>Data</p>
+</td>
+<td align="left" headers="r3c1-t6 r1c2-t6">
+<p>Displays a <a id="sthref26" name="sthref26"></a>report of the data in the current table. Actions you can perform include:</p>
+<ul>
+<li>
+<p><span class="bold"><a id="sthref27" name="sthref27"></a>Query</span> - Enables you to sort by column. To restrict specific rows, enter a condition in the Column Condition field. Use the percent sign (%) for wildcards. From Order by, select the columns you want to review and click <span class="bold">Query</span>.</p>
+</li>
+<li>
+<p><span class="bold">Count Rows</span> - Displays a <a id="sthref28" name="sthref28"></a>report of the number of rows in the current table.</p>
+</li>
+<li>
+<p><span class="bold"><a id="sthref29" name="sthref29"></a>Insert Row</span> - Enables you to insert a row into the table.</p>
+</li>
+<li>
+<p><span class="bold">Download</span> - <a id="sthref30" name="sthref30"></a>Exports all data in the table to a spreadsheet. Click the download link at the bottom of the page to export all data in the selected table.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t6" headers="r1c1-t6">
+<p>Indexes</p>
+</td>
+<td align="left" headers="r4c1-t6 r1c2-t6">
+<p>Displays <a id="sthref31" name="sthref31"></a>indexes associated with this table. Actions you can perform include <span class="bold">Create</span> and <span class="bold">Drop</span>.</p>
+<p><span class="bold">See Also:</span> <a href="obj_index.htm#CHDIHDAA">"Managing Indexes"</a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t6" headers="r1c1-t6">
+<p>Model</p>
+</td>
+<td align="left" headers="r5c1-t6 r1c2-t6">
+<p>Displays a graphical representation of the selected table along with all related tables. Related tables are those that reference the current table in a foreign key and those tables referenced by foreign keys within the current table.</p>
+<p>You can position the cursor over an underlined table name to view the relationship between that table and the current table. Click an underlined table name to view the model of the related table.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t6" headers="r1c1-t6">
+<p>Constraints</p>
+</td>
+<td align="left" headers="r6c1-t6 r1c2-t6">
+<p>Displays a list of <a id="sthref32" name="sthref32"></a>constraints for the current table. Actions you can perform include <span class="bold">Create</span>, <span class="bold">Drop</span>, <span class="bold">Enable</span>, and <span class="bold">Disable</span>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t6" headers="r1c1-t6">
+<p>Grants</p>
+</td>
+<td align="left" headers="r7c1-t6 r1c2-t6">
+<p>Displays a list of <a id="sthref33" name="sthref33"></a>grants on the current table, including the grantee, the privilege, and grant options. Actions you can perform in this view include <span class="bold">Grant</span> and <span class="bold">Revoke</span>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t6" headers="r1c1-t6">
+<p>Statistics</p>
+</td>
+<td align="left" headers="r8c1-t6 r1c2-t6">
+<p>Displays collected <a id="sthref34" name="sthref34"></a>statistics about the current table, including the number of rows and blocks, the average row length, sample size, when the data was last analyzed, and the compression status (enabled or disabled). Click <span class="bold">Analyze</span> to access the Analyze Table Wizard.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t6" headers="r1c1-t6">
+<p>UI Defaults</p>
+</td>
+<td align="left" headers="r9c1-t6 r1c2-t6">
+<p>Displays <a id="sthref35" name="sthref35"></a>user interface defaults for forms and reports. User interface defaults enable developers to assign default user interface properties to a table, column, or view within a specified schema.</p>
+<p>Click <span class="bold">Edit</span> to edit defined user interface defaults. Click <span class="bold">Create Defaults</span> to initialize user interface defaults for tables that do not currently have user interface defaults defined.</p>
+<p><span class="bold">See Also:</span> "<a href="../ui_default.htm">Managing User Interface Defaults" i</a>n <a href="../preface.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span>.</a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t6" headers="r1c1-t6">
+<p>Triggers</p>
+</td>
+<td align="left" headers="r10c1-t6 r1c2-t6">
+<p>Displays a list of triggers associated with the current table. Actions you can perform include <span class="bold">Create</span>, <span class="bold">Drop</span>, <span class="bold">Enable</span>, and <span class="bold">Disable</span>.</p>
+<p>To view trigger details, click the trigger name.</p>
+<p><span class="bold">See Also</span>: <a href="obj_trig.htm#CHDHEHCC">"Managing Triggers"</a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r11c1-t6" headers="r1c1-t6">
+<p>Dependencies</p>
+</td>
+<td align="left" headers="r11c1-t6 r1c2-t6">
+<p>Displays report showing objects referenced by this table, objects this table references, and synonyms for this table.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r12c1-t6" headers="r1c1-t6">
+<p>SQL</p>
+</td>
+<td align="left" headers="r12c1-t6 r1c2-t6">
+<p>Displays the SQL necessary to re-create this table, including keys, indexes, triggers and table definition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="obj_table_create.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="obj_table_edit.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

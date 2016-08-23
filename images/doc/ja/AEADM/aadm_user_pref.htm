@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Managing User Preferences</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-27T14:38:55Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Managing User Preferences" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15521-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="wrkspc.htm" title="Workspace and Application A..." type="text/html" />
+<link rel="up" href="aadm_mg_sessions.htm" title="Managing Session State and ..." type="text/html" />
+<link rel="up" href="aadm_user_pref.htm" title="Managing User Preferences" type="text/html" />
+<link rel="prev" href="aadm_purge_session.htm" title="Previous" type="text/html" />
+<link rel="next" href="aadmn_mg_cache.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="wrkspc.htm" title="Workspace and Application A...">Workspace and Application A...</a> &gt; <a href="aadm_mg_sessions.htm" title="Managing Session State and ...">Managing Session State and ...</a> &gt; Managing User Preferences</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="aadm_purge_session.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="aadmn_mg_cache.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABHFEFD" name="BABHFEFD"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEADM116" id="AEADM116"></a>Managing User Preferences</h1>
+<p>You can use preferences to store values for a specific Application Express user across distinct sessions. Once set, these preferences can be removed programmatically or manually. You can set user preferences by creating a page process, by the calculation of a preference Item Source Value, or programmatically by using a PL/SQL API.</p>
+<a id="sthref143" name="sthref143"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#BABCFIAC">Viewing Preferences by User</a></p>
+</li>
+<li>
+<p><a href="#CIHEADDF">Viewing Current User Preferences</a></p>
+</li>
+<li>
+<p><a href="#CHDBBHGA">Purging Preferences for a Specific User</a></p>
+</li>
+<li>
+<p><a href="#BEJIEGFH">Purging Current User Preferences</a></p>
+</li>
+<li>
+<p><a href="#BABJADGJ">Setting User Preferences</a></p>
+</li>
+<li>
+<p><a href="#CHDJIFAC">Removing User Preferences Programmatically</a></p>
+</li>
+<li>
+<p><a href="#BABHHGBI">Resetting User Preferences Using a Page Process</a></p>
+</li>
+</ul>
+<a id="BABCFIAC" name="BABCFIAC"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM118" id="AEADM118"></a>Viewing Preferences by <a id="sthref144" name="sthref144"></a>User</h2>
+<p>To view the preferences by user:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express. See "Logging In to Oracle Application Express" in <a href="../start_login.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+<p>The Workspace home page appears.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Administration</span> icon.</p>
+</li>
+<li>
+<p>On the Administration page, click <span class="bold">Manage Service</span>.</p>
+</li>
+<li>
+<p>Under Manage Meta Data, click <span class="bold">Session State</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Preferences by User</span>.</p>
+<p>The Preferences by User page appears.</p>
+</li>
+<li>
+<p>You can customize the appearance the page using the Search bar at the top of the page. See "Customizing Interactive Reports" in <a href="../ir_using.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHEADDF" name="CIHEADDF"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2>Viewing Current User <a id="sthref145" name="sthref145"></a>Preferences</h2>
+<p>To view current user preferences:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express. See "Logging In to Oracle Application Express" in <a href="../start_login.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+<p>The Workspace home page appears.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Administration</span> icon.</p>
+</li>
+<li>
+<p>On the Administration page, click <span class="bold">Manage Service</span>.</p>
+</li>
+<li>
+<p>Under Manage Meta Data, click <span class="bold">Session State</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Report Current User Preferences</span>.</p>
+<p>The Current user Preferences page appears.</p>
+</li>
+<li>
+<p>You can customize the appearance the page using the Search bar at the top of the page. See "Customizing Interactive Reports" in <a href="../ir_using.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CHDBBHGA" name="CHDBBHGA"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM125" id="AEADM125"></a>Purging Preferences for a Specific <a id="sthref146" name="sthref146"></a><a id="sthref147" name="sthref147"></a>User</h2>
+<p>You can purge preferences for a specific user on the Purge Preferences page.</p>
+<p>To purge preferences for a specific user:</p>
+<ol>
+<li>
+<p>Navigate to the appropriate Page Definition. See "Accessing a Page Definition" in <a href="../bldr_goto_pgdef.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Administration</span> icon.</p>
+</li>
+<li>
+<p>On the Administration page, click <span class="bold">Manage Service</span>.</p>
+</li>
+<li>
+<p>Under Manage Meta Data, click <span class="bold">Session State</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Purge preferences by User</span>.</p>
+<p>The Purge Preferences page appears.</p>
+</li>
+<li>
+<p>Select a specific user and click <span class="bold">Report</span>.</p>
+<p>A report appears at the bottom of the page.</p>
+</li>
+<li>
+<p>To purge the displayed user preferences, click <span class="bold">Purge User Preferences</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="BEJIEGFH" name="BEJIEGFH"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2>Purging Current User <a id="sthref148" name="sthref148"></a>Preferences</h2>
+<p>To purge preferences for the current user:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express. See "Logging In to Oracle Application Express" in <a href="../start_login.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+<p>The Workspace home page appears.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Administration</span> icon.</p>
+</li>
+<li>
+<p>On the Administration page, click <span class="bold">Manage Service</span>.</p>
+</li>
+<li>
+<p>Under Manage Meta Data, click <span class="bold">Session State</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Purge Preferences for Current User</span>.</p>
+<p>The Purge Preferences page appears.</p>
+</li>
+<li>
+<p>Select a user and click <span class="bold">Report</span>.</p>
+</li>
+<li>
+<p>To purge preferences, click <span class="bold">Purge User Preferences</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="BABJADGJ" name="BABJADGJ"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM119" id="AEADM119"></a>Setting User <a id="sthref149" name="sthref149"></a>Preferences</h2>
+<p>You can set user preferences within your application through the creation of a page process, by creating a preference item, or programmatically.</p>
+<a id="sthref150" name="sthref150"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#BABGIDAJ">Setting User Preferences Using a Page Process</a></p>
+</li>
+<li>
+<p><a href="#BABBEDHA">Setting the Source of an Item Based on a User Preference</a></p>
+</li>
+<li>
+<p><a href="#BABFFEFA">Setting User Preferences Programmatically</a></p>
+</li>
+</ul>
+<a id="BABGIDAJ" name="BABGIDAJ"></a>
+<div class="sect4"><!-- infolevel="all" infotype="General" -->
+<h3><a name="AEADM120" id="AEADM120"></a>Setting User Preferences Using a Page Process</h3>
+<p>To set user preference values by creating a page process:</p>
+<ol>
+<li>
+<p>Navigate to the appropriate Page Definition. See "Accessing a Page Definition" in <a href="../bldr_goto_pgdef.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+<li>
+<p>Access the Create Page Process Wizard:</p>
+<ul>
+<li>
+<p>Tree view- Under the appropriate event, locate Processes. Right-click and select <span class="bold">Create</span>.</p>
+</li>
+<li>
+<p>Component view - Under Processes, click the Create icon.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For process category, select <span class="bold">Session State</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For the process type, select <span class="bold">Reset Preferences (remove all preferences for current user)</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Specify a name, sequence, and processing point and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Follow the on-screen instructions and click <span class="bold">Create Process</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" -->
+<a id="BABBEDHA" name="BABBEDHA"></a>
+<div class="sect4"><!-- infolevel="all" infotype="General" -->
+<h3><a name="AEADM121" id="AEADM121"></a>Setting the Source of an Item Based on a User Preference</h3>
+<p>You can set the source of an item based on a user preference by defining the item source type as Preference.</p>
+<p>To define the source of item based on a user preference:</p>
+<ol>
+<li>
+<p>Navigate to the appropriate Page Definition. See "Accessing a Page Definition" in <a href="../bldr_goto_pgdef.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+<li>
+<p>Access the Create Page Item Wizard:</p>
+<ul>
+<li>
+<p>Tree view- Under Page Rending, expand Regions, right-click on Items, and select <span class="bold">Create Page Item</span>.</p>
+</li>
+<li>
+<p>Component view - Component view - Under Items, click the <span class="bold">Create</span> icon.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For the item type, select <span class="bold">Hidden</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Hidden Item Type, select one of the following and click <span class="bold">Next</span>:</p>
+<ul>
+<li>
+<p><span class="bold">Hidden</span> - A hidden item is exposed in the HTML form but not displayed.</p>
+</li>
+<li>
+<p><span class="bold">Hidden an Protected</span> - A hidden and protected item is also exposed in the HTML form but not displayed. However, its value cannot be changed when the page is posted.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Specify the item name, sequence, and region and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Source, select Source Type of Preference, enter the appropriate Source Value, and click <span class="bold">Next</span>. If the item source is null the default value is used.</p>
+<p>To learn more about a specific field, see item Help.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create Item</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" -->
+<a id="BABFFEFA" name="BABFFEFA"></a>
+<div class="sect4"><!-- infolevel="all" infotype="General" -->
+<h3><a name="AEADM122" id="AEADM122"></a>Setting User Preferences Programmatically</h3>
+<p>To set or reference user preferences programmatically, you must use a PL/SQL API. User-level caching is available programmatically. You can use the <code>SET_PREFERENCE</code> procedure to set a user level preference called <code>NAMED_PREFERENCE</code>. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_UTIL.SET_PREFERENCE(
+ p_preference=&gt;'NAMED_PREFERENCE',
+ p_value =&gt;:ITEM_NAME);
+</pre>
+<p>You can reference the value of a user preference using the function <code>GET_PREFERENCE</code>. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+NVL(APEX_UTIL.GET_PREFERENCE('NAMED_PREFERENCE'),15)
+</pre>
+<p>In the previous example, the preference would default to the value 15 if the preference contained no value.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+"<a href="http://www.oracle.com/pls/db112/lookup?id=AEAPI142">GET_PREFERENCE Function</a> and "<a href="http://www.oracle.com/pls/db112/lookup?id=AEAPI180">SET_PREFERENCE Procedure</a> in <span class="italic">Oracle Application Express Application Builder User's Guide</span></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<a id="CHDJIFAC" name="CHDJIFAC"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM123" id="AEADM123"></a>Removing User <a id="sthref151" name="sthref151"></a>Preferences Programmatically</h2>
+<p>To remove user preferences programmatically, you must use a PL/SQL API. You can use the <code>REMOVE_PREFERENCE</code> procedure to remove a user level preference called <code>NAMED_PREFERENCE</code>. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_UTIL.REMOVE_PREFERENCE(
+p_preference=&gt;'NAMED_PREFERENCE');
+</pre></div>
+<!-- class="sect3" -->
+<a id="BABHHGBI" name="BABHHGBI"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM124" id="AEADM124"></a>Resetting User Preferences Using a Page <a id="sthref152" name="sthref152"></a>Process</h2>
+<p>You can reset user preferences by creating a page process and selecting the Reset Preferences process type.</p>
+<p>To reset user preferences using a page process:</p>
+<ol>
+<li>
+<p>Navigate to the appropriate Page Definition. See "Accessing a Page Definition" in <a href="../bldr_goto_pgdef.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+<li>
+<p>Access the Create Page Process Wizard:</p>
+<ol>
+<li>
+<p>Tree view- Under the appropriate event, locate Processes. Right-click and select <span class="bold">Create Process</span>.</p>
+</li>
+<li>
+<p>Component view - Under Processes, click the <span class="bold">Create</span> icon.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For the process category, select <span class="bold">Session State</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For the process type, select <span class="bold">Reset Preferences (remove all preferences for current user)</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Specify a name, sequence, and processing point and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Follow the on-screen instructions.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create Process</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="aadm_purge_session.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="aadmn_mg_cache.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

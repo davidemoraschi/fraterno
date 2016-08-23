@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Creating a Validation</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:1Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Creating a Validation" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="bldr_pgs.htm" title="Working with Application Pages" type="text/html" />
+<link rel="up" href="bldr_validate.htm" title="Understanding Validations" type="text/html" />
+<link rel="up" href="bldr_validate_create.htm" title="Creating a Validation" type="text/html" />
+<link rel="prev" href="bldr_validate.htm" title="Previous" type="text/html" />
+<link rel="next" href="bldr_validate_error.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="bldr_pgs.htm" title="Working with Application Pages">Working with Application Pages</a> &gt; <a href="bldr_validate.htm" title="Understanding Validations">Understanding Validations</a> &gt; Creating a Validation</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="bldr_validate.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldr_validate_error.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABCGJEA" name="BABCGJEA"></a></p>
+<div class="sect2">
+<h1><a name="HTMDB25141" id="HTMDB25141"></a>Creating a Validation</h1>
+<p>To create a validation:</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Text entered for validations may not exceed 3,950 characters.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+<ol>
+<li>
+<p>Navigate to the appropriate Page Definition. See <a href="bldr_pg_def_access.htm#BABJAICG">"Accessing the Page Definition"</a>.</p>
+</li>
+<li>
+<p>To access the Create Validation Wizard:</p>
+<ul>
+<li>
+<p>Tree view - Under Page Processing, right-click <span class="bold">Validating</span> and select <span class="bold">Create Validation</span>.</p>
+</li>
+<li>
+<p>Component view - Under Page Processing, locate Validations. Click the <span class="bold">Create</span> icon.</p>
+</li>
+</ul>
+<p>The <a id="sthref722" name="sthref722"></a><a id="sthref723" name="sthref723"></a>Create Validation Wizard appears.</p>
+</li>
+<li>
+<p>Select a validation level and click <span class="bold">Next</span>:</p>
+<ul>
+<li>
+<p><span class="bold">Item Level Validations</span> are specific to a single item.</p>
+</li>
+<li>
+<p><span class="bold">Tabular Form Validation</span> are specific to a tabular form.</p>
+</li>
+<li>
+<p><span class="bold">Page level Validation</span> do not apply to any single item, but apply to an entire page.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>If you selected <span class="bold">Item level validation</span>, select the item to be validated and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Validation Method, select a method as described in <a href="#BABEGEEJ">Table: Validation Methods</a> and click <span class="bold">Next</span>.</p>
+<div class="tblformal"><a id="sthref724" name="sthref724"></a><a id="BABEGEEJ" name="BABEGEEJ"></a>
+<p class="titleintable">Validation Methods</p>
+<table class="Formal" title="Validation Methods" summary="The table describes the validation methods you can select when creating a new validation." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="24%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t46">Validation Method</th>
+<th align="left" valign="bottom" id="r1c2-t46">Descriptions</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t46" headers="r1c1-t46">
+<p>SQL</p>
+</td>
+<td align="left" headers="r2c1-t46 r1c2-t46">
+<p>Compares item values to data in the database.</p>
+<p>For example, you can use a SQL validation to verify whether a last name typed into a field exists in the database. In the following Exists SQL validation, the field is named <code>P1_LAST_NAME</code> and the table is named <code>customers</code>.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT 1 FROM customers 
+WHERE last_name = :P1_LAST_NAME
+</pre></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t46" headers="r1c1-t46">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t46 r1c2-t46">
+<p>Useful if you need complex logic to validate entered data.</p>
+<p>For example, suppose you need to create a validation for an address form that requires the user to enter a province if the address is not in the United States. You could create the validation as a Function Returning Boolean, using the following PL/SQL:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN
+  IF :P1_COUNTRY = 'US' AND :P1_PROVINCE IS NULL THEN
+     RETURN FALSE;
+  ELSE
+    RETURN TRUE;
+  END IF;
+END;
+</pre>
+<p>You could also create the same validation implemented as a PL/SQL Expression as follows:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+NOT (:P1_COUNTRY='US' AND  :P1_PROVINCE IS NULL);
+</pre></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t46" headers="r1c1-t46">
+<p>Item Not Null</p>
+</td>
+<td align="left" headers="r4c1-t46 r1c2-t46">
+<p>Checks if an item's value in session state is null.</p>
+<p>For example, you could validate that the user enters a value in a field by creating an item validation and then selecting the validation method <span class="bold">Item Not Null</span>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t46" headers="r1c1-t46">
+<p>Item String Comparison</p>
+</td>
+<td align="left" headers="r5c1-t46 r1c2-t46">
+<p>Compares the value of an item to a specific string.</p>
+<p>There are several string comparison validations that compare the value of an item to a literal string. For example, you select the validation type <span class="bold">Item in Expression 1 is contained in Expression 2</span> to validate a user entry in a field against a list of values you provide.</p>
+<p>In Expression 1, enter the name of the item you want to validate without a colon. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+P1_VALUE
+</pre>
+<p>In Expression 2, enter a string of values you want to validate against. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+ABC/DEF/GHI
+</pre></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t46" headers="r1c1-t46">
+<p>Regular Expression</p>
+</td>
+<td align="left" headers="r6c1-t46 r1c2-t46">
+<p>Regular expressions provide a method to describe text patterns. Use a Regular Expression validation to perform data validation.</p>
+<p>For example, you could use the following regular expression validation to verify that a string of entered data always consists of groups of six numbers separated by commas and followed by a comma:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+^([[:digit:]]{6},)+$
+</pre>
+<p>This regular expression would find the following entries valid:</p>
+<p><code>123456,654321,</code></p>
+<p><code>123456,</code></p>
+<p><code>123456,123456,654321</code>,</p>
+<p>However, the following would not be valid:</p>
+<p><code>123456,12345</code></p>
+<p><code>12345</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></li>
+<li>
+<p>For SQL, PL/SQL, and Item String Comparison validations, select the type of validation you want to create and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Specify the sequence and validation name and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Validation:</p>
+<ul>
+<li>
+<p>Depending upon the validation method, enter the validation or message text that displays if the validation fails.</p>
+<p>You can use the placeholders <code>#LABEL#</code> or <code>#HEADING#</code> to get the current page item label or column heading when the error message displays.</p>
+</li>
+<li>
+<p>For <span class="bold">Always Execute</span>, select Yes or No. This attribute determines if validations execute when a page is submitted. Use this attribute in conjunction with the Execute Validations attribute for buttons or certain page items that submit a page.</p>
+<p>If you select <span class="bold">Yes</span>, the validation always executes independent of validation settings for buttons or items on a page. Note that any defined conditions still apply.</p>
+<p>If you select <span class="bold">No</span>, the validation only executes if the button or item used to submit the page has the <span class="bold">Execute Validations</span> attributes set to <span class="bold">Yes</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Define conditions that apply to this validation and click <span class="bold">Create</span>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="bldapp_frm_val.htm#CHDBGEGA">"Validating User Input in Forms"</a>, <a href="bldapp_but_edit.htm#BABHIDBC">"About Execute Validations"</a>, and <a href="item_types.htm#CIHHIECA">"About Item Types"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="bldr_validate.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldr_validate_error.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

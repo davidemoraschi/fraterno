@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>About the APEX_COLLECTION API</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:37Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="About the APEX_COLLECTION API" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_collection.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_collection002.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_collection.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection002.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CJAIDBIC" name="CJAIDBIC"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>About the APEX_COLLECTION <a id="sthref129" name="sthref129"></a><a id="sthref130" name="sthref130"></a><a id="sthref131" name="sthref131"></a>API</h1>
+<p>Every collection contains a named list of data elements (or members) which can have up to 50 character attributes (<code>VARCHAR2(4000)</code>), five number attributes, five date attributes, one XML Type attribute, one large binary attribute (<code>BLOB</code>), and one large character attribute (<code>CLOB</code>). You insert, update, and delete collection information using the PL/SQL API <code>APEX_COLLECTION</code>.</p>
+<p>The following are examples of when you might use collections:</p>
+<ul>
+<li>
+<p>When you are creating a data-entry wizard in which multiple rows of information first need to be collected within a logical transaction. You can use collections to temporarily store the contents of the multiple rows of information, before performing the final step in the wizard when both the physical and logical transactions are completed.</p>
+</li>
+<li>
+<p>When your application includes an update page on which a user updates multiple detail rows on one page. The user can make many updates, apply these updates to a collection and then call a final process to apply the changes to the database.</p>
+</li>
+<li>
+<p>When you are building a wizard where you are collecting an arbitrary number of attributes. At the end of the wizard, the user then performs a task that takes the information temporarily stored in the collection and applies it to the database.</p>
+</li>
+</ul>
+<p>Topics:</p>
+<ul>
+<li>
+<p><a href="apex_collection002.htm#BABBCHID">Naming, Creating and Accessing Collections</a></p>
+</li>
+<li>
+<p><a href="apex_collection003.htm#BABGGIDG">Merging, Truncating and Deleting Collections</a></p>
+</li>
+<li>
+<p><a href="apex_collection004.htm#BABCHDBC">Adding, Updating and Deleting Collection Members</a></p>
+</li>
+<li>
+<p><a href="apex_collection005.htm#BABBFIAA">Managing Collections</a></p>
+</li>
+</ul>
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_collection.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection002.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" --></div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>UPD_GROUP Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:40Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="UPD_GROUP Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_ui_default014.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_ui_default016.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_ui_default014.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_ui_default016.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDCEJJA" name="CHDCEJJA"></a></p>
+<hr />
+<div class="refsect1">
+<h1><a name="AEAPI411" id="AEAPI411"></a>UPD_GROUP <a id="sthref989" name="sthref989"></a>Procedure</h1>
+<p>If the provided table and group exist within the user's schema's table based User Interface Defaults, the group name, description and display sequence of the group are updated. If 'null%' is passed in for p_description or p_display_sequence, the value is set to null.</p>
+<a id="sthref990" name="sthref990"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_UI_DEFAULT_UPDATE.UPD_GROUP (
+    p_table_name            IN VARCHAR2,
+    p_group_name            IN VARCHAR2,
+    p_new_group_name        IN VARCHAR2 DEFAULT NULL,
+    p_description           IN VARCHAR2 DEFAULT NULL,
+    p_display_sequence      IN VARCHAR2 DEFAULT NULL);
+</pre>
+<a id="sthref991" name="sthref991"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#CHDHAHGB">Table: UPD_GROUP Parameters</a> describes the parameters available in the <code>UPD_GROUP</code> procedure.</p>
+<div class="tblformal"><a id="sthref992" name="sthref992"></a><a id="CHDHAHGB" name="CHDHAHGB"></a>
+<p class="titleintable">UPD_GROUP Parameters</p>
+<table class="Formal" title="UPD_GROUP Parameters" summary="This table describes the parameters available in the UPD_DISPLAY_IN_FORM procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t19">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t19">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t19" headers="r1c1-t19">
+<p><code>p_table_name</code></p>
+</td>
+<td align="left" headers="r2c1-t19 r1c2-t19">
+<p>Name of table whose group is being updated</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t19" headers="r1c1-t19">
+<p><code>p_group_name</code></p>
+</td>
+<td align="left" headers="r3c1-t19 r1c2-t19">
+<p>Group being updated</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t19" headers="r1c1-t19">
+<p><code>p_new_group_name</code></p>
+</td>
+<td align="left" headers="r4c1-t19 r1c2-t19">
+<p>New name for group, if group is being renamed</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t19" headers="r1c1-t19">
+<p><code>p_description</code></p>
+</td>
+<td align="left" headers="r5c1-t19 r1c2-t19">
+<p>Description of group</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t19" headers="r1c1-t19">
+<p><code>p_display_sequence</code></p>
+</td>
+<td align="left" headers="r6c1-t19 r1c2-t19">
+<p>Display sequence of group.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+If <code>p_description</code> or <code>p_display_sequence</code> are set to 'null%', the value will be nullified. If no value is passed in, that column will not be updated.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+<a id="sthref993" name="sthref993"></a>
+<p class="subhead2">Example</p>
+<p>The following example updates the description of the group <code>AUDIT_INFO</code> within the <code>EMP</code> table definition within the UI Defaults Table Dictionary within the current schema.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN
+    apex_ui_default_update.upd_group (
+       p_table_name  =&gt; 'EMP',
+       p_group_name  =&gt; 'AUDIT_INFO',
+       p_description =&gt; 'Audit columns' );
+END;
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_ui_default014.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_ui_default016.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

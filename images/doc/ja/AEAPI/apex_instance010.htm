@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Available Parameter Values</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:38Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Available Parameter Values" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_instance009.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_item.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_instance009.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_item.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDFGJEI" name="CHDFGJEI"></a></p>
+<hr />
+<div class="refsect1">
+<h1><a name="AEAPI248" id="AEAPI248"></a>Available Parameter <a id="sthref503" name="sthref503"></a>Values</h1>
+<p><a href="#CHDFEICJ">Table: Available Parameters</a> lists all the available parameter values you can set within the <code>APEX_INSTANCE_ADMIN package</code>, including parameters for email, wallet, and reporting printing.</p>
+<div class="tblformal"><a id="sthref504" name="sthref504"></a><a id="CHDFEICJ" name="CHDFEICJ"></a>
+<p class="titleintable">Available Parameters</p>
+<table class="Formal" title="Available Parameters" summary="This table lists all the available parameter values you can set within the APEX_INSTANCE_ADMIN package." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t11">Parameter Name</th>
+<th align="left" valign="bottom" id="r1c2-t11">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t11" headers="r1c1-t11">
+<p><code>SMTP_FROM</code></p>
+</td>
+<td align="left" headers="r2c1-t11 r1c2-t11">
+<p>Defines the "from" address for administrative tasks that generate email, such as approving a provision request or resetting a password.</p>
+<p>Enter a valid email address, for example:</p>
+<p><code>someone@somewhere.com</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t11" headers="r1c1-t11">
+<p><code>SMTP_HOST_ADDRESS</code></p>
+</td>
+<td align="left" headers="r3c1-t11 r1c2-t11">
+<p>Defines the server address of the SMTP server. If you are using another server as an SMTP relay, change this parameter to that server's address.</p>
+<p>Default setting:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+localhost
+</pre></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t11" headers="r1c1-t11">
+<p><code>SMTP_HOST_PORT</code></p>
+</td>
+<td align="left" headers="r4c1-t11 r1c2-t11">
+<p>Defines the port the SMTP server listens to for mail requests.</p>
+<p>Default setting:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+25
+</pre></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t11" headers="r1c1-t11">
+<p><code>WALLET_PATH</code></p>
+</td>
+<td align="left" headers="r5c1-t11 r1c2-t11">
+<p>The path to the wallet on the file system, for example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+file:/home/&lt;<span class="italic">username</span>&gt;/wallets
+</pre></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t11" headers="r1c1-t11">
+<p><code>WALLET_PWD</code></p>
+</td>
+<td align="left" headers="r6c1-t11 r1c2-t11">
+<p>The password associated with the wallet.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t11" headers="r1c1-t11">
+<p><code>PASSWORD_HISTORY_DAYS</code></p>
+</td>
+<td align="left" headers="r7c1-t11 r1c2-t11">
+<p>Defines the maximum number of days a developer or administrator account password may be used before the account expires. The default value is 45 days.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t11" headers="r1c1-t11">
+<p><code>PRINT_BIB_LICENSED</code></p>
+</td>
+<td align="left" headers="r8c1-t11 r1c2-t11">
+<p>Specify either standard support or advanced support. Advanced support requires an Oracle BI Publisher license. Valid values include:</p>
+<ul>
+<li>
+<p><code>STANDARD</code></p>
+</li>
+<li>
+<p><code>ADVANCED</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t11" headers="r1c1-t11">
+<p><code>PRINT_SVR_PROTOCOL</code></p>
+</td>
+<td align="left" headers="r9c1-t11 r1c2-t11">
+<p>Valid values include:</p>
+<ul>
+<li>
+<p><code>http</code></p>
+</li>
+<li>
+<p><code>https</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t11" headers="r1c1-t11">
+<p><code>PRINT_SVR_HOST</code></p>
+</td>
+<td align="left" headers="r10c1-t11 r1c2-t11">
+<p>Specifies the host address of the print server converting engine, for example, <code>localhost</code>. Enter the appropriate host address if the print server is installed at another location.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r11c1-t11" headers="r1c1-t11">
+<p><code>PRINT_SVR_PORT</code></p>
+</td>
+<td align="left" headers="r11c1-t11 r1c2-t11">
+<p>Defines the port of the print server engine, for example <code>8888</code>. Value must be a positive integer.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r12c1-t11" headers="r1c1-t11">
+<p><code>PRINT_SVR_SCRIPT</code></p>
+</td>
+<td align="left" headers="r12c1-t11 r1c2-t11">
+<p>Defines the script that is the print server engine, for example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+/xmlpserver/convert
+</pre></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r13c1-t11" headers="r1c1-t11">
+<p><code>REQUIRE_HTTPS</code></p>
+</td>
+<td align="left" headers="r13c1-t11 r1c2-t11">
+<p>Set to 'Y' to allow authentication pages within the Application Express development and administration applications to be used only when the protocol is HTTPS. Select 'N' to allow these application pages to be used when the protocol is either HTTP or HTTPS.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="../AEADM/adm_env.htm">"Configuring Email in a Runtime Environment"</a>, <a href="../AEADM/adm_env.htm">"Configuring a Wallet in a Runtime Environment"</a>, <a href="../AEADM/adm_env.htm">"Configuring Report Printing Settings in a Runtime Environment"</a> in <a href="../AEADM/preface.htm"><span class="italic">Oracle Application Express Administration Guide</span></a>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_instance009.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_item.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

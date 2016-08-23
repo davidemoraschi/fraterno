@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Creating a Page Process</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:1Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Creating a Page Process" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="bldr_pgs.htm" title="Working with Application Pages" type="text/html" />
+<link rel="up" href="bldr_pg_procs.htm" title="Understanding Page Processes" type="text/html" />
+<link rel="up" href="bldr_pg_procs_create.htm" title="Creating a Page Process" type="text/html" />
+<link rel="prev" href="bldr_pg_procs.htm" title="Previous" type="text/html" />
+<link rel="next" href="bldr_pg_procs_att.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="bldr_pgs.htm" title="Working with Application Pages">Working with Application Pages</a> &gt; <a href="bldr_pg_procs.htm" title="Understanding Page Processes">Understanding Page Processes</a> &gt; Creating a Page Process</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="bldr_pg_procs.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldr_pg_procs_att.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABIFFAJ" name="BABIFFAJ"></a></p>
+<div class="sect2">
+<h1><a name="HTMDB25144" id="HTMDB25144"></a>Creating a Page Process<a id="sthref728" name="sthref728"></a></h1>
+<p>You create a process by running the <a id="sthref729" name="sthref729"></a><a id="sthref730" name="sthref730"></a>Create Process Wizard. During the wizard, you define a process name, specify a sequence and the point at which the process will execute, and select a process category. You can change nearly all of these attributes on the Edit Page Process page.</p>
+<p>To create a process:<a id="sthref731" name="sthref731"></a><a id="sthref732" name="sthref732"></a><a id="sthref733" name="sthref733"></a><a id="sthref734" name="sthref734"></a><a id="sthref735" name="sthref735"></a><a id="sthref736" name="sthref736"></a><a id="sthref737" name="sthref737"></a></p>
+<ol>
+<li>
+<p>Navigate to the appropriate Page Definition. See <a href="bldr_pg_def_access.htm#BABJAICG">"Accessing the Page Definition"</a>.</p>
+</li>
+<li>
+<p>Access the Create Page Process Wizard:</p>
+<ul>
+<li>
+<p>Tree view - Under the appropriate event, locate Processes. Right-click and select <span class="bold">Create</span>.</p>
+</li>
+<li>
+<p>Component view - Under Processes, click the <span class="bold">Create</span> icon.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Select a category as described in <a href="#BABCDEGA">Table: Process Categories</a>:</p>
+<div class="tblformal"><a id="sthref738" name="sthref738"></a><a id="BABCDEGA" name="BABCDEGA"></a>
+<p class="titleintable">Process Categories</p>
+<table class="Formal" title="Process Categories" summary="This table describes the available page process categories." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t50">Process Category</th>
+<th align="left" valign="bottom" id="r1c2-t50">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t50" headers="r1c1-t50">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r2c1-t50 r1c2-t50">
+<p>Runs the PL/SQL you provide. Use this process type to execute a block of PL/SQL entered directly into the process or to simply call an existing API.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t50" headers="r1c1-t50">
+<p>Reset Pagination</p>
+</td>
+<td align="left" headers="r3c1-t50 r1c2-t50">
+<p>In Report regions, resets pagination back to the first result set. The Application Express engine keeps track of where the user is within a given result set. This process category returns the user to the beginning result set. In other words, this category resets the counters associated with the report region to return the first part of the result set the next time the result set displays.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t50" headers="r1c1-t50">
+<p>Session State</p>
+</td>
+<td align="left" headers="r4c1-t50 r1c2-t50">
+<p>Sets the values of existing session state items to null. Select this process type to clear the cache for applications, sessions, or items and to clear existing user preferences.</p>
+<p><span class="bold">See Also:</span> <a href="concept_ses_val.htm#BEIFIHFH">"Managing Session State Values"</a> and "Managing User Preferences" in <a href="AEADM/aadm_mg_sessions.htm"><span class="italic">Oracle Application Express Administration Guide</span></a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t50" headers="r1c1-t50">
+<p>Data Manipulation</p>
+</td>
+<td align="left" headers="r5c1-t50 r1c2-t50">
+<p>Data Manipulation process types are frequently used by wizards to support data manipulation language (DML) actions. Application Builder supports the following declarative data manipulation processes:</p>
+<ul>
+<li>
+<p>Select <span class="bold">Automatic Row Fetch</span> and <span class="bold">Automatic Row Processing</span> <span class="bold">(DML)</span> to create an automatic data manipulation language (DML) process.</p>
+</li>
+<li>
+<p>Use <span class="bold">Multi Row Update</span> and <span class="bold">Multi Row Delete</span> with tabular forms.</p>
+</li>
+<li>
+<p>Use <span class="bold">Add Rows to Tabular Form</span> with a tabular form.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t50" headers="r1c1-t50">
+<p>Web Services</p>
+</td>
+<td align="left" headers="r6c1-t50 r1c2-t50">
+<p>Implements a Web Service as a process on a page. Running the process submits a request to the service provider.</p>
+<p><span class="bold">See Also:</span> <a href="advnc_web_invoke.htm#BABBCIIJ">"Invoking a Web Service as a Process"</a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t50" headers="r1c1-t50">
+<p>Form Pagination</p>
+</td>
+<td align="left" headers="r7c1-t50 r1c2-t50">
+<p>Implements pagination through the detail records associated with a master detail form. Most often used in master detail forms (such as in the Master Detail Wizard), this process checks the master table to determine which set of detail records you are in and determines what the next detail record should be.</p>
+<p><span class="bold">See Also:</span> <a href="bldapp_frm_detail.htm#BCEBEDIC">"Creating a Master Detail Form"</a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t50" headers="r1c1-t50">
+<p>Send E-Mail</p>
+</td>
+<td align="left" headers="r8c1-t50 r1c2-t50">
+<p>Provides a declarative interface for the <code>APEX_MAIL.SEND_MAIL</code> package. The process type support attachments.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t50" headers="r1c1-t50">
+<p>Plug-ins</p>
+</td>
+<td align="left" headers="r9c1-t50 r1c2-t50">
+<p>Plug-ins allow developers to declaratively extend the built-in types available with Application Express. This option is available when a plug-in type process exists in this application.</p>
+<p>See Also: <a href="advnc_plugins.htm#BACGADAG">"Implementing Plug-ins"</a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t50" headers="r1c1-t50">
+<p>Close Popup Window</p>
+</td>
+<td align="left" headers="r10c1-t50 r1c2-t50">
+<p>Applies to processes running within a popup window. Upon execution, this process type closes the current popup window.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r11c1-t50" headers="r1c1-t50">
+<p>Run On Demand Process</p>
+</td>
+<td align="left" headers="r11c1-t50 r1c2-t50">
+<p>Creates an application-level process that can only be executed when called from a specific page. When you create this process type at the page-level, you are creating reference to an existing application-level process.</p>
+<p><span class="bold">See Also</span>: <a href="bldr_app_proc_about.htm#BABBCFCG">"About On Demand Application Processes"</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></li>
+<li>
+<p>Follow the on-screen instructions.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="bldr_pg_procs.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldr_pg_procs_att.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

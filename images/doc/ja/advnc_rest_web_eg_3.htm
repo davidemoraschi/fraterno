@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Example: Creating a Web Service Reference Manually</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:13Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Example: Creating a Web Service Reference Manually" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="advnc.htm" title="Advanced Programming Techni..." type="text/html" />
+<link rel="up" href="advnc_web_services.htm" title="Implementing Web Services" type="text/html" />
+<link rel="up" href="advnc_rest_web_eg_3.htm" title="Example: Creating a Web Ser..." type="text/html" />
+<link rel="prev" href="advnc_rest_web_eg_2.htm" title="Previous" type="text/html" />
+<link rel="next" href="advnc_plugins.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="advnc.htm" title="Advanced Programming Techni...">Advanced Programming Techni...</a> &gt; <a href="advnc_web_services.htm" title="Implementing Web Services">Implementing Web Services</a> &gt; Example: Creating a Web Ser...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="advnc_rest_web_eg_2.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_plugins.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CIHEJAEH" name="CIHEJAEH"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1>Example: <a id="sthref2582" name="sthref2582"></a>Creating a Web Service Reference Manually</h1>
+<p>In this example, you create a Web reference by supplying information about the Web service and using the manual facility. Manual Web references are created by visually inspecting the WSDL document as well as using a tool to determine the SOAP envelope for the Web service request.</p>
+<p>Topics in this section include:</p>
+<ul>
+<li>
+<p><a href="#CHDBHFJC">Create a Web Service Reference Manually</a></p>
+</li>
+<li>
+<p><a href="#CHDIDJFH">Test the Web Service Reference</a></p>
+</li>
+<li>
+<p><a href="#CHDGIFBG">Create a Form and Report on the Web Service Results</a></p>
+</li>
+</ul>
+<a id="CHDBHFJC" name="CHDBHFJC"></a>
+<div class="sect3">
+<h2>Create a Web Service Reference Manually</h2>
+<p>To create a Web reference manually, you copy sections from the WSDL for a service called MovieInformation.</p>
+<p>Please note the example settings provided in the following steps are based on the MovieInformation service at the time this document was released.</p>
+<p>To create a manual Web reference:</p>
+<ol>
+<li>
+<p>On the Application home page, click <span class="bold">Shared Components</span>.</p>
+</li>
+<li>
+<p>Under Logic, click <span class="bold">Web Service References</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+</li>
+<li>
+<p>Select Manual and click <span class="bold">Next</span>.</p>
+<p>The Create/Edit Web Service page appears.</p>
+</li>
+<li>
+<p>In the Name field, enter <code>Movie Info</code>.</p>
+</li>
+<li>
+<p>Locate the endpoint of the MovieInformation service:</p>
+<ol>
+<li>
+<p>Open the WSDL by going to:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+<code><a href="http://www.ignyte.com/webservices/ignyte.whatsshowing.webservice/moviefunctions.asmx?wsdl">http://www.ignyte.com/webservices/ignyte.whatsshowing.webservice/moviefunctions.asmx?wsdl</a></code>
+</pre></li>
+<li>
+<p>In the WSDL, find the <code>location</code> attribute of the <code>soap:address</code> element, which is a child of the <code>port</code> element. You can search for the following term within the code: soap:address location.</p>
+<p>At the time of this release, it was this attribute:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+http://www.ignyte.com/webservices/ignyte.whatsshowing.webservice/moviefunctions.asmx
+</pre></li>
+</ol>
+</li>
+<li>
+<p>In the URL field on the Create/Edit Web Service page, enter the endpoint of the MovieInformation service you located. For example: <code>http://www.ignyte.com/webservices/ignyte.whatsshowing.webservice/moviefunctions.asmx</code></p>
+</li>
+<li>
+<p>Locate the SOAP action for the <code>GetTheatersAndMovies</code> operation:</p>
+<ol>
+<li>
+<p>If necessary, open the WSDL again. See Step 7a.</p>
+</li>
+<li>
+<p>In the WSDL, find the <code>soapAction</code> attribute of the <code>soap:operation</code> element, which is a child of the operation element that has a name attribute of <code>GetTheatersAndMovies</code>. You can search for the following term within the code: <code>soap:operation soapAction</code>.</p>
+<p>At the time of this release, it was this attribute:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+http://www.ignyte.com/whatsshowing/GetTheatersAndMovies
+</pre></li>
+</ol>
+</li>
+<li>
+<p>In the Action field on the Create/Edit Web Service page, enter the SOAP action you located. For example: <code>http://www.ignyte.com/whatsshowing/GetTheatersAndMovies</code></p>
+</li>
+<li>
+<p>In the SOAP Envelope field on the Create/Edit Web Reference page, enter the xml document representing the SOAP Request message. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:tns="http://www.ignyte.com/whatsshowing"
+xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+   &lt;soap:Body&gt;
+      &lt;tns:GetTheatersAndMovies&gt;
+         &lt;tns:zipCode&gt;#ZIP#&lt;/tns:zipCode&gt;
+         &lt;tns:radius&gt;#RADIUS#&lt;/tns:radius&gt;
+      &lt;/tns:GetTheatersAndMovies&gt;
+   &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</pre>
+<p>You can use a SOAP message generating tool, such as MindReef, to construct a valid SOAP Request for a given Web service.</p>
+</li>
+<li>
+<p>In the Store Response in Collection field, enter <code>MOVIE_RESULTS</code>. This is where the response from the Web service will be stored.</p>
+<p>The Create/Edit Web Service page should resemble <a href="#CIHEEFEE">Figure: Create/Edit Web Service Page</a>.</p>
+<div class="figure"><a id="CIHEEFEE" name="CIHEEFEE"></a>
+<p class="titleinfigure">Create/Edit Web Service Page</p>
+<img src="img/web_manref.gif" alt="Description of this figure follows" title="Description of this figure follows" longdesc="img_text/web_manref.htm" /><br />
+<a id="sthref2583" name="sthref2583" href="img_text/web_manref.htm">Description of "Create/Edit Web Service Page"</a><br />
+<br /></div>
+<!-- class="figure" --></li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+<p>The Web Service References page appears, showing Movie Info in the list.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CHDIDJFH" name="CHDIDJFH"></a>
+<div class="sect3">
+<h2>Test the Web Service Reference</h2>
+<p>To test the Web service reference:</p>
+<ol>
+<li>
+<p>On the Web Service References page, click the <span class="bold">Test</span> icon next to the Movie Info Web reference.</p>
+<p>The Web Services Testing page appears.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+View must be set to Report, otherwise the Test icon is not displayed.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+</li>
+<li>
+<p>In the SOAP Envelope field, replace #ZIP# with <code>43221</code> and #RADIUS# with <code>5</code>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Test</span>.</p>
+</li>
+<li>
+<p>Review the Result field and note the following about the response:</p>
+<ul>
+<li>
+<p>The base node in the return envelope is called:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+GetTheatersAndMoviesResponse
+</pre></li>
+<li>
+<p>The namespace for the message is:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+http://www.ignyte.com/whatsshowing
+</pre></li>
+<li>
+<p>The XPath to the interesting parts of the response under the result element is:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+/GetTheatersAndMoviesResponse/GetTheatersAndMoviesResult/Theater/Movies/Movie
+</pre></li>
+<li>
+<p>The interesting elements in the results are called:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+Name
+Rating
+RunningTime
+ShowTimes
+</pre></li>
+</ul>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CHDGIFBG" name="CHDGIFBG"></a>
+<div class="sect3">
+<h2>Create a Form and Report on the Web Service Results</h2>
+<p>Next, you create a page that contains a form and report to use with the Manual Web Service Reference.</p>
+<p>To create a form and report on a Manual Web Service Reference:</p>
+<ol>
+<li>
+<p>On the Application home page, click <span class="bold">Create Page</span>.</p>
+</li>
+<li>
+<p>Select <span class="bold">Form</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Select <span class="bold">Form and Report on Web Service</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Web Service Reference, select <span class="bold">Movie Info</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Page and Region Attributes, make these changes:</p>
+<ol>
+<li>
+<p>Form Region Title - Enter <code>Theater Information</code>.</p>
+</li>
+<li>
+<p>Accept all other defaults and click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Input Items, make these changes:</p>
+<ol>
+<li>
+<p>For ZIP and RADIUS, accept the default, <span class="bold">Yes</span>, in the Create column.</p>
+</li>
+<li>
+<p>For ZIP, change the Item label default to <span class="bold">ZIP Code</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Web Service Results, make these changes:</p>
+<ol>
+<li>
+<p>SOAP Style - Select <span class="bold">Document</span>.</p>
+</li>
+<li>
+<p>Message Format - Select <span class="bold">Literal</span>.</p>
+</li>
+<li>
+<p>Result Node Path - Enter the following:</p>
+<p><code>/GetTheatersAndMoviesResponse/GetTheatersAndMoviesResult/Theater/Movies/Movie</code></p>
+</li>
+<li>
+<p>Message Namespace - Enter the following:</p>
+<p><code>http://www.ignyte.com/whatsshowing</code></p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Parameter Names, enter <code>Name</code>, <code>Rating</code>, <code>RunningTime</code>, and <code>Showtimes</code> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Tab Options, accept the default and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create Form and Report</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Run Page</span>.</p>
+</li>
+<li>
+<p>If prompted to log in, enter the user name and password for your workspace and click <span class="bold">Login</span>.</p>
+<p>A form and report resembling <a href="#CHDIIGBJ">Figure: Theater Information Form and Report without Data</a> appears. Notice that the Theater Information Form at the top of the page contains a data entry field and a submit button, but the Results Report does not contain any data.</p>
+<div class="figure"><a id="CHDIIGBJ" name="CHDIIGBJ"></a>
+<p class="titleinfigure">Theater Information Form and Report without Data</p>
+<img src="img/web_name.gif" alt="Description of this figure follows" title="Description of this figure follows" longdesc="img_text/web_name.htm" /><br />
+<a id="sthref2584" name="sthref2584" href="img_text/web_name.htm">Description of "Theater Information Form and Report without Data"</a><br />
+<br /></div>
+<!-- class="figure" --></li>
+<li>
+<p>To test the form, enter <code>43221</code> in the ZIP Code field and <code>5</code> in the Radius field. Then click <span class="bold">Submit</span>.</p>
+<p>The report at the bottom of the page should resemble <a href="#CHDIJIJE">Figure: Theater Information Report Showing Resulting Data</a>. The report lists the names and addresses of movie theaters matching the entered ZIP code and radius.</p>
+<div class="figure"><a id="CHDIJIJE" name="CHDIJIJE"></a>
+<p class="titleinfigure">Theater Information Report Showing Resulting Data</p>
+<img src="img/web_name_2.gif" alt="Description of this figure follows" title="Description of this figure follows" longdesc="img_text/web_name_2.htm" /><br />
+<a id="sthref2585" name="sthref2585" href="img_text/web_name_2.htm">Description of "Theater Information Report Showing Resulting Data"</a><br />
+<br /></div>
+<!-- class="figure" --></li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="advnc_rest_web_eg_2.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_plugins.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

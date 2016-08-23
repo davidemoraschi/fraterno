@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>SET_OFFSET Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:36Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="SET_OFFSET Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_app_inst017.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_app_inst019.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_app_inst017.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_app_inst019.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDFHGJD" name="CHDFHGJD"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>SET_OFFSET <a id="sthref108" name="sthref108"></a>Procedure</h1>
+<p>This procedure sets the offset value used during application import. The offset value is used to ensure that the metadata for the Application Express application definition does not collide with other metadata on the instance. For a new application installation, it is usually sufficient to call the <code>generate_offset</code> procedure to have Application Express generate this offset value for you.</p>
+<a id="sthref109" name="sthref109"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_APPLICATION_INSTALL.SET_OFFSET(
+    p_offset IN NUMBER);
+</pre>
+<a id="sthref110" name="sthref110"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#CHDIDGDB">Table: SET_OFFSET Parameters</a> describes the parameters available in <code>SET_OFFSET</code> procedure.</p>
+<div class="tblformal"><a id="sthref111" name="sthref111"></a><a id="CHDIDGDB" name="CHDIDGDB"></a>
+<p class="titleintable">SET_OFFSET Parameters</p>
+<table class="Formal" title="SET_OFFSET Parameters" summary="This table describes the parameters available in the GET_BLOB_FILE_SRC function." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="33%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t21">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t21">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t21" headers="r1c1-t21">
+<p><code>p_offset</code></p>
+</td>
+<td align="left" headers="r2c1-t21 r1c2-t21">
+<p>The offset value. The offset must be a positive integer. In most cases you do not need to specify the offset, and instead, call <code>APEX_APPLICATION_INSTALL.GENERATE_OFFSET</code>, which generates a large random value and then set it in the <code>APEX_APPLICATION_INSTALL</code> package.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref112" name="sthref112"></a>
+<p class="subhead2">Example</p>
+<p>The following example generates a random number from the database and uses this as the offset value in <code>APEX_APPLICATION_INSTALL</code>.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+declare
+    l_offset number;
+begin
+    l_offset := dbms_random.value(100000000000, 999999999999);
+    apex_application_install.set_offset( p_offset =&gt; l_offset );
+end/
+</pre>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_app_inst010.htm#CHDCAHEI">"GET_OFFSET Function"</a>, <a href="apex_app_inst005.htm#BABFDGCG">"GENERATE_OFFSET Procedure"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_app_inst017.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_app_inst019.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

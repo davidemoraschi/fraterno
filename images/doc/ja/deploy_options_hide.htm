@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Exporting Build Options or Build Option Status</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:12Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Exporting Build Options or Build Option Status" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="deploy.htm" title="Deploying an Application" type="text/html" />
+<link rel="up" href="deploy_build_options.htm" title="Using Build Options to Cont..." type="text/html" />
+<link rel="up" href="deploy_options_hide.htm" title="Exporting Build Options or ..." type="text/html" />
+<link rel="prev" href="deploy_bld_edit.htm" title="Previous" type="text/html" />
+<link rel="next" href="deploy_build_rpt.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="deploy.htm" title="Deploying an Application">Deploying an Application</a> &gt; <a href="deploy_build_options.htm" title="Using Build Options to Cont...">Using Build Options to Cont...</a> &gt; Exporting Build Options or ...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="deploy_bld_edit.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="deploy_build_rpt.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDGEGIJ" name="CHDGEGIJ"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB25852" id="HTMDB25852"></a>Exporting Build <a id="sthref2505" name="sthref2505"></a><a id="sthref2506" name="sthref2506"></a><a id="sthref2507" name="sthref2507"></a>Options or Build Option Status</h1>
+<p>You can export build options or build option status on the Component Export page. Exporting build option status is an effective way to toggle build options on or off within another environment. For example, you can use this feature to deploy a production application with a hidden feature.</p>
+<p>To accomplish this, you associate the components of the hidden feature with a build option having the status of <code>EXCLUDE</code>. After deployment, you can enable the hidden feature by changing the status of the build option to <code>INCLUDE</code> and then exporting the Build Option Status.</p>
+<p>Once you apply the Build Options Status to the production instance, the new feature appears.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="deployment.htm#CHDICGJD">"How to Create a Packaged Application"</a> and <a href="deploy_export_comp.htm#CHDCDCFH">"Exporting Application Components"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<p>To export build options or build option status:</p>
+<ol>
+<li>
+<p>Navigate to the Component Export page:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click the <span class="bold">Application Builder</span> icon.</p>
+</li>
+<li>
+<p>Select an application.</p>
+</li>
+<li>
+<p>Click <span class="bold">Shared Components</span>.</p>
+</li>
+<li>
+<p>From the Tasks list, click <span class="bold">Export Application Components</span>.</p>
+<p>The Component Export page appears.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Select the build options to export:</p>
+<ol>
+<li>
+<p>Click the <span class="bold">Components</span> tab and select the build options to export.</p>
+</li>
+<li>
+<p>Click <span class="bold">Add to Export</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Select <span class="bold">Build Option Status</span> to be exported:</p>
+<ol>
+<li>
+<p>Click the <span class="bold">Build Options Status</span> tab and select the build options to export.</p>
+</li>
+<li>
+<p>Click <span class="bold">Add to Export</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>On Components to Export:</p>
+<ol>
+<li>
+<p>From File Format, select how rows in the export file will be formatted:</p>
+<ul>
+<li>
+<p>Choose <span class="bold">UNIX</span> to have the resulting file contain rows delimited by line feeds.</p>
+</li>
+<li>
+<p>Choose <span class="bold">DOS</span> to have the resulting file contain rows delimited by carriage returns and line feeds.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Use the <span class="bold">As of</span> field to export a page as it was previously defined. Specify the number of minutes in the field provided.</p>
+<p>This utility uses the <code>DBMS_FLASHBACK</code> package. Because the timestamp to System Change Number (SCN) mapping is refreshed approximately every five minutes, you may have to wait that amount of time to locate the version for which you are looking. The time undo information is retained and influenced by the startup parameter <code>UNDO_RETENTION</code> (the default is three hours). However, this only influences the size of the undo tablespace. While two databases may have the same <code>UNDO_RETENTION</code> parameter, you are able to go back further in time on a database with fewer transactions because it is not filling the undo tablespace, forcing older data to be archived.</p>
+</li>
+<li>
+<p>Click <span class="bold">Export Components</span>.</p>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="deploy_bld_edit.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="deploy_build_rpt.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

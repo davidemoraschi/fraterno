@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Deleting a Workspace</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-27T14:38:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Deleting a Workspace" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15521-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="adm_wrkspc.htm" title="Oracle Application Express ..." type="text/html" />
+<link rel="up" href="adm_mg_wrkspc.htm" title="Managing Existing Workspaces" type="text/html" />
+<link rel="up" href="adm_del_wrkspc.htm" title="Deleting a Workspace" type="text/html" />
+<link rel="prev" href="adm_mg_wrkspc.htm" title="Previous" type="text/html" />
+<link rel="next" href="adm_wrkspc_lock.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="adm_wrkspc.htm" title="Oracle Application Express ...">Oracle Application Express ...</a> &gt; <a href="adm_mg_wrkspc.htm" title="Managing Existing Workspaces">Managing Existing Workspaces</a> &gt; Deleting a Workspace</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="adm_mg_wrkspc.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_wrkspc_lock.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDHBEFI" name="CHDHBEFI"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEADM280" id="AEADM280"></a>Deleting a <a id="sthref405" name="sthref405"></a><a id="sthref406" name="sthref406"></a>Workspace</h1>
+<p>Deleting a workspace does not remove any of the associated database objects. To remove the associated schemas, a database administrator (DBA) must use a standard database administration tool, such as Oracle Enterprise Manager or SQL*Plus.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1"><span class="bold">See Also</span>:</p>
+<a href="http://www.oracle.com/pls/db112/lookup?id=SQPUG"><span class="italic">SQL*Plus User's Guide and Reference</span></a>, <a href="adm_wrkspc_details.htm#CHDFGGFC">"Viewing and Emailing Workspace Details"</a>, and <a href="adm_create_wkspc.htm#CHDJFJFA">"Creating Workspaces"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<a id="sthref407" name="sthref407"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#CHDHBCIH">Deleting Workspaces in a Full Development Environment</a></p>
+</li>
+<li>
+<p><a href="#CHDJACDI">Deleting Workspaces in a Runtime Development Environment</a></p>
+</li>
+<li>
+<p><a href="#CHDGJCDB">About Deleting Inactive Workspaces</a></p>
+</li>
+</ul>
+<a id="CHDHBCIH" name="CHDHBCIH"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM281" id="AEADM281"></a>Deleting Workspaces in a Full Development Environment</h2>
+<p>To delete a workspace in a full development environment:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Workspaces</span>.</p>
+</li>
+<li>
+<p>Under Workspace Reports, click <span class="bold">Existing Workspaces</span>.</p>
+</li>
+<li>
+<p>Under the Action column, click <span class="bold">Delete</span>.</p>
+</li>
+<li>
+<p>Follow the on-screen instructions.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CHDJACDI" name="CHDJACDI"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM282" id="AEADM282"></a>Deleting Workspaces in a Runtime Development Environment</h2>
+<p>To delete a workspace in a runtime development environment:</p>
+<ol>
+<li>
+<p>Start SQL*Plus and connect to the database where Oracle Application Express is installed as <code>SYS</code>. For example:</p>
+<ul>
+<li>
+<p>On Windows:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+<span class="italic">SYSTEM_DRIVE:\</span> sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+<li>
+<p>On UNIX and Linux:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+$ sqlplus /nolog
+connect sys as sysdba
+</pre></li>
+</ul>
+<p>When prompted enter the appropriate password.</p>
+</li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+ALTER SESSION SET CURRENT_SCHEMA = APEX_040000
+</pre></li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN
+APEX_INSTANCE_ADMIN.REMOVE_WORKSPACE(<span class="italic">WORKSPACE_NAME</span>, <span class="italic">DROP_USER</span>, <span class="italic">DROP_TABLESPACE</span>)
+END;
+</pre>
+<p>Where:</p>
+<ul>
+<li>
+<p><code>WORKSPACE_NAME</code> is the name of the workspace.</p>
+</li>
+<li>
+<p><code>DROP_USER</code> is either Y or N. The default is N.</p>
+</li>
+<li>
+<p><code>DROP_TABLESPACE</code> is either <code>Y</code> or <code>N</code>. The default is <code>N</code>.</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CHDGJCDB" name="CHDGJCDB"></a>
+<div class="sect3">
+<h2><a name="AEADM276" id="AEADM276"></a>About Deleting Inactive Workspaces<a id="sthref408" name="sthref408"></a><a id="sthref409" name="sthref409"></a></h2>
+<p>If you are managing a large hosted Oracle Application Express instance, manually deleting inactive workspaces can free up resources for other users. The process of manually deleting inactive workspaces consists of the following steps:</p>
+<ol>
+<li>
+<p>Identify inactive workspaces.</p>
+</li>
+<li>
+<p>Remove the resources associated with each inactive workspace.</p>
+</li>
+<li>
+<p>Delete the inactive workspaces.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Tip:</p>
+'If you wish to systematically purge inactive workspaces you should configure Workspace Purge settings. See <a href="adm_purge_wrkspc.htm#CHDBFHHA">"Purging Inactive Workspaces"</a>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<a id="sthref410" name="sthref410"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#CHDBIDIE">Identifying Inactive Workspaces</a></p>
+</li>
+<li>
+<p><a href="#CHDBHJFE">Viewing Workspaces with Only a Sample Application</a></p>
+</li>
+<li>
+<p><a href="#CHDEDGHH">Removing the Resources Associated with Inactive Workspaces</a></p>
+</li>
+<li>
+<p><a href="#CHDHEICE">Deleting Inactive Workspaces</a></p>
+</li>
+</ul>
+<a id="CHDBIDIE" name="CHDBIDIE"></a>
+<div class="sect4">
+<h3><a name="AEADM277" id="AEADM277"></a>Identifying <a id="sthref411" name="sthref411"></a>Inactive Workspaces<a id="sthref412" name="sthref412"></a></h3>
+<p>The first step in determining if a workspace is inactive is to establish some basic rules. A common approach is to base the rules on the Oracle Application Express activity records found in the current Application Express engine schema.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="adm_eng_schema.htm#BEJEDCEJ">"Determining the Oracle Application Express Engine Schema"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<p>The following DDL (data definition language) creates a table of all workspaces requested before June 28, 2004 but that have been inactive since June 10, 2004. In this example, inactivity is determined by checking a key within the Application Express engine schema for the most recent updates by each workspace.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+ALTER SESSION SET CURRENT_SCHEMA = APEX_040000;
+CREATE TABLE ws_to_purge AS
+ SELECT c.security_group_id, c.company_name, c.admin_email, c.request_date,
+ SYSDATE last_updated_on, 'Y' ok_to_delete
+   FROM wwv_flow_provision_company c
+  WHERE
+c.request_date &lt;= to_date('20040628','YYYYMMDD') AND
+     (  not exists
+ (SELECT NULL /* Activity Log */
+        FROM wwv_flow_activity_log l
+       WHERE l.security_group_id = c.security_group_id
+         AND l.time_stamp &gt; to_date('20040610','YYYYMMDD'))
+ )
+    AND NOT EXISTS
+     (SELECT NULL /* workspace applications */
+        FROM wwv_flows f
+       WHERE f.security_group_id = c.security_group_id
+         AND f.last_updated_on &gt; to_date('20040610','YYYYMMDD'))
+    AND NOT EXISTS
+     (SELECT NULL /* Pages */
+        FROM wwv_flow_steps s
+       WHERE s.security_group_id = c.security_group_id
+         AND s.last_updated_on &gt; to_date('20040610','YYYYMMDD'))
+    AND NOT EXISTS
+     (SELECT NULL /* Regions */
+        FROM wwv_flow_page_plugs p
+       WHERE p.security_group_id = c.security_group_id
+         AND p.last_updated_on &gt; to_date('20040610','YYYYMMDD'))
+    AND NOT EXISTS
+     (SELECT NULL /* Items */
+        FROM wwv_flow_step_items i
+       WHERE i.security_group_id = c.security_group_id
+         AND i.last_updated_on &gt; to_date('20040610','YYYYMMDD'))
+    AND NOT EXISTS
+     (SELECT NULL /* Templates */
+        FROM wwv_flow_templates t
+       WHERE t.security_group_id = c.security_group_id
+         AND t.last_updated_on &gt; to_date('20040610','YYYYMMDD'))
+    AND NOT EXISTS
+     (SELECT NULL /* Files uploaded */
+        FROM wwv_flow_file_objects$ o
+       WHERE o.security_group_id = c.security_group_id
+         AND o.created_on &gt; to_date('20040610','YYYYMMDD'))
+    AND NOT EXISTS
+     (SELECT NULL /* SQL Workshop history */
+        FROM wwv_flow_sw_sql_cmds s
+       WHERE s.security_group_id = c.security_group_id
+         AND s.created_on &gt; to_date('20040610','YYYYMMDD'));
+</pre>
+<p>After you identify inactive workspaces, you can purge them. Purging inactive workspaces is a two-step process:</p>
+<ul>
+<li>
+<p>First, remove the resources (that is, the database schemas, tablespaces, and data files) associated with each inactive workspace.</p>
+</li>
+<li>
+<p>Second, drop the inactive workspaces from Oracle Application Express.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect4" -->
+<a id="CHDBHJFE" name="CHDBHJFE"></a>
+<div class="sect4">
+<h3>Viewing Workspaces with Only a <a id="sthref413" name="sthref413"></a>Sample Application</h3>
+<p>Another way to identify potentially inactive workspaces is to view the Workspaces with Only Sample Application report.</p>
+<p>To view a report or workspaces only containing only a sample application.</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Workspaces</span>.</p>
+</li>
+<li>
+<p>Under Workspace Reports, click <span class="bold">Workspaces with Only Sample Application</span>.</p>
+<p>The Workspaces with Only Sample Applications page appears.</p>
+<p>This page displays as an interactive report. To customize the report, use the Search bar at the top of the page. See "Customizing Interactive Reports" in <a href="../ir_using.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" -->
+<a id="CHDEDGHH" name="CHDEDGHH"></a>
+<div class="sect4">
+<h3><a name="AEADM278" id="AEADM278"></a>Removing the <a id="sthref414" name="sthref414"></a>Resources Associated with Inactive Workspaces</h3>
+<p>After you have identified inactive workspaces in a single table, the next step is to remove them.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Before removing the schemas, tablespaces, or data files associated with inactive workspaces, make sure these resources are not being used in any other workspace or application.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+<p>To remove the resources associated with inactive workspaces:</p>
+<ol>
+<li>
+<p>Identify the schemas used by the workspaces to be deleted by joining the table containing the identified inactive workspaces to <code>wwv_flow_company_schemas.</code></p>
+</li>
+<li>
+<p>Drop the schemas, tablespaces, and data files used exclusively by the inactive workspaces from the database. You can identify the schemas to drop by running a query similar to the following:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT s.schema
+  FROM ws_to_purge ws,
+       wwv_flow_company_schemas s
+WHERE s.security_group_id = ws.security_group_id
+   AND ws.ok_to_delete = 'Y';
+</pre></li>
+</ol>
+</div>
+<!-- class="sect4" -->
+<a id="CHDHEICE" name="CHDHEICE"></a>
+<div class="sect4">
+<h3><a name="AEADM279" id="AEADM279"></a>Deleting <a id="sthref415" name="sthref415"></a>Inactive Workspaces<a id="sthref416" name="sthref416"></a></h3>
+<p>Once you remove the resources associated with an inactive workspace, you can delete the workspace. You can delete inactive workspaces manually using the Oracle Application Express Administration Services application. Or, you can delete them programmatically as shown in the following PL/SQL example.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN 
+     FOR c1 IN (SELECT security_group_id  
+                 FROM ws_to_purge
+                 WHERE ok_to_delete = 'Y')
+     LOOP
+         WWV_FLOW_PROVISIONING.TERMINATE_SERVICE_BY_SGID(c1.security_group_id);
+     END LOOP;
+ END;
+</pre></div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="adm_mg_wrkspc.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_wrkspc_lock.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

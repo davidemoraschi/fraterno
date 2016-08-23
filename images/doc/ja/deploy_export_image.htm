@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Where Images, CSS, and Script Files Are Stored</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:11Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Where Images, CSS, and Script Files Are Stored" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="deploy.htm" title="Deploying an Application" type="text/html" />
+<link rel="up" href="deploy_export.htm" title="Exporting an Application an..." type="text/html" />
+<link rel="up" href="deploy_export_image.htm" title="Where Images, CSS, and Scri..." type="text/html" />
+<link rel="prev" href="deploy_export.htm" title="Previous" type="text/html" />
+<link rel="next" href="deploy_export_app.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="deploy.htm" title="Deploying an Application">Deploying an Application</a> &gt; <a href="deploy_export.htm" title="Exporting an Application an...">Exporting an Application an...</a> &gt; Where Images, CSS, and Scri...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="deploy_export.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="deploy_export_app.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABEGDGI" name="BABEGDGI"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB25961" id="HTMDB25961"></a>Where Images, CSS, and Script Files Are Stored</h1>
+<p>In order to run, Oracle Application Express must have access to either Oracle HTTP Server and mod_plsql or the embedded PL/SQL gateway. Where images, CSS, and script files are stored depends upon the HTTP server you choose.</p>
+<a id="sthref2396" name="sthref2396"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#BABBIIGE">Where Images, CSS, and Script Files Are Stored When Using Oracle HTTP Server</a></p>
+</li>
+<li>
+<p><a href="#BABGIABJ">Where Images, CSS, and Script Files Are Stored When Using the Embedded PL/SQL Gateway</a></p>
+</li>
+</ul>
+<a id="BABBIIGE" name="BABBIIGE"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25962" id="HTMDB25962"></a>Where Images, CSS, and Script Files Are Stored When <a id="sthref2397" name="sthref2397"></a>Using Oracle HTTP Server</h2>
+<p>In an Oracle HTTP Server or Oracle Application Server configuration, images are stored on the file system in the location referenced by the alias <code>/i/</code>. To locate the images directory on the file system, review the following files and search for the text alias <code>/i/</code>:</p>
+<ul>
+<li>
+<p>Oracle9<span class="italic">i</span> HTTP Server Release 2&mdash;see the <code>httpd.conf</code> file.</p>
+</li>
+<li>
+<p>Oracle HTTP Server distributed with Oracle Database 11<span class="italic">g</span>&mdash;see the <code>dads.conf</code> file.</p>
+</li>
+<li>
+<p>Oracle Application Server 10g&mdash;see the <code>marvel.conf</code> file.</p>
+</li>
+</ul>
+<p>Specific examples for locating the text alias <code>/i/</code> can be found in <a class="olinkSRC HTMIG" href="http://download.oracle.com/docs/cd/E17556_01/doc/index.htm" target="_blank"><span class="italic">Oracle Application Express Installation Guide</span></a></p>
+</div>
+<!-- class="sect3" -->
+<a id="BABGIABJ" name="BABGIABJ"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25963" id="HTMDB25963"></a>Where Images, CSS, and Script Files Are Stored When <a id="sthref2398" name="sthref2398"></a>Using the Embedded PL/SQL Gateway</h2>
+<p>When running Oracle Application Express with the embedded PL/SQL gateway, images are stored directly in the database within the Oracle XML DB repository. You can access images by using the WebDAV feature of Oracle XML DB or by using FTP. To learn more, see "Using Protocols to Access the Repository" in <span class="italic"><a href="http://www.oracle.com/pls/db112/lookup?id=ADXDB2500">Oracle XML DB Developer's Guide</a>.</span></p>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="deploy_export.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="deploy_export_app.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

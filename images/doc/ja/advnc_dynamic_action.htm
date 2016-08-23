@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Adding Additional True or False Actions</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:13Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Adding Additional True or False Actions" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="advnc.htm" title="Advanced Programming Techni..." type="text/html" />
+<link rel="up" href="advnc_dynamic_actions.htm" title="Implementing Dynamic Actions" type="text/html" />
+<link rel="up" href="advnc_dynamic_action.htm" title="Adding Additional True or F..." type="text/html" />
+<link rel="prev" href="advnc_dynamic_edit.htm" title="Previous" type="text/html" />
+<link rel="next" href="advnc_dynamic_scope.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="advnc.htm" title="Advanced Programming Techni...">Advanced Programming Techni...</a> &gt; <a href="advnc_dynamic_actions.htm" title="Implementing Dynamic Actions">Implementing Dynamic Actions</a> &gt; Adding Additional True or F...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="advnc_dynamic_edit.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_dynamic_scope.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CIHDABAD" name="CIHDABAD"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB28005" id="HTMDB28005"></a>Adding <a id="sthref2608" name="sthref2608"></a>Additional True or False Actions</h1>
+<p>Dynamic actions contain a condition that can be specified to control when True and False actions fire. For example, consider an application that displays employee information to managers. If the employee is exempt, their salary displays, otherwise their hourly wage displays.</p>
+<p>The Dynamic Action creation wizard allows only one true and one false action to be specified. If you want to add more than one action you must use the create wizard to create the dynamic action and then edit the action to add additional true or false actions.</p>
+<p>To add an action:</p>
+<ol>
+<li>
+<p>Navigate to the appropriate Page Definition. See <a href="bldr_pg_def_access.htm#BABJAICG">"Accessing the Page Definition"</a>.</p>
+</li>
+<li>
+<p>Access the Edit Dynamic Action page:</p>
+<ul>
+<li>
+<p>Tree view - Under Page Rendering, locate Dynamic Actions. Right-click and select <span class="bold">Edit</span>.</p>
+<p>You can also right-click directly on the True or False nodes right under the dynamic action node in the tree. Select Create here and this will take you directly to the page to create the additional true or false action. This is a simpler means of creation and eliminates the next step.</p>
+</li>
+<li>
+<p>Component view - Under Page Rendering, scroll down to Dynamic Actions and click the dynamic action you want to edit.</p>
+</li>
+</ul>
+<p>The Edit Dynamic Action page appears.</p>
+</li>
+<li>
+<p>If you want to add an action that executes when the conditions are met or when no condition is specified, scroll down to True Actions and click <span class="bold">Add True Action</span>.</p>
+<p>Otherwise, scroll down to False Actions and click <span class="bold">Add False Action</span>.</p>
+<p>The Create/Edit Action page appears.</p>
+</li>
+<li>
+<p>Under Identification:</p>
+<ol>
+<li>
+<p>Sequence - Enter the sequence for this component. This indicates the evaluation order.</p>
+</li>
+<li>
+<p>Action - Select the action that triggers when the condition is true or false.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Under Execution Options:</p>
+<ol>
+<li>
+<p>Fire on Page Load - Select if you want the action to also trigger when the page loads.</p>
+</li>
+<li>
+<p>Stop Execution on Error - Specify whether any proceeding actions should be executed, if an error occurs while executing the current action. Only available when the selected Action has been defined to expose this attribute, for example Execute PL/SQL Code.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Affected Elements (only available if the selected action supports definition of affected elements):</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Some or all of these fields may not be available to select, depending on the type of action selected. For example the Disable action does not support selecting a Region as the affected element.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+<ol>
+<li>
+<p>Selection Type - Select the type of page element that is affected by the dynamic action. A corresponding name field displays to specify the name of the page element.</p>
+</li>
+<li>
+<p>Item(s), Region, DOM Object, or jQuery Selector - Specify the name of the page element as follows:</p>
+<ul>
+<li>
+<p>Item(s) - Enter or select the item name that is affected by the dynamic action.</p>
+</li>
+<li>
+<p>Region - Enter or select the region name that is affected by the dynamic action. The region selected must use a region template that includes a container element with an ID attribute set to <code>#REGION_STATIC_ID#</code>. The dynamic action framework relies on this ID value in order to reference the region.</p>
+</li>
+<li>
+<p>DOM Object - Enter either the Document Object Model (DOM) object or the ID of a DOM object that is affected by the dynamic action.</p>
+</li>
+<li>
+<p>jQuery Selector - Enter the jQuery selector syntax to return one or more page elements that is affected by the dynamic action.</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>For Comments, enter developer comments or notes. These comments never display when the application is running.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+<p>The Edit Dynamic Action page displays with the added action listed under True Actions or False Actions.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="advnc_dynamic_edit.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="advnc_dynamic_scope.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

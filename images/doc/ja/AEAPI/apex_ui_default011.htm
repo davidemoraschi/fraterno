@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>UPD_COLUMN Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:40Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="UPD_COLUMN Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_ui_default010.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_ui_default012.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_ui_default010.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_ui_default012.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDIGBHD" name="CHDIGBHD"></a></p>
+<hr />
+<div class="refsect1">
+<h1><a name="AEAPI410" id="AEAPI410"></a>UPD_COLUMN <a id="sthref969" name="sthref969"></a>Procedure</h1>
+<p>If the provided table and column exists within the user's schema's table based User Interface Defaults, the provided parameters are updated. If 'null%' is passed in, the value of the associated parameter is set to null.</p>
+<a id="sthref970" name="sthref970"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_UI_DEFAULT_UPDATE.UPD_COLUMN (
+    p_table_name            IN VARCHAR2,
+    p_column_name           IN VARCHAR2,
+    p_group_id              IN VARCHAR2  DEFAULT NULL,
+    p_label                 IN VARCHAR2  DEFAULT NULL,
+    p_help_text             IN VARCHAR2  DEFAULT NULL,
+    p_display_in_form       IN VARCHAR2  DEFAULT NULL,
+    p_display_seq_form      IN VARCHAR2  DEFAULT NULL,
+    p_mask_form             IN VARCHAR2  DEFAULT NULL,
+    p_default_value         IN VARCHAR2  DEFAULT NULL,
+    p_required              IN VARCHAR2  DEFAULT NULL,
+    p_display_width         IN VARCHAR2  DEFAULT NULL,
+    p_max_width             IN VARCHAR2  DEFAULT NULL,
+    p_height                IN VARCHAR2  DEFAULT NULL,
+    p_display_in_report     IN VARCHAR2  DEFAULT NULL,
+    p_display_seq_report    IN VARCHAR2  DEFAULT NULL,
+    p_mask_report           IN VARCHAR2  DEFAULT NULL,
+    p_alignment             IN VARCHAR2  DEFAULT NULL);
+</pre>
+<a id="sthref971" name="sthref971"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#CHDJAECB">Table: UPD_COLUMN Parameters</a> describes the parameters available in the <code>UPD_COLUMN</code> procedure.</p>
+<div class="tblformal"><a id="sthref972" name="sthref972"></a><a id="CHDJAECB" name="CHDJAECB"></a>
+<p class="titleintable">UPD_COLUMN Parameters</p>
+<table class="Formal" title="UPD_COLUMN Parameters" summary="This table describes the parameters available in the UPD_DISPLAY_IN_FORM procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t14">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t14">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t14" headers="r1c1-t14">
+<p><code>p_table_name</code></p>
+</td>
+<td align="left" headers="r2c1-t14 r1c2-t14">
+<p>Name of table whose column's UI Defaults are being updated</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t14" headers="r1c1-t14">
+<p><code>p_column_name</code></p>
+</td>
+<td align="left" headers="r3c1-t14 r1c2-t14">
+<p>Name of column whose UI Defaults are being updated</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t14" headers="r1c1-t14">
+<p><code>p_group_id</code></p>
+</td>
+<td align="left" headers="r4c1-t14 r1c2-t14">
+<p>id of group to be associated with the column</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t14" headers="r1c1-t14">
+<p><code>p_label</code></p>
+</td>
+<td align="left" headers="r5c1-t14 r1c2-t14">
+<p>When creating a form against this table or view, this will be used as the label for the item if this column is included. When creating a report or tabular form, this will be used as the column heading if this column is included.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t14" headers="r1c1-t14">
+<p><code>p_help_text</code></p>
+</td>
+<td align="left" headers="r6c1-t14 r1c2-t14">
+<p>When creating a form against this table or view, this becomes the help text for the resulting item.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t14" headers="r1c1-t14">
+<p><code>p_display_in_form</code></p>
+</td>
+<td align="left" headers="r7c1-t14 r1c2-t14">
+<p>When creating a form against this table or view, this determines whether this column will be displayed in the resulting form page. Valid values are Y and N.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t14" headers="r1c1-t14">
+<p><code>p_display_seq_form</code></p>
+</td>
+<td align="left" headers="r8c1-t14 r1c2-t14">
+<p>When creating a form against this table or view, this determines the sequence in which the columns will be displayed in the resulting form page.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t14" headers="r1c1-t14">
+<p><code>p_mask_form</code></p>
+</td>
+<td align="left" headers="r9c1-t14 r1c2-t14">
+<p>When creating a form against this table or view, this specifies the mask that will be applied to the item, such as 999-99-9999. This is not used for character based items.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t14" headers="r1c1-t14">
+<p><code>p_default_value</code></p>
+</td>
+<td align="left" headers="r10c1-t14 r1c2-t14">
+<p>When creating a form against this table or view, this specifies the default value for the item resulting from this column.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r11c1-t14" headers="r1c1-t14">
+<p>p_required</p>
+</td>
+<td align="left" headers="r11c1-t14 r1c2-t14">
+<p>When creating a form against this table or view, this specifies to generate a validation in which the resulting item must be NOT NULL. Valid values are Y and N.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r12c1-t14" headers="r1c1-t14">
+<p><code>p_display_width</code></p>
+</td>
+<td align="left" headers="r12c1-t14 r1c2-t14">
+<p>When creating a form against this table or view, this specifies the display width of the item resulting from this column.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r13c1-t14" headers="r1c1-t14">
+<p><code>p_max_width</code></p>
+</td>
+<td align="left" headers="r13c1-t14 r1c2-t14">
+<p>When creating a form against this table or view, this specifies the maximum string length that a user is allowed to enter in the item resulting from this column.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r14c1-t14" headers="r1c1-t14">
+<p><code>p_height</code></p>
+</td>
+<td align="left" headers="r14c1-t14 r1c2-t14">
+<p>When creating a form against this table or view, this specifies the display height of the item resulting from this column.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r15c1-t14" headers="r1c1-t14">
+<p><code>p_display_in_report</code></p>
+</td>
+<td align="left" headers="r15c1-t14 r1c2-t14">
+<p>When creating a report against this table or view, this determines whether this column will be displayed in the resulting report. Valid values are Y and N.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r16c1-t14" headers="r1c1-t14">
+<p><code>p_display_seq_report</code></p>
+</td>
+<td align="left" headers="r16c1-t14 r1c2-t14">
+<p>When creating a report against this table or view, this determines the sequence in which the columns will be displayed in the resulting report.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r17c1-t14" headers="r1c1-t14">
+<p><code>p_mask_report</code></p>
+</td>
+<td align="left" headers="r17c1-t14 r1c2-t14">
+<p>When creating a report against this table or view, this specifies the mask that will be applied against the data, such as 999-99-9999. This is not used for character based items.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r18c1-t14" headers="r1c1-t14">
+<p><code>p_alignment</code></p>
+</td>
+<td align="left" headers="r18c1-t14 r1c2-t14">
+<p>When creating a report against this table or view, this determines the alignment for the resulting report column. Valid values are L for Left, C for Center, and R for Right.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+If <code>p_group_id</code> through <code>p_alignment</code> are set to 'null%', the value will be nullified. If no value is passed in, that column will not be updated.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+<a id="sthref973" name="sthref973"></a>
+<p class="subhead2">Example</p>
+<p>The following example updates the column <code>DEPT_NO</code> within the <code>EMP</code> table definition within the UI Defaults Table Dictionary within the current schema, setting the <code>group_id</code> to null.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN
+    apex_ui_default_update.upd_column (
+       p_table_name    =&gt; 'EMP',
+       p_column_name   =&gt; 'DEPT_NO',
+       p_group_id      =&gt; 'null%' );
+END;
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_ui_default010.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_ui_default012.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

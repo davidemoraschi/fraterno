@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Incorporating JavaScript Functions</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:8Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Incorporating JavaScript Functions" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="app_comp.htm" title="Adding Application Components" type="text/html" />
+<link rel="up" href="bldapp_js.htm" title="Incorporating JavaScript in..." type="text/html" />
+<link rel="up" href="bldapp_js_functions.htm" title="Incorporating JavaScript Fu..." type="text/html" />
+<link rel="prev" href="bldapp_js_items.htm" title="Previous" type="text/html" />
+<link rel="next" href="bldapp_js_but.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="app_comp.htm" title="Adding Application Components">Adding Application Components</a> &gt; <a href="bldapp_js.htm" title="Incorporating JavaScript in...">Incorporating JavaScript in...</a> &gt; Incorporating JavaScript Fu...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="bldapp_js_items.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldapp_js_but.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CIHGHDFA" name="CIHGHDFA"></a></p>
+<div class="sect2">
+<h1><a name="HTMDB25493" id="HTMDB25493"></a>Incorporating JavaScript Functions</h1>
+<p>You can include JavaScript functions by incorporating JavaScript</p>
+<ul>
+<li>
+<p>Editing the JavaScript attribute of the page</p>
+</li>
+<li>
+<p>Calling the .js file from the HTML Header attribute of the page</p>
+</li>
+<li>
+<p>Calling the .js file from the page template</p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="bldapp_cut_about.htm#CEGIDFJH">"Text with JavaScript Escaped Single Quotes"</a> for information about referencing a shortcut inside of a JavaScript literal string</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<a id="sthref1557" name="sthref1557"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#BABHCJGG">Incorporating JavaScript Utilizing the JavaScript Attribute</a></p>
+</li>
+<li>
+<p><a href="#BABIGDIJ">Calling the JavaScript File from the HTML Header Attribute</a></p>
+</li>
+<li>
+<p><a href="#BABCDDBI">Calling the JavaScript File from the Page Template</a></p>
+</li>
+</ul>
+<a id="BABHCJGG" name="BABHCJGG"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25494" id="HTMDB25494"></a>Incorporating JavaScript Utilizing the JavaScript Attribute<a id="sthref1558" name="sthref1558"></a></h2>
+<p>You can include JavaScript into your application by adding it to the JavaScript attribute of the page. This is a good approach for functions that are very specific to a page and a convenient way to test a function before you include it in the <code>.js</code> file.</p>
+<p>In the following example, adding the code would make the <code>test</code> function accessible from anywhere on the current page.</p>
+<p>To add JavaScript code to the JavaScript attribute:</p>
+<ol>
+<li>
+<p>Navigate to the Page Definition. See <a href="bldr_pg_def_access.htm#BABJAICG">"Accessing the Page Definition"</a>.</p>
+</li>
+<li>
+<p>To access the Edit Page:</p>
+<ul>
+<li>
+<p>Tree view - Under Page Rendering, double-click the page title at the top of the tree.</p>
+</li>
+<li>
+<p>Component view- Under Page, click the <span class="bold">Edit</span> icon.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Scroll down to JavaScript.</p>
+</li>
+<li>
+<p>Enter code into the following:</p>
+<ul>
+<li>
+<p><span class="bold">Function and Global Variable Declaration</span> - Enter JavaScript code (for example, functions or global variable declarations) for code to be used on this page. If the code is used on multiple pages, consider putting it into an external JavaScript file to avoid duplication.</p>
+<p>Code you enter here replaces the <code>#JAVASCRIPT_CODE#</code> substitution string in the page template.</p>
+</li>
+<li>
+<p><span class="bold">Execute When Page Loads</span> - Enter JavaScript code to execute when the page loads. The code is executed after the JavaScript code generated by Oracle Application Expresss.</p>
+</li>
+</ul>
+<p>For example, adding the following would test a function accessible from anywhere on the current page.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+  function test(){
+    window.alert('This is a test.');
+  }
+</pre></li>
+<li>
+<p><span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="BABIGDIJ" name="BABIGDIJ"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2>Calling the JavaScript File from the HTML Header Attribute</h2>
+<p>To call a <code>.js</code> file from the HTML Header attribute:</p>
+<ol>
+<li>
+<p>Navigate to the Page Definition. See <a href="bldr_pg_def_access.htm#BABJAICG">"Accessing the Page Definition"</a>.</p>
+</li>
+<li>
+<p>To access the Edit Page:</p>
+<ul>
+<li>
+<p>Tree view - Under Page Rendering, double-click the page title at the top of the tree.</p>
+</li>
+<li>
+<p>Component view- Under Page, click the <span class="bold">Edit</span> icon.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Scroll down to HTML Header and Body Attribute.</p>
+</li>
+<li>
+<p>In HTML Header, call the JavaScript file using the following syntax:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+&lt;script src="/my_images/custom.js" type="text/javascript"&gt;&lt;/script&gt;
+</pre></li>
+<li>
+<p><span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="BABCDDBI" name="BABCDDBI"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25495" id="HTMDB25495"></a>Calling the JavaScript File from the Page Template<a id="sthref1559" name="sthref1559"></a><a id="sthref1560" name="sthref1560"></a></h2>
+<p>In Oracle Application Express, you can reference a <code>.js</code> file in the page template. This approach makes all the JavaScript in that file accessible to the application. This is the most efficient approach since a <code>.js</code> file loads on the first page view of your application and is then cached by the browser.</p>
+<p>The following demonstrates how to include a <code>.js</code> file in the header section of a page template. Note the line <code>script src=</code> that appears in bold.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;#TITLE#&lt;/title&gt;
+    #HEAD#
+    <span class="bold">&lt;script src="/my_images/custom.js" type="text/javascript"&gt;&lt;/script&gt;</span>
+&lt;/head&gt;
+&lt;body #ONLOAD#&gt;#FORM_OPEN#
+</pre>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="ui_templt_page.htm#BABGJFEI">"Page Templates"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="bldapp_js_items.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldapp_js_but.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

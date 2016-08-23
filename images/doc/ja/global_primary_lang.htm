@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Specifying the Primary Language for an Application</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:13Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Specifying the Primary Language for an Application" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="global.htm" title="Managing Application Global..." type="text/html" />
+<link rel="up" href="global_primary_lang.htm" title="Specifying the Primary Lang..." type="text/html" />
+<link rel="prev" href="global_comp.htm" title="Previous" type="text/html" />
+<link rel="next" href="global_format.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="global.htm" title="Managing Application Global...">Managing Application Global...</a> &gt; Specifying the Primary Lang...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="global_comp.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="global_format.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDFFJEJ" name="CHDFFJEJ"></a></p>
+<div class="sect1"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB14002|primary language"></a>Specifying the Primary Language for an <a id="sthref2665" name="sthref2665"></a><a id="sthref2666" name="sthref2666"></a><a id="sthref2667" name="sthref2667"></a><a id="sthref2668" name="sthref2668"></a><a id="sthref2669" name="sthref2669"></a>Application</h1>
+<p>Globalization attributes specify how the Application Express engine determines the primary language of an application.</p>
+<p>To edit globalization attributes:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click the <span class="bold">Application Builder</span> icon.</p>
+</li>
+<li>
+<p>Select an application.</p>
+</li>
+<li>
+<p>Click <span class="bold">Shared Components</span>.</p>
+</li>
+<li>
+<p>Under Globalization, click <span class="bold">Edit Application Attributes</span>.</p>
+</li>
+<li>
+<p>From <span class="bold">Application Primary Language</span>, select the language in which the application is being developed.</p>
+</li>
+<li>
+<p>From <span class="bold">Application Language Derived From</span>, specify how the Application Express engine determines (or derives) the application language. Available options are described in <a href="#BABIHCHA">Table: Application Language Derived From Options</a>.</p>
+<div class="tblformal"><a id="sthref2670" name="sthref2670"></a><a id="BABIHCHA" name="BABIHCHA"></a>
+<p class="titleintable">Application Language Derived From Options</p>
+<table class="Formal" title="Application Language Derived From Options" summary="This table describes the available options in the Application Language Derived From list. The option you select determines how the HTML DB engine determines (or derives) the application language." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="38%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t10">Option</th>
+<th align="left" valign="bottom" id="r1c2-t10">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t10" headers="r1c1-t10">
+<p>No NLS (Application not translated)</p>
+</td>
+<td align="left" headers="r2c1-t10 r1c2-t10">
+<p>Select this option if the application will not be translated.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t10" headers="r1c1-t10">
+<p>Use Application Primary Language</p>
+</td>
+<td align="left" headers="r3c1-t10 r1c2-t10">
+<p>Determines the application's primary language based on the Application Primary Language attribute. (See step 5.)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t10" headers="r1c1-t10">
+<p>Browser (use browser language preference)</p>
+</td>
+<td align="left" headers="r4c1-t10 r1c2-t10">
+<p>Determines the application's primary language based on the user's browser language preference.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t10" headers="r1c1-t10">
+<p>Application Preference (use FSP_LANGUAGE_PREFERENCE)</p>
+</td>
+<td align="left" headers="r5c1-t10 r1c2-t10">
+<p>Determines the application's primary language based on a value defined using the <code>APEX_UTIL</code>.<code>SET_PREFERENCE</code> API. Select this option to maintain the selected language preference across multiple logins.</p>
+<p><span class="bold">See Also:</span> "SET_PREFERENCE Procedure" in <a href="AEAPI/apex_util.htm"><span class="italic">Oracle Application Express API Reference</span></a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t10" headers="r1c1-t10">
+<p>Item Preference (use item containing preference)</p>
+</td>
+<td align="left" headers="r6c1-t10 r1c2-t10">
+<p>Determines the application's primary language based on an application-level item called <code>FSP_LANGUAGE_PREFERENCE</code>. Using this option requires Oracle Application Express to determine the appropriate language preference every time the user logs in.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t10" headers="r1c1-t10">
+<p>Session</p>
+</td>
+<td align="left" headers="r7c1-t10 r1c2-t10">
+<p>Determines the translated application language from the session setting. The Application Express session language can be set via either the <code>APEX_UTIL.SET_SESSION_LANG</code> procedure or by using the <code>p_lang</code> parameter of the <code>"f" procedure</code> in the URL</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></li>
+<li>
+<p>Configure other options as appropriate. To learn more about an attribute, click the item label.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="bldr_attr_standard.htm#CHDGJHDC">"Editing the Application Definition"</a>, <a href="bldr_attr_global.htm#CHDIIHHC">"Configuring Globalization Attributes"</a>, and <a href="global_codes.htm#BABDHCGJ">"About Supported Globalization Codes"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="global_comp.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="global_format.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" --></div>
+</body>
+</html>

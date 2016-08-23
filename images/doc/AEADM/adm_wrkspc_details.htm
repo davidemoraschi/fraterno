@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Viewing and Emailing Workspace Details</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-27T14:38:56Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Viewing and Emailing Workspace Details" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15521-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="adm_wrkspc.htm" title="Oracle Application Express ..." type="text/html" />
+<link rel="up" href="adm_mg_wrkspc.htm" title="Managing Existing Workspaces" type="text/html" />
+<link rel="up" href="adm_wrkspc_details.htm" title="Viewing and Emailing Worksp..." type="text/html" />
+<link rel="prev" href="adm_wrkspc_existing.htm" title="Previous" type="text/html" />
+<link rel="next" href="adm_wrkspc_privs.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="adm_wrkspc.htm" title="Oracle Application Express ...">Oracle Application Express ...</a> &gt; <a href="adm_mg_wrkspc.htm" title="Managing Existing Workspaces">Managing Existing Workspaces</a> &gt; Viewing and Emailing Worksp...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="adm_wrkspc_existing.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_wrkspc_privs.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDFGGFC" name="CHDFGGFC"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEADM273" id="AEADM273"></a>Viewing and<a id="sthref437" name="sthref437"></a><a id="sthref438" name="sthref438"></a><a id="sthref439" name="sthref439"></a><a id="sthref440" name="sthref440"></a> Emailing Workspace Details</h1>
+<p>Instance administrators can view workspace information by viewing the Workspace Summary Report.</p>
+<p>To view workspace details:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Workspaces</span>.</p>
+</li>
+<li>
+<p>Under Workspace Reports, click <span class="bold">Workspace Details</span>.</p>
+<p>The Workspace Details page appears.</p>
+</li>
+<li>
+<p>Make a selection from the Workspace list at the top of the page and click <span class="bold">Set</span>.</p>
+<p>The Workspace Summary Report page appears.</p>
+<img src="img/wrkspc_details.gif" alt="Description of wrkspc_details.gif follows" title="Description of wrkspc_details.gif follows" longdesc="img_text/wrkspc_details.htm" /><br />
+<a id="sthref441" name="sthref441" href="img_text/wrkspc_details.htm">Description of the illustration wrkspc_details.gif</a><br />
+<br /></li>
+<li>
+<p>To email the report:</p>
+<ol>
+<li>
+<p>Click <span class="bold">Email</span> at the top of the page.</p>
+</li>
+<li>
+<p>Edit the fields and click <span class="bold">Email</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>To mange users, click <span class="bold">Manage Users</span> at the top of the page. See <a href="adm_users.htm#BABDIFEI">"Managing Users in an Oracle Application Express Instance"</a>.</p>
+</li>
+</ol>
+<a id="CHDDAIAD" name="CHDDAIAD"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="AEADM274" id="AEADM274"></a>About the Workspace Summary Report</h2>
+<p>The Workspace Summary Report is divided into the following major sections:</p>
+<ul>
+<li>
+<p><span class="bold">Workspace</span>. Displays high-level information about selected workspace.</p>
+</li>
+<li>
+<p><span class="bold">Workspace Schemas</span>. Displays the schema name, and default tablespace, privileges granted, and database role privileges.</p>
+<p>When users log in to Oracle Application Express, they log in to a shared work area called a workspace. Each workspace can have multiple associated schemas. By associating a workspace with a schema, developers can build applications that interact with the objects in that schema and create new database objects in that schema. To edit workspace to schema assignments, click <span class="bold">Workspace to Schema Assignments</span>. See <a href="adm_schema.htm#CIHIEEDI">"Managing Schemas"</a>.</p>
+</li>
+<li>
+<p><span class="bold">Workspace Applications</span>. Lists details about the applications within the workspace.</p>
+</li>
+<li>
+<p><span class="bold">Workspace Websheets</span>. Lists details about the websheets within the workspace.</p>
+</li>
+<li>
+<p><span class="bold">SQL Workshop</span>. Lists the number of SQL scripts, SQL script results, and SQL Command history.</p>
+</li>
+<li>
+<p><span class="bold">Team Development</span>. Lists the number of features, milestones, bugs, To Dos, feedback entries, news entries, and links.</p>
+</li>
+<li>
+<p><span class="bold">Workspace Application Activity Summary</span>. Details statistics about workspace applications.</p>
+</li>
+</ul>
+<p>Other sections include:</p>
+<ul>
+<li>
+<p>Developer Activity Summary</p>
+</li>
+<li>
+<p>Database Object Counts by Object Type</p>
+</li>
+<li>
+<p>5 Top Tables by Row Count, Reported by Schema</p>
+</li>
+</ul>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="adm_wrkspc_existing.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_wrkspc_privs.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

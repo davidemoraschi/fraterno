@@ -1,0 +1,570 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Creating Page-Level Items</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:3Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Creating Page-Level Items" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="bldapp.htm" title="Creating Applications" type="text/html" />
+<link rel="up" href="bldapp_item.htm" title="Understanding Page-Level Items" type="text/html" />
+<link rel="up" href="bldapp_item_pg_create.htm" title="Creating Page-Level Items" type="text/html" />
+<link rel="prev" href="bldapp_item_pg_def.htm" title="Previous" type="text/html" />
+<link rel="next" href="bldapp_item_pg_edit.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="bldapp.htm" title="Creating Applications">Creating Applications</a> &gt; <a href="bldapp_item.htm" title="Understanding Page-Level Items">Understanding Page-Level Items</a> &gt; Creating Page-Level Items</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="bldapp_item_pg_def.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldapp_item_pg_edit.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CEGHEEBA" name="CEGHEEBA"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB25308" id="HTMDB25308"></a>Creating Page-Level <a id="sthref991" name="sthref991"></a>Items</h1>
+<p>You can create page-level items by running the Create Item Wizard.</p>
+<a id="sthref992" name="sthref992"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#CHDBBDGI">About Item Naming Conventions</a></p>
+</li>
+<li>
+<p><a href="#CHDIEDGC">Creating a Page-Level Item on the Page Definition</a></p>
+</li>
+<li>
+<p><a href="#CHDDAIJH">Creating a Static List of Values</a></p>
+</li>
+<li>
+<p><a href="#CHDJDADC">Creating a Cascading List of Values</a></p>
+</li>
+<li>
+<p><a href="#CHDGJGHI">Creating Multiple Items Using a Tabular Form</a></p>
+</li>
+<li>
+<p><a href="#CHDCCJBE">Creating Multiple Items Using Drag and Drop</a></p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="bldapp_item_diffs.htm#CEGGIDGB">"Differences Between Page Items and Application Items"</a> and <a href="item_types.htm#CIHHIECA">"About Item Types"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<a id="CHDBBDGI" name="CHDBBDGI"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25310" id="HTMDB25310"></a>About Item <a id="sthref993" name="sthref993"></a>Naming Conventions<a id="sthref994" name="sthref994"></a><a id="sthref995" name="sthref995"></a></h2>
+<p>When specifying an item name, remember the following rules. Item names must:</p>
+<ul>
+<li>
+<p>Be unique within an application.</p>
+</li>
+<li>
+<p>Not include quotation marks.</p>
+</li>
+<li>
+<p>Begin with a letter or a number, and subsequent characters can be letters, numbers, or underscore characters.</p>
+</li>
+<li>
+<p>Be case-insensitive.</p>
+</li>
+<li>
+<p>Should not exceed 30 characters. Items longer than 30 characters cannot be referenced using bind variable syntax. See <a href="concept_bind_var.htm#BEIEGCCC">"About Bind Variable Syntax"</a>.</p>
+</li>
+<li>
+<p>Cannot contain letters outside the base ASCII character set</p>
+</li>
+</ul>
+<p>As a best practice Oracle recommends including the page number when naming items. By default, wizards prefix page item names with <code>P</code><code><span class="codeinlineitalic">&lt;page no&gt;</span></code>_ (for example, <code>P1_NAME</code>.</p>
+</div>
+<!-- class="sect3" -->
+<a id="CHDIEDGC" name="CHDIEDGC"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25309" id="HTMDB25309"></a>Creating a Page-Level Item<a id="sthref996" name="sthref996"></a> on the Page Definition</h2>
+<p>You create a page-level item by running the Create Item Wizard from the Page Definition.</p>
+<p>To create a page-level item:</p>
+<ol>
+<li>
+<p>Navigate to the appropriate Page Definition. See <a href="bldr_pg_def_access.htm#BABJAICG">"Accessing the Page Definition"</a>.</p>
+</li>
+<li>
+<p>If necessary, create an HTML region. See <a href="ui_region.htm#CHDCIJJE">"Understanding Regions"</a>.</p>
+</li>
+<li>
+<p>To access the Create Item Wizard:</p>
+<ul>
+<li>
+<p>Tree view - Under Page Rending, right-click the region to contain the item and select <span class="bold">Create Page Item</span>.</p>
+</li>
+<li>
+<p>Component view - Under Items, click the <span class="bold">Create</span> icon.</p>
+</li>
+</ul>
+<p>The Create Item Wizard appears.</p>
+</li>
+<li>
+<p>Select an item type. See <a href="item_types.htm#CIHHIECA">"About Item Types"</a>.</p>
+<p>When creating a Popup LOV, Color Picker, or Text Field with Calculator Popup, select <span class="bold">Popup List of Values</span> and then the specific popup list of values type.</p>
+</li>
+<li>
+<p>For Display Position and Name:</p>
+<ol>
+<li>
+<p>Item Name - Enter a name used to retrieve the value of the item. See <a href="#CHDBBDGI">"About Item Naming Conventions"</a>.</p>
+</li>
+<li>
+<p>Sequence - Specify the sequence for this component. The sequence determines the order of evaluation.</p>
+</li>
+<li>
+<p>Region - Select a region to contain this item.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Follow the on-screen instructions.</p>
+</li>
+<li>
+<p>To learn more about a specific field, click the field label.</p>
+<p>When help is available, the item label changes to red when you pass your cursor over it, and the cursor changes to an arrow and question mark. See <a href="start_hlp.htm#BABDGBDB">"About Field-Level Help"</a>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CHDDAIJH" name="CHDDAIJH"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25314" id="HTMDB25314"></a>Creating a Static List of <a id="sthref997" name="sthref997"></a>Values</h2>
+<p>One way to create a static list of values is to edit an item's List of Values definition. Note that this type of list of values is not reusable. As a best practice, create a list of values as a shared component whenever possible.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="bldapp_lov.htm#CHDFGFHI">"Creating Lists of Values at the Application Level"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<p>To create a static list of values:</p>
+<ol>
+<li>
+<p>Navigate to the appropriate Page Definition. See <a href="bldr_pg_def_access.htm#BABJAICG">"Accessing the Page Definition"</a>.</p>
+</li>
+<li>
+<p>Access the attributes page for the item:</p>
+<ul>
+<li>
+<p>Tree view - Right-click on the item and select <span class="bold">Edit</span>.</p>
+</li>
+<li>
+<p>Component view -Under Items, select the item name.</p>
+</li>
+</ul>
+<p>The Edit Page Item page appears.</p>
+</li>
+<li>
+<p>Under Name, specify how the item will be rendered. From Display As, select Select List.</p>
+</li>
+<li>
+<p>Scroll down to List of Values.</p>
+</li>
+<li>
+<p>Under List of Values, create a static list of values:</p>
+<ol>
+<li>
+<p>From Named LOV, select <span class="bold">Select Named LOV</span>.</p>
+</li>
+<li>
+<p>In List of values definition, enter a definition using the following syntax:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+STATIC[2]:<span class="italic">Display Value</span>[;<span class="italic">Return Value</span>],<span class="italic">Display Value</span>[;<span class="italic">Return Value</span>]
+</pre>
+<p>Where:</p>
+<ul>
+<li>
+<p>The first keyword may be <code>STATIC</code> or <code>STATIC2</code>.</p>
+<p><code>STATIC</code> results in the values being sorted alphabetically by display value. <code>STATIC2</code> results in the values being displayed in the order they are entered in the list.</p>
+</li>
+<li>
+<p>A semicolon separates the display value from the return value in each entry.</p>
+</li>
+<li>
+<p><code>Return Value</code> is optional. If a <code>Return Value</code> is not included, the return value is the same as the display value.</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>To learn more, see item Help. To view help for a specific item on a page, click the item label.</p>
+<p>When help is available, the item label changes to red when you pass your cursor over it and the cursor changes to an arrow and question mark. See <a href="start_hlp.htm#BABDGBDB">"About Field-Level Help"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+<p>The examples that follow demonstrate syntax for three different static LOVs.</p>
+</li>
+</ol>
+<div class="sect4"><!-- infolevel="all" infotype="General" --><a id="sthref998" name="sthref998"></a>
+<h3><a name="HTMDB25315" id="HTMDB25315"></a>Example 1: Four Values Displayed in Alphabetical Order</h3>
+<p>In this example, the list of values has four values (Cow, Dog, Cat, and Lion) that display in alphabetical order. The return value of each entry equals the display value.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+STATIC:Cow,Dog,Cat,Lion
+</pre></div>
+<!-- class="sect4" -->
+<div class="sect4"><!-- infolevel="all" infotype="General" --><a id="sthref999" name="sthref999"></a>
+<h3><a name="HTMDB25316" id="HTMDB25316"></a>Example 2: Ten Values Displayed in the Order Listed</h3>
+<p>In this example, the list of values has ten values that display in the order listed in the definition. The return value of each entry equals the display value.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+STATIC2:10,15,20,25,50,100,200,500,1000,10000
+</pre></div>
+<!-- class="sect4" -->
+<div class="sect4"><!-- infolevel="all" infotype="General" --><a id="sthref1000" name="sthref1000"></a>
+<h3><a name="HTMDB25317" id="HTMDB25317"></a>Example 3: A List of Values with Having Both a Return and Display Value</h3>
+<p>In this example, the list of values has two values: <code>Yes</code> and <code>No</code> (the display value <code>Yes</code> and its return value <code>Y</code>, and the display value <code>No</code> and its return value <code>N</code>).</p>
+<pre xml:space="preserve" class="oac_no_warn">
+STATIC:Yes;Y,No;N
+</pre></div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<a id="CHDJDADC" name="CHDJDADC"></a>
+<div class="sect3">
+<h2><a name="HTMDB05014|dependent select lists"></a>Creating a Cascading List of <a id="sthref1001" name="sthref1001"></a><a id="sthref1002" name="sthref1002"></a><a id="sthref1003" name="sthref1003"></a><a id="sthref1004" name="sthref1004"></a><a id="sthref1005" name="sthref1005"></a><a id="sthref1006" name="sthref1006"></a><a id="sthref1007" name="sthref1007"></a>Values</h2>
+<p>By creating a cascading list of values (LOV), one item on a page determines the list of values for another item. Application Builder includes cascading LOV support for the following item types: Select List, Shuttle, Checkbox, Radio Group, Popup LOV, and List Manager. To learn more about item types, see <a href="item_types.htm#CIHHIECA">About Item Types</a>.</p>
+<p>You create a cascading LOV by creating two items. To populate the second item, you specify a Cascading LOV Parent Item when running the Create Item Wizard or by editing the item's attributes.</p>
+<p>The following example demonstrates how to create two related select lists where the value of the first list populates the second.</p>
+<p>To a cascading list of values:</p>
+<ol>
+<li>
+<p>Create the first item and name it P1_DEPTNO:</p>
+<ol>
+<li>
+<p>Create a select list item. See <a href="#CHDIEDGC">"Creating a Page-Level Item on the Page Definition"</a>.</p>
+</li>
+<li>
+<p>For Item Type, select <span class="bold">Select List</span>.</p>
+</li>
+<li>
+<p>For Display Position and Name:</p>
+<ul>
+<li>
+<p>Item Name - Enter:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+P1_DEPTNO
+</pre></li>
+<li>
+<p>Accept the remaining defaults and click <span class="bold">Next</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Item Attributes:</p>
+<ul>
+<li>
+<p>Label - Enter <code>Department</code></p>
+</li>
+<li>
+<p>Accept the remaining defaults and click <span class="bold">Next</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Settings, accept the defaults and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For List of Values:</p>
+<ul>
+<li>
+<p>Display Null Value - Accept the default, <span class="bold">Yes</span>.</p>
+</li>
+<li>
+<p>Null Display Value - Enter - Select Department -</p>
+<pre xml:space="preserve" class="oac_no_warn">
+- Select Department -
+</pre></li>
+<li>
+<p>In List of values definition, enter:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT dname as d,
+       deptno as r
+  FROM dept
+ ORDER BY dname
+</pre></li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Accept the remaining defaults.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create Item</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Create the second item named <code>P1_EMPNO</code>:</p>
+<ol>
+<li>
+<p>Create a second item. See <a href="#CHDIEDGC">"Creating a Page-Level Item on the Page Definition"</a>.</p>
+</li>
+<li>
+<p>For Item Type, select <span class="bold">Select List</span>.</p>
+</li>
+<li>
+<p>For Display Position and Name:</p>
+<ul>
+<li>
+<p>Item Name - Enter:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+P1_EMPNO
+</pre></li>
+<li>
+<p>Accept the remaining defaults and click <span class="bold">Next</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Item Attributes:</p>
+<ul>
+<li>
+<p>Label - Enter <code>Employee.</code></p>
+</li>
+<li>
+<p>Accept the remaining defaults and click <span class="bold">Next</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Settings, accept the defaults and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For List of Values:</p>
+<ul>
+<li>
+<p>Display Null Value - Accept the default, <span class="bold">Yes</span>.</p>
+</li>
+<li>
+<p>Null Display Value - Enter - Select Department -</p>
+<pre xml:space="preserve" class="oac_no_warn">
+- Select Employee -
+</pre></li>
+<li>
+<p>From Cascading LOV Parent Item(s) - Select <span class="bold">P1_DEPTNO</span>.</p>
+</li>
+<li>
+<p>In List of values definition, enter:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT ename as d,
+       empno as r
+  FROM emp
+ WHERE deptno = :P1_DEPTNO
+ ORDER BY ename
+</pre></li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Accept the remaining defaults.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create Item</span>.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>Two select lists appear. Making a selection in the Department select list, determines which individuals display in the Employees select list.</p>
+<img src="img/cascading_lov.gif" alt="Description of cascading_lov.gif follows" title="Description of cascading_lov.gif follows" longdesc="img_text/cascading_lov.htm" /><br />
+<a id="sthref1008" name="sthref1008" href="img_text/cascading_lov.htm">Description of the illustration cascading_lov.gif</a><br />
+<br />
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+, <a href="bldapp_item_pg_edit.htm#CEGBHICA">"Editing Page-Level Items"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect3" -->
+<a id="CHDGJGHI" name="CHDGJGHI"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25312" id="HTMDB25312"></a>Creating Multiple <a id="sthref1009" name="sthref1009"></a>Items Using a Tabular Form</h2>
+<p>To create multiple items simultaneously:</p>
+<ol>
+<li>
+<p>Navigate to the appropriate Page Definition. See <a href="bldr_pg_def_access.htm#BABJAICG">"Accessing the Page Definition"</a>.</p>
+</li>
+<li>
+<p>If necessary, create an HTML region. See <a href="ui_region.htm#CHDCIJJE">"Understanding Regions"</a>.</p>
+</li>
+<li>
+<p>To access the Create Item Wizard:</p>
+<ul>
+<li>
+<p>Tree view - Under Page Rending, right-click the region to contain the item and select <span class="bold">Create Page Item</span>.</p>
+</li>
+<li>
+<p>Component view - Under Items, click the <span class="bold">Create</span> icon.</p>
+</li>
+</ul>
+<p>The Create Item Wizard appears.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Create multiple items using tabular form</span> link at the bottom of the page.</p>
+</li>
+<li>
+<p>On the Create Multiple Items page, specify the following:</p>
+<ol>
+<li>
+<p>Create Item(s) in Region - Select the region to contain the items.</p>
+</li>
+<li>
+<p>Item Template - Select an item template.</p>
+</li>
+<li>
+<p>For each item, enter the Sequence, Name, Label, Type and specify whether the item should be cached.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <span class="bold">Create Multiple Items</span>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="bldapp_item_pg_def.htm#CEGHJIGD">"About the Drag and Drop Icon"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect3" -->
+<a id="CHDCCJBE" name="CHDCCJBE"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25313" id="HTMDB25313"></a>Creating Multiple <a id="sthref1010" name="sthref1010"></a>Items Using Drag and Drop</h2>
+<p>To create multiple items using the Drag and Drop Layout page:</p>
+<ol>
+<li>
+<p>Navigate to the appropriate Page Definition. See <a href="bldr_pg_def_access.htm#BABJAICG">"Accessing the Page Definition"</a>.</p>
+</li>
+<li>
+<p>If necessary, create an HTML region. See <a href="ui_region.htm#CHDCIJJE">"Understanding Regions"</a>.</p>
+</li>
+<li>
+<p>To access the Drag and Drop Layout page:</p>
+<ul>
+<li>
+<p>Tree view - Under Page Rending, right-click on the region and select <span class="bold">Drag and Drop Layout</span>.</p>
+</li>
+<li>
+<p>Component view - Under Items, click the <span class="bold">Drag and Drop Layout</span> icon.</p>
+</li>
+</ul>
+<p>The Drag and Drop Layout page appears.</p>
+</li>
+<li>
+<p>Select an item from the palette on the left side of the page and drag it to the appropriate position on the page.</p>
+</li>
+<li>
+<p>Edit the item attributes at the of the page.</p>
+<ol>
+<li>
+<p>Item Name - Enter a name used to retrieve the value of the item. See <a href="#CHDBBDGI">"About Item Naming Conventions"</a>.</p>
+</li>
+<li>
+<p>Label - Enter the label for this item. You may include HTML, JavaScript, and shortcuts. You can also use the substitution string <code>#CURRENT_ITEM_NAME#</code> to obtain the name of the item associated with this label.</p>
+</li>
+<li>
+<p>Display Type - Select a display type (if applicable). See <a href="item_types.htm#CIHHIECA">"About Item Types"</a>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>To edit an existing item, select the item and then edit the Item Name and Label fields, or select a new Display Type at the top of the page.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Optionally, edit the each item's Name and Label.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="bldapp_item_pg_edit.htm#CEGIDJHF">"Using the Drag and Drop Layout Page"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="bldapp_item_pg_def.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldapp_item_pg_edit.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

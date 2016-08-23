@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Creating a Page Computation</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:1Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Creating a Page Computation" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="bldr_pgs.htm" title="Working with Application Pages" type="text/html" />
+<link rel="up" href="bldr_pg_comp.htm" title="Understanding Page Computat..." type="text/html" />
+<link rel="up" href="bldr_pg_comp_create.htm" title="Creating a Page Computation" type="text/html" />
+<link rel="prev" href="bldr_pg_comp.htm" title="Previous" type="text/html" />
+<link rel="next" href="bldr_pg_comp_syntax.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="bldr_pgs.htm" title="Working with Application Pages">Working with Application Pages</a> &gt; <a href="bldr_pg_comp.htm" title="Understanding Page Computat...">Understanding Page Computat...</a> &gt; Creating a Page Computation</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="bldr_pg_comp.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldr_pg_comp_syntax.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABBHDCA" name="BABBHDCA"></a></p>
+<div class="sect2">
+<h1><a name="HTMDB25136" id="HTMDB25136"></a>Creating a Page Computation<a id="sthref709" name="sthref709"></a></h1>
+<p>A page computation assigns a value to an identified item when a page is displayed or submitted (rendered and processed).You create a page computation by running the <a id="sthref710" name="sthref710"></a><a id="sthref711" name="sthref711"></a>Create Page Computation Wizard. For each computation, specify the item for which you are creating the computation and a computation type.</p>
+<p>To create a page computation:</p>
+<ol>
+<li>
+<p>Navigate to the appropriate Page Definition. See <a href="bldr_pg_def_access.htm#BABJAICG">"Accessing the Page Definition"</a>.</p>
+</li>
+<li>
+<p>Access the Create Computation Wizard:</p>
+<ul>
+<li>
+<p>Tree view - Under the appropriate event, locate Computations. Right-click and select <span class="bold">Create</span>.</p>
+</li>
+<li>
+<p>Component view - Under Computations, click the <span class="bold">Create</span> icon.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Item Type, select where the computation will execute and click <span class="bold">Next</span>. Location options include:</p>
+<ul>
+<li>
+<p>Item on Another Page</p>
+</li>
+<li>
+<p>Item on This Page</p>
+</li>
+<li>
+<p>Application Level Item</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Item, select the item and computation point at which you would like to perform the computation:</p>
+<ol>
+<li>
+<p>Compute Item - Select the item the computation will update.</p>
+</li>
+<li>
+<p>Sequence - Select the order of evaluation.</p>
+</li>
+<li>
+<p>Computation Point - Select the point at which the computation executes. The computation point <span class="bold">On New Instance</span> executes the computation when a new session (or instance) is generated.</p>
+</li>
+<li>
+<p>Computation Type - Select the method of computation you want to create.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>In Computation, enter a computation that corresponds to the selected computation type and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>On Condition, you can choose to make the computation conditional. To make a computation conditional, make a selection from the Condition Type list and enter text in the expression fields.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="bldr_pg_comp.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldr_pg_comp_syntax.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

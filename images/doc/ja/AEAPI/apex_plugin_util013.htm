@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>GET_POSITION_IN_LIST Function</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:40Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="GET_POSITION_IN_LIST Function" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_plugin_util012.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_plugin_util014.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_plugin_util012.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin_util014.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABCBEJA" name="BABCBEJA"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>GET_POSITION_IN_LIST <a id="sthref858" name="sthref858"></a>Function</h1>
+<p>This function returns the position in the list where p_value is stored. If it is not found, null is returned.</p>
+<a id="sthref859" name="sthref859"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_PLUGIN_UTIL.GET_POSITION_IN_LIST(
+    p_list IN wwv_flow_global.vc_arr2,
+    p_value IN VARCHAR2)
+RETURN NUMBER;
+</pre>
+<a id="sthref860" name="sthref860"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#BABGEHFA">Table: GET_POSITION_IN_LIST Parameters</a> describes the parameters available in the <code>GET_POSITION_IN_LIST</code> function.</p>
+<div class="tblformal"><a id="sthref861" name="sthref861"></a><a id="BABGEHFA" name="BABGEHFA"></a>
+<p class="titleintable">GET_POSITION_IN_LIST Parameters</p>
+<table class="Formal" title="GET_POSITION_IN_LIST Parameters" summary="This table describes the parameters available in the GET_POSITION_IN_LIST function." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="38%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t18">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t18">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t18" headers="r1c1-t18">
+<p><code>p_list</code></p>
+</td>
+<td align="left" headers="r2c1-t18 r1c2-t18">
+<p>Array of type <code>wwv_flow_global.vc_arr2</code> that contains entries of type VARCHAR2.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t18" headers="r1c1-t18">
+<p><code>p_value</code></p>
+</td>
+<td align="left" headers="r3c1-t18 r1c2-t18">
+<p>Value located in the <code>p_list</code> array.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref862" name="sthref862"></a>
+<p class="subhead2">Return</p>
+<p><a href="#BABBEAJD">Table: GET_POSITION_IN_LIST Return</a> describes the return value by the GET_POISTION_IN_LIST function.</p>
+<div class="tblformal"><a id="sthref863" name="sthref863"></a><a id="BABBEAJD" name="BABBEAJD"></a>
+<p class="titleintable">GET_POSITION_IN_LIST Return</p>
+<table class="Formal" title="GET_POSITION_IN_LIST Return" summary="This table describes the returns for the GET_POSITION_IN_LIST function." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t19">Return</th>
+<th align="left" valign="bottom" id="r1c2-t19">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t19" headers="r1c1-t19">
+<p><code>NUMBER</code></p>
+</td>
+<td align="left" headers="r2c1-t19 r1c2-t19">
+<p>Returns the position of <code>p_value</code> in the array <code>p_list</code>. If it is not found <code>NULL</code> is returned.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref864" name="sthref864"></a>
+<p class="subhead2">Example</p>
+<p>The following example will search for "New York" in the provided list and will return <code>2</code> into <code>l_position</code>.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+declare
+    l_list     wwv_flow_global.vc_arr2;
+    l_position number;
+begin
+    l_list(1) := 'Rome';
+    l_list(2) := 'New York';
+    l_list(3) := 'Vienna';
+    
+    l_position := apex_plugin_util.get_position_in_list (
+                      p_list  =&gt; l_list,
+                      p_value =&gt; 'New York' );
+end;
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_plugin_util012.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin_util014.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

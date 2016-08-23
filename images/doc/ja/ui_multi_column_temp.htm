@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Creating a Multiple Column Page Template</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:9Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Creating a Multiple Column Page Template" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="ui.htm" title="Controlling Page Layout" type="text/html" />
+<link rel="up" href="ui_multi_column.htm" title="Creating a Multiple Column ..." type="text/html" />
+<link rel="up" href="ui_multi_column_temp.htm" title="Creating a Multiple Column ..." type="text/html" />
+<link rel="prev" href="ui_multi_column_reg.htm" title="Previous" type="text/html" />
+<link rel="next" href="ui_item_attr.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="ui.htm" title="Controlling Page Layout">Controlling Page Layout</a> &gt; <a href="ui_multi_column.htm" title="Creating a Multiple Column ...">Creating a Multiple Column ...</a> &gt; Creating a Multiple Column ...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="ui_multi_column_reg.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="ui_item_attr.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BGBDDIFE" name="BGBDDIFE"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB25581" id="HTMDB25581"></a>Creating a Multiple Column Page Template</h1>
+<p>Page templates define the appearance of individual pages, including the placement of page controls and components. Each page template is divided into three sections: Header, Body, and Footer. The most basic template must include the substitution string <code>#BOX_BODY#</code> in the Body attribute. When the page is rendered, the Application Express engine replaces <code>#BOX_BODY#</code> with HTML to display the regions on that page.</p>
+<p>You can create a multiple column page by defining a page template that contains a multiple column table. You then explicitly place regions within specific table cells.</p>
+<p>The following example demonstrates how to create a two-column page and specify a region position using the <code>#REGION_POSITION_XX#</code> substitution string in each column. You would enter the code in the Body section of the page-level template as shown in the following example.:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+&lt;body #ONLOAD#&gt;
+  #FORM_OPEN#
+  &lt;table style="width:100%"&gt;
+    &lt;tr&gt;
+      &lt;td style="width:50%;padding:5px;"&gt;#REGION_POSITION_01#&lt;/td&gt;
+      &lt;td style="width:50%; border-left:2px #bbbbbb dashed; padding:5px;"&gt;#REGION_POSITION_02#&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;br /&gt;
+  #BOX_BODY#
+  #FORM_CLOSE#
+&lt;/body&gt;
+</pre>
+<p>The following is an alternative DIV-based example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+&lt;body #ONLOAD#&gt;
+  #FORM_OPEN#
+  &lt;div style="width:100%"&gt;
+    &lt;div style="float:left;width:50%;"&gt;#REGION_POSITION_01#&lt;/div&gt;
+    &lt;div style="float:left;width:50%;"&gt;#REGION_POSITION_02#&lt;/div&gt;
+  &lt;/div&gt;
+  #BOX_BODY#
+  #FORM_CLOSE#
+&lt;/body&gt;
+</pre>
+<p>Once you create this page-level template, the newly defined positions would be available as Display Point options when you run the Create Region Wizard.</p>
+</div>
+<!-- class="sect2" -->
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="ui_multi_column_reg.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="ui_item_attr.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

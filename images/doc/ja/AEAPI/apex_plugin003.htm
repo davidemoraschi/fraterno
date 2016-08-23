@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>GET_INPUT_NAME_FOR_PAGE_ITEM Function</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:39Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="GET_INPUT_NAME_FOR_PAGE_ITEM Function" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_plugin002.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_plugin_util.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_plugin002.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin_util.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BAJFIDIG" name="BAJFIDIG"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>GET_INPUT_NAME_FOR_PAGE_ITEM <a id="sthref782" name="sthref782"></a>Function</h1>
+<p>This function is used when you want to render an HTML input element in the rendering function of an item type plug-in.For the HTML input element, for example, &lt;<code>input type="text" id="P1_TEST" name="xxx"&gt;</code>, you have to provide a value for the <code>name</code> attribute so that Oracle Application Express is able to map the submitted value to the actual page item in session state. This function returns the mapping <code>name</code> for your page item. If the HTML input element has multiple values, such as a select list with <code>multiple="multiple"</code>, then set <code>p_is_multi_value</code> to true.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+This function is only useful when called in the rendering function of an item type plug-in.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+<a id="sthref783" name="sthref783"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_PLUGIN.GET_INPUT_NAME_FOR_PAGE_ITEM (
+    p_is_multi_value  IN BOOLEAN)
+RETURN VARCHAR2;
+</pre>
+<a id="sthref784" name="sthref784"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#BAJDJCGC">Table: GET_INPUT_NAME_FOR_PAGE_ITEM Parameters</a> describes the parameters available in the GET_INPUT_NAME_FOR_PAGE_ITEM function.</p>
+<div class="tblformal"><a id="sthref785" name="sthref785"></a><a id="BAJDJCGC" name="BAJDJCGC"></a>
+<p class="titleintable">GET_INPUT_NAME_FOR_PAGE_ITEM Parameters</p>
+<table class="Formal" title="GET_INPUT_NAME_FOR_PAGE_ITEM Parameters" summary="This table describes the parameters available in the CACHE_GET_DATE_OF_PAGE_CACHE procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t4">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t4">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t4" headers="r1c1-t4">
+<p><code>p_is_multi_value</code></p>
+</td>
+<td align="left" headers="r2c1-t4 r1c2-t4">
+<p>Set to <code>TRUE</code> if the HTML input element has multiple values. If not, set to <code>FALSE</code>. HTML input elements with multiple values can be checkboxes and multi select lists.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref786" name="sthref786"></a>
+<p class="subhead2">Example</p>
+<p>The following example outputs the necessary HTML code to render a text field where the value gets stored in session state when the page is submitted.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+sys.htp.prn (
+    '&lt;input type="text" id="'||p_item.name||'" '||
+    'name="'||wwv_flow_plugin.get_input_name_for_page_item(false)||'" '||
+    'value="'||sys.htf.escape_sc(p_value)||'" '||
+    'size="'||p_item.element_width||'" '||
+    'maxlength="'||p_item.element_max_length||'" '||
+    coalesce(p_item.element_attributes, 'class="text_field"')||' /&gt;' );
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_plugin002.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin_util.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

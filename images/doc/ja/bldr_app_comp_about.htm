@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>About Application Computations</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:1Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="About Application Computations" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="bldr_pgs.htm" title="Working with Application Pages" type="text/html" />
+<link rel="up" href="bldr_app_comp.htm" title="Understanding Application C..." type="text/html" />
+<link rel="up" href="bldr_app_comp_about.htm" title="About Application Computations" type="text/html" />
+<link rel="prev" href="bldr_app_comp.htm" title="Previous" type="text/html" />
+<link rel="next" href="bldr_app_comp_create.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="bldr_pgs.htm" title="Working with Application Pages">Working with Application Pages</a> &gt; <a href="bldr_app_comp.htm" title="Understanding Application C...">Understanding Application C...</a> &gt; About Application Computations</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="bldr_app_comp.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldr_app_comp_create.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABFHDCD" name="BABFHDCD"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB25217" id="HTMDB25217"></a>About Application Computations<a id="sthref844" name="sthref844"></a></h1>
+<p>A common use of an application item is to store the value of the last page viewed in the application. By storing the value in an item, you can add a back button and then redirect the user to the page number captured by the computation. This type of computation works well, for example, when you need to enable users to back out of an error page.</p>
+<p>The following is an example of a computation that stores the last page visited. In this example, the computation:</p>
+<ul>
+<li>
+<p>Stores the last application page visited to an item named <code>LAST_PAGE</code></p>
+</li>
+<li>
+<p>Checks that the value of a <code>CURRENT_PAGE_ITEM</code> is of type PL/SQL Function Body with a Computation body of:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN
+   :LAST_PAGE := nvl(:CURRENT_PAGE,:APP_PAGE_ID);
+   :CURRENT_PAGE := :APP_PAGE_ID;
+   RETURN :LAST_PAGE;
+END;
+</pre></li>
+</ul>
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref845" name="sthref845"></a>
+<h2><a name="HTMDB25218" id="HTMDB25218"></a>About Application Computations that Execute On New Instance<a id="sthref846" name="sthref846"></a></h2>
+<p>Typically an application computation runs at the same point across multiple pages in an application. The exception is computations having a Computation Point of <span class="bold">On New Instance</span>. This type of computation only runs when a user first accesses your application. This type of computation is useful when you need to only retrieve information once within a user's session (for example, to retrieve a user's job title).</p>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="bldr_app_comp.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldr_app_comp_create.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

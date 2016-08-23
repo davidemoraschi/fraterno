@@ -1,0 +1,852 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Understanding Session State Protection</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:11Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Understanding Session State Protection" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="sec.htm" title="Managing Application Security" type="text/html" />
+<link rel="up" href="sec_dev.htm" title="Understanding Developer Sec..." type="text/html" />
+<link rel="up" href="sec_session_protection.htm" title="Understanding Session State..." type="text/html" />
+<link rel="prev" href="sec_session_encrypt.htm" title="Previous" type="text/html" />
+<link rel="next" href="sec_sec_upload.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="sec.htm" title="Managing Application Security">Managing Application Security</a> &gt; <a href="sec_dev.htm" title="Understanding Developer Sec...">Understanding Developer Sec...</a> &gt; Understanding Session State...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="sec_session_encrypt.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="sec_sec_upload.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CDDGIGJH" name="CDDGIGJH"></a></p>
+<div class="sect2">
+<h1><a name="HTMDB12002|Session State Protection"></a>Understanding Session State <a id="sthref2268" name="sthref2268"></a>Protection</h1>
+<p>Session State Protection is a built-in functionality that prevents hackers from tampering with the URLs within your application. URL tampering can adversely affect program logic, session state contents, and information privacy.</p>
+<p>Enabling Session State Protection is a two-step process. First, you enable the feature. Second, you set page and item security attributes.</p>
+<a id="sthref2269" name="sthref2269"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#CDDCJBJI">How Session State Protection Works</a></p>
+</li>
+<li>
+<p><a href="#CDDGHCHI">Enabling Session State Protection</a></p>
+</li>
+<li>
+<p><a href="#CDDJAJEH">Configuring Session State Protection</a></p>
+</li>
+</ul>
+<a id="CDDCJBJI" name="CDDCJBJI"></a>
+<div class="sect3">
+<h2><a name="HTMDB25754" id="HTMDB25754"></a>How Session State Protection <a id="sthref2270" name="sthref2270"></a>Works</h2>
+<p>When enabled, Session State Protection uses the Page Access Protection attributes and the Session State Protection item attributes with checksums positioned in <code>f?p=</code> URLs to prevent URL tampering and unauthorized access to and alteration of session state. When Session State Protection is disabled, the page and item attributes related to session state protection are ignored and checksums are not included checksums in generated <code>f?p=</code> URLs.</p>
+</div>
+<!-- class="sect3" -->
+<a id="CDDGHCHI" name="CDDGHCHI"></a>
+<div class="sect3">
+<h2><a name="HTMDB25755" id="HTMDB25755"></a>Enabling Session State <a id="sthref2271" name="sthref2271"></a><a id="sthref2272" name="sthref2272"></a>Protection</h2>
+<p>You can enable session state protection from either the Edit Security Attributes page or the Session State Protection page.</p>
+<p>Enabling Session State Protection is a two-step process. First, you enable the feature. Second, you set page and item security attributes. You can perform these steps using a wizard, or you can set security attributes for pages and items manually on the Session State Protection page.</p>
+<a id="sthref2273" name="sthref2273"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#CDDIFBDA">Enabling Session State Protection from Edit Security Attributes</a></p>
+</li>
+<li>
+<p><a href="#CDDIEDGG">Enabling Session State Protection from Session State Protection</a></p>
+</li>
+</ul>
+<a id="CDDIFBDA" name="CDDIFBDA"></a>
+<div class="sect4">
+<h3><a name="HTMDB25756" id="HTMDB25756"></a>Enabling Session State Protection from Edit Security <a id="sthref2274" name="sthref2274"></a>Attributes</h3>
+<p>To enable Session State Protection from the Edit Security Attributes page:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click the <span class="bold">Application Builder</span> icon.</p>
+</li>
+<li>
+<p>Select an application.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Shared Components</span> icon.</p>
+</li>
+<li>
+<p>Under Security, click <span class="bold">Security Attributes</span>.</p>
+</li>
+<li>
+<p>Scroll down to Session State Protection and select <span class="bold">Enabled</span> from the Session State Protection list.</p>
+</li>
+<li>
+<p>To configure session Session State Protection, click <span class="bold">Manage Session State Protection</span>.</p>
+<p>The Session State Projection page appears.</p>
+</li>
+<li>
+<p>To enable, disable, or configure Session State Protection using a wizard, click <span class="bold">Set Protection</span>.</p>
+</li>
+<li>
+<p>Otherwise, navigate to the appropriate page or item attributes page and configure the Security attributes.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Tip:</p>
+To disable Session State Protection, perform the same steps again, but select <span class="bold">Disabled</span> instead of <span class="bold">Enabled</span>. Disabling Session State Protection will not change existing security attribute settings, but those attributes will be ignored at run time.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<div class="sect4"><!-- infolevel="all" infotype="General" --><a id="sthref2275" name="sthref2275"></a>
+<h3><a name="HTMDB25757" id="HTMDB25757"></a>About the Expire Bookmarks Button</h3>
+<p>Enabling Session State Protection affects whether bookmarked links to the current application will work. Consider the following rules:</p>
+<ol>
+<li>
+<p>Bookmarked links created after Session State Protection is enabled will work if the bookmarked link contains a checksum.</p>
+</li>
+<li>
+<p>Bookmarked links created before Session State Protection is enabled will not work if the bookmarked link contains a checksum.</p>
+</li>
+<li>
+<p>Bookmarks that do not contain checksums or contain unnecessary checksums will not be affected by Session State Protection.</p>
+</li>
+</ol>
+<p>During page rendering, the Application Express engine uses a hidden application attribute (a checksum salt) during computation and to verify checksums included in <code>f?p</code> URLs. When you enable Session State Protection, the Application Express engine includes checksums. You can reset the checksum salt attribute by clicking <span class="bold">Expire Bookmarks</span> on the Edit Security Attributes page. Note that if you click <span class="bold">Expire Bookmarks,</span> bookmarked URLs used to access your application that contain previously generated checksums will fail.</p>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect4" -->
+<a id="CDDIEDGG" name="CDDIEDGG"></a>
+<div class="sect4">
+<h3><a name="HTMDB25758" id="HTMDB25758"></a>Enabling Session State Protection from <a id="sthref2276" name="sthref2276"></a><a id="sthref2277" name="sthref2277"></a>Session State Protection</h3>
+<p>To enable Session State Protection:</p>
+<ol>
+<li>
+<p>Navigate to the Shared Components page:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click the <span class="bold">Application Builder</span> icon.</p>
+</li>
+<li>
+<p>Select an application.</p>
+</li>
+<li>
+<p>Click <span class="bold">Shared Components</span>.</p>
+</li>
+<li>
+<p>Under Security, select <span class="bold">Session State Protection</span>.</p>
+</li>
+</ol>
+<p>The Session State Protection page appears. Note the current Session State Protection status (Enabled or Disabled) displays at the top of the page.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Set Protection</span> button.</p>
+<p>The Session State Protection wizard appears.</p>
+</li>
+<li>
+<p>Under Select Action, select <span class="bold">Enable</span> and click <span class="bold">Next</span>.</p>
+<p>Next, determine whether to set security attributes for pages and items.</p>
+</li>
+<li>
+<p>Select <span class="bold">Enable</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Enable Session State Protection</span>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Tip:</p>
+To disable Session State Protection, perform the same steps, but select <span class="bold">Disable</span> instead of <span class="bold">Enable</span>. Disabling Session State Protection will not change existing security attribute settings, but those attributes will be ignored at run time.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<a id="CDDJAJEH" name="CDDJAJEH"></a>
+<div class="sect3">
+<h2><a name="HTMDB25759" id="HTMDB25759"></a>Configuring Session State <a id="sthref2278" name="sthref2278"></a>Protection</h2>
+<p>Once you have enabled Session State Protection, the next step is to configure security attributes. You can configure security attributes in two ways:</p>
+<ul>
+<li>
+<p>Use a wizard and select a value for specific attribute categories. Those selections will then be applied to all pages and items within the application.</p>
+</li>
+<li>
+<p>Configure values for individual pages, items, or application items.</p>
+</li>
+</ul>
+<a id="sthref2279" name="sthref2279"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#CDDDFGHJ">Reviewing Existing Session State Protection Settings</a></p>
+</li>
+<li>
+<p><a href="#CDDGCCJA">Configuring Session State Protection Using a Wizard</a></p>
+</li>
+<li>
+<p><a href="#CDDIGDCA">Configuring Session State Protection for Pages</a></p>
+</li>
+<li>
+<p><a href="#CDDFBCBI">Configuring Session State Protection for Page Items</a></p>
+</li>
+<li>
+<p><a href="#CDDCBIBC">Configuring Session State Protection for Application Items</a></p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Tip:</p>
+Before you can configure security attributes, you must first enable Session State Protection. See <a href="#CDDGHCHI">"Enabling Session State Protection"</a>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<a id="CDDDFGHJ" name="CDDDFGHJ"></a>
+<div class="sect4">
+<h3><a name="HTMDB25760" id="HTMDB25760"></a>Reviewing Existing Session State Protection <a id="sthref2280" name="sthref2280"></a><a id="sthref2281" name="sthref2281"></a><a id="sthref2282" name="sthref2282"></a>Settings</h3>
+<p>You can review a summary of Session State Protection settings for pages, items, and application items on the first page of the Session State Protection wizard.</p>
+<p>To view summaries of existing Session State Protection settings:</p>
+<ol>
+<li>
+<p>Navigate to the Session State Protection page:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click the <span class="bold">Application Builder</span> icon.</p>
+</li>
+<li>
+<p>Select an application.</p>
+</li>
+<li>
+<p>Click <span class="bold">Shared Components</span>.</p>
+</li>
+<li>
+<p>Under Security, select <span class="bold">Session State Protection</span>.</p>
+<p>The Session State Protection page appears.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <span class="bold">Set Protection</span>.</p>
+</li>
+<li>
+<p>Expand the following reports at the bottom of the page:</p>
+<ul>
+<li>
+<p>Page Level Session State Protection Summary</p>
+</li>
+<li>
+<p>Page Item Session State Protection Summary</p>
+</li>
+<li>
+<p>Application Item Session State Protection</p>
+<img src="img/sess_state_summary.gif" alt="Description of sess_state_summary.gif follows" title="Description of sess_state_summary.gif follows" longdesc="img_text/sess_state_summary.htm" /><br />
+<a id="sthref2283" name="sthref2283" href="img_text/sess_state_summary.htm">Description of the illustration sess_state_summary.gif</a><br />
+<br /></li>
+</ul>
+</li>
+</ol>
+</div>
+<!-- class="sect4" -->
+<a id="CDDGCCJA" name="CDDGCCJA"></a>
+<div class="sect4">
+<h3><a name="HTMDB25761" id="HTMDB25761"></a>Configuring Session State Protection Using a <a id="sthref2284" name="sthref2284"></a>Wizard</h3>
+<p>When you configure Session State Protection using a wizard, you set a value for specific attribute categories. Those selections are then applied to all pages and items within the application.</p>
+<p>To configure Session State Protection using a wizard:</p>
+<ol>
+<li>
+<p>Navigate to the Session State Protection page:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click the <span class="bold">Application Builder</span> icon.</p>
+</li>
+<li>
+<p>Select an application.</p>
+</li>
+<li>
+<p>Click <span class="bold">Shared Components</span>.</p>
+</li>
+<li>
+<p>Under Security, select <span class="bold">Session State Protection</span>.</p>
+<p>The Session State Protection page appears.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <span class="bold">Set Protection</span>.</p>
+<p>The Session State Protection wizard appears.</p>
+</li>
+<li>
+<p>Under Select Action, select <span class="bold">Configure</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Page Access Protection, select one of the following:</p>
+<ul>
+<li>
+<p><span class="bold">Unrestricted</span> - The page may be requested using a URL with or without session state arguments (Request, Clear Cache, Name/Values).</p>
+</li>
+<li>
+<p><span class="bold">Arguments Must Have Checksum</span> - If Request, Clear Cache, or Name/Value arguments appear in the URL, a checksum must also be provided. The checksum type must be compatible with the most stringent Session State Protection attribute of all the items passed as arguments.</p>
+</li>
+<li>
+<p><span class="bold">No Arguments Allowed</span> - A URL may be used to request the page but no Request, Clear Cache, or Name/Value arguments are allowed.</p>
+</li>
+<li>
+<p><span class="bold">No URL Access</span> - The page may not be accessed using a URL; however, the page may be the target of a Branch to Page branch type, which does not do a URL redirect.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Application Item Protection, select one of the following:</p>
+<ul>
+<li>
+<p><span class="bold">Unrestricted</span> - The item's session state may be set by passing the item name/value in a URL or in a form. No checksum is required in the URL.</p>
+<p><span class="bold">Note:</span> If you need to set this item's value in session state using Ajax, then an Unrestricted protection level must be used for the item (for example in Dynamic Actions, Set Value, Page Items to Submit or Cascading LOVs, Page Items to Submit).</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: Application Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the schema is provided. A user-level checksum or a session-level checksum will also suffice (see next bullets). Use this option when you want to allow the item to be set only by URLs having checksums that were generated by any user running the same application in the current workspace but in a different session.</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: User Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the workspace, application, and user is provided. A session-level checksum will also suffice (see next bullet). Use this option when you want to allow the item to be set only by URLs having checksums that were generated by the same named user, running the same application in the current workspace but in a different session.</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: Session Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the current session is also provided. Use this option when you want to allow this item to be set only by URLs having checksums that were generated in the current session.</p>
+</li>
+<li>
+<p><span class="bold">Restricted - May not be set from browser</span> - The item may not be altered using the URL or POSTDATA. Use this option when you want to restrict the way that the item value can be set to internal processes, computations, and so on. This attribute is applicable only to items that cannot be used as data entry items and is always observed even if Session State Protection is disabled.</p>
+<p>Use this attribute for application items or for page items with any of these Display As types:</p>
+<ul>
+<li>
+<p>Display as Text (escape special characters, does not save state)</p>
+</li>
+<li>
+<p>Display as Text (does not save state)</p>
+</li>
+<li>
+<p>Display as Text (based on LOV, does not save state)</p>
+</li>
+<li>
+<p>Display as Text (based on PLSQL, does not save state)</p>
+</li>
+<li>
+<p>Text Field (Disabled, does not save state)</p>
+</li>
+<li>
+<p>Stop and Start HTML Table (Displays label only)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>For Page Data Entry Item Protection, select one of the following:</p>
+<ul>
+<li>
+<p><span class="bold">Unrestricted</span> - The item's session state may be set by passing the item name/value in a URL or in a form. No checksum is required in the URL.</p>
+<p><span class="bold">Note:</span> If you need to set this item's value in session state using Ajax, then an Unrestricted protection level must be used for the item (for example in Dynamic Actions, Set Value, Page Items to Submit or Cascading LOVs, Page Items to Submit).</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: Application Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the schema is provided. A user-level checksum or a session-level checksum will also suffice (see next bullets). Use this option when you want to allow the item to be set only by URLs having checksums that were generated by any user running the same application in the current workspace but in a different session.</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: User Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the workspace, application, and user is provided. A session-level checksum will also suffice (see next bullet). Use this option when you want to allow the item to be set only by URLs having checksums that were generated by the same named user, running the same application in the current workspace but in a different session.</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: Session Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the current session is provided. Use this option when you want to allow this item to be set only by URLs having checksums that were generated in the current session.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Page Display-Only Item Protection, select one of the following:</p>
+<ul>
+<li>
+<p><span class="bold">Unrestricted</span> - The item may be set by passing the item name/value in a URL or in a form. No checksum is required in the URL.</p>
+<p><span class="bold">Note:</span> If you need to set this item's value in session state using Ajax, then an Unrestricted protection level must be used for the item (for example in Dynamic Actions, Set Value, Page Items to Submit or Cascading LOVs, Page Items to Submit).</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: Application Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the schema is provided. A user-level checksum or a session-level checksum will also suffice (see next bullets). Use this option when you want to allow the item to be set only by URLs having checksums that were generated by any user running the same application in the current workspace but in a different session.</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: Session Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the current session is provided. Use this option when you want to allow this item to be set only by URLs having checksums that were generated in the current session.</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: User Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the workspace, application, and user is provided. A session-level checksum will also suffice (see next bullet). Use this option when you want to allow the item to be set only by URLs having checksums that were generated by the same named user, running the same application in the current workspace but in a different session.</p>
+</li>
+<li>
+<p><span class="bold">Restricted: May not be set from browser</span> - The item may not be altered using the URL or POSTDATA. Use this when you want to restrict the way that the item value can be set to internal processes, computations, and so on. This attribute is always observed, even if Session State Protection is disabled.</p>
+<p>This attribute may be used with any of these Display As types:</p>
+<ul>
+<li>
+<p>Display as Text (escape special characters, does not save state)</p>
+</li>
+<li>
+<p>Display as Text (does not save state)</p>
+</li>
+<li>
+<p>Display as Text (based on LOV, does not save state)</p>
+</li>
+<li>
+<p>Display as Text (based on PLSQL, does not save state)</p>
+</li>
+<li>
+<p>Text Field (Disabled, does not save state)</p>
+</li>
+<li>
+<p>Stop and Start HTML Table (Displays label only)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Finish</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" -->
+<a id="CDDIGDCA" name="CDDIGDCA"></a>
+<div class="sect4">
+<h3><a name="HTMDB25762" id="HTMDB25762"></a>Configuring Session State Protection for Pages</h3>
+<p>To configure Session State Protection for Pages:</p>
+<ol>
+<li>
+<p>Navigate to the Session State Protection page:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click the <span class="bold">Application Builder</span> icon.</p>
+</li>
+<li>
+<p>Select an application.</p>
+</li>
+<li>
+<p>Click <span class="bold">Shared Components</span>.</p>
+</li>
+<li>
+<p>Under Security, select <span class="bold">Session State Protection</span>.</p>
+<p>The Session State Protection page appears.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click the <span class="bold">Page</span> icon.</p>
+</li>
+<li>
+<p>You can customize the appearance the page using the Search bar at the top of the page. Available controls include:</p>
+<ul>
+<li>
+<p><span class="bold">Search icon</span> - Resembles a magnifying glass. Click this icon to narrow your search to only specific columns. To search all columns, select <span class="bold">All Columns</span>.</p>
+</li>
+<li>
+<p><span class="bold">Text area</span> - Enter case insensitive search criteria (wild card characters are implied) and then click <span class="bold">Go</span>.</p>
+</li>
+<li>
+<p><span class="bold">Go button</span> - Executes a search or applies a filter.</p>
+</li>
+<li>
+<p><span class="bold">View Chart</span>. Use this control to view information as a chart.</p>
+</li>
+<li>
+<p><span class="bold">Actions menu</span> - Displays the Actions menu. Use this menu to customize this interactive report. See <a href="ir_using.htm#BABHBCFI">"Using the Actions Menu"</a>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Select a page number.</p>
+<p>The Set Page and Item Protection page appears. The following information displays at the top of the page:</p>
+<ul>
+<li>
+<p>Application ID and name</p>
+</li>
+<li>
+<p>Session State Protection status (Enabled or Disabled)</p>
+</li>
+<li>
+<p>Page Number</p>
+</li>
+<li>
+<p>Page name</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Page Access Protection, select one of the following:</p>
+<ul>
+<li>
+<p><span class="bold">Unrestricted</span> - The page may be requested using a URL with or without session state arguments (Request, Clear Cache, Name/Values).</p>
+</li>
+<li>
+<p><span class="bold">Arguments Must Have Checksum</span> - If Request, Clear Cache, or Name/Value arguments appear in the URL, a checksum must also be provided. The checksum type must be compatible with the most stringent Session State Protection attribute of all the items passed as arguments.</p>
+</li>
+<li>
+<p><span class="bold">No Arguments Allowed</span> - A URL may be used to request the page but no Request, Clear Cache, or Name/Value arguments are allowed.</p>
+</li>
+<li>
+<p><span class="bold">No URL Access</span> - The page may not be accessed using a URL; however, the page may be the target of a Branch to Page branch type, which does not do a URL redirect.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Item Types, select <span class="bold">Data Entry Items</span> or <span class="bold">Display-only Items</span>.</p>
+<p>Data Entry items are items that can be altered using forms and include hidden items. Display-Only items are rendered only and are not submitted with the form.</p>
+</li>
+<li>
+<p>If you select <span class="bold">Data Entry Items</span>, select a session state protection level for each item:</p>
+<ul>
+<li>
+<p><span class="bold">Unrestricted</span> - The item's session state may be set by passing the item name/value in a URL or in a form. No checksum is required in the URL.</p>
+<p><span class="bold">Note:</span> If you need to set this item's value in session state using Ajax, then an Unrestricted protection level must be used for the item (for example in Dynamic Actions, Set Value, Page Items to Submit or Cascading LOVs, Page Items to Submit).</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: Application Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the schema is provided. A user-level checksum or a session-level checksum will also suffice (see next bullets). Use this option when you want to allow the item to be set only by URLs having checksums that were generated by any user running the same application in the current workspace but in a different session.</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: User Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the workspace, application, and user is provided. A session-level checksum will also suffice (see next bullet). Use this option when you want to allow the item to be set only by URLs having checksums that were generated by the same named user, running the same application in the current workspace but in a different session.</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: Session Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the current session is provided. Use this option when you want to allow this item to be set only by URLs having checksums that were generated in the current session.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>If you select <span class="bold">Display-only Item</span>, select a session state protection level for each item:</p>
+<ul>
+<li>
+<p><span class="bold">Unrestricted</span> - The item may be set by passing the item name/value in a URL or in a form. No checksum is required in the URL.</p>
+<p><span class="bold">Note:</span> If you need to set this item's value in session state using Ajax, then an Unrestricted protection level must be used for the item (for example in Dynamic Actions, Set Value, Page Items to Submit or Cascading LOVs, Page Items to Submit).</p>
+</li>
+<li>
+<p><span class="bold">Restricted: May not be set from browser</span> - The item may not be altered using the URL or POSTDATA. Use this when you want to restrict the way that the item value can be set to internal processes, computations, and so on. This attribute is always observed, even if Session State Protection is disabled. This attribute may be used with any of these Display As types:</p>
+<ul>
+<li>
+<p>Display as Text (escape special characters, does not save state)</p>
+</li>
+<li>
+<p>Display as Text (does not save state)</p>
+</li>
+<li>
+<p>Display as Text (based on LOV, does not save state)</p>
+</li>
+<li>
+<p>Display as Text (based on PLSQL, does not save state)</p>
+</li>
+<li>
+<p>Text Field (Disabled, does not save state)</p>
+</li>
+<li>
+<p>Stop and Start HTML Table (Displays label only)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Checksum Required: Application Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the schema is provided. A user-level checksum or a session-level checksum will also suffice (see next bullets). Use this option when you want to allow the item to be set only by URLs having checksums that were generated by any user running the same application in the current workspace but in a different session.</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: User Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the workspace, application, and user is provided. A session-level checksum will also suffice (see next bullet). Use this option when you want to allow the item to be set only by URLs having checksums that were generated by the same named user, running the same application in the current workspace but in a different session.</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: Session Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the current session is provided. Use this option when you want to allow this item to be set only by URLs having checksums that were generated in the current session.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" -->
+<a id="CDDFBCBI" name="CDDFBCBI"></a>
+<div class="sect4">
+<h3><a name="HTMDB25763" id="HTMDB25763"></a>Configuring Session State Protection for Page Items</h3>
+<p>To configure Session State Protection for items:</p>
+<ol>
+<li>
+<p>Navigate to the Session State Protection page:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click the <span class="bold">Application Builder</span> icon.</p>
+</li>
+<li>
+<p>Select an application.</p>
+</li>
+<li>
+<p>Click <span class="bold">Shared Components</span>.</p>
+</li>
+<li>
+<p>Under Security, select <span class="bold">Session State Protection</span>.</p>
+<p>The Session State Protection page appears.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click the <span class="bold">Page Item</span> icon.</p>
+</li>
+<li>
+<p>You can customize the appearance the page using the Search bar at the top of the page. Available controls include:</p>
+<ul>
+<li>
+<p><span class="bold">Search icon</span> - Resembles a magnifying glass. Click this icon to narrow your search to only specific columns. To search all columns, select <span class="bold">All Columns</span>.</p>
+</li>
+<li>
+<p><span class="bold">Text area</span> - Enter case insensitive search criteria (wild card characters are implied) and then click <span class="bold">Go</span>.</p>
+</li>
+<li>
+<p><span class="bold">Go button</span> - Executes a search or applies a filter.</p>
+</li>
+<li>
+<p><span class="bold">Actions menu</span> - Displays the Actions menu. Use this menu to customize the report view. See <a href="ir_using.htm#BABHBCFI">"Using the Actions Menu"</a>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Select a page number.</p>
+<p>The Edit Session State Protection for Page and Items page appears. The following information displays at the top of the page:</p>
+<ul>
+<li>
+<p>Application ID and name</p>
+</li>
+<li>
+<p>Session State Protection status (Enabled or Disabled)</p>
+</li>
+<li>
+<p>page Number</p>
+</li>
+<li>
+<p>Page name</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Page Access Protection, select a session state protection level for each item:</p>
+<ul>
+<li>
+<p><span class="bold">Unrestricted</span> - The page may be requested using a URL with or without session state arguments (Request, Clear Cache, Name/Values).</p>
+</li>
+<li>
+<p><span class="bold">Arguments Must Have Checksum</span> - If Request, Clear Cache, or Name/Value arguments appear in the URL, a checksum must also be provided. The checksum type must be compatible with the most stringent Session State Protection attribute of all the items passed as arguments.</p>
+</li>
+<li>
+<p><span class="bold">No Arguments Allowed</span> - A URL may be used to request the page but no Request, Clear Cache, or Name/Value arguments are allowed.</p>
+</li>
+<li>
+<p><span class="bold">No URL Access</span> - The page may not be accessed using a URL, however the page may be the target of a Branch to Page branch type, which does not do a URL redirect.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Item Types, select <span class="bold">Data Entry Items</span> or <span class="bold">Display-only Items</span>.</p>
+<p>Data Entry items are items that can be altered using forms and include hidden items. Display-Only items are rendered only and are not submitted with the form.</p>
+</li>
+<li>
+<p>If you select <span class="bold">Data Entry Items</span>, select a session state protection level for each item:</p>
+<ul>
+<li>
+<p><span class="bold">Unrestricted</span> - The item's session state may be set by passing the item name/value in a URL or in a form. No checksum is required in the URL.</p>
+<p><span class="bold">Note:</span> If you need to set this item's value in session state using Ajax, then an Unrestricted protection level must be used for the item (for example in Dynamic Actions, Set Value, Page Items to Submit or Cascading LOVs, Page Items to Submit).</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: Application Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the schema is provided. A user-level checksum or a session-level checksum will also suffice (see next bullets). Use this option when you want to allow the item to be set only by URLs having checksums that were generated by any user running the same application in the current workspace but in a different session.</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: User Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the workspace, application, and user is provided. A session-level checksum will also suffice (see next bullet). Use this option when you want to allow the item to be set only by URLs having checksums that were generated by the same named user, running the same application in the current workspace but in a different session.</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: Session Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the current session is provided. Use this option when you want to allow this item to be set only by URLs having checksums that were generated in the current session.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>If you select <span class="bold">Display-only Item</span>, select a session state protection level for each item:</p>
+<ul>
+<li>
+<p><span class="bold">Unrestricted</span> - The item may be set by passing the item name/value in a URL or in a form. No checksum is required in the URL.</p>
+<p><span class="bold">Note:</span> If you need to set this item's value in session state using Ajax, then an Unrestricted protection level must be used for the item (for example in Dynamic Actions, Set Value, Page Items to Submit or Cascading LOVs, Page Items to Submit).</p>
+</li>
+<li>
+<p><span class="bold">Restricted: May not be set from browser</span> - The item may not be altered using the URL or POSTDATA. Use this when you want to restrict the way that the item value can be set to internal processes, computations, and so on. This attribute is always observed, even if Session State Protection is disabled. This attribute may be used with any of these Display As types:</p>
+<ul>
+<li>
+<p>Display as Text (escape special characters, does not save state)</p>
+</li>
+<li>
+<p>Display as Text (does not save state)</p>
+</li>
+<li>
+<p>Display as Text (based on LOV, does not save state)</p>
+</li>
+<li>
+<p>Display as Text (based on PLSQL, does not save state)</p>
+</li>
+<li>
+<p>Text Field (Disabled, does not save state)</p>
+</li>
+<li>
+<p>Stop and Start HTML Table (Displays label only)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Checksum Required: Application Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the schema is provided. A user-level checksum or a session-level checksum will also suffice (see next bullets). Use this option when you want to allow the item to be set only by URLs having checksums that were generated by any user running the same application in the current workspace but in a different session.</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: User Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the workspace, application, and user is provided. A session-level checksum will also suffice (see next bullet). Use this option when you want to allow the item to be set only by URLs having checksums that were generated by the same named user, running the same application in the current workspace but in a different session.</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: Session Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the current session is provided. Use this option when you want to allow this item to be set only by URLs having checksums that were generated in the current session.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" -->
+<a id="CDDCBIBC" name="CDDCBIBC"></a>
+<div class="sect4">
+<h3><a name="HTMDB25764" id="HTMDB25764"></a>Configuring Session State Protection for Application Items</h3>
+<p>To configure Session State Protection for application items:</p>
+<ol>
+<li>
+<p>Navigate to the Session State Protection page:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click the <span class="bold">Application Builder</span> icon.</p>
+</li>
+<li>
+<p>Select an application.</p>
+</li>
+<li>
+<p>Click <span class="bold">Shared Components</span>.</p>
+</li>
+<li>
+<p>Under Security, select <span class="bold">Session State Protection</span>.</p>
+<p>The Session State Protection page appears.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click the <span class="bold">Application Item</span> icon.</p>
+</li>
+<li>
+<p>You can customize the appearance the page using the Search bar at the top of the page. Available controls include:</p>
+<ul>
+<li>
+<p><span class="bold">Search icon</span> - Resembles a magnifying glass. Click this icon to narrow your search to only specific columns. To search all columns, select <span class="bold">All Columns</span>.</p>
+</li>
+<li>
+<p><span class="bold">Text area</span> - Enter case insensitive search criteria (wild card characters are implied) and then click <span class="bold">Go</span>.</p>
+</li>
+<li>
+<p><span class="bold">Go button</span> - Executes a search or applies a filter.</p>
+</li>
+<li>
+<p><span class="bold">Actions menu</span> - Displays the Actions menu. Use this menu to customize the report view. See <a href="ir_using.htm#BABHBCFI">"Using the Actions Menu"</a>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Select an application item.</p>
+</li>
+<li>
+<p>Under Security, select one of the following from the Session State Protection list:</p>
+<ul>
+<li>
+<p><span class="bold">Unrestricted</span> - The item's session state may be set by passing the item name/value in a URL or in a form. No checksum is required in the URL.</p>
+<p><span class="bold">Note:</span> If you need to set this item's value in session state using Ajax, then an Unrestricted protection level must be used for the item (for example in Dynamic Actions, Set Value, Page Items to Submit or Cascading LOVs, Page Items to Submit).</p>
+</li>
+<li>
+<p><span class="bold">Restricted - May not be set from browser</span> - The item may not be altered using the URL or POSTDATA. Use this option when you want to restrict the way that the item value can be set to internal processes, computations, and so on. This attribute is only applicable only to items that cannot be used as data entry items and is always observed even if Session State Protection is disabled. This attribute may be used for application items or for page items with any of these Display As types:</p>
+<ul>
+<li>
+<p>Display as Text (escape special characters, does not save state)</p>
+</li>
+<li>
+<p>Display as Text (does not save state)</p>
+</li>
+<li>
+<p>Display as Text (based on LOV, does not save state)</p>
+</li>
+<li>
+<p>Display as Text (based on PLSQL, does not save state)</p>
+</li>
+<li>
+<p>Text Field (Disabled, does not save state)</p>
+</li>
+<li>
+<p>Stop and Start HTML Table (Displays label only)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Checksum Required: Application Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the schema is provided. A user-level checksum or a session-level checksum will also suffice (see next bullets). Use this option when you want to allow the item to be set only by URLs having checksums that were generated by any user running the same application in the current workspace but in a different session.</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: User Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the workspace, application, and user is provided. A session-level checksum will also suffice (see next bullet). Use this option when you want to allow the item to be set only by URLs having checksums that were generated by the same named user, running the same application in the current workspace but in a different session.</p>
+</li>
+<li>
+<p><span class="bold">Checksum Required: Session Level</span> - The item's session state may be set by passing the item name/value in a URL if a checksum specific to the current session is provided. Use this option when you want to allow this item to be set only by URLs having checksums that were generated in the current session.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="sec_session_encrypt.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="sec_sec_upload.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

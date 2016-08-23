@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>REMOVE_SAVED_REPORT Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:38Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="REMOVE_SAVED_REPORT Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_instance004.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_instance006.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_instance004.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_instance006.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<hr />
+<div class="refsect1"><a id="sthref477" name="sthref477"></a>
+<h1>REMOVE_SAVED_REPORT <a id="sthref478" name="sthref478"></a>Procedure</h1>
+<p>The <code>REMOVE_SAVED_REPORT</code> procedure removes a specific user's saved interactive report settings for a particular application.</p>
+<a id="sthref479" name="sthref479"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_INSTANCE_ADMIN.REMOVE_SAVED_REPORT(
+    p_application_id     IN NUMBER,
+    p_report_id          IN NUMBER);
+</pre>
+<a id="sthref480" name="sthref480"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#CHDCDEDE">Table: REMOVE_SAVED_REPORT Parameters</a> describes the parameters available in the <code>REMOVE_SAVED_REPORT</code> procedure.</p>
+<div class="tblformal"><a id="sthref481" name="sthref481"></a><a id="CHDCDEDE" name="CHDCDEDE"></a>
+<p class="titleintable">REMOVE_SAVED_REPORT Parameters</p>
+<table class="Formal" title="REMOVE_SAVED_REPORT Parameters" summary="This table describes the parameters available in the REMOVE_SCHEMA procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t6">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t6">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t6" headers="r1c1-t6">
+<p><code>p_application_id</code></p>
+</td>
+<td align="left" headers="r2c1-t6 r1c2-t6">
+<p>The ID of the application for which to remove user saved interactive report information.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t6" headers="r1c1-t6">
+<p>p_report_id</p>
+</td>
+<td align="left" headers="r3c1-t6 r1c2-t6">
+<p>The ID of the saved user interactive report to be removed.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref482" name="sthref482"></a>
+<p class="subhead2">Example</p>
+<p>The following example demonstrates how to use the <code>REMOVE_SAVED_REPORT</code> procedure to remove user saved interactive report with the ID 123 for the application with an ID of 100.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN
+    APEX_INSTANCE_ADMIN.REMOVE_SAVED_REPORT(100,123);
+END;
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_instance004.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_instance006.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

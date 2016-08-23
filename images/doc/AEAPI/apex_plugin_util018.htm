@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>PRINT_ESCAPED_VALUE Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:40Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="PRINT_ESCAPED_VALUE Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_plugin_util017.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_plugin_util019.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_plugin_util017.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin_util019.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABIIIFB" name="BABIIIFB"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>PRINT_ESCAPED_VALUE <a id="sthref892" name="sthref892"></a>Procedure</h1>
+<p>This procedure outputs the value in an escaped form and chunks big strings into smaller outputs.</p>
+<a id="sthref893" name="sthref893"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_PLUGIN_UTIL.PRINT_ESCAPED_VALUE (
+    p_value   IN VARCHAR2);
+</pre>
+<a id="sthref894" name="sthref894"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#BABDJGHJ">Table: PRINT_ESCAPED_VALUE Parameter</a> describes the parameters available in the PRINT_ESCAPED_VALUE procedure.</p>
+<div class="tblformal"><a id="sthref895" name="sthref895"></a><a id="BABDJGHJ" name="BABDJGHJ"></a>
+<p class="titleintable">PRINT_ESCAPED_VALUE Parameter</p>
+<table class="Formal" title="PRINT_ESCAPED_VALUE Parameter" summary="This table describes the parameters available in the PRINT_ESCAPED_VALUE procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="38%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t27">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t27">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t27" headers="r1c1-t27">
+<p><code>p_value</code></p>
+</td>
+<td align="left" headers="r2c1-t27 r1c2-t27">
+<p>Text which should be escaped and then printed to the HTTP buffer.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref896" name="sthref896"></a>
+<p class="subhead2">Example</p>
+<p>Prints a hidden field with the current value of the page item.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+sys.htp.prn('&lt;input type="hidden" name="'||l_name||'" id="'||p_item_name||'" value="');
+print_escaped_value(p_value);
+sys.htp.prn('"&gt;');
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_plugin_util017.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin_util019.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

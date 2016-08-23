@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Creating a Sequence</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T17:42:51Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Creating a Sequence" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15520-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface" title="Home" type="text/html" />
+<link rel="up" href="obj_brows.htm" title="Managing Database Objects w..." type="text/html" />
+<link rel="up" href="obj_seq.htm" title="Managing Sequences" type="text/html" />
+<link rel="up" href="obj_seq_create.htm" title="Creating a Sequence" type="text/html" />
+<link rel="prev" href="obj_seq.htm" title="Previous" type="text/html" />
+<link rel="next" href="obj_seq_browse.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface" title="Home">Home</a> &gt; <a href="obj_brows.htm" title="Managing Database Objects w...">Managing Database Objects w...</a> &gt; <a href="obj_seq.htm" title="Managing Sequences">Managing Sequences</a> &gt; Creating a Sequence</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="obj_seq.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="obj_seq_browse.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDIFAJH" name="CHDIFAJH"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEUTL131" id="AEUTL131"></a>Creating a <a id="sthref74" name="sthref74"></a>Sequence</h1>
+<p>To create a sequence:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click <span class="bold">SQL Workshop</span> and then <span class="bold">Object Browser</span>.</p>
+<p>Object Browser appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+</li>
+<li>
+<p>From the list of object types, select <span class="bold">Sequence</span>.</p>
+</li>
+<li>
+<p>Specify the following and click <span class="bold">Next</span>:</p>
+<ul>
+<li>
+<p>Sequence Name - Enter the name of the sequence.</p>
+</li>
+<li>
+<p>Preserve Case - To have the final sequence name match the case entered in the Sequence Name field, click <span class="bold">Preserve Case</span>.</p>
+</li>
+<li>
+<p>Start With - Enter the number of the first sequence. The first reference to sequence_name.nextval returns this number.</p>
+</li>
+<li>
+<p>Minimum Value - Enter the minimum value this sequence can return.</p>
+</li>
+<li>
+<p>Maximum Value - Enter the maximum value this sequence can return.</p>
+</li>
+<li>
+<p>Increment By - Each call to sequence_name.nextval will return a value greater than the last, until the maximum value is reached. Enter the value used to increment to the next sequence number.</p>
+</li>
+<li>
+<p>Cycle - Select this option to restart the sequence number to the minimum value when the maximum value is reached. This is not recommended if using the sequence for primary key creation.</p>
+</li>
+<li>
+<p>Number to Cache - For faster access, specify how many sequence values are stored in memory.</p>
+</li>
+<li>
+<p>Order - Specify ORDER to guarantee that sequence numbers are generated in order of request. This option is necessary if using Real Application Clusters (Oracle RAC).</p>
+</li>
+</ul>
+<p>A confirmation page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="obj_seq.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="obj_seq_browse.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

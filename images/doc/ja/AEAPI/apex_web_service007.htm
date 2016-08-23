@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>CLOBBASE642BLOB Function</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:42Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="CLOBBASE642BLOB Function" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_web_service006.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_web_service008.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_web_service006.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_web_service008.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABHIEJB" name="BABHIEJB"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>CLOBBASE642B<a id="sthref1643" name="sthref1643"></a>LOB Function</h1>
+<p>Use this function to convert a CLOB datatype that is base64 encoded into a BLOB. This is often used when receiving output from a Web service that contains a binary parameter.</p>
+<a id="sthref1644" name="sthref1644"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_WEB_SERVICE.CLOBBASE642BLOB (      p_clob IN CLOB)RETURN BLOB;
+</pre>
+<a id="sthref1645" name="sthref1645"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#BABEJCHA">Table: CLOBBASE642BLOB Parameters</a> describes the parameters available in the <code>CLOBBASE642BLOB</code> function.</p>
+<div class="tblformal"><a id="sthref1646" name="sthref1646"></a><a id="BABEJCHA" name="BABEJCHA"></a>
+<p class="titleintable">CLOBBASE642BLOB Parameters</p>
+<table class="Formal" title="CLOBBASE642BLOB Parameters" summary="This table contains the parameters for the CLOBBASE642BLOB function." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t3">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t3">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t3" headers="r1c1-t3">
+<p><code>p_clob</code></p>
+</td>
+<td align="left" headers="r2c1-t3 r1c2-t3">
+<p>The base64 encoded CLOB to convert into a BLOB.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref1647" name="sthref1647"></a>
+<p class="subhead2">Example</p>
+<p>The following example retrieves a base64 encoded node from an XML document as a CLOB and converts it into a BLOB.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+declare
+        l_base64 CLOB;
+     l_blob      BLOB;
+     l_xml       XMLTYPE;
+begin
+ 
+l_base64 := apex_web_service.parse_xml_clob(l_xml, ' //runReportReturn/reportBytes/text()');
+ 
+        l_blob := apex_web_service.clobbase642blob(l_base64);
+end;
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_web_service006.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_web_service008.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

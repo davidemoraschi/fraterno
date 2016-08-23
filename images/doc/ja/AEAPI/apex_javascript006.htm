@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ADD_LIBRARY Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:39Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="ADD_LIBRARY Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_javascript005.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_javascript007.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_javascript005.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_javascript007.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BCEIDBFE" name="BCEIDBFE"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>ADD_LIBRARY <a id="sthref641" name="sthref641"></a>Procedure</h1>
+<p>This procedure adds the script tag to load a JavaScript library. If a library has been added it will not be added a second time.</p>
+<a id="sthref642" name="sthref642"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_JAVASCRIPT.ADD_LIBRARY (
+    p_name           IN VARCHAR2,
+    p_directory      IN VARCHAR2 DEFAULT wwv_flow.g_image_prefix||'javascript/',
+    p_version        IN VARCHAR2 DEFAULT c_apex_version,
+    p_skip_extension IN BOOLEAN DEFAULT FALSE);
+</pre>
+<a id="sthref643" name="sthref643"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#BCEEIADD">Table: ADD_LIBRARY Parameters</a> describes the parameters available in the <code>ADD_LIBRARY</code> procedure.</p>
+<div class="tblformal"><a id="sthref644" name="sthref644"></a><a id="BCEEIADD" name="BCEEIADD"></a>
+<p class="titleintable">ADD_LIBRARY Parameters</p>
+<table class="Formal" title="ADD_LIBRARY Parameters" summary="This table describes the parameters available in the ADD_LIBRARY procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t8">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t8">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t8" headers="r1c1-t8">
+<p><code>p_name</code></p>
+</td>
+<td align="left" headers="r2c1-t8 r1c2-t8">
+<p>Name of the JavaScript file. Must not use <code>.js</code> when specifying.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t8" headers="r1c1-t8">
+<p><code>p_directory</code></p>
+</td>
+<td align="left" headers="r3c1-t8 r1c2-t8">
+<p>Must have a trailing slash.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t8" headers="r1c1-t8">
+<p><code>p_version</code></p>
+</td>
+<td align="left" headers="r4c1-t8 r1c2-t8">
+<p>Version identifier. It is recommended, but is optional, to add this to the library name.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t8" headers="r1c1-t8">
+<p><code>p_skip_extension</code></p>
+</td>
+<td align="left" headers="r5c1-t8 r1c2-t8">
+<p>If TRUE the extension <code>.js</code> is NOT added.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref645" name="sthref645"></a>
+<p class="subhead2">Example</p>
+<p>The following example includes the JavaScript library file <code>my_library.1.2.min.js</code> in the directory specified by <code>p_plugin.file_prefix</code>. This is the recommended syntax when you include your own JavaScript files in a plug-in.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+apex_javascript.add_library (
+    p_name      =&gt; 'mylibrary.1.2.min'
+    p_directory =&gt; p_plugin.file_prefix,
+    p_version   =&gt; null );
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_javascript005.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_javascript007.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MAKE_REQUEST Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:42Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="MAKE_REQUEST Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_web_service007.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_web_service009.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_web_service007.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_web_service009.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABDHIBJ" name="BABDHIBJ"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>MAKE_REQUEST <a id="sthref1648" name="sthref1648"></a>Procedure</h1>
+<p>Use this procedure to invoke a SOAP style Web service with the supplied SOAP envelope and store the results in a collection.</p>
+<a id="sthref1649" name="sthref1649"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_WEB_SERVICE.MAKE_REQUEST (
+    p_url               IN VARCHAR2,
+    p_action            IN VARCHAR2 default null,
+    p_version           IN VARCHAR2 default '1.1',
+    p_collection_name   IN VARCHAR2 default null,
+    p_envelope          IN CLOB,
+    p_username          IN VARCHAR2 default null,
+    p_password          IN VARCHAR2 default null,
+    p_proxy_override    IN VARCHAR2 default null,
+    p_wallet_path       IN VARCHAR2 default null,
+    p_wallet_pwd        IN VARCHAR2 default null );
+</pre>
+<a id="sthref1650" name="sthref1650"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#BABCICEF">Table: MAKE_REQUEST Procedure Parameters</a> describes the parameters available in the <code>MAKE_REQUEST</code> procedure.</p>
+<div class="tblformal"><a id="sthref1651" name="sthref1651"></a><a id="BABCICEF" name="BABCICEF"></a>
+<p class="titleintable">MAKE_REQUEST Procedure Parameters</p>
+<table class="Formal" title="MAKE_REQUEST Procedure Parameters" summary="This table contains the parameters for the MAKE_REQUEST procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t4">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t4">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t4" headers="r1c1-t4">
+<p><code>p_url</code></p>
+</td>
+<td align="left" headers="r2c1-t4 r1c2-t4">
+<p>The URL endpoint of the Web service.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t4" headers="r1c1-t4">
+<p><code>p_action</code></p>
+</td>
+<td align="left" headers="r3c1-t4 r1c2-t4">
+<p>The SOAP Action corresponding to the operation to be invoked.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t4" headers="r1c1-t4">
+<p><code>p_version</code></p>
+</td>
+<td align="left" headers="r4c1-t4 r1c2-t4">
+<p>The SOAP version, 1.1 or 1.2. The default is 1.1.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t4" headers="r1c1-t4">
+<p><code>p_collection_name</code></p>
+</td>
+<td align="left" headers="r5c1-t4 r1c2-t4">
+<p>The name of the collection to store the response.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t4" headers="r1c1-t4">
+<p><code>p_envelope</code></p>
+</td>
+<td align="left" headers="r6c1-t4 r1c2-t4">
+<p>The SOAP envelope to post to the service.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t4" headers="r1c1-t4">
+<p><code>p_username</code></p>
+</td>
+<td align="left" headers="r7c1-t4 r1c2-t4">
+<p>The username if basic authentication is required for this service.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t4" headers="r1c1-t4">
+<p><code>p_password</code></p>
+</td>
+<td align="left" headers="r8c1-t4 r1c2-t4">
+<p>The password if basic authentication is required for this service</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t4" headers="r1c1-t4">
+<p><code>p_proxy_override</code></p>
+</td>
+<td align="left" headers="r9c1-t4 r1c2-t4">
+<p>The proxy to use for the request. The proxy supplied overrides the proxy defined in the application attributes.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t4" headers="r1c1-t4">
+<p><code>p_wallet_path</code></p>
+</td>
+<td align="left" headers="r10c1-t4 r1c2-t4">
+<p>The file system path to a wallet if the URL endpoint is https. For example, file:/usr/home/oracle/WALLETS. The wallet path provided overrides the wallet defined in the instance settings.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r11c1-t4" headers="r1c1-t4">
+<p><code>p_wallet_pwd</code></p>
+</td>
+<td align="left" headers="r11c1-t4 r1c2-t4">
+<p>The password to access the wallet.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref1652" name="sthref1652"></a>
+<p class="subhead2">Example</p>
+<p>The following example uses the <code>make_request</code> procedure to retrieve a list of movies from a SOAP style Web service. The response is stored in an Application Express collection named <code>MOVIE_LISTINGS</code>.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+declare
+        l_envelope CLOB;
+BEGIN
+        l_envelope := '&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:tns="http://www.ignyte.com/whatsshowing"
+xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+   &lt;soap:Body&gt;
+      &lt;tns:GetTheatersAndMovies&gt;
+         &lt;tns:zipCode&gt;43221&lt;/tns:zipCode&gt;
+         &lt;tns:radius&gt;5&lt;/tns:radius&gt;
+      &lt;/tns:GetTheatersAndMovies&gt;
+   &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;';
+ 
+apex_web_service.make_request(
+   p_url               =&gt; ' http://www.ignyte.com/webservices/ignyte.whatsshowing.webservice/moviefunctions.asmx',
+   p_action            =&gt; ' http://www.ignyte.com/whatsshowing/GetTheatersAndMovies',
+   p_collection_name   =&gt; 'MOVIE_LISTINGS',
+   p_envelope          =&gt; l_envelope
+);
+END;
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_web_service007.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_web_service009.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

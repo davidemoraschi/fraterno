@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>About Importing, Exporting, Loading, and Unloading Data</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T17:42:53Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="About Importing, Exporting, Loading, and Unloading Data" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15520-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface" title="Home" type="text/html" />
+<link rel="up" href="sql_utl.htm" title="Using Oracle Application Ex..." type="text/html" />
+<link rel="up" href="sql_utl_exprt_imprt_about.htm" title="About Importing, Exporting,..." type="text/html" />
+<link rel="prev" href="sql_utl.htm" title="Previous" type="text/html" />
+<link rel="next" href="sql_utl_exprt_imprt_choose.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface" title="Home">Home</a> &gt; <a href="sql_utl.htm" title="Using Oracle Application Ex...">Using Oracle Application Ex...</a> &gt; About Importing, Exporting,...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="sql_utl.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="sql_utl_exprt_imprt_choose.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BCEJBFDF" name="BCEJBFDF"></a></p>
+<div class="sect1"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEUTL244" id="AEUTL244"></a>About Importing, Exporting, Loading, and Unloading Data</h1>
+<p>You have several options when copying data between Oracle databases or between an Oracle database and external files. Data copying is accomplished by <span class="italic">exporting</span> and <span class="italic">importing</span> data, and by <span class="italic">unloading</span> and <span class="italic">loading</span> data. The following table defines these terms.</p>
+<div class="inftblinformal">
+<table class="Informal" title="Data transfer definitions" summary="This table has two columns. The left column contains a term, and the right column contains its definition. The four rows contain definitions for the terms Export, Import, Unload, and Load" dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="17%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t2">Term</th>
+<th align="left" valign="bottom" id="r1c2-t2">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t2" headers="r1c1-t2">Exporting</td>
+<td align="left" headers="r2c1-t2 r1c2-t2">Copying database data to external files for import into another Oracle database only. The files are in a proprietary binary format.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t2" headers="r1c1-t2">Importing</td>
+<td align="left" headers="r3c1-t2 r1c2-t2">Copying data into the database from external files that were created by exporting from another Oracle database.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t2" headers="r1c1-t2">Unloading</td>
+<td align="left" headers="r4c1-t2 r1c2-t2">Copying database data to external text files for consumption by another Oracle database or another application (such as a spreadsheet application). The text files are in an industry-standard format such as tab-delimited or comma-delimited (<code>CSV</code>).</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t2" headers="r1c1-t2">Loading</td>
+<td align="left" headers="r5c1-t2 r1c2-t2">Copying data into the database from external text files that are in either a standard delimited format or in any of the formats that are supported by the Oracle SQL*Loader utility.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblinformal" -->
+<p>You can export data from any Oracle Database edition (Express Edition, Standard Edition, and Enterprise Edition) into any other edition.</p>
+<a id="sthref272" name="sthref272"></a>
+<p class="subhead2">Topics:</p>
+<p>This section contains the following topics:</p>
+<ul>
+<li>
+<p><a href="sql_utl_exprt_imprt_choose.htm#CBHBGGGD">Choosing the Right Import/Export/Load/Unload Option</a></p>
+</li>
+</ul>
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="sql_utl.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="sql_utl_exprt_imprt_choose.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" --></div>
+</body>
+</html>

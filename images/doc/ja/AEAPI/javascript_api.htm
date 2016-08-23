@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>JavaScript APIs</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:42Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content=" JavaScript APIs" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_web_service014.htm" title="Previous" type="text/html" />
+<link rel="next" href="javascript_api001.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_web_service014.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="javascript_api001.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CDEEIGFH" name="CDEEIGFH"></a></p>
+<h1><a name="AEAPI266" id="AEAPI266"></a> JavaScript APIs</h1>
+<p>This section describes <a id="sthref1684" name="sthref1684"></a><a id="sthref1685" name="sthref1685"></a>JavaScript functions and objects included with Oracle Application Express and available on every page. You can use these functions and objects to provide client-side functionality, such as showing and hiding page elements, or making XML HTTP Asynchronous JavaScript and XML (AJAX) requests.</p>
+<ul>
+<li>
+<p><a href="javascript_api001.htm#CHDGGBII">apex.event.trigger(pSelector,pEvent,pData)</a></p>
+</li>
+<li>
+<p><a href="javascript_api002.htm#BGBBHCBH">apex.widget.initPageItem(pName,pOptions)</a></p>
+</li>
+<li>
+<p><a href="javascript_api003.htm#BGBHEBGA">$x(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api005.htm#CHDEJEIG">$v2(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api005.htm#CHDEJEIG">$v2(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api006.htm#CHDFBJGD">$s(pNd, pValue, pDisplayValue)</a></p>
+</li>
+<li>
+<p><a href="javascript_api007.htm#CHDCBJFF">$u_Carray(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api008.htm#CHDEIGDJ">$u_Narray(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api009.htm#CHDGAIJJ">$nvl(pTest, pDefault)</a></p>
+</li>
+<li>
+<p><a href="javascript_api010.htm#BGBJHEHG">apex.submit(pOptions)</a></p>
+</li>
+<li>
+<p><a href="javascript_api011.htm#CHDBEACA">apex.submit(pRequest)</a></p>
+</li>
+<li>
+<p><a href="javascript_api012.htm#CHDGHCBE">apex.confirm(pMessage, pRequest)</a></p>
+</li>
+<li>
+<p><a href="javascript_api014.htm#CHDDBBDH">$x_Style(pNd, pStyle, pString)</a></p>
+</li>
+<li>
+<p><a href="javascript_api015.htm#CHDDAGFE">$x_Hide(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api016.htm#CHDIFFJI">$x_Show(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api017.htm#CHDCEEAG">$x_Toggle(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api018.htm#CHDDJGHC">$x_Remove(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api019.htm#CHDDEFJJ">$x_Value(pNd,pValue)</a></p>
+</li>
+<li>
+<p><a href="javascript_api020.htm#CHDEGGGI">$x_UpTill(pNd, pToTag)</a></p>
+</li>
+<li>
+<p><a href="javascript_api021.htm#CHDIBGDH">$x_ItemRow(pNd,pFunc)</a></p>
+</li>
+<li>
+<p><a href="javascript_api022.htm#CHDIIJHG">$x_HideItemRow(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api023.htm#CHDHAEDD">$x_ShowItemRow(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api024.htm#CHDJHIFH">$x_ToggleItemRow(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api025.htm#CHDGBGAE">$x_HideAllExcept(pNd,pNdArray)</a></p>
+</li>
+<li>
+<p><a href="javascript_api026.htm#CHDHHIBB">$x_HideSiblings(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api027.htm#CHDJGBHF">$x_ShowSiblings(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api028.htm#CHDFCHJJ">$x_Class(pNd,pClass)</a></p>
+</li>
+<li>
+<p><a href="javascript_api029.htm#CHDEAIIA">$x_SetSiblingsClass(pNd, pClass, pNdClass)</a></p>
+</li>
+<li>
+<p><a href="javascript_api030.htm#CHDEACGG">$x_ByClass(pClass, pNd, pTag)</a></p>
+</li>
+<li>
+<p><a href="javascript_api031.htm#CHDGBBDE">$x_ShowAllByClass(pNd, pClass, pTag)</a></p>
+</li>
+<li>
+<p><a href="javascript_api032.htm#CHDFJBGB">$x_ShowChildren(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api033.htm#CHDIBFDB">$x_HideChildren(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api034.htm#CHDDAHDJ">$x_disableItem(pNd, pTest)</a></p>
+</li>
+<li>
+<p><a href="javascript_api035.htm#CHDJDFEI">$f_get_emptys(pNd, pClassFail, pClass)</a></p>
+</li>
+<li>
+<p><a href="javascript_api036.htm#CHDGEBHH">$v_Array(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api037.htm#CHDIFFFF">$f_ReturnChecked(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api038.htm#CHDDFHDF">$d_ClearAndHide(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api039.htm#CHDFGIHJ">$f_SelectedOptions(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api040.htm#CHDFBJDF">$f_SelectValue(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api041.htm#CHDHIFGB">$u_ArrayToString(pArray, pDelim)</a></p>
+</li>
+<li>
+<p><a href="javascript_api042.htm#CHDDGDGB">$x_CheckImageSrc(pId,pSearch)</a></p>
+</li>
+<li>
+<p><a href="javascript_api043.htm#CHDJFDGE">$v_CheckValueAgainst(pThis, pValue)</a></p>
+</li>
+<li>
+<p><a href="javascript_api044.htm#CHDHIAJB">$f_Hide_On_Value_Item(pThis, pThat, pValue)</a></p>
+</li>
+<li>
+<p><a href="javascript_api045.htm#CHDFAFJJ">$f_Show_On_Value_Item(pThis, pThat, pValue)</a></p>
+</li>
+<li>
+<p><a href="javascript_api046.htm#CHDEIJED">$f_Hide_On_Value_Item_Row(pThis, pThat, pValue)</a></p>
+</li>
+<li>
+<p><a href="javascript_api047.htm#CHDBAEJH">$f_Show_On_Value_Item_Row(pThis, pThat, pValue)</a></p>
+</li>
+<li>
+<p><a href="javascript_api048.htm#CHDIGFEF">$f_DisableOnValue(pThis, pValue, pThat)</a></p>
+</li>
+<li>
+<p><a href="javascript_api049.htm#CHDIFGBG">$x_ClassByClass(pNd, pClass, pTag, pClass2)</a></p>
+</li>
+<li>
+<p><a href="javascript_api050.htm#CHDEGJFC">$f_ValuesToArray(pThis, pClass, pTag)</a></p>
+</li>
+<li>
+<p><a href="javascript_api051.htm#CHDBGBJJ">$x_FormItems(pNd, pType)</a></p>
+</li>
+<li>
+<p><a href="javascript_api052.htm#CHDFECEC">$f_CheckAll(pThis, pCheck, pArray)</a></p>
+</li>
+<li>
+<p><a href="javascript_api053.htm#CHDHDHEB">$f_CheckFirstColumn(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api054.htm#CHDEBJAB">$v_PopupReturn(pValue, pThat)</a></p>
+</li>
+<li>
+<p><a href="javascript_api055.htm#CHDFBAEE">$x_ToggleWithImage(pThis,pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api056.htm#CHDIDCCA">$x_SwitchImageSrc(pNd, pSearch, pReplace)</a></p>
+</li>
+<li>
+<p><a href="javascript_api057.htm#CHDCFHHB">$x_CheckImageSrc(pNd, pSearch)</a></p>
+</li>
+<li>
+<p><a href="javascript_api058.htm#CHDFHGDB">$u_SubString(pText,pMatch)</a></p>
+</li>
+<li>
+<p><a href="javascript_api059.htm#CHDBAIHH">html_RemoveAllChildren(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api060.htm#CHDBCAGD">$v_IsEmpty(pThis)</a></p>
+</li>
+<li>
+<p><a href="javascript_api061.htm#CHDBBJJJ">html_SetSelectValue(pId,pValue)</a></p>
+</li>
+<li>
+<p><a href="javascript_api062.htm#CHDIFGFC">addLoadEvent(pFunction)</a></p>
+</li>
+<li>
+<p><a href="javascript_api063.htm#CHDFCGHE">$f_Swap(pThis,pThat)</a></p>
+</li>
+<li>
+<p><a href="javascript_api064.htm#CHDFEHFA">submitEnter(pNd,e)</a></p>
+</li>
+<li>
+<p><a href="javascript_api065.htm#CHDCFCJI">$f_SetValueSequence(pArray,pMultiple)</a></p>
+</li>
+<li>
+<p><a href="javascript_api066.htm#CHDBAFAG">$dom_AddTag(pThis, pTag, pText)</a></p>
+</li>
+<li>
+<p><a href="javascript_api067.htm#CHDIEEGE">$tr_AddTD(pThis,pText)</a></p>
+</li>
+<li>
+<p><a href="javascript_api069.htm#CHDHEDDA">$dom_AddInput(pThis,pType,pId,pName,pValue)</a></p>
+</li>
+<li>
+<p><a href="javascript_api070.htm#CHDIEDBG">$dom_MakeParent(p_Node,p_Parent)</a></p>
+</li>
+<li>
+<p><a href="javascript_api071.htm#CHDEGCGF">$x_RowHighlight(pThis, pColor)</a></p>
+</li>
+<li>
+<p><a href="javascript_api072.htm#CHDFAFCC">$x_RowHighlightOff(pThis)</a></p>
+</li>
+<li>
+<p><a href="javascript_api073.htm#CHDHIIGD">$v_Upper(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api073.htm#CHDHIIGD">$v_Upper(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api074.htm#CHDEBGJG">$d_Find(pThis,pString,pTags,pClass)</a></p>
+</li>
+<li>
+<p><a href="javascript_api075.htm#CHDGGCDF">returnInput(p_R, p_D)</a></p>
+</li>
+<li>
+<p><a href="javascript_api076.htm#CHDJEJEF">setReturn(p_R,p_D)</a></p>
+</li>
+<li>
+<p><a href="javascript_api077.htm#CHDGCEAD">$f_First_field(pNd)</a></p>
+</li>
+<li>
+<p><a href="javascript_api078.htm#CHDJJIBG">GetCookie (pName)</a></p>
+</li>
+<li>
+<p><a href="javascript_api079.htm#CHDDGGBA">SetCookie (pName,pValue)</a></p>
+</li>
+</ul>
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_web_service014.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="javascript_api001.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

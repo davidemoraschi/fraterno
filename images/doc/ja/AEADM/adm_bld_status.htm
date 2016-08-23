@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Changing Application Build Status Set During Deployment</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-27T14:38:57Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Changing Application Build Status Set During Deployment" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15521-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="adm_wrkspc.htm" title="Oracle Application Express ..." type="text/html" />
+<link rel="up" href="adm_mg_wrkspc.htm" title="Managing Existing Workspaces" type="text/html" />
+<link rel="up" href="adm_bld_status.htm" title="Changing Application Build ..." type="text/html" />
+<link rel="prev" href="adm_app.htm" title="Previous" type="text/html" />
+<link rel="next" href="adm_app_parse_as.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="adm_wrkspc.htm" title="Oracle Application Express ...">Oracle Application Express ...</a> &gt; <a href="adm_mg_wrkspc.htm" title="Managing Existing Workspaces">Managing Existing Workspaces</a> &gt; Changing Application Build ...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="adm_app.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_app_parse_as.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDEDCAJ" name="CHDEDCAJ"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEADM289" id="AEADM289"></a>Changing Application <a id="sthref452" name="sthref452"></a><a id="sthref453" name="sthref453"></a>Build Status Set During Deployment</h1>
+<p>Every Oracle Application Express application has an application-level attribute called Build Status. You can use this attribute to prevent an application from being modified by other developers. Build Status has two settings:</p>
+<ul>
+<li>
+<p><span class="bold">Run and Build Application</span> - Developers can both run and edit an application.</p>
+</li>
+<li>
+<p><span class="bold">Run Application Only</span> - Developers can only run an application.</p>
+</li>
+</ul>
+<p>Setting the Build Status to <span class="bold">Run Application Only</span> is an effective way to prevent other developers from modifying it.</p>
+<p>You can change the Build Status of an application as follows:</p>
+<ul>
+<li>
+<p>Developers and administrators can change the Build Status attribute on the Edit Application page. See "Availability" in <a href="../bldr_attr_standard.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+<li>
+<p>Workspace administrators can change the Build Status of applications within the current workspace on the Manage Application Build Status page. See <a href="aadm_build_status.htm#BABFDJHI">"Changing Build Status for Multiple Applications"</a>.</p>
+</li>
+<li>
+<p>Instance administrators can change the Build Status of an application on the Build Status page as described in the next section.</p>
+</li>
+</ul>
+<p>To change a Build Status as an Instance administrator:</p>
+<ol>
+<li>
+<p>Log in to Oracle Application Express Administration Services. See <a href="adm_login.htm#CHDHCIFG">"Logging in to Oracle Application Express Administration Services"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Manage Workspaces</span>.</p>
+</li>
+<li>
+<p>Under Manage Applications, click <span class="bold">Build Status</span>.</p>
+<p>The Build Status page appears.</p>
+<p>This page displays as an interactive report. To customize the report, use the Search bar at the top of the page. See "Customizing Interactive Reports" in <a href="../ir_using.htm"><span class="italic">Oracle Application Express Application Builder User's Guide</span></a>.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Edit</span> icon adjacent to the appropriate application.</p>
+<p>The Edit Build Status page appears.</p>
+</li>
+<li>
+<p>Select an alternate build status and click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Tip:</p>
+Note that if you select <span class="bold">Build Application Only</span> during deployment, the only way to change this setting is change it on the Build Status page in Oracle Application Express Administration Services.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="adm_app.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="adm_app_parse_as.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Invoking a RESTful Style Web Service</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:42Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Invoking a RESTful Style Web Service" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_web_service002.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_web_service004.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_web_service002.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_web_service004.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABGGBBH" name="BABGGBBH"></a></p>
+<hr />
+<h1>Invoking a R<a id="sthref1635" name="sthref1635"></a>ESTful Style Web Service</h1>
+<p>RESTful style Web services use a simpler architecture than SOAP. Typically the input to a RESTful style Web service is a collection of name/value pairs. The response can be an XML document or simply text such as a comma separated response or JSON. The following is an example of MAKE_REST_REQUEST being used in an application process that is callable by AJAX.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+declare
+  l_clob clob;
+  l_buffer         varchar2(32767);
+  l_amount         number;
+  l_offset         number;
+begin
+ 
+  l_clob := apex_web_service.make_rest_request(
+              p_url =&gt; 'http://us.music.yahooapis.com/ video/v1/list/published/popular',
+              p_http_method =&gt; 'GET',
+              p_parm_name =&gt; apex_util.string_to_table('appid:format'),
+              p_parm_value =&gt; apex_util.string_to_table(apex_application.g_x01||':'||apex_application.g_x02));
+ 
+    l_amount := 32000;
+    l_offset := 1;
+    begin
+        loop
+            dbms_lob.read( l_clob, l_amount, l_offset, l_buffer );
+            htp.p(l_buffer);
+            l_offset := l_offset + l_amount;
+            l_amount := 32000;
+        end loop;
+    exception
+        when no_data_found then
+            null;
+    end;
+ 
+end;
+</pre>
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_web_service002.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_web_service004.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

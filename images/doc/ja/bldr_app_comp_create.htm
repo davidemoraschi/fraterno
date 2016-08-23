@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Creating an Application Computation</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:1Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Creating an Application Computation" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="bldr_pgs.htm" title="Working with Application Pages" type="text/html" />
+<link rel="up" href="bldr_app_comp.htm" title="Understanding Application C..." type="text/html" />
+<link rel="up" href="bldr_app_comp_create.htm" title="Creating an Application Com..." type="text/html" />
+<link rel="prev" href="bldr_app_comp_about.htm" title="Previous" type="text/html" />
+<link rel="next" href="bldr_app_comp-access.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="bldr_pgs.htm" title="Working with Application Pages">Working with Application Pages</a> &gt; <a href="bldr_app_comp.htm" title="Understanding Application C...">Understanding Application C...</a> &gt; Creating an Application Com...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="bldr_app_comp_about.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldr_app_comp-access.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABJGGGA" name="BABJGGGA"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB25219" id="HTMDB25219"></a>Creating an Application Computation<a id="sthref847" name="sthref847"></a></h1>
+<p>To create an application computation:</p>
+<ol>
+<li>
+<p>Navigate to the Shared Components page:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click <span class="bold">Application Builder</span>.</p>
+</li>
+<li>
+<p>Select an application.</p>
+</li>
+<li>
+<p>On the Application home page, click <span class="bold">Shared Components</span>.</p>
+<p>The Shared Components page appears.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Under Logic, select <span class="bold">Application Computations</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+</li>
+<li>
+<p>Under Item:</p>
+<ol>
+<li>
+<p>Sequence - Specify the sequence for this component. The sequence determines the order of evaluation.</p>
+</li>
+<li>
+<p>Computation Item - Select the item this computation affects.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Computation Point, select a process point at which this computation should be performed. Selecting <span class="bold">After Submit</span> causes the computation to be performed only after the page is displayed and then submitted.</p>
+</li>
+<li>
+<p>Under Computation:</p>
+<ol>
+<li>
+<p>Computation Type - Select the manner in which this computation will be performed.</p>
+</li>
+<li>
+<p>Computation - Enter the computation logic that corresponds to the computation type.</p>
+</li>
+<li>
+<p>Computation Error Message - Enter the error message that displays if the computation fails.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Authorization Scheme (optional), select an authorization scheme which must evaluate to True in order for this computation to execute.</p>
+</li>
+<li>
+<p>Under Conditions (optional):</p>
+<ol>
+<li>
+<p>Condition Type - Select a condition type that must be met in order for this computation to execute.</p>
+</li>
+<li>
+<p>Expression 1 and Expression 2 - Use these attributes to conditionally control whether the computation executes. Enter values in this attribute based on the specific condition type you select. The computation will execute if the specified condition is met.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>For Build Option (optional), select a build option for this component. See <a href="deploy_build_options.htm#BEIDAGHE">"Using Build Options to Control Configuration"</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+</li>
+</ol>
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref848" name="sthref848"></a>
+<h2><a name="HTMDB25220" id="HTMDB25220"></a>About the Application Computations <a id="sthref849" name="sthref849"></a>Page</h2>
+<p>Once you create an application computation, it appears on the Application Computations page. You control how the page displays by making a selection from the View list. Available options include:</p>
+<ul>
+<li>
+<p><span class="bold">Icons</span> (the default) displays each computation as a large icon. To edit an computation, click the appropriate icon.</p>
+</li>
+<li>
+<p><span class="bold">Details</span> displays each application process as a line in a report. To edit a computation process, click the name.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="bldr_app_comp_about.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldr_app_comp-access.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

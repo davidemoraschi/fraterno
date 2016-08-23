@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Data Types used by APEX_PLUGIN Package</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:39Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Data Types used by APEX_PLUGIN Package" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_plugin.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_plugin002.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_plugin.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin002.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BAJDADCE" name="BAJDADCE"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>Data Types used by APEX_PLUGIN <a id="sthref776" name="sthref776"></a>Package</h1>
+<p>The data types used by the <code>APEX_PLUGIN</code> package are described in this section.</p>
+<a id="sthref777" name="sthref777"></a>
+<p class="subhead2">Data Types:</p>
+<ul>
+<li>
+<p><a href="#BAJIDJEA">c_*</a></p>
+</li>
+<li>
+<p><a href="#BAJGJCGA">t_dynamic_action</a></p>
+</li>
+<li>
+<p><a href="#BAJHHGEI">t_dynamic_action_ajax_result</a></p>
+</li>
+<li>
+<p><a href="#BAJEJGJF">t_dynamic_action_render_result</a></p>
+</li>
+<li>
+<p><a href="#BAJEEFFH">t_page_item</a></p>
+</li>
+<li>
+<p><a href="#BAJJIHHH">t_page_item_ajax_result</a></p>
+</li>
+<li>
+<p><a href="#BAJHGJFG">t_page_item_render_result</a></p>
+</li>
+<li>
+<p><a href="#BAJJGIGD">t_page_item_validation_result</a></p>
+</li>
+<li>
+<p><a href="#BAJFGBFA">t_plugin</a></p>
+</li>
+<li>
+<p><a href="#BAJDGCHB">t_process</a></p>
+</li>
+<li>
+<p><a href="#BAJJEDHJ">t_process_exec_result</a></p>
+</li>
+<li>
+<p><a href="#BAJIFJJI">t_region</a></p>
+</li>
+<li>
+<p><a href="#BAJIFIBH">t_region_ajax_result</a></p>
+</li>
+<li>
+<p><a href="#BAJCAIGH">t_region_render_result</a></p>
+</li>
+</ul>
+<a id="BAJIDJEA" name="BAJIDJEA"></a>
+<p class="subhead2">c_*</p>
+<p>The following constants are used for <code>display_location</code> in the page item validation function result type <code>t_page_item_validation_result</code>.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+c_inline_with_field           constant varchar2(40) := 'INLINE_WITH_FIELD';
+c_inline_with_field_and_notif constant varchar2(40) := 'INLINE_WITH_FIELD_AND_NOTIFICATION';
+c_inline_in_notifiction       constant varchar2(40) := 'INLINE_IN_NOTIFICATION';
+c_on_error_page               constant varchar2(40) := 'ON_ERROR_PAGE';
+</pre>
+<a id="BAJGJCGA" name="BAJGJCGA"></a>
+<p class="subhead2">t_dynamic_action</p>
+<p>The following type is passed into all dynamic action plug-in functions and contains information about the current plug-in.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+type t_dynamic_action is record (
+    id           number,
+    action       varchar2(50),
+    attribute_01 varchar2(32767),
+    attribute_02 varchar2(32767),
+    attribute_03 varchar2(32767),
+    attribute_04 varchar2(32767),
+    attribute_05 varchar2(32767),
+    attribute_06 varchar2(32767),
+    attribute_07 varchar2(32767),
+    attribute_08 varchar2(32767),
+    attribute_09 varchar2(32767),
+    attribute_10 varchar2(32767) );
+</pre>
+<a id="BAJHHGEI" name="BAJHHGEI"></a>
+<p class="subhead2">t_dynamic_action_ajax_result</p>
+<p>The following type is used as the result type for the AJAX function of a dynamic action type plug-in.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+type t_dynamic_action_ajax_result is record (
+    dummy boolean /* not used yet */
+    );
+</pre>
+<a id="BAJEJGJF" name="BAJEJGJF"></a>
+<p class="subhead2">t_dynamic_action_render_result</p>
+<p>The following type is used as the result type for the rendering function of a dynamic action plug-in.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+type t_dynamic_action_render_result is record (
+    javascript_function varchar2(32767),
+    ajax_identifier     varchar2(255),
+    attribute_01        varchar2(32767),
+    attribute_02        varchar2(32767),
+    attribute_03        varchar2(32767),
+    attribute_04        varchar2(32767),
+    attribute_05        varchar2(32767),
+    attribute_06        varchar2(32767),
+    attribute_07        varchar2(32767),
+    attribute_08        varchar2(32767),
+    attribute_09        varchar2(32767),
+    attribute_10        varchar2(32767) );
+</pre>
+<a id="BAJEEFFH" name="BAJEEFFH"></a>
+<p class="subhead2">t_page_item</p>
+<p>The following type is passed into all item type plug-in functions and contains information about the current page item.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+type t_page_item is record (
+    id                          number,
+    name                        varchar2(255),
+    label                       varchar2(4000),
+    plain_label                 varchar2(4000),
+    format_mask                 varchar2(255),
+    is_required                 boolean,
+    lov_definition              varchar2(4000),
+    lov_display_extra           boolean,
+    lov_display_null            boolean,
+    lov_null_text               varchar2(255),
+    lov_null_value              varchar2(255),
+    lov_cascade_parent_items    varchar2(255),
+    ajax_items_to_submit        varchar2(255),
+    ajax_optimize_refresh       boolean,
+    element_width               number,
+    element_max_length          number,
+    element_height              number,
+    element_attributes          varchar2(2000),
+    element_option_attributes   varchar2(4000),
+    escape_output               boolean,
+    attribute_01                varchar2(32767),
+    attribute_02                varchar2(32767),
+    attribute_03                varchar2(32767),
+    attribute_04                varchar2(32767),
+    attribute_05                varchar2(32767),
+    attribute_06                varchar2(32767),
+    attribute_07                varchar2(32767),
+    attribute_08                varchar2(32767),
+    attribute_09                varchar2(32767),
+    attribute_10                varchar2(32767) );
+</pre>
+<a id="BAJJIHHH" name="BAJJIHHH"></a>
+<p class="subhead2">t_page_item_ajax_result</p>
+<p>The following type is used as the result type for the AJAX function of an item type plug-in.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+type t_page_item_ajax_result is record (
+    dummy boolean /* not used yet */
+    );
+</pre>
+<a id="BAJHGJFG" name="BAJHGJFG"></a>
+<p class="subhead2">t_page_item_render_result</p>
+<p>The following type is used as the result type for the rendering function of an item type plug-in.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+type t_page_item_render_result is record (
+    is_navigable     boolean default false,
+    navigable_dom_id varchar2(255)          /* should only be set if navigable element is not equal to item name */
+    );
+</pre>
+<a id="BAJJGIGD" name="BAJJGIGD"></a>
+<p class="subhead2">t_page_item_validation_result</p>
+<p>The following type is used as the result type for the validation function of an item type plug-in.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+type t_page_item_validation_result is record (
+    message          varchar2(32767),
+    display_location varchar2(40),    /* if not set the application default will be used */
+    page_item_name   varchar2(255) ); /* if not set the validated page item name will be used */
+</pre>
+<a id="BAJFGBFA" name="BAJFGBFA"></a>
+<p class="subhead2">t_plugin</p>
+<p>The following type is passed into all plug-in functions and contains information about the current plug-in.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+type t_plugin is record (
+    name         varchar2(45),
+    file_prefix  varchar2(4000),
+    attribute_01 varchar2(32767),
+    attribute_02 varchar2(32767),
+    attribute_03 varchar2(32767),
+    attribute_04 varchar2(32767),
+    attribute_05 varchar2(32767),
+    attribute_06 varchar2(32767),
+    attribute_07 varchar2(32767),
+    attribute_08 varchar2(32767),
+    attribute_09 varchar2(32767),
+    attribute_10 varchar2(32767) );
+</pre>
+<a id="BAJDGCHB" name="BAJDGCHB"></a>
+<p class="subhead2">t_process</p>
+<p>The following type is passed into all process type plug-in functions and contains information about the current process.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+type t_process is record (
+    id                   number,
+    name                 varchar2(255),
+    success_message      varchar2(32767),
+    attribute_01         varchar2(32767),
+    attribute_02         varchar2(32767),
+    attribute_03         varchar2(32767),
+    attribute_04         varchar2(32767),
+    attribute_05         varchar2(32767),
+    attribute_06         varchar2(32767),
+    attribute_07         varchar2(32767),
+    attribute_08         varchar2(32767),
+    attribute_09         varchar2(32767),
+    attribute_10         varchar2(32767) );
+</pre>
+<a id="BAJJEDHJ" name="BAJJEDHJ"></a>
+<p class="subhead2">t_process_exec_result</p>
+<p>The following type is used as the result type for the execution function of a process type plug-in.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+type t_process_exec_result is record (
+    success_message varchar2(32767)
+    );
+</pre>
+<a id="BAJIFJJI" name="BAJIFJJI"></a>
+<p class="subhead2">t_region</p>
+<p>The following type is passed into all region type plug-in functions and contains information about the current region.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+type t_region is record (
+    id            number,
+    static_id     varchar2(255),
+    name          varchar2(255),
+    type          varchar2(255),
+    source        varchar2(32767),
+    error_message varchar2(32767),
+    attribute_01  varchar2(32767),
+    attribute_02  varchar2(32767),
+    attribute_03  varchar2(32767),
+    attribute_04  varchar2(32767),
+    attribute_05  varchar2(32767),
+    attribute_06  varchar2(32767),
+    attribute_07  varchar2(32767),
+    attribute_08  varchar2(32767),
+    attribute_09  varchar2(32767),
+    attribute_10  varchar2(32767) );
+</pre>
+<a id="BAJIFIBH" name="BAJIFIBH"></a>
+<p class="subhead2">t_region_ajax_result</p>
+<p>The following type is used as result type for the AJAX function of a region type plug-in.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+type t_region_ajax_result is record (
+    dummy boolean /* not used yet */
+    );
+</pre>
+<a id="BAJCAIGH" name="BAJCAIGH"></a>
+<p class="subhead2">t_region_render_result</p>
+<p>The following type is used as the result type for the rendering function of a region type plug-in.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+type t_region_render_result is record (
+    dummy boolean /* not used yet */
+    );
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_plugin.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin002.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

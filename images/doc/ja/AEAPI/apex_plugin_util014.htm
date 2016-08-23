@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>GET_SEARCH_STRING Function</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:40Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="GET_SEARCH_STRING Function" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_plugin_util013.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_plugin_util015.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_plugin_util013.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin_util015.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABJIHCA" name="BABJIHCA"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>GET_SEARCH_STRING <a id="sthref865" name="sthref865"></a>Function</h1>
+<p>Based on the provided value in <code>p_search_type</code> the passed in value of <code>p_search_string</code> is returned unchanged or is converted to uppercase. This function is used in conjunction with the <code>p_search_string</code> parameter of <code>get_data</code> and <code>get_data2</code>.</p>
+<a id="sthref866" name="sthref866"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_PLUGIN_UTIL.GET_SEARCH_STRING(
+    p_search_type IN VARCHAR2,
+    p_search_string IN VARCHAR2)
+RETURN VARCHAR2;
+</pre>
+<a id="sthref867" name="sthref867"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#BABEDBHB">Table: GET_SEARCH_STRING Parameters</a> describes the parameters available in the <code>GET_SEARCH_STRING</code> function.</p>
+<div class="tblformal"><a id="sthref868" name="sthref868"></a><a id="BABEDBHB" name="BABEDBHB"></a>
+<p class="titleintable">GET_SEARCH_STRING Parameters</p>
+<table class="Formal" title="GET_SEARCH_STRING Parameters" summary="This table describes the parameters available in the GET_SEARCH_STRING function." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="38%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t20">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t20">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t20" headers="r1c1-t20">
+<p><code>p_search_type</code></p>
+</td>
+<td align="left" headers="r2c1-t20 r1c2-t20">
+<p>Type of search when used with <code>get_data</code> and <code>get_data2</code>. Use one of the <code>c_search_*</code> constants.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t20" headers="r1c1-t20">
+<p>p_search_string</p>
+</td>
+<td align="left" headers="r3c1-t20 r1c2-t20">
+<p>Search string used for the search with <code>get_data</code> and <code>get_data2</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref869" name="sthref869"></a>
+<p class="subhead2">Return</p>
+<p><a href="#BABCHFEI">Table: GET_SEARCH_STRING Return</a> describes the return value by the function <code>GET_SEARCH_STRING</code>.</p>
+<div class="tblformal"><a id="sthref870" name="sthref870"></a><a id="BABCHFEI" name="BABCHFEI"></a>
+<p class="titleintable">GET_SEARCH_STRING Return</p>
+<table class="Formal" title="GET_SEARCH_STRING Return" summary="This table describes the return values for the GET_SEARCH_STRING function." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t21">Return</th>
+<th align="left" valign="bottom" id="r1c2-t21">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t21" headers="r1c1-t21">
+<p><code>VARCHAR2</code></p>
+</td>
+<td align="left" headers="r2c1-t21 r1c2-t21">
+<p>Returns <code>p_search_string</code> unchanged or in uppercase if <code>p_search_type</code> is of type <code>c_search_contains_ignore</code> or <code>c_search_exact_ignore</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref871" name="sthref871"></a>
+<p class="subhead2">Example</p>
+<p>This example uses a call to <code>get_data</code> or <code>get_data2</code> to make sure the search string is using the correct case.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+l_column_value_list :=
+    apex_plugin_util.get_data (
+        p_sql_statement    =&gt; p_item.lov_definition,
+        p_min_columns      =&gt; 2,
+        p_max_columns      =&gt; 2,
+        p_component_name   =&gt; p_item.name,
+        p_search_type      =&gt; apex_plugin_util.c_search_contains_ignore,
+        p_search_column_no =&gt; 1,
+        p_search_string    =&gt; apex_plugin_util.get_search_string (
+            p_search_type   =&gt; apex_plugin_util.c_search_contains_ignore,
+            p_search_string =&gt; p_value ) );
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_plugin_util013.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin_util015.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

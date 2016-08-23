@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ADD_AD_COLUMN Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:40Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="ADD_AD_COLUMN Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_ui_default.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_ui_default002.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_ui_default.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_ui_default002.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDCADAA" name="CHDCADAA"></a></p>
+<hr />
+<div class="refsect1">
+<h1><a name="AEAPI400" id="AEAPI400"></a>ADD_AD_COLUMN <a id="sthref918" name="sthref918"></a>Procedure</h1>
+<p>Adds a User Interface Default Attribute Dictionary entry with the provided definition. Up to three synonyms can be provided during the creation. Additional synonyms can be added post-creation using apex_ui_default_update.add_ad_synonym. Synonyms share the column definition of their base column.</p>
+<a id="sthref919" name="sthref919"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_UI_DEFAULT_UPDATE.ADD_AD_COLUMN (
+    p_column_name           IN  VARCHAR2,
+    p_label                 IN  VARCHAR2  DEFAULT NULL,
+    p_help_text             IN  VARCHAR2  DEFAULT NULL,
+    p_format_mask           IN  VARCHAR2  DEFAULT NULL,
+    p_default_value         IN  VARCHAR2  DEFAULT NULL,
+    p_form_format_mask      IN  VARCHAR2  DEFAULT NULL,
+    p_form_display_width    IN  VARCHAR2  DEFAULT NULL,
+    p_form_display_height   IN  VARCHAR2  DEFAULT NULL,
+    p_form_data_type        IN  VARCHAR2  DEFAULT NULL,
+    p_report_format_mask    IN  VARCHAR2  DEFAULT NULL,
+    p_report_col_alignment  IN  VARCHAR2  DEFAULT NULL,
+    p_syn_name1             IN  VARCHAR2  DEFAULT NULL,
+    p_syn_name2             IN  VARCHAR2  DEFAULT NULL,
+    p_syn_name3             IN  VARCHAR2  DEFAULT NULL); 
+</pre>
+<a id="sthref920" name="sthref920"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="apex_ui_default005.htm#CHDHHGCA">Table: DEL_COLUMN Parameters</a> describes the parameters available in the <code>ADD_AD_COLUMN</code> procedure.</p>
+<div class="tblformal"><a id="sthref921" name="sthref921"></a><a id="sthref922" name="sthref922"></a>
+<p class="titleintable">ADD_AD_COLUMN Parameters</p>
+<table class="Formal" title="ADD_AD_COLUMN Parameters" summary="This table describes the parameters available in the UPD_DISPLAY_IN_FORM procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="36%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t3">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t3">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t3" headers="r1c1-t3">
+<p><code>p_column_name</code></p>
+</td>
+<td align="left" headers="r2c1-t3 r1c2-t3">
+<p>Name of column to be created.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t3" headers="r1c1-t3">
+<p><code>p_label</code></p>
+</td>
+<td align="left" headers="r3c1-t3 r1c2-t3">
+<p>Used for item label and report column heading.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t3" headers="r1c1-t3">
+<p><code>p_help_text</code></p>
+</td>
+<td align="left" headers="r4c1-t3 r1c2-t3">
+<p>Used for help text for items and interactive report columns</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t3" headers="r1c1-t3">
+<p><code>p_format_mask</code></p>
+</td>
+<td align="left" headers="r5c1-t3 r1c2-t3">
+<p>Used as the format mask for items and report columns. Can be overwritten by report for form specific format masks.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t3" headers="r1c1-t3">
+<p><code>p_default_value</code></p>
+</td>
+<td align="left" headers="r6c1-t3 r1c2-t3">
+<p>Used as the default value for items.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t3" headers="r1c1-t3">
+<p><code>p_form_format_mask</code></p>
+</td>
+<td align="left" headers="r7c1-t3 r1c2-t3">
+<p>If provided, used as the format mask for items, overriding any value for the general format mask.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t3" headers="r1c1-t3">
+<p><code>p_form_display_width</code></p>
+</td>
+<td align="left" headers="r8c1-t3 r1c2-t3">
+<p>Used as the width of any items using this Attribute Definition.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t3" headers="r1c1-t3">
+<p><code>p_form_display_height</code></p>
+</td>
+<td align="left" headers="r9c1-t3 r1c2-t3">
+<p>Used as the height of any items using this Attribute Definition (only used by item types such as text areas and shuttles).</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t3" headers="r1c1-t3">
+<p><code>p_form_data_type</code></p>
+</td>
+<td align="left" headers="r10c1-t3 r1c2-t3">
+<p>Used as the data type for items (results in an automatic validation). Valid values are VARCHAR, NUMBER and DATE.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r11c1-t3" headers="r1c1-t3">
+<p><code>p_report_format_mask</code></p>
+</td>
+<td align="left" headers="r11c1-t3 r1c2-t3">
+<p>If provided, used as the format mask for report columns, overriding any value for the general format mask.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r12c1-t3" headers="r1c1-t3">
+<p><code>p_report_col_alignment</code></p>
+</td>
+<td align="left" headers="r12c1-t3 r1c2-t3">
+<p>Used as the alignment for report column data (e.g. number are usually right justified). Valid values are <code>LEFT</code>, <code>CENTER</code>, and <code>RIGHT</code>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r13c1-t3" headers="r1c1-t3">
+<p><code>p_syn_name1</code></p>
+</td>
+<td align="left" headers="r13c1-t3 r1c2-t3">
+<p>Name of synonym to be created along with this column. For more than 3, use APEX_UI_DEFAULT_UPDATE.ADD_AD_SYNONYM.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r14c1-t3" headers="r1c1-t3">
+<p><code>p_syn_name2</code></p>
+</td>
+<td align="left" headers="r14c1-t3 r1c2-t3">
+<p>Name of second synonym to be created along with this column. For more than 3, use APEX_UI_DEFAULT_UPDATE.ADD_AD_SYNONYM.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r15c1-t3" headers="r1c1-t3">
+<p><code>p_syn_name3</code></p>
+</td>
+<td align="left" headers="r15c1-t3 r1c2-t3">
+<p>Name of third synonym to be created along with this column. For more than 3, use APEX_UI_DEFAULT_UPDATE.ADD_AD_SYNONYM.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref923" name="sthref923"></a>
+<p class="subhead2">Example</p>
+<p>The following example creates a new attribute to the UI Defaults Attribute Dictionary within the workspace associated with the current schema. It also creates a synonym for that attribute.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN
+    apex_ui_default_update.add_ad_column (
+       p_column_name          =&gt; 'CREATED_BY',
+       p_label                =&gt; 'Created By',
+       p_help_text            =&gt; 'User that created the record.',
+       p_form_display_width   =&gt; 30,
+       p_form_data_type       =&gt; 'VARCHAR',
+       p_report_col_alignment =&gt; 'LEFT',
+       p_syn_name1            =&gt; 'CREATED_BY_USER' );
+END;
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_ui_default.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_ui_default002.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

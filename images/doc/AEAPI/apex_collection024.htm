@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MERGE_MEMBERS Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:37Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="MERGE_MEMBERS Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_collection023.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_collection025.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_collection023.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection025.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CJAJBDCF" name="CJAJBDCF"></a></p>
+<hr />
+<div class="refsect1">
+<h1><a id="sthref235" name="sthref235"></a>MERGE_MEMBERS Procedure</h1>
+<p>Use this procedure to merge members of the given named collection with the values passed in the arrays. If the named collection does not exist one is created. If a p_init_query is provided, the collection is created from the supplied SQL query. If the named collection exists, the following occurs:</p>
+<ol>
+<li>
+<p>Rows in the collection and not in the arrays are deleted.</p>
+</li>
+<li>
+<p>Rows in the collections and in the arrays are updated.</p>
+</li>
+<li>
+<p>Rows in the arrays and not in the collection are inserted.</p>
+</li>
+</ol>
+<p>The count of elements in the p_c001 PL/SQL table will be used as the total number of items across all PL/SQL tables. For example, if p_c001.count is 2 and p_c002.count is 10, only 2 members will be merged. If p_c001 is null an application error is raised.</p>
+<a id="sthref236" name="sthref236"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_COLLECTION.MERGE_MEMBERS (
+    p_collection_name IN VARCHAR2,
+    p_seq  IN APEX_APPLICATION_GLOBAL.VC_ARR2 DEFAULT empty_vc_arr,
+    p_c001 IN APEX_APPLICATION_GLOBAL.VC_ARR2 DEFAULT empty_vc_arr,
+    p_c002 IN APEX_APPLICATION_GLOBAL.VC_ARR2 DEFAULT empty_vc_arr,
+    p_c003 IN APEX_APPLICATION_GLOBAL.VC_ARR2 DEFAULT empty_vc_arr,
+    ...
+    p_c050 IN APEX_APPLICATION_GLOBAL.VC_ARR2 DEFAULT empty_vc_arr,
+    p_null_index  IN NUMBER DEFAULT 1,
+    p_null_value  IN VARCHAR2 DEFAULT null,
+    p_init_query  IN VARCHAR2 DEFAULT null);
+</pre>
+<a id="sthref237" name="sthref237"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#CJAGACGH">Table: MERGE_MEMBERS Procedure Parameters</a> describes the parameters available in the <code>MERGE_MEMBERS</code> procedure.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Any character attribute exceeding 4,000 characters is truncated to 4,000 characters. Also, the number of members added is based on the number of elements in the first array.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+<div class="tblformal"><a id="sthref238" name="sthref238"></a><a id="CJAGACGH" name="CJAGACGH"></a>
+<p class="titleintable">MERGE_MEMBERS Procedure Parameters</p>
+<table class="Formal" title="MERGE_MEMBERS Procedure Parameters" summary="This table describes the parameters available in the UNEXPIRE_END_USER_ACCOUNT procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t56">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t56">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t56" headers="r1c1-t56">
+<p><code>p_collection_name</code></p>
+</td>
+<td align="left" headers="r2c1-t56 r1c2-t56">
+<p>The name of the collection. Maximum length is 255 bytes. Collection names are not case sensitive and are converted to upper case.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t56" headers="r1c1-t56">
+<p><code>p_c001 through p_c050</code></p>
+</td>
+<td align="left" headers="r3c1-t56 r1c2-t56">
+<p>Array of attribute values to be merged. Maximum length is 4,000 bytes. Any character attribute exceeding 4,000 characters is truncated to 4,000 characters. The count of the p_c001 array is used across all arrays. If no values are provided then no actions are performed.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t56" headers="r1c1-t56">
+<p><code>p_c0xx</code></p>
+</td>
+<td align="left" headers="r4c1-t56 r1c2-t56">
+<p>Attribute of NN attributes values to be merged. Maximum length can be 4,000 bytes. The attribute value is truncated to 4,000 bytes if greater than this amount.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t56" headers="r1c1-t56">
+<p><code>p_seq</code></p>
+</td>
+<td align="left" headers="r5c1-t56 r1c2-t56">
+<p>Identifies the sequence number of the collection to be merged.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t56" headers="r1c1-t56">
+<p><code>p_null_index</code></p>
+</td>
+<td align="left" headers="r6c1-t56 r1c2-t56">
+<p>That is if the element identified by this value is null, then treat this row as a null row. For example, if p_null_index is 3, then p_c003 is treated as a null row. In other words, tell the merge function to ignore this row. This results in the null rows being removed from the collection. The null index works in conjunction with the null value. If the value of the <code>p_cXXX</code> argument is equal to the p_null_value then the row will be treated as null.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t56" headers="r1c1-t56">
+<p>p_null_value</p>
+</td>
+<td align="left" headers="r7c1-t56 r1c2-t56">
+<p>Used in conjunction with the p_null_index argument. Identifies the null value. If used, this value must not be null. A typical value for this argument is "0"</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t56" headers="r1c1-t56">
+<p>p_init_query</p>
+</td>
+<td align="left" headers="r8c1-t56 r1c2-t56">
+<p>If the collection does not exist, the collection is created using this query.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref239" name="sthref239"></a>
+<p class="subhead2">Example</p>
+<p>The following example creates a collection on the table of employees, and then merges the contents of the local arrays with the collection, updating the job of two employees.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+DECLARE
+    l_seq   APEX_APPLICATION_GLOBAL.VC_ARR2;
+    l_c001  APEX_APPLICATION_GLOBAL.VC_ARR2;
+    l_c002  APEX_APPLICATION_GLOBAL.VC_ARR2;
+    l_c003  APEX_APPLICATION_GLOBAL.VC_ARR2;
+BEGIN
+    l_seq(1)  := 1;
+    l_c001(1) := 7369;
+    l_c002(1) := 'SMITH';
+    l_c003(1) := 'MANAGER';
+    l_seq(2)  := 2;
+    l_c001(2) := 7499;
+    l_c002(2) := 'ALLEN';
+    l_c003(2) := 'CLERK';
+ 
+    APEX_COLLECTION.MERGE_MEMBERS(
+        p_collection_name =&gt; 'EMPLOYEES',
+        p_seq =&gt; l_seq,
+        p_c001 =&gt; l_c001,
+        p_c002 =&gt; l_c002,
+        p_c003 =&gt; l_c003,
+        p_init_query =&gt; 'select empno, ename, job from emp order by empno');
+END;
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_collection023.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection025.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

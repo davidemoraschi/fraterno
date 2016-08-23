@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Exporting User Interface Defaults</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:12Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Exporting User Interface Defaults" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="deploy.htm" title="Deploying an Application" type="text/html" />
+<link rel="up" href="deploy_export.htm" title="Exporting an Application an..." type="text/html" />
+<link rel="up" href="deploy_exprt_ui_def.htm" title="Exporting User Interface De..." type="text/html" />
+<link rel="prev" href="deploy_exprt_scripts.htm" title="Previous" type="text/html" />
+<link rel="next" href="deploy_export_feed.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="deploy.htm" title="Deploying an Application">Deploying an Application</a> &gt; <a href="deploy_export.htm" title="Exporting an Application an...">Exporting an Application an...</a> &gt; Exporting User Interface De...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="deploy_exprt_scripts.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="deploy_export_feed.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABCADHA" name="BABCADHA"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB25830" id="HTMDB25830"></a>Exporting <a id="sthref2445" name="sthref2445"></a>User Interface Defaults<a id="sthref2446" name="sthref2446"></a><a id="sthref2447" name="sthref2447"></a><a id="sthref2448" name="sthref2448"></a></h1>
+<p>Exporting User Interface Defaults is useful when you plan to develop on a target system. User Interface Defaults are divided into two categories, the Table Dictionary, and the Attribute Dictionary.</p>
+<ul>
+<li>
+<p>The Table Dictionary consists is specific to tables and columns within a selected schema. These defaults are used over those defined in the Attribute Dictionary.</p>
+</li>
+<li>
+<p>The Attribute Dictionary contains a set of attributes about a column that is used in creating forms and reports. The definitions are matched by column name and a particular definition can be shared among several columns by using synonyms.</p>
+</li>
+</ul>
+<p>When you export User Interface Defaults, all User Interface Defaults for the selected dictionary and schema are exported to a single SQL Command script. When prompted, save this file to your hard drive. The file contains an API call to create table hints by making calls to the application PL/SQL API. You can use this file to import User Interface Defaults to another database and Oracle Application Express instance.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="deploy_import_ui.htm#CHDCIDDB">"Importing User Interface Defaults"</a> and "Managing User Interface Defaults" in <a href="AEUTL/qry_blr_sel_obj.htm"><span class="italic">Oracle Application Express SQL Workshop Guide</span></a>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref2449" name="sthref2449"></a>
+<h2><a name="HTMDB25831" id="HTMDB25831"></a>Exporting User Interface Defaults from the Export Page</h2>
+<p>To export User Interface Defaults from the Export page:</p>
+<ol>
+<li>
+<p>Navigate to the Export page:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click the <span class="bold">Application Builder</span> icon.</p>
+</li>
+<li>
+<p>On the Application Builder home page, click <span class="bold">Export</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>On the Export page, click <span class="bold">User Interface Defaults</span>.</p>
+</li>
+<li>
+<p>On the Export User Interface Defaults - Table Dictionary page, select the following:</p>
+<ol>
+<li>
+<p>Schema - Select the schema that owns the table associated with the User Interface Defaults.</p>
+</li>
+<li>
+<p>File Format - Select how rows in the export file will be formatted:</p>
+<ul>
+<li>
+<p>Choose <span class="bold">UNIX</span> to have the resulting file contain rows delimited by line feeds.</p>
+</li>
+<li>
+<p>Choose <span class="bold">DOS</span> to have the resulting file contain rows delimited by carriage returns and line feeds.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">Export</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>To export Attribute Dictionary, click <span class="bold">Attribute Dictionary</span> tab.</p>
+</li>
+<li>
+<p>Click <span class="bold">Export</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref2450" name="sthref2450"></a>
+<h2><a name="HTMDB25832" id="HTMDB25832"></a>Exporting User Interface Defaults from the User Interface Defaults Page</h2>
+<p>To export User Interface Defaults from the User Interface Defaults page:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click the <span class="bold">SQL Workshop</span> icon.</p>
+</li>
+<li>
+<p>Click <span class="bold">Utilities</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">User Interface Defaults</span>.</p>
+<p>The User Interface Defaults page appears.</p>
+</li>
+<li>
+<p>Select the dictionary you want to export:</p>
+<ul>
+<li>
+<p><span class="bold">Manage Table Dictionary</span> - select this button to export specific tables and columns within a selected schema.</p>
+</li>
+<li>
+<p><span class="bold">Manage Attribute Dictionary</span> - select this button to export a set of column attributes used to create forms and reports.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Under Tasks, click <span class="bold">Export</span> link.</p>
+</li>
+<li>
+<p>On the Table Dictionary page, select the file format:</p>
+<ul>
+<li>
+<p>Choose <span class="bold">UNIX</span> to have the resulting file contain rows delimited by line feeds.</p>
+</li>
+<li>
+<p>Choose <span class="bold">DOS</span> to have the resulting file contain rows delimited by carriage returns and line feeds.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">Export</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="deploy_exprt_scripts.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="deploy_export_feed.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

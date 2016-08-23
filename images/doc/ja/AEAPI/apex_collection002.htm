@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Naming, Creating and Accessing Collections</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:37Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Naming, Creating and Accessing Collections" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_collection001.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_collection003.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_collection001.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection003.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABBCHID" name="BABBCHID"></a></p>
+<hr />
+<h1>Naming, Creating and Accessing Collections</h1>
+<p><a id="sthref132" name="sthref132"></a></p>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#BAGGIGJJ">Naming Collections</a></p>
+</li>
+<li>
+<p><a href="#BAGJBDEH">Creating a Collection</a></p>
+</li>
+<li>
+<p><a href="#BAGGAIFD">About the Parameter p_generate_md5</a></p>
+</li>
+</ul>
+<p><a id="BAGGIGJJ" name="BAGGIGJJ"></a></p>
+<h2>Naming Collections</h2>
+<p>When you create a collection, you must give it a name that cannot exceed 255 characters. Note that collection names are not case-sensitive and will be converted to uppercase.</p>
+<p>Once the collection is named, you can access the values in the collection by running a SQL query against the view <code>APEX_COLLECTIONS</code>.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="#CHDGGECE">"Accessing a Collection"</a>, <a href="apex_collection012.htm#CJAHBADG">"CREATE_COLLECTION Procedure Parameters"</a>, <a href="apex_collection013.htm#CJADIJAI">"CREATE_OR_TRUNCATE_COLLECTION Procedure Parameters"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<p><a id="BAGJBDEH" name="BAGJBDEH"></a></p>
+<h2>Creating a <a id="sthref133" name="sthref133"></a>Collection</h2>
+<p>Every collection contains a named list of data elements (or members) which can have up to 50 character attributes (<code>VARCHAR2(4000)</code>), five number attributes, one XML Type attribute, one large binary attribute (<code>BLOB</code>), and one large character attribute (<code>CLOB</code>). You use the following methods to create a collection:</p>
+<ul>
+<li>
+<p><code>CREATE_COLLECTION</code>This method creates an empty collection with the provided name. An exception is raised if the named collection exists.</p>
+</li>
+<li>
+<p><code>CREATE_OR_TRUNCATE_COLLECTION</code> If the provided named collection does not exist, this method creates an empty collection with the given name. If the named collection exists, this method truncates it. Truncating a collection empties it, but leaves it in place.</p>
+</li>
+<li>
+<p><code>CREATE_COLLECTION_FROM_QUERY</code>This method creates a collection and then populates it with the results of a specified query. An exception is raised if the named collection exists. This method can be used with a query with up to 50 columns in the <code>SELECT</code> clause. These columns in the <code>SELECT</code> clause will populate the 50 character attributes of the collection (C001 through C050).</p>
+</li>
+<li>
+<p><code>CREATE_COLLECTION_FOM_QUERY2</code>This method creates a collection and then populates it with the results of a specified query. An exception is raised if the named collection exists. It is identical to the <code>CREATE_COLLECTION_FROM_QUERY</code>, however, the first 5 columns of the <code>SELECT</code> clause must be numeric. After the numeric columns, there can be up to 50 character columns in the <code>SELECT</code> clause.</p>
+</li>
+<li>
+<p><code>CREATE_COLLECTION_FROM_QUERY_B</code>This method offers significantly faster performance than the <code>CREATE_COLLECTION_FROM_QUERY</code> method by performing bulk SQL operations, but has the following limitations:</p>
+<ul>
+<li>
+<p>No column value in the select list of the query can be more than 2,000 bytes. If a row is encountered that has a column value of more than 2,000 bytes, an error will be raised during execution.</p>
+</li>
+<li>
+<p>The MD5 checksum will not be computed for any members in the collection.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>CREATE_COLLECTION_FROM_QUERYB2</code>This method also creates a collection and then populates it with the results of a specified query. An exception is raised if the named collection exists. It is identical to the <code>CREATE_COLLECTION_FROM_QUERY_B</code>, however, the first five columns of the <code>SELECT</code> clause must be numeric. After the numeric columns, there can be up to 50 character columns in the <code>SELECT</code> clause.</p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection012.htm#CJADHJCJ">"CREATE_COLLECTION Procedure"</a>, <a href="apex_collection013.htm#CJAGGCJD">"CREATE_OR_TRUNCATE_COLLECTION Procedure"</a>, <a href="apex_collection014.htm#CJAGHAJD">"CREATE_COLLECTION_FROM_QUERY Procedure"</a>, <a href="apex_collection015.htm#CJAEDIIB">"CREATE_COLLECTION_FROM_QUERY2 Procedure"</a>, <a href="apex_collection016.htm#CJAHBBGD">"CREATE_COLLECTION_FROM_QUERY_B Procedure"</a>, <a href="apex_collection017.htm#CJACABGE">"CREATE_COLLECTION_FROM_QUERYB2 Procedure"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<p><a id="BAGGAIFD" name="BAGGAIFD"></a></p>
+<h2>About the Parameter p_generate_md5</h2>
+<p>Use the <code>p_generate_md5</code> flag to specify if the message digest of the data of the collection member should be computed. By default, this flag is set to <code>NO</code>. Use this parameter to check the MD5 of the collection member (that is, compare it with another member or see if a member has changed).</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection005.htm#BABIAEDH">"Determining Collection Status"</a> for information about using the <code>GET_MEMBER_MD5</code> function, <a href="apex_collection023.htm#CJAIFADF">"GET_MEMBER_MD5 Function"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<p><a id="CHDGGECE" name="CHDGGECE"></a></p>
+<h2>Accessing a Collection<a id="sthref134" name="sthref134"></a></h2>
+<p>You can access the members of a collection by querying the database view <code>APEX_COLLECTIONS</code>. The <code>APEX_COLLECTIONS</code> view has the following definition:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+COLLECTION_NAME   NOT NULL VARCHAR2(255)
+SEQ_ID            NOT NULL NUMBER 
+C001              VARCHAR2(4000)
+C002              VARCHAR2(4000)
+C003              VARCHAR2(4000)   
+C004              VARCHAR2(4000)   
+C005              VARCHAR2(4000)  
+...
+C050              VARCHAR2(4000)
+N001              NUMBER
+N002              NUMBER
+N003              NUMBER
+N004              NUMBER
+N005              NUMBER     
+CLOB001           CLOB
+BLOB001           BLOB  
+XMLTYPE001        XMLTYPE
+MD5_ORIGINAL      VARCHAR2(4000)  
+</pre>
+<p>Use the <code>APEX_COLLECTIONS</code> view in an application just as you would use any other table or view in an application, for example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT c001, c002, c003, n001, clob001
+   FROM APEX_collections
+ WHERE collection_name = 'DEPARTMENTS'
+</pre>
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_collection001.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection003.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

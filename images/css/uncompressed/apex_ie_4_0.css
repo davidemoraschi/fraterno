@@ -1,0 +1,14 @@
+img.apexDatePickerIcon[class]{vertical-align:middle;}
+span.lov,span.lov *{white-space:nowrap;vertical-align:middle;}
+span.lov{display:inline-block;}
+
+ol{margin:0 0 0 25px;padding:0;}
+ul{margin:0 0 0 15px;padding:0;}
+
+.apexir_BUTTONS table td {
+	text-align: left;
+}
+
+.apexir_TOOLBAR_CLOSE {
+	padding: 4px 8px 7px 0;
+}

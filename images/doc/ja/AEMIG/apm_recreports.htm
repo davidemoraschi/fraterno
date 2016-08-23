@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Reviewing Retrieved Reports</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-28T10:25:24Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Reviewing Retrieved Reports" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15518-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="appmgr.htm" title="Migrating a Microsoft Acces..." type="text/html" />
+<link rel="up" href="apm_howrevobj.htm" title="Step 5: Review Your Retriev..." type="text/html" />
+<link rel="up" href="apm_recreports.htm" title="Reviewing Retrieved Reports" type="text/html" />
+<link rel="prev" href="apm_recforms.htm" title="Previous" type="text/html" />
+<link rel="next" href="apm_rvwdbmodpg.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="appmgr.htm" title="Migrating a Microsoft Acces...">Migrating a Microsoft Acces...</a> &gt; <a href="apm_howrevobj.htm" title="Step 5: Review Your Retriev...">Step 5: Review Your Retriev...</a> &gt; Reviewing Retrieved Reports</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apm_recforms.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apm_rvwdbmodpg.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CBBIAIFD" name="CBBIAIFD"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEMIG116" id="AEMIG116"></a>Reviewing <a id="sthref67" name="sthref67"></a>Retrieved Reports</h1>
+<p>Next, review the reports retrieved from the Microsoft Access export. Application Migration identifies invalid reports and lists additional information, such as the report's source type and source name.</p>
+<p>After you update the reports, select the ones you want to include in the migration. To include a report, the source of the report must have a status of Valid.</p>
+<p>To review retrieved reports:</p>
+<ol>
+<li>
+<p>From the project page, click <span class="bold">Reports</span>.</p>
+<p>The Reports page appears, showing the status of the objects ready for migration.</p>
+<img src="img/acmg_rpt_pg.gif" alt="Description of acmg_rpt_pg.gif follows" title="Description of acmg_rpt_pg.gif follows" longdesc="img_text/acmg_rpt_pg.htm" /><br />
+<a id="sthref68" name="sthref68" href="img_text/acmg_rpt_pg.htm">Description of the illustration acmg_rpt_pg.gif</a><br />
+<br />
+<p>For each Microsoft Access report, the Reports page shows the following information, if available:</p>
+<ul>
+<li>
+<p>Source type:</p>
+<ul>
+<li>
+<p>Table</p>
+</li>
+<li>
+<p>Query - The Oracle view that was migrated from the Microsoft Access query.</p>
+</li>
+<li>
+<p>SQL Query - The original Microsoft Access SQL query that the Microsoft Access form is based on. Note that this query has not been parsed by the Oracle Migration Workbench. Therefore, you might must edit it to make it valid Oracle SQL syntax.</p>
+</li>
+<li>
+<p>Nothing - The report has no underlying source type.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Source name</p>
+</li>
+<li>
+<p>Status of the report: Valid or Invalid. The source of the report must have a status of Valid before you can select it for migration.</p>
+<p>A report's status is based on two factors: status of its underlying source object and inclusion of the source object in the migration. Specifically, a report has a status of valid if either one of these situations exists:</p>
+<ul>
+<li>
+<p>Its Source Type object (table, query, or SQL query) is valid, and it has been included in the migration. Its check box is enabled and can be selected.</p>
+</li>
+<li>
+<p>Its Source type object has a status of valid, but the source object was not included in the migration. Its check box is disabled.</p>
+</li>
+</ul>
+<p>A report has a status of invalid if either one of these situations exists:</p>
+<ul>
+<li>
+<p>No Source Type is listed. Its check box is disabled.</p>
+</li>
+<li>
+<p>Its Source Type object (table, query, or SQL query) is invalid. Its check box is disabled.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>To run a bulk process that attempts to compile all invalid SQL queries, click <span class="bold">Attempt to compile invalid SQL queries</span> at the bottom of the page.</p>
+<p>Using this option can validate some SQL queries that show a status of invalid. Note that SQL queries from Microsoft Access forms are not loaded into the Oracle Migration Workbench and are therefore not parsed.</p>
+</li>
+<li>
+<p>To edit a SQL query:</p>
+<ol>
+<li>
+<p>On the Reports page, click the <span class="bold">SQL Query</span> link you want to edit.</p>
+</li>
+<li>
+<p>Click <span class="bold">Validate</span> to find the invalid part of the SQL query.</p>
+</li>
+<li>
+<p>Update the query and validate it.</p>
+</li>
+<li>
+<p>When it is validated, click the project name breadcrumb.</p>
+</li>
+<li>
+<p>To include the validated query, click <span class="bold">Reports</span> on the project page to go to the Reports page. Then select the newly validated SQL query in the left column and click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>To edit a query:</p>
+<ol>
+<li>
+<p>On the Reports page, click <span class="bold">Query</span> for the report you want to edit.</p>
+</li>
+<li>
+<p>Click <span class="bold">Compile</span> to find the invalid part of the query.</p>
+</li>
+<li>
+<p>Click <span class="bold">Access Query</span> to review the initial query and compare it to the converted query.</p>
+</li>
+<li>
+<p>Update the query and recompile it.</p>
+</li>
+<li>
+<p>When it is validated, click the <span class="bold">Queries</span> breadcrumb.</p>
+</li>
+<li>
+<p>To include this validated query, select it in the left column on the Queries page and click <span class="bold">Apply Changes</span>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>To review details about a report, click the link in the Access Report column.</p>
+</li>
+<li>
+<p>To include reports in the migration, select them in the left column.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply Changes</span> to save your selections.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apm_rvwdbmodpg.htm#CBBICFIA">"Reviewing Database, Module, and Pages Information"</a>, <a href="apm_howrevobj.htm#BGBHBHFA">"Step 5: Review Your Retrieved Objects"</a>, and <a href="apm_howmigproj.htm#BGBIDFDB">"How to Migrate a Microsoft Access Application"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apm_recforms.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apm_rvwdbmodpg.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

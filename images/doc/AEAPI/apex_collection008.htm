@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ADD_MEMBERS Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:37Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="ADD_MEMBERS Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_collection007.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_collection009.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_collection007.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection009.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CJAFADDF" name="CJAFADDF"></a></p>
+<hr />
+<div class="refsect1">
+<h1>ADD_MEMBERS <a id="sthref156" name="sthref156"></a>Procedure</h1>
+<p>Use this procedure to add an array of members to a collection. An error is raised if the specified collection does not exist for the current user in the same session for the current Application ID. Gaps are not used when adding a new member, so an existing collection with members of sequence IDs (1,2,5,8) will add the new member with a sequence ID of 9. The count of elements in the p_c001 PL/SQL table will be used as the total number of items across all PL/SQL tables. For example, if p_c001.count is 2 and p_c002.count is 10, only 2 members will be added. If p_c001 is null an application error is raised.</p>
+<a id="sthref157" name="sthref157"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_COLLECTION.ADD_MEMBERS (
+    p_collection_name IN VARCHAR2,
+    p_c001 IN APEX_APPLICATION_GLOBAL.VC_ARR2 defulat empty_vc_arr,
+    p_c002 IN APEX_APPLICATION_GLOBAL.VC_ARR2 defulat empty_vc_arr,
+    p_c003 IN APEX_APPLICATION_GLOBAL.VC_ARR2 defulat empty_vc_arr,
+    ...
+    p_c050 IN APEX_APPLICATION_GLOBAL.VC_ARR2 defulat empty_vc_arr,
+    p_n001 IN APEX_APPLICATION_GLOBAL.N_ARR defulat empty_n_arr,
+    p_n002 IN APEX_APPLICATION_GLOBAL.N_ARR defulat empty_n_arr,
+    p_n003 IN APEX_APPLICATION_GLOBAL.N_ARR defulat empty_n_arr,
+    p_n004 IN APEX_APPLICATION_GLOBAL.N_ARR defulat empty_n_arr,
+    p_n005 IN APEX_APPLICATION_GLOBAL.N_ARR defulat empty_n_arr,
+    p_generate_md5 IN VARCHAR2 default 'NO');
+</pre>
+<a id="sthref158" name="sthref158"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#CJACECHD">Table: ADD_MEMBERS Procedure Parameters</a> describes the parameters available in the <code>ADD_MEMBERS</code> procedure.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Any character attribute exceeding 4,000 characters is truncated to 4,000 characters. Also, the number of members added is based on the number of elements in the first array.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote" --></div>
+<div class="tblformal"><a id="sthref159" name="sthref159"></a><a id="CJACECHD" name="CJACECHD"></a>
+<p class="titleintable">ADD_MEMBERS Procedure Parameters</p>
+<table class="Formal" title="ADD_MEMBERS Procedure Parameters" summary="This table describes the parameters available in the UNEXPIRE_END_USER_ACCOUNT procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t28">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t28">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t28" headers="r1c1-t28">
+<p><code>p_collection_name</code></p>
+</td>
+<td align="left" headers="r2c1-t28 r1c2-t28">
+<p>The name of an existing collection. Maximum length is 255 bytes. Collection names are not case sensitive and are converted to upper case.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t28" headers="r1c1-t28">
+<p><code>p_c001 through p_c050</code></p>
+</td>
+<td align="left" headers="r3c1-t28 r1c2-t28">
+<p>Attribute value of the member to be added. Maximum length is 4,000 bytes. Any character attribute exceeding 4,000 characters is truncated to 4,000 characters.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t28" headers="r1c1-t28">
+<p><code>p_generate_md5</code></p>
+</td>
+<td align="left" headers="r4c1-t28 r1c2-t28">
+<p>Valid values include <code>YES</code> and <code>NO</code>. <code>YES</code> to specify if the message digest of the data of the collection member should be computed. Use this parameter to compare the MD5 of the collection member with another member or to see if that member has changed.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref160" name="sthref160"></a>
+<p class="subhead2">Example</p>
+<p>The following example shows how to add two new members to the <code>EMPLOYEE</code> table.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+Begin
+    APEX_COLLECTION.ADD_MEMBERS(
+        p_collection_name =&gt; 'EMPLOYEE',
+        p_c001 =&gt; l_arr1,
+        p_c002 =&gt; 1_arr2);
+End;
+</pre>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="apex_collection023.htm#CJAIFADF">"GET_MEMBER_MD5 Function"</a>, <a href="apex_collection006.htm#CJAHGGFH">"ADD_MEMBER Procedure"</a>, <a href="apex_collection007.htm#CJABJFEC">"ADD_MEMBER Function"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_collection007.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_collection009.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

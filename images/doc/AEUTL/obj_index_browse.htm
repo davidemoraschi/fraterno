@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Browsing an Index</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T17:42:51Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Browsing an Index" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15520-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface" title="Home" type="text/html" />
+<link rel="up" href="obj_brows.htm" title="Managing Database Objects w..." type="text/html" />
+<link rel="up" href="obj_index.htm" title="Managing Indexes" type="text/html" />
+<link rel="up" href="obj_index_browse.htm" title="Browsing an Index" type="text/html" />
+<link rel="prev" href="obj_index_create.htm" title="Previous" type="text/html" />
+<link rel="next" href="obj_index_drop.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface" title="Home">Home</a> &gt; <a href="obj_brows.htm" title="Managing Database Objects w...">Managing Database Objects w...</a> &gt; <a href="obj_index.htm" title="Managing Indexes">Managing Indexes</a> &gt; Browsing an Index</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="obj_index_create.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="obj_index_drop.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CHDHGJCD" name="CHDHGJCD"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="AEUTL127" id="AEUTL127"></a>Browsing an <a id="sthref64" name="sthref64"></a><a id="sthref65" name="sthref65"></a><a id="sthref66" name="sthref66"></a>Index</h1>
+<p>To browse an index:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click <span class="bold">SQL Workshop</span> and then <span class="bold">Object Browser</span>.</p>
+<p>Object Browser appears.</p>
+</li>
+<li>
+<p>From the Object list, select <span class="bold">Indexes</span>.</p>
+</li>
+<li>
+<p>From the Object Selection pane, select an index.</p>
+<p>The index appears displaying the index name, type, table owner, table type and a listing of indexed columns.</p>
+</li>
+</ol>
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref67" name="sthref67"></a>
+<h2><a name="AEUTL128" id="AEUTL128"></a>Summary of Available Views</h2>
+<p>Click the tabs at the top of the page to view different reports about the index. <a href="#CHDIIJHA">Table: Available Views for Indexes</a> describes all available views.</p>
+<div class="tblformal"><a id="sthref68" name="sthref68"></a><a id="CHDIIJHA" name="CHDIIJHA"></a>
+<p class="titleintable">Available Views for Indexes</p>
+<table class="Formal" title="Available Views for Indexes" summary="This table describes the alternative views available when browsing an index in Object Browser." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="31%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t12">View</th>
+<th align="left" valign="bottom" id="r1c2-t12">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t12" headers="r1c1-t12">
+<p>Object Details</p>
+</td>
+<td align="left" headers="r2c1-t12 r1c2-t12">
+<p>Displays the index name, index type, table owner, table name, table type, uniqueness, compression, prefix length, tablespace name, status, last analyzed and also a listing of the indexed columns. Actions you can perform while viewing Object Details include:</p>
+<ul>
+<li>
+<p><a id="sthref69" name="sthref69"></a>Disable - Disables the current index</p>
+</li>
+<li>
+<p>Drop - Drops the current index</p>
+</li>
+<li>
+<p><a id="sthref70" name="sthref70"></a>Rebuild - Rebuilds the current index</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t12" headers="r1c1-t12">
+<p>Statistics</p>
+</td>
+<td align="left" headers="r3c1-t12 r1c2-t12">
+<p>Displays collected <a id="sthref71" name="sthref71"></a>statistics about the current view, including the number of rows, sample size, when the data was last analyzed, and the compression status (enabled or disabled). Click <span class="bold">Analyze</span> to refresh the displayed statistics.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t12" headers="r1c1-t12">
+<p>SQL</p>
+</td>
+<td align="left" headers="r4c1-t12 r1c2-t12">
+<p>Displays the SQL necessary to re-create this index.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" --></div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="obj_index_create.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="obj_index_drop.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

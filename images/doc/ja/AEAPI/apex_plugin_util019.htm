@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>PRINT_HIDDEN_IF_READONLY Procedure</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1" />
+<meta name="date" content="2010-09-28T16:0:40Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="PRINT_HIDDEN_IF_READONLY Procedure" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15519-02" />
+<link rel="copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="prev" href="apex_plugin_util018.htm" title="Previous" type="text/html" />
+<link rel="next" href="apex_plugin_util020.htm" title="Next" type="text/html" />
+</head>
+<body>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="apex_plugin_util018.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin_util020.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="BABBCEEF" name="BABBCEEF"></a></p>
+<hr />
+<div class="refsect1"><!-- infolevel="all" infotype="General" -->
+<h1>PRINT_HIDDEN_IF_READONLY <a id="sthref897" name="sthref897"></a>Procedure</h1>
+<p>This procedure outputs a hidden field to store the page item value if the page item is rendered as readonly and is not printer friendly. If this procedure is called in an item type plug-in, the parameters of the plug-in interface should directly be passed in.</p>
+<a id="sthref898" name="sthref898"></a>
+<p class="subhead2">Syntax</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_PLUGIN_UTIL.PRINT_HIDDEN_VALUE (
+    p_item_name   IN VARCHAR2,
+    p_value       IN VARCHAR2,
+    p_is_readonly IN BOOLEAN,
+    p_is_printer_friendly IN BOOLEAN,
+    p_id_postfix  IN VARCHAR2 DEFAULT NULL);
+</pre>
+<a id="sthref899" name="sthref899"></a>
+<p class="subhead2">Parameters</p>
+<p><a href="#BABCJIDF">Table: PRINT_HIDDEN_IF_READONLY Parameters</a> describes the parameters available in the PRINT_HIDDEN_IF_READONLY procedure.</p>
+<div class="tblformal"><a id="sthref900" name="sthref900"></a><a id="BABCJIDF" name="BABCJIDF"></a>
+<p class="titleintable">PRINT_HIDDEN_IF_READONLY Parameters</p>
+<table class="Formal" title="PRINT_HIDDEN_IF_READONLY Parameters" summary="This table describes the parameters available in the PRINT_HIDDEN_IF_READONLY procedure." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="38%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t28">Parameter</th>
+<th align="left" valign="bottom" id="r1c2-t28">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t28" headers="r1c1-t28">
+<p><code>p_item_name</code></p>
+</td>
+<td align="left" headers="r2c1-t28 r1c2-t28">
+<p>Name of the page item. For this parameter the <code>p_item.name</code> should be passed in.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t28" headers="r1c1-t28">
+<p><code>p_value</code></p>
+</td>
+<td align="left" headers="r3c1-t28 r1c2-t28">
+<p>Current value of the page item. For this parameter <code>p_value</code> should be passed in.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t28" headers="r1c1-t28">
+<p><code>p_is_readonly</code></p>
+</td>
+<td align="left" headers="r4c1-t28 r1c2-t28">
+<p>Is the item rendered readonly. For this parameter <code>p_is_readonly</code> should be passed in.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t28" headers="r1c1-t28">
+<p><code>p_is_printer_friendly</code></p>
+</td>
+<td align="left" headers="r5c1-t28 r1c2-t28">
+<p>Is the item rendered in printer friendly mode. For this parameter <code>p_is_printer_friendly</code> should be passed in.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t28" headers="r1c1-t28">
+<p><code>p_id_postfix</code></p>
+</td>
+<td align="left" headers="r6c1-t28 r1c2-t28">
+<p>Used to generate the ID attribute of the hidden field. It is build based on <code>p_item_name</code> and the value in <code>p_id_postfix</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformal" -->
+<a id="sthref901" name="sthref901"></a>
+<p class="subhead2">Example</p>
+<p>Writes a hidden field with the current value to the HTTP output if <code>p_is_readonly</code> is TRUE and <code>p_printer_friendly</code> is FALSE.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+apex_plugin_util.print_hidden_if_readonly (
+    p_item_name           =&gt; p_item.name,
+    p_value               =&gt; p_value,
+    p_is_readonly         =&gt; p_is_readonly,
+    p_is_printer_friendly =&gt; p_is_printer_friendly );
+</pre></div>
+<!-- class="refsect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="../dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="apex_plugin_util018.htm"><img src="../dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="apex_plugin_util020.htm"><img src="../dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

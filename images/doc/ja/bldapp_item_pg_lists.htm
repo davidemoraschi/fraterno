@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Working with Multiple Select List Item</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:3Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Working with Multiple Select List Item" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="bldapp.htm" title="Creating Applications" type="text/html" />
+<link rel="up" href="bldapp_item.htm" title="Understanding Page-Level Items" type="text/html" />
+<link rel="up" href="bldapp_item_pg_lists.htm" title="Working with Multiple Selec..." type="text/html" />
+<link rel="prev" href="bldapp_item_pg_cond.htm" title="Previous" type="text/html" />
+<link rel="next" href="bldapp_item_app.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="bldapp.htm" title="Creating Applications">Creating Applications</a> &gt; <a href="bldapp_item.htm" title="Understanding Page-Level Items">Understanding Page-Level Items</a> &gt; Working with Multiple Selec...</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="bldapp_item_pg_cond.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldapp_item_app.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CEGDBEHF" name="CEGDBEHF"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB25337" id="HTMDB25337"></a>Working with <a id="sthref1049" name="sthref1049"></a><a id="sthref1050" name="sthref1050"></a>Multiple Select List Item</h1>
+<p>A multiple select item renders as a multiple select list form element which can be either a Multiselect List or Shuttle item type. When submitted, selected values are returned in a single colon-delimited string. You can handle values in this format in three ways:</p>
+<ul>
+<li>
+<p>Using the <code>INSTR</code> function</p>
+</li>
+<li>
+<p>Using the <code>APEX_UTIL.STRING_TO_TABLE</code> function</p>
+</li>
+<li>
+<p>Creating a shuttle</p>
+</li>
+</ul>
+<a id="sthref1051" name="sthref1051"></a>
+<p class="subhead2">Topics:</p>
+<ul>
+<li>
+<p><a href="#CHDEHCDF">Using APEX_UTIL.STRING_TO_TABLE to Convert Selected Values</a></p>
+</li>
+<li>
+<p><a href="#CHDGCCIG">Creating a Shuttle Item Type</a></p>
+</li>
+</ul>
+<a id="CHDEHCDF" name="CHDEHCDF"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2><a name="HTMDB25338" id="HTMDB25338"></a>Using <a id="sthref1052" name="sthref1052"></a><a id="sthref1053" name="sthref1053"></a>APEX_UTIL.STRING_TO_TABLE to Convert Selected Values</h2>
+<p>Suppose you had a report on the <code>EMP</code> and <code>DEPT</code> tables that is limited by the departments selected from a Department multiple select list. First, you create the multiple select item, P1_DEPTNO, using the following query:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT dname, deptno
+FROM dept
+</pre>
+<p>Second, you return only those employees within the selected departments as follows:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT ename, job, sal, comm, dname
+FROM emp e, dept d
+WHERE d.deptno = e.deptno
+AND instr(':'||:P1_DEPTNO||':',':'||e.deptno||':') &gt; 0
+
+</pre>
+<p>Next, assume you want to programmatically step through the values selected in the multiple select item, P1_DEPTNO. To accomplish this, you would convert the colon-delimited string into a PL/SQL array using the <code>APEX_UTIL.STRING_TO_TABLE</code> function. The following example demonstrates how to insert the selected departments into an audit table containing the date of the query.</p>
+<pre xml:space="preserve" class="oac_no_warn">
+DECLARE
+    l_selected APEX_APPLICATION_GLOBAL.VC_ARR2;
+BEGIN
+  --
+  -- Convert the colon separated string of values into
+  -- a PL/SQL array 
+
+  l_selected := APEX_UTIL.STRING_TO_TABLE(:P1_DEPTNO);
+
+  --
+  -- Loop over array to insert department numbers and sysdate
+  --
+
+  FOR i IN 1..l_selected.count 
+  LOOP
+    INSERT INTO report_audit_table (report_date, selected_department)
+        VALUES (sysdate, l_selected(i));
+  END LOOP;
+END;
+</pre>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+"STRING_TO_TABLE Function" in <a href="http://www.oracle.com/pls/db112/lookup?id=AEAPI185"><span class="italic">Oracle Application Express API Reference</span></a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect3" -->
+<a id="CHDGCCIG" name="CHDGCCIG"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" -->
+<h2>Creating a <a id="sthref1054" name="sthref1054"></a>Shuttle Item Type</h2>
+<p>Suppose you have a form on the <code>DEPT</code> table that shows which employees are assigned to a given department. To made assigning employees to a department easier, you can create a shuttle item that lists employees alphabetically.</p>
+<p>To create a s<code>hu</code>ttle item:</p>
+<ol>
+<li>
+<p>Create a new Form page on DEPT using Form on a Table with Report:</p>
+<ol>
+<li>
+<p>On the Workspace home page, click the <span class="bold">Application Builder</span> icon.</p>
+</li>
+<li>
+<p>Select an application.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create Page</span>.</p>
+</li>
+<li>
+<p>For Page Type, select <span class="bold">Form</span>.</p>
+</li>
+<li>
+<p>Under Forms, select <span class="bold">Form on a Table with Report</span>.</p>
+</li>
+<li>
+<p>Select the appropriate schema.</p>
+</li>
+<li>
+<p>For Table/View Name, select <span class="bold">DEPT</span>.</p>
+</li>
+<li>
+<p>Accept the remaining defaults and follow the on-screen instructions. To learn more about a specific field, click the item label.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Create a shuttle named P2_EMP_LIST and the form page.</p>
+<ol>
+<li>
+<p>Go the Page Definition for the form page.</p>
+</li>
+<li>
+<p>Right-click the region containing the form and select <span class="bold">Create Page Item</span>.</p>
+</li>
+<li>
+<p>For Item Type, select <span class="bold">Shuttle</span>.</p>
+</li>
+<li>
+<p>For Item Name, enter <code>P2_EMP_LIST</code> and click <span class="bold">Next</span>.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Tip:</p>
+In this example, "<code>P2</code>" in the item name <code>P2_EMP_LIST</code> indicates the item resides on page 2.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</li>
+<li>
+<p>For Item Attributes, accept the defaults and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For Setting, accept the defaults and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>For List of Values:</p>
+<ul>
+<li>
+<p>List of Values Query - Enter:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT ename, empno FROM emp ORDER BY 1
+</pre></li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For Source:</p>
+<ul>
+<li>
+<p>Source Type - Select <span class="bold">SQL Query (return color separated value)</span></p>
+</li>
+<li>
+<p>Item Source Value - Enter:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+SELECT empno FROM emp WHERE deptno = :P2_DEPTNO ORDER BY ename
+</pre></li>
+<li>
+<p>Click <span class="bold">Create Item</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Run the page by clicking the Run Page icon.</p>
+<img src="img/shuttle_example.gif" alt="Description of shuttle_example.gif follows" title="Description of shuttle_example.gif follows" longdesc="img_text/shuttle_example.htm" /><br />
+<a id="sthref1055" name="sthref1055" href="img_text/shuttle_example.htm">Description of the illustration shuttle_example.gif</a><br />
+<br /></li>
+</ol>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<!-- class="sect1" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="bldapp_item_pg_cond.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldapp_item_app.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>

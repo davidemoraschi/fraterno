@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Referencing Item Values</title>
+<meta name="generator" content="Oracle DARB XHTML Converter (Mode = ohj/ohw) - Version 5.1.1 Build 007" />
+<meta name="date" content="2010-09-29T14:5:3Z" />
+<meta name="robots" content="noarchive" />
+<meta name="doctitle" content="Referencing Item Values" />
+<meta name="relnum" content="Release 4.0" />
+<meta name="partnum" content="E15517-02" />
+<link rel="copyright" href="dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="stylesheet" href="dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<link rel="contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="up" href="preface.htm" title="Home" type="text/html" />
+<link rel="up" href="bldapp.htm" title="Creating Applications" type="text/html" />
+<link rel="up" href="bldapp_item.htm" title="Understanding Page-Level Items" type="text/html" />
+<link rel="up" href="bldapp_item_pg_value.htm" title="Referencing Item Values" type="text/html" />
+<link rel="prev" href="bldapp_item_pg_edit.htm" title="Previous" type="text/html" />
+<link rel="next" href="bldapp_item_pg_cond.htm" title="Next" type="text/html" />
+</head>
+<body>
+<p id="BREADCRUMBING"><a href="preface.htm" title="Home">Home</a> &gt; <a href="bldapp.htm" title="Creating Applications">Creating Applications</a> &gt; <a href="bldapp_item.htm" title="Understanding Page-Level Items">Understanding Page-Level Items</a> &gt; Referencing Item Values</p>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr valign="bottom">
+<td align="left"></td>
+<td align="center"><a href="bldapp_item_pg_edit.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldapp_item_pg_cond.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+<p><a id="CEGFIJIH" name="CEGFIJIH"></a></p>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h1><a name="HTMDB25335" id="HTMDB25335"></a>Referencing <a id="sthref1041" name="sthref1041"></a><a id="sthref1042" name="sthref1042"></a>Item Values</h1>
+<p>You can reference item values stored in session state in regions, computations, processes, validation, and branches. <a href="#CEGJAFEA">Table: Syntax for Referencing Item Values</a> describes the supported syntax for referencing item values.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="concept_ses_val.htm#BEIFIHFH">"Managing Session State Values"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+<div class="tblformalwide"><a id="sthref1043" name="sthref1043"></a><a id="CEGJAFEA" name="CEGJAFEA"></a>
+<p class="titleintable">Syntax for Referencing Item Values</p>
+<table class="FormalWide" title="Syntax for Referencing Item Values " summary="This table describes the supported syntax for referencing item values." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<col width="17%" />
+<col width="28%" />
+<col width="*" />
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t59">Type</th>
+<th align="left" valign="bottom" id="r1c2-t59">Syntax</th>
+<th align="left" valign="bottom" id="r1c3-t59">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t59" headers="r1c1-t59">
+<p>SQL</p>
+</td>
+<td align="left" headers="r2c1-t59 r1c2-t59">
+<p><code>:MY_ITEM</code></p>
+</td>
+<td align="left" headers="r2c1-t59 r1c3-t59">
+<p>Standard bind variable syntax for items whose names are no longer than 30 bytes. Use this syntax for references within a SQL query and within PL/SQL code.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t59" headers="r1c1-t59">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r3c1-t59 r1c2-t59">
+<p><code>V('MY_ITEM')</code></p>
+</td>
+<td align="left" headers="r3c1-t59 r1c3-t59">
+<p>PL/SQL syntax referencing the item value using the <code>V</code> function. Use this syntax in PL/SQL code of packages or stored procedures and functions.</p>
+<p>Avoid this syntax in SQL statements. It may result in performance problems.</p>
+<p><span class="bold">See Also:</span> <a href="AEAPI/preface.htm"><span class="italic">Oracle Application Express API Reference</span></a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t59" headers="r1c1-t59">
+<p>PL/SQL</p>
+</td>
+<td align="left" headers="r4c1-t59 r1c2-t59">
+<p><code>NV('MY_NUMERIC_ITEM')</code></p>
+</td>
+<td align="left" headers="r4c1-t59 r1c3-t59">
+<p>Standard PL/SQL syntax referencing the numeric item value using the <code>NV</code> function. Use this syntax in PL/SQL code of packages or stored procedures and functions.</p>
+<p>Avoid this syntax in SQL statements.It may result in performance problems.</p>
+<p><span class="bold">See Also:</span> <a href="AEAPI/preface.htm"><span class="italic">Oracle Application Express API Reference</span></a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t59" headers="r1c1-t59">
+<p>Static Text (exact)</p>
+</td>
+<td align="left" headers="r5c1-t59 r1c2-t59">
+<p><code>&amp;MY_ITEM.</code></p>
+</td>
+<td align="left" headers="r5c1-t59 r1c3-t59">
+<p>Static text. Exact Substitution.</p>
+<p><span class="bold">Note</span>: Exact substitution syntax should be avoided in SQL or PL/SQL code because it can result in SQL Injection vulnerabilities.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblformalwide" -->
+<p>You can set the value of an item in your application using any of the following methods:</p>
+<ul>
+<li>
+<p>For page-level items, use the Source Attribute to set the item value.</p>
+<p>From the Page Definition, select the item name to view the Edit Page Item page. Scroll down to Source and edit the appropriate fields.</p>
+<p>You can also set the value of an item in any region based on PL/SQL or a process using the following syntax:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+BEGIN
+ :MY_ITEM :=  'new value';
+END;
+</pre></li>
+<li>
+<p>Pass the value on a URL reference using <code>f?p</code> syntax. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+f?p=100:101:10636547268728380919::NO::MY_ITEM:ABC
+</pre></li>
+<li>
+<p>Set the value using a computation. Computations are designed to set item values. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+TO_CHAR(SYSDATE,'Day DD Month, YYYY');
+</pre></li>
+<li>
+<p>Use the PL/SQL API to set an item value within a PL/SQL context. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">
+APEX_UTIL.SET_SESSION_STATE('MY_ITEM',SYSDATE);
+</pre></li>
+</ul>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="concept_ses_clear.htm#BEIHCICF">"Clearing Session State"</a>, <a href="AEAPI/preface.htm"><span class="italic">Oracle Application Express API Reference</span></a>, and <a href="sec_cross_site.htm#CDDBBECI">"Understanding Cross-Site Scripting Protection"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso" --></div>
+</div>
+<!-- class="sect2" -->
+<!-- Start Footer -->
+<div class="footer">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<col width="86%" />
+<col width="*" />
+<tr>
+<td align="left"><span class="copyrightlogo">Copyright&nbsp;&copy;&nbsp;2003, 2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span><br />
+<a href="dcommon/html/cpyr.htm"><span class="copyrightlogo">Legal Notices</span></a></td>
+<td align="center"><a href="bldapp_item_pg_edit.htm"><img src="dcommon/gifs/leftnav.gif" alt="Previous" /><br />
+<span class="icon">Previous</span></a>&nbsp;</td>
+<td align="center"><a href="bldapp_item_pg_cond.htm"><img src="dcommon/gifs/rightnav.gif" alt="Next" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</div>
+<!-- class="footer" -->
+</body>
+</html>
